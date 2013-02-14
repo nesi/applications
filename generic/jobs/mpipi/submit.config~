@@ -1,0 +1,3 @@
+job = .
+group = /nz/nesi
+queue = pan:pan.nesi.org.nz
