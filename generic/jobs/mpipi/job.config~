@@ -1,9 +1,8 @@
 // required parameters
 // -------------------
 
-commandline = /share/test/MPI_pi/mpipi 1000000000
-application = generic
-walltime = 10m
+commandline = /share/test/MPI_pi/mpipi 100000000000
+walltime = 2h
 
 // optional parameters
 // --------------------
