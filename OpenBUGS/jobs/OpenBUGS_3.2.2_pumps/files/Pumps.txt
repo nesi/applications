@@ -1,0 +1,25 @@
+# Check model syntax
+modelCheck('Pumpsmodel.txt')
+
+# Load data
+modelData('Pumpsdata.txt')
+
+# Compile with one chain
+modelCompile(1)
+
+# Load inital values for first chain
+# modelInits('Pumpsinits.txt',1)
+modelGenInits()
+
+# Start with 1000 update burn-in
+modelUpdate(1000)
+
+# Set nodes of interest
+samplesSet('alpha')
+samplesSet('beta')
+
+# Follow by a further 10,000 updates
+modelUpdate(10000)
+
+# Look at sample statistics
+samplesStats('*')
