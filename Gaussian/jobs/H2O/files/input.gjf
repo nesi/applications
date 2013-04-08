@@ -1,0 +1,14 @@
+$RunGauss$
+
+%NProcShared=1
+%Mem=4096MB
+%Chk=H2O.chk
+
+#P HF/STO-3G SP
+
+Water opt
+
+0 1
+H
+O 1 0.95
+H 2 0.95 1 109.0

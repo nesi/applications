@@ -1,0 +1,7 @@
+// required parameters
+
+job = ../../jobs/H2O/job.grisu
+group = /nz/nesi
+queue = pan:pan.nesi.org.nz
+jobname = gee_gaussian_h2o
+

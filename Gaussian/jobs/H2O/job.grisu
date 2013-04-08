@@ -1,0 +1,16 @@
+// required parameters
+// -------------------
+
+commandline = g09
+stdin = input.gjf
+application = Gaussian
+applicationVersion = C.01
+walltime = 1m
+stdout = output.log
+jobname = gaussian
+
+// optional parameters
+// --------------------
+
+cpus = 1
+walltime = 10m

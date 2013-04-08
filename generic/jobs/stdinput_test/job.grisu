@@ -1,0 +1,17 @@
+// required parameter
+// -------------------
+
+commandline = cat 
+
+// optional parameters
+// --------------------
+application = generic
+submissionLocation = pan:pan.nesi.org.nz
+// applicationVersion = 1.6.0
+// cpus = 1
+stderr = stderr.txt
+stdout = stdout.txt
+stdin = stdin.txt
+walltime = 1m
+
+group = /nz/nesi
