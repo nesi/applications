@@ -1,0 +1,5 @@
+#%Module1.0
+
+prepend-path PATH /share/apps/MATLAB/UoA-FoS/bin
+
+

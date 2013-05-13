@@ -1,0 +1,8 @@
+#%Module1.0
+
+module-whatis "SOAPec (version 2.01)"
+
+set root /share/apps/SOAPec/noarch/2.01/bin
+
+prepend-path PATH $root
+

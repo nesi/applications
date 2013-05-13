@@ -1,0 +1,8 @@
+#%Module1.0
+
+module-whatis "Bowtie (version 2.1.0)"
+
+set root /share/apps/bowtie/noarch/2.1.0
+
+prepend-path PATH $root
+

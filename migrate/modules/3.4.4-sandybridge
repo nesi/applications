@@ -1,0 +1,10 @@
+#%Module1.0
+ 
+module-whatis "Migrate estimates effective population sizes and past migration rates beween n populations"
+
+module load intel/ics-2013
+
+set-alias MPIRUN "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -genv I_MPI_FABRICS dapl -genv I_MPI_PIN_PROCESSOR_LIST='grain=cache2,shift=sock' -envall \$*"
+prepend-path PATH "/share/apps/migrate/sandybridge/3.4.4/ics-2013/bin"
+prepend-path MANPATH "/share/apps/migrate/sandybridge/3.4.4/ics-2013/man"
+

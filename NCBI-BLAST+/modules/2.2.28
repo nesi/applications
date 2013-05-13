@@ -1,0 +1,6 @@
+#%Module1.0
+ 
+setenv BLASTDB /share/db/blast/db
+
+module load FASTASplitN/1.0.4
+prepend-path PATH /share/apps/NCBI-BLAST+/noarch/2.2.28/GCC445-ReleaseMT64/bin

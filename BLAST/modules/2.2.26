@@ -1,0 +1,6 @@
+#%Module1.0
+ 
+setenv BLASTDB /share/db/blast/db
+
+module load FASTASplitN/1.0.4
+prepend-path PATH /share/apps/BLAST/noarch/2.2.26/bin

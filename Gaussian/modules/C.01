@@ -1,0 +1,68 @@
+#%Module1.0
+
+module-whatis "The Gaussian computational chemistry package (G09, rev. C.01)"
+
+# This module file was prepared chiefly by comparing and contrasting the
+# environments (using "env") and aliases (using "alias") before and after the
+# resource files (g09.profile and g09.login) were sourced. It is therefore
+# unique to the hardware and software environment of Pan.
+
+# Can't have G09-B.01 and G09-C.01 loaded at the same time
+conflict g09/B.01
+
+# Start commands common to all shells
+
+set root /share/apps/g09-C.01
+setenv g09root $root
+set shell [module-info shell]
+
+setenv _DSM_BARRIER "SHM"
+setenv G09BASIS $root/g09/basis
+setenv GAUSS_ARCHDIR $root/g09/arch
+setenv GAUSS_BSDDIR $root/g09/bsd
+setenv GAUSS_EXEDIR $root/g09/bsd:$root/g09/local:$root/g09/extras:$root/g09
+setenv GAUSS_LEXEDIR $root/g09/linda-exe
+setenv GV_DIR $root/gv
+setenv PGI_TERM "trace,abort"
+
+append-path PATH $root/g09/bsd
+append-path PATH $root/g09/local
+append-path PATH $root/g09/extras
+append-path PATH $root/g09
+
+prepend-path LD_LIBRARY_PATH $root/g09
+prepend-path LD_LIBRARY_PATH $root/g09/extras
+prepend-path LD_LIBRARY_PATH $root/g09/local
+prepend-path LD_LIBRARY_PATH $root/g09/bsd
+append-path  LD_LIBRARY_PATH $root/gv/lib
+
+set-alias gv $root/gv/gview.csh
+set-alias sl $root/g09/tests/searchlog.csh
+
+# Finish commands common to all shells
+
+if {[string match $shell "csh"] || [string match $shell "tcsh"]} {
+	# Commands unique to the C shell family
+	setenv LINDA_FORTRAN "pgf77 -Bstatic_pgi -mp=nonuma -tp p7-64 -i8 -r8 -mcmodel=medium"
+	setenv LINDA_FORTRAN_LINK "pgf77 -Bstatic_pgi -mp=nonuma -tp p7-64 -i8 -r8 -mcmodel=medium"
+	setenv PERLLIB "$root/g09/bsd"
+	setenv PGI "/usr/pgi"
+	setenv PGIDIR "/usr/pgi/unknown"
+	setenv POSTFL_FORTRAN "pgf77 -Bstatic_pgi -mp=nonuma -tp p7-64 -i8 -r8 -mcmodel=medium"
+	setenv _RLD_ARGS "-log /dev/null"
+	
+	prepend-path MANPATH $root/g09/bsd
+	
+	set-alias gt "(g09 -exedir=l1:exe-dir:$root/g09/bsd:$root/g09/local:$root/g09/extras:$root/g09)"
+	set-alias gtl "(g09 -exedir=l1:linda-exe:exe-dir:$root/g09/linda-exe:$root/g09/bsd:$root/g09/local:$root/g09/extras:$root/g09)"
+	set-alias gtlx "(g09 -exedir=/mf/frisch/working/l1:/mf/frisch/working/linda-exe:/mf/frisch/working/exe-dir:$root/g09/linda-exe:$root/g09/bsd:$root/g09/local:$root/g09/extras:$root/g09)"
+	set-alias mg "make -f bsd/g09.make  CSIZE=12582912 CSIZEW=1536 OPTOI= MMODEL='\\\\''-mcmodel=medium'\\\\'' PROCTYPE=-D_EM64T_ NJSEC=-DDEFJSEC=512 I8FLAG=-i8 R8FLAG=-r8 I8CPP1=-DI64 I8CPP2=-DP64 I8CPP3=-DPACK64 I8CPP4=-DUSE_I2 MACHTY=p7-64 GAULIBU=util.a XGEMMINI=-DXGEMM_INIT BLAS1=bsd/libf77blas-em64t.a BLAS2=bsd/libatlas-em64t.a"
+	set-alias mkf "(make -f $root/g09/bsd/g09.make)"
+	set-alias mk "make  GAU_DIR=$root/g09 BLAS='\\\\'''\\\\'' UTIL_NAME=util.a UTIL_NAME=bsd/libf77blas-em64t.a UTIL_NAME=bsd/libatlas-em64t.a MACHTY=p7-64 GAULIBU=util.a I8FLAG=-i8 R8FLAG=-r8 MMODEL='\\\\''-mcmodel=medium'\\\\'' OPTOI= I8CPP1=-DI64 I8CPP2=-DP64 I8CPP3=-DPACK64 I8CPP4=-DUSE_I2 NJSEC=-DDEFJSEC=512 XGEMMINI=-DXGEMM_INIT  FCN='\\\\''pgf77 -Bstatic_pgi'\\\\'' FC='\\\\''-mp=nonuma -tp p7-64 -i8 -r8 -mcmodel=medium'\\\\'' FC2='\\\\''-lpthread -lm -lc'\\\\''"
+	set-alias mkno "make  GAU_DIR=$root/g09 BLAS='\\\\'''\\\\'' UTIL_NAME=util.a UTIL_NAME=bsd/libf77blas-em64t.a UTIL_NAME=bsd/libatlas-em64t.a MACHTY=p7-64 GAULIBU=util.a I8FLAG=-i8 R8FLAG=-r8 MMODEL='\\\\''-mcmodel=medium'\\\\'' OPTOI= I8CPP1=-DI64 I8CPP2=-DP64 I8CPP3=-DPACK64 I8CPP4=-DUSE_I2 NJSEC=-DDEFJSEC=512 XGEMMINI=-DXGEMM_INIT  FCN='\\\\''pgf77 -Bstatic_pgi'\\\\'' FC='\\\\''-mp=nonuma -tp p7-64 -i8 -r8 -mcmodel=medium'\\\\'' FC2='\\\\''-lpthread -lm -lc'\\\\'' PROFFLAG='\\\\''-g -O0'\\\\'' UPROFFLAG='\\\\''-g -O0'\\\\''"
+	set-alias mkp "make  GAU_DIRA=$root/g09/prof UTIL_NAME=profutil.a BLAS='\\\\'''\\\\'' UTIL_NAME=util.a UTIL_NAME=bsd/libf77blas-em64t.a UTIL_NAME=bsd/libatlas-em64t.a MACHTY=p7-64 GAULIBU=util.a I8FLAG=-i8 R8FLAG=-r8 MMODEL='\\\\''-mcmodel=medium'\\\\'' OPTOI= I8CPP1=-DI64 I8CPP2=-DP64 I8CPP3=-DPACK64 I8CPP4=-DUSE_I2 NJSEC=-DDEFJSEC=512 XGEMMINI=-DXGEMM_INIT   FCN='\\\\''pgf77 -Bstatic_pgi'\\\\'' FC2='\\\\''-lpthread -lm -lc'\\\\'' PROFFLAG=-p UPROFFLAG=-p"
+	set-alias ngtl "(nohup g09 -exedir=l1:linda-exe:exe-dir:$root/g09/linda-exe:$root/g09/bsd:$root/g09/local:$root/g09/extras:$root/g09)"
+	set-alias ngt "(nohup g09 -exedir=l1:exe-dir:$root/g09/bsd:$root/g09/local:$root/g09/extras:$root/g09)"
+	set-alias si "$root/g09/tests/search.csh log ibm"
+	set-alias ss "$root/g09/tests/search.csh log ia64"
+}

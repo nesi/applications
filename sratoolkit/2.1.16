@@ -1,0 +1,12 @@
+#%Module1.0
+
+module-whatis "Sequence read archieve (SRA) Toolkit (version 2.1.16)"
+
+set root /gpfs1m/apps/apps/sratoolkit
+
+prepend-path PATH $root
+prepend-path PATH $root/bin
+prepend-path PATH $root/help
+prepend-path PATH $root/schema
+
+
