@@ -1,0 +1,44 @@
+commandline = diff ${file1} ${file2}
+cpus = 1
+walltime = 60
+= Generic = 
+-
+[file1]
+type = SingleInputFile
+title = File
+size = 2000x70
+filter = BasenameFilter
+-
+[file2]
+type = SingleInputFile
+title = File
+size = 2000x70
+filter = BasenameFilter
+-------
+[queueSel]
+type = QueueSelector
+title = SubmissionLocation
+size = 2000x70
+--
+[jobname]
+type = Jobname
+defaultValue = catjob
+title = Jobname
+size = 2000x70
+-
+[temp]
+type = InputFileParser
+size = 2000x70
+title = fileParser
+-
+[mem]
+type = Memory
+title = Memory 
+prefills = 0,1024,2048,4096,8192,16384,32768,49152,65536
+size = 350x70
+-
+[cpus]
+type = Cpus
+title = CPUs
+size = 100x70
+defaultValue = 8

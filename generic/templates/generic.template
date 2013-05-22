@@ -1,0 +1,56 @@
+commandline = ${commandline}
+= Generic = 
+-
+[commandline]
+type = SimpleCommandline
+title = Commandline
+size = 2000x70
+setJobname = true
+-
+[inputFiles]
+type = MultipleInputFiles
+size = 2000x200
+title = Inputfiles
+-
+[walltime]
+type = Walltime
+title = Walltime
+defaultAmount = 10
+defaultUnit = minutes
+size = 200x70
+[cpus]
+type = Cpus
+title = CPUs
+size = 100x70
+defaultValue = 1
+[jobtype]
+type = JobType
+size = 2000x70
+[memory]
+type = Memory
+title = Memory per core (in GB)
+defaultValue = 2
+#prefills = 0,1024,2048,4096,8192,16384,32768,49152,65536
+size = 350x70
+-
+[appInfo]
+type = ApplicationSelector
+size = 2000x70
+title = Application
+[appVersion]
+type = ApplicationVersionSelector
+size = 2000x70
+title = Version
+[queueSel]
+type = QueueSelector
+title = SubmissionLocation
+size = 2000x70
+-
+[email]
+type = Email
+size = 1500x100
+[jobname]
+type = Jobname
+defaultValue = templatetest
+title = Jobname
+size = 2000x100

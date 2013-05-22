@@ -1,0 +1,113 @@
+commandline = mpiblast -i ${fastaFile} -p ${program} -d ${db} -e ${expectation_cutoff} -F ${filter} -M ${score_matrix} -w ${frame_shift_penalty} -o myout.txt ${other}
+application = mpiblast
+applicationVersion = 1.5.0
+cpus = 8
+walltimeInSeconds = 360000
+force_mpi = true
+= Start = 
+-
+[program]
+type = TextCombo
+title = Program
+size = 150x70
+prefills = blastn,blastp,blastx,tblastn,tblastx
+editable = false
+[db]
+type = TextCombo
+title = Database
+size = 150x70
+prefills = nt,nr
+editable = false
+[expectation_cutoff]
+type = TextCombo
+title = Cutoff E
+size = 150x70
+prefills = 0.0001,0.001,0.01,0.1,1.0,10
+editable = false
+-
+[filter]
+type = TextCombo
+title = Filter
+size = 150x70
+prefills = T,F
+editable = false
+[frame_shift_penalty]
+type = TextCombo
+title = Frame shift penalty
+size = 150x70
+prefills = 0,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,25,50,100
+editable = false
+[score_matrix]
+type = TextCombo
+title = Score matrix
+size = 150x70
+prefills = BLOSUM62,BLOSUM45,BLOSUM80,PAM30,PAM70
+editable = false
+-
+[other]
+type = TextCombo
+title = Other parameters
+size = 2000x70
+editable = true
+-
+[jobname]
+type = Jobname
+defaultValue = blastjob
+title = Jobname
+size = 2000x70
+-
+[Tips]
+type = InfoField
+size = 2000x70
+defaultValue = Tip: -m 6 will give results that are flat query-anchored, no identities and blunt ends.  Requests for additional databases and for installation of newer versions should be made to rt@arcs.org.au   
+-
+[fastaFile]
+type = SingleInputFile
+size = 2000x70
+title = Input FASTA file
+filter = BasenameFilter
+#-
+#will be removed for finished template, just to see what happens...
+#[dummy]
+#type = MonitorCommandlinePanel
+#size = 2000x70
+#title = Monitor commandline
+= About iVEC =
+-
+[ivecInfo1]
+type = InfoField
+title =  
+size = 2000x70
+defaultValue = mpiBLAST runs on resources provided by iVEC - The Hub of Advanced Computing in Western Australia
+-
+[ivecMembers]
+type = InfoField
+title = iVEC Members
+size = 2000x280
+defaultValue = Curtin University of Technology, University of Western Australia, Murdoch University, Edith Cowan University, CSIRO Exploration and Mining
+= About eRSA =
+-
+[ersaInfo1]
+type = InfoField
+title =  
+size = 2000x70
+defaultValue = mpiBLAST runs on resources provided by eResearch SA - Advanced Technologies for Changing Research
+-
+[ersaMembers]
+type = InfoField
+title = eRSA Members
+size = 2000x280
+defaultValue = University of Adelaide, Flinders University, and the University of South Australia
+= Registry =
+-
+[registry1]
+type = InfoField
+title =
+size = 2000x70
+defaultValue = Known installations of mpiBLAST in Australia
+-
+[registry2]
+type = InfoField
+title =
+size = 2000x140
+defaultValue = If you wish to list your installation, please send details of the number of CPUs, RAM and Storage, plus some description of what you use mpiBLAST for to rt@arcs.org.au

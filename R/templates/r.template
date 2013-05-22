@@ -1,0 +1,58 @@
+commandline = R -f ${file} --args ${parameters}
+application = R
+cpus = 1
+force_single = true
+= Single cpu R job = 
+-
+[file]
+type = TextFile
+mode = r
+title = R script file
+size = 2000x1000
+filter = BasenameFilter
+help = you need to specify an R input file
+setJobname = true
+- 
+-
+[QueueSelector]
+title = Queue
+type = QueueSelector
+size = 1000x70
+[walltime]
+type = Walltime
+size = 300x70
+title = Walltime
+defaultAmount = 1
+defaultUnit = hours
+= Optional parameters =
+-
+[parameters]
+type = TextCombo
+title = Additional commandline parameters
+size = 2000x70
+[memory]
+type = Memory
+title = Memory per core (in GB)
+defaultValue = 2
+#prefills = 0,1024,2048,4096,8192,16384,32768
+size = 350x70
+-
+[jobname]
+type = Jobname
+defaultValue = R_job
+title = Jobname
+size = 2000x70
+[ApplicationVersionSelector]
+type = ApplicationVersionSelector
+size = 350x70
+title = Application version
+useHistory=true
+-
+[file2]
+type = MultipleInputFiles
+title = Additional files
+size = 2000x210
+-
+[email]
+type = Email
+size = 2000x100

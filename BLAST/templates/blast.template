@@ -1,0 +1,110 @@
+commandline = blastall -p ${program} -i ${inputquery} -d ${db} -e ${expectation_cutoff} -o output.txt ${other}
+application = blast
+applicationVersion = 2.2.21
+force_single = true
+hostCount = 1
+memory = 1024m
+walltimeInSeconds = 3600
+= Start =
+- 
+[Heading]
+type = InfoField
+size = 1000x140
+defaultValue = BLAST -   NCBI Basic Local Alignment Search Tool.  Databases on ARCS sites are preformatted into 42 fragments for compatibility with mpiBLAST.
+[Source]
+type = InfoField
+size = 1000x140
+defaultValue = Source: http://blast.ncbi.nlm.nih.gov/Blast.cgi  -   Defaults:  Single threaded, results stored in myout.txt
+-
+[jobname]
+type = Jobname
+defaultValue = blastjob
+title = Jobname
+size = 2000x70
+-
+[program]
+type = TextCombo
+title = Program
+size = 150x70
+prefills = blastp,blastn,blastx,tblastn,tblastx
+editable = false
+[db]
+type = TextCombo
+title = Database
+size = 150x70
+prefills = nr,nt
+editable = false
+useHistory = false
+[expectation_cutoff]
+type = TextCombo
+title = Cutoff E
+size = 150x70
+prefills = 0.0001,0.001,0.01,0.1,1.0,10
+editable = false
+useHistory = true
+[extendt]
+type = TextCombo
+title = Extend T
+size = 150x70
+prefills = 11
+editable = false
+useHistory = true
+[other]
+type = TextCombo
+title = Other parameters
+size = 2000x70
+editable = true
+useHistory = true
+prefills = -m 6
+-
+[Tips]
+type = InfoField
+size = 2000x70
+defaultValue = Tip: -m 6 will give results that are flat query-anchored, no identities and blunt ends.  Requests for additional databases and for installation of newer versions should be made to rt@arcs.org.au   
+-
+[inputquery]
+type = SingleInputFile
+size = 2000x70
+title = Input FASTA file
+filter = BasenameFilter
+= About VPAC =
+-
+[vpacInfo1]
+type = InfoField
+title =  
+size = 2000x70
+defaultValue = BLAST runs on resources provided by VPAC - The Victorian Partnership for Advanced Computing - Innovation powered by advanced computing
+-
+[vpacMembers]
+type = InfoField
+title = VPAC Members
+size = 2000x280
+defaultValue = Deakin University, La Trobe University, Monash University, RMIT, Swinburne University of Technology, University of Melbourne, University of Ballarat and Victoria University
+= About eRSA =
+-
+[ersaInfo1]
+type = InfoField
+title =  
+size = 2000x70
+defaultValue = BLAST runs on resources provided by eResearch SA - Advanced Technologies for Changing Research
+-
+[ersaMembers]
+type = InfoField
+title = eRSA Members
+size = 2000x280
+defaultValue = University of Adelaide, Flinders University, and University of South Australia
+= Registry =
+-
+[registry1]
+type = InfoField
+title =
+size = 2000x70
+defaultValue = Known installations of BLAST in Australia
+-
+[registry2]
+type = InfoField
+title =
+size = 2000x140
+defaultValue = If you wish to list your installation, please send details of the number of CPUs, RAM and Storage, plus some description of what you use BLAST for to rt@arcs.org.au
+
+

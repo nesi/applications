@@ -1,0 +1,56 @@
+commandline = matlab -nodesktop -nosplash -r ${file}
+application = matlab
+hostCount = 1
+= Matlab job = 
+-
+[file]
+type = SingleInputFile
+title = matlab script file
+size = 2000x70
+filter = BasenameFilter[noExtension=true]
+help = you need to specify a matlab input file
+setJobname = true
+-
+[file2]
+type = MultipleInputFiles
+title = Additional files
+size = 2000x210
+-
+[jobname]
+type = Jobname
+defaultValue = matlab_job
+title = Jobname
+size = 2000x70
+[memory]
+type = Memory
+title = Memory per core (in GB)
+defaultValue = 2
+#prefills = 0,1024,2048,4096,8192,16384,32768
+size = 150x70
+[ApplicationVersionSelector]
+type = ApplicationVersionSelector
+size = 350x70
+title = Application version
+-
+[QueueSelector]
+title = Queue
+type = QueueSelector
+size = 1000x70
+[walltime]
+type = Walltime
+size = 300x70
+title = Walltime
+defaultAmount = 1
+defaultUnit = hours
+[cpus]
+type = Cpus
+title = CPUs
+size = 100x70
+defaultValue = 1
+-
+[email]
+type = Email
+size = 2000x100
+
+
+

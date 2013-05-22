@@ -1,0 +1,63 @@
+commandline = ${executable} ${arguments} -n ${file}
+application = PAUP*
+cpus = 1
+force_single = true
+
+= Create a PAUP job =
+-
+[executable]
+type = TextCombo
+title = Executable
+size = 800x70
+prefills = paup4b10
+editable = false
+
+[arguments]
+type = TextCombo
+title = Arguments
+size = 2000x70
+help = Arguments for the executable (without -n -- that gets added automatically)
+useHistory = true
+
+-
+
+[file]
+type = SingleInputFile
+title = File
+size = 2000x70
+filter = BasenameFilter
+help = you need to specify a PAUP input file here
+setJobname = true
+
+-
+[ApplicationVersionSelector]
+type = ApplicationVersionSelector
+size = 350x70
+title = Application version
+
+[walltime]
+type = Walltime
+title = Walltime
+defaultAmount = 1
+defaultUnit = hours
+#useHistory = false
+size = 200x70
+
+-
+[QueueSelector]
+type = QueueSelector
+size = 2000x70
+-
+
+[jobname]
+type = Jobname
+defaultValue = paup
+title = Jobname
+size = 2000x70
+
+-
+
+[email]
+type = Email
+size = 2000x120
+

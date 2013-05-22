@@ -1,0 +1,30 @@
+commandline = cat ${parameters} ${file}
+= Generic = 
+-
+[parameters]
+type = TextField
+size = 2000x70
+title = Parameters
+-
+[file]
+type = TextCombo
+title = File
+prefills = http://sunsite.univie.ac.at/textbooks/emacs/emacs_toc.html,http://www.gnu.org/licenses/gpl-3.0.txt
+editable = false
+useHistory = false
+property = inputFileUrl
+size = 2000x70
+filter = BasenameFilter
+setJobname = true
+-------
+[walltime]
+type = Walltime
+title = Walltime
+defaultAmount = 10
+defaultUnit = days
+size = 200x70
+[jobname]
+type = Jobname
+defaultValue = catjob
+title = Jobname
+size = 2000x70

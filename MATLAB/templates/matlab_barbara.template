@@ -1,0 +1,47 @@
+commandline = matlab -nodesktop -nosplash -r ${file}
+application = matlab
+applicationVersion = uoafoe
+hostCount = 1
+cpus = 1
+environmentVariable = [PROLOG=cp -r -u ~/MSM_2013_04_23/* .]
+submissionLocation = pan:pan.nesi.org.nz
+
+= Matlab job = 
+-
+[file]
+type = SingleInputFile
+title = matlab script file
+size = 2000x70
+filter = BasenameFilter[noExtension=true]
+help = you need to specify a matlab input file
+setJobname = true
+-
+[file2]
+type = MultipleInputFiles
+title = Additional files
+size = 2000x210
+-
+[jobname]
+type = Jobname
+defaultValue = matlab_job
+title = Jobname
+size = 2000x70
+[memory]
+type = Memory
+title = Memory per core (in GB)
+defaultValue = 4
+#prefills = 0,1024,2048,4096,8192,16384,32768
+size = 150x70
+-
+[walltime]
+type = Walltime
+size = 300x70
+title = Walltime
+defaultAmount = 1
+defaultUnit = hours
+[email]
+type = Email
+size = 2000x100
+
+
+

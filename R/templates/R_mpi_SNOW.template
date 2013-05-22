@@ -1,0 +1,90 @@
+commandline = RMPISNOW -f ${file} --args ${parameters}
+application = RMPISNOW
+force_mpi = true
+
+= MPI SNOW R job = 
+
+----------------------------------------
+
+[file]
+type = TextFile
+title = R script file
+size = 2000x1000
+filter = BasenameFilter
+help = you need to specify an R script file
+mode = r
+setJobname = true
+
+----------------------------------------
+[QueueSelector]
+title = Queue
+type = QueueSelector
+size = 1000x70
+[walltime]
+type = Walltime
+title = Walltime
+defaultAmount = 1
+defaultUnit = hours
+#useHistory = false
+size = 300x70
+
+[cpus]
+type = Cpus
+title = CPUs
+size = 200x70
+defaultValue = 2
+prefills = 2,3,4,5,6,7,8,16,32,64
+
+[memory]
+type = Memory
+title = Memory per core (in GB)
+defaultValue = 2
+size = 200x70
+#prefills = 1024,2048,4096,8192,16384,32768
+= Optional parameters =
+-
+[parameters]
+type = TextCombo
+title = Additional commandline parameters
+size = 2000x70
+
+-
+
+[jobname]
+type = Jobname
+defaultValue = RMPISNOW_job
+title = Jobname
+size = 2000x70
+
+[ApplicationVersionSelector]
+type = ApplicationVersionSelector
+size = 350x70
+title = Application version
+useHistory = true
+-
+[file2]
+type = MultipleInputFiles
+title = Additional files
+size = 2000x210
+
+-
+
+[email]
+type = Email
+size = 2000x100
+
+#= Debug =
+
+#-------------------------------------------------------------
+
+#[InfoField1]
+#type = InfoField
+#size = 1000x40
+#defaultValue =  This is the commandline that will be executed on the resource
+
+#-----------------------------------------------------------
+
+#[dummy]
+#type = MonitorCommandlinePanel
+#size = 1000x50
+#title = 

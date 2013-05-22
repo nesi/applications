@@ -1,0 +1,53 @@
+commandline = sh ${file} 
+application = generic
+cpus = 1
+force_single = true
+
+= Single cpu Shell script = 
+-
+[file]
+type = TextFile
+mode = shellscript
+title = shell script
+size = 2000x1000
+filter = BasenameFilter
+help = the shell script to run
+setJobname = true
+-
+[file2]
+type = MultipleInputFiles
+title = Additional files
+size = 2000x140
+
+= Job parameters =
+-
+[jobname]
+type = Jobname
+defaultValue = shell_script
+title = Jobname
+size = 2000x100
+- 
+[walltime]
+type = Walltime
+title = Walltime
+defaultAmount = 1
+defaultUnit = hours
+#useHistory = false
+size = 200x70
+
+[QueueSelector]
+title = Queue
+type = QueueSelector
+size = 1000x70
+
+-
+[email]
+type = Email
+size = 2000x100
+= Help =
+-
+[help]
+type = InfoField
+title =
+size = 2000x70
+defaultValue = This template is helpful if you want to submit a (single-cpu) job that contains multiple steps, each of which is started from a shell script that acts as a wrapper for the whole job.

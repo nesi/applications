@@ -1,0 +1,281 @@
+commandline = raxmlHPC-MPI  ${inputfile} ${outputfile} ${substitutionmodel} -N ${cpus} ${weightfile} ${bootstrapseed} ${numcategories} ${startrandomtree} ${likelihoodepsilon} ${excludefile} ${groupingfile} ${algorithm} ${initialrearrangement} ${writetrees} ${optimizebranches} ${similarityclustering} ${fastsimilarityclustering} ${estimatebranchlengths} ${outgroupname} ${parsimonyseed} ${proteinfile} ${multimodelfile} ${constraintfile} ${userstartingtree} ${multipletreesfile} ${numBSsearches} ${rapidbootstrappingseed} ${onlycomputestartingtree} ${arguments}
+application = RAxML
+force_mpi = true
+= Create a RAxML job = 
+- 
+[ApplicationVersionSelector]
+type = ApplicationVersionSelector
+size = 350x70
+title = Application version
+[QueueSelector]
+title = Queue
+type = QueueSelector
+size = 1000x70
+-
+[cpus]
+type = Cpus
+title = CPUs
+size = 200x70
+defaultValue = 1
+[walltime]
+type = Walltime
+title = Wall clock time limit
+defaultAmount = 1
+defaultUnit = hours
+#useHistory = false
+size = 200x70
+-
+[Email]
+type = Email
+size = 2000x120
+-
+[jobname]
+type = Jobname
+defaultValue = RAxML_job
+title = Jobname
+size = 2000x70
+-
+[inputfile]
+type = SingleInputFile
+title = RAxML sequence file (-s)
+size = 2000x70
+filter = BasenameFilter
+filter = SimpleStringFilter[prefix=-s :prefixWhenEmpty=false]
+help = you need to specify a RAxML sequence file
+setJobname = true
+-
+[outputfile]
+type = TextCombo
+title = Name of this run (-n) - for naming output files, MUST NOT BE BLANK
+size = 2000x70
+help = Output file name
+useHistory = true
+filter = SimpleStringFilter[prefix=-n :prefixWhenEmpty=false]
+-
+[arguments]
+type = TextCombo
+title = Additional arguments
+size = 2000x70
+help = Additional arguments (in addition to input controls on this form)
+useHistory = true
+-
+[substitutionmodel]
+type = TextCombo
+title = Substitution model (-m)
+size = 200x70
+prefills = GTRCAT,GTRMIX,GTRGAMMA,GTRCAT_GAMMA,GTRGAMMAI,GTRMIXIGTRCAT_GAMMAI
+editable = false
+useHistory = true
+filter = SimpleStringFilter[prefix=-m :prefixWhenEmpty=false]
+-
+[monitor2]
+type = MonitorCommandlinePanel
+size = 2000x70
+title = Command line to be invoked
+-
+= RAxML bootstrapping parameters =
+-
+[bootstrapseed]
+type = TextCombo
+title = Bootstrap random seed (-b)
+size = 2000x70
+useHistory = true
+filter = SimpleStringFilter[prefix=-b :prefixWhenEmpty=false]
+-
+[parsimonyseed]
+type = TextCombo
+title = Parsimony random seed (-p)
+size = 2000x70
+useHistory = true
+filter = SimpleStringFilter[prefix=-p :prefixWhenEmpty=false]
+-
+[rapidbootstrappingseed]
+type = TextCombo
+title = Rapid bootstrapping random seed (-x)
+help = This invokes the novel rapid bootstrapping algorithm
+size = 2000x70
+useHistory = true
+filter = SimpleStringFilter[prefix=-x :prefixWhenEmpty=false]
+-
+[startrandomtree]
+type = CheckBox
+title = Start with Random Tree (-d)
+help = start the RAxML search with a complete random starting tree instead of the default Maximum Parsimony starting tree
+checkedValue = -d
+uncheckedValue =
+defaultValue =
+size = 2000x70
+-
+[monitor]
+type = MonitorCommandlinePanel
+size = 2000x70
+title = Command line to be invoked
+-
+= RAxML additional parameters =
+-
+[numcategories]
+type = TextCombo
+title = Number of categories (-c)
+size = 2000x70
+useHistory = true
+filter = SimpleStringFilter[prefix=-c :prefixWhenEmpty=false]
+[likelihoodepsilon]
+type = TextCombo
+title = Likelyhood Epsilon (-e)
+size = 2000x70
+useHistory = true
+filter = SimpleStringFilter[prefix=-e :prefixWhenEmpty=false]
+-
+[algorithm]
+type = TextCombo
+title = Algorithm (-f)
+size = 200x70
+prefills = ,a,b,c,d,e,f,g,h,i,j,m,n,o,p,s,t,W,x
+editable = true
+useHistory = true
+filter = SimpleStringFilter[prefix=-f :prefixWhenEmpty=false]
+[initialrearrangement]
+type = TextCombo
+title = Initial rearrangement setting (-i)
+size = 2000x70
+useHistory = true
+filter = SimpleStringFilter[prefix=-i :prefixWhenEmpty=false]
+-
+[writetrees]
+type = CheckBox
+title = Write intermediate trees (-j)
+help = Write intermediate trees after each iteration of the search algorithm
+checkedValue = -j
+uncheckedValue =
+defaultValue =
+size = 500x70
+-
+[optimizebranches]
+type = CheckBox
+title = Optimize branches and model parameters (-k)
+help = Optimize branches and model parameters on bootstrapped trees as well as print out the optimized likelihood. Only makes sense when used with the GTRMIX or GTRGAMMA models (or the respective AA models)!
+checkedValue = -k
+uncheckedValue =
+defaultValue =
+size = 500x70
+-
+[similarityclustering]
+type = TextCombo
+title = Similarity clustering threshold (-l)
+size = 2000x70
+useHistory = true
+filter = SimpleStringFilter[prefix=-l :prefixWhenEmpty=false]
+-
+[fastsimilarityclustering]
+type = TextCombo
+title = Fast similarity clustering threshold (-L)
+help = Same functionality as -l above, but uses a less exhaustive and thus faster clustering algorithm.
+size = 2000x70
+useHistory = true
+filter = SimpleStringFilter[prefix=-L :prefixWhenEmpty=false]
+-
+[estimatebranchlengths]
+type = CheckBox
+title = Estimation individual per-partition branch lengths (-M)
+checkedValue = -M
+uncheckedValue =
+defaultValue =
+size = 500x70
+-
+[outgroupname]
+type = TextCombo
+title = Name/names of the outgroup taxa (-o)
+help = Comma separated, e.g. Rat,Mouse
+size = 2000x70
+useHistory = true
+filter = SimpleStringFilter[prefix=-o :prefixWhenEmpty=false]
+-
+# not supporting -T - PTHREADS only
+[numBSsearches]
+type = TextCombo
+title = Number of multiple BS searches per replicate (-u)
+size = 2000x70
+useHistory = true
+filter = SimpleStringFilter[prefix=-u :prefixWhenEmpty=false]
+-
+[onlycomputestartingtree]
+type = CheckBox
+title = Only compute starting tree - no ML analysis (-y)
+checkedValue = -y
+uncheckedValue =
+defaultValue =
+size = 500x70
+-
+-
+[monitor3]
+type = MonitorCommandlinePanel
+size = 2000x70
+title = Command line to be invoked
+-
+= RAxML optional files =
+-
+[weightfile]
+type = SingleInputFile
+title = RAxML weight file (-a)
+size = 2000x70
+filter = BasenameFilter
+filter = SimpleStringFilter[prefix=-a :prefixWhenEmpty=false]
+-
+[excludefile]
+type = SingleInputFile
+title = RAxML exclude file (-E)
+size = 2000x70
+filter = BasenameFilter
+filter = SimpleStringFilter[prefix=-E :prefixWhenEmpty=false]
+-
+[groupingfile]
+type = SingleInputFile
+title = RAxML grouping file (-g)
+size = 2000x70
+filter = BasenameFilter
+filter = SimpleStringFilter[prefix=-g :prefixWhenEmpty=false]
+-
+[proteinfile]
+type = SingleInputFile
+title = Protein model file (-P)
+help = An external AA substitution model
+size = 2000x70
+filter = BasenameFilter
+filter = SimpleStringFilter[prefix=-P :prefixWhenEmpty=false]
+-
+[multimodelfile]
+type = SingleInputFile
+title = Multiple model file (-q)
+size = 2000x70
+filter = BasenameFilter
+filter = SimpleStringFilter[prefix=-q :prefixWhenEmpty=false]
+-
+[constraintfile]
+type = SingleInputFile
+title = Constraint file (-r)
+help = Use a binary/bifurcating constraint/backbone tree in NEWICK format
+size = 2000x70
+filter = BasenameFilter
+filter = SimpleStringFilter[prefix=-r :prefixWhenEmpty=false]
+-
+[userstartingtree]
+type = SingleInputFile
+title = User starting tree (-t)
+help = Specify a user strarting tree (in Newick format)
+size = 2000x70
+filter = BasenameFilter
+filter = SimpleStringFilter[prefix=-r :prefixWhenEmpty=false]
+-
+[multipletreesfile]
+type = SingleInputFile
+title = Multiple trees file (-z)
+help = Only effective in combination with the -f b,-f h,-f m,-f n options. This file should contain a number of trees in NEWICK format
+size = 2000x70
+filter = BasenameFilter
+filter = SimpleStringFilter[prefix=-z :prefixWhenEmpty=false]
+-
+[monitor4]
+type = MonitorCommandlinePanel
+size = 2000x70
+title = Command line to be invoked
+-

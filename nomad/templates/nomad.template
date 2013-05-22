@@ -1,0 +1,46 @@
+commandline = /share/apps/nomad.3.5.1/bin/nomad.exe ${file}
+application = nomad
+force_single = true
+
+= Create a MrBayes job = 
+-
+[file]
+type = SingleInputFile
+title = Nomad input file
+size = 2000x70
+filter = BasenameFilter
+setJobname = true
+- 
+#[cpus]
+#type = Cpus
+#title = CPUs
+#size = 200x70
+#defaultValue = 1
+[walltime]
+type = Walltime
+title = Wall clock time limit
+defaultAmount = 1
+defaultUnit = hours
+#useHistory = false
+size = 200x120
+
+[ApplicationVersionSelector]
+type = ApplicationVersionSelector
+size = 350x120
+title = Application version
+
+[Email]
+type = Email
+size = 2000x120
+
+-
+[QueueSelector]
+title = Queue
+type = QueueSelector
+size = 2000x70
+-
+[jobname]
+type = Jobname
+defaultValue = nomad_job
+title = Jobname
+size = 2000x70

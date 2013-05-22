@@ -1,0 +1,49 @@
+commandline = sas ${file}
+application = sas
+applicationVersion = 9.3
+cpus = 1
+force_single = true
+= Single cpu R job = 
+-
+[file]
+type = TextFile
+mode = text
+title = SAS input file
+size = 2000x1000
+filter = BasenameFilter
+help = you need to specify the SAS input file
+setJobname = true
+- 
+-
+[QueueSelector]
+title = Queue
+type = QueueSelector
+size = 1000x70
+[walltime]
+type = Walltime
+size = 300x70
+title = Walltime
+defaultAmount = 1
+defaultUnit = hours
+= Optional parameters =
+-
+[jobname]
+type = Jobname
+defaultValue = sas_job
+title = Jobname
+size = 2000x70
+[memory]
+type = Memory
+title = Memory per core (in GB)
+defaultValue = 2
+#prefills = 0,1024,2048,4096,8192,16384,32768
+size = 350x70
+-
+[file2]
+type = MultipleInputFiles
+title = Additional files
+size = 2000x210
+-
+[email]
+type = Email
+size = 2000x100

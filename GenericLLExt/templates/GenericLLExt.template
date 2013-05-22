@@ -1,0 +1,79 @@
+commandline = ${commandline}
+= Generic = 
+-
+[commandline]
+type = SimpleCommandline
+title = Commandline
+size = 2000x70
+-
+[inputFiles]
+type = MultipleInputFiles
+size = 2000x200
+title = Inputfiles
+-
+[walltime]
+type = Walltime
+title = Walltime
+defaultAmount = 10
+defaultUnit = minutes
+size = 200x100
+[cpus]
+type = Cpus
+title = CPUs
+size = 100x100
+defaultValue = 1
+[jobtype]
+type = JobType
+size = 2000x100
+[email]
+type = Email
+size = 2000x100
+-
+[appInfo]
+type = ApplicationSelector
+size = 2000x70
+title = Application
+[appVersion]
+type = ApplicationVersionSelector
+size = 2000x70
+title = Version
+[queueSel]
+type = QueueSelector
+title = SubmissionLocation
+size = 2000x70
+-
+[jobname]
+type = Jobname
+defaultValue = templatetest
+title = Jobname
+size = 2000x100
+-
+[env]
+type = EnvironmentVariablePanel
+size = 800x250
+- LoadLeveler specific settings -
+
+[BG_MODE]
+type = TextCombo
+title = BlueGene execution mode
+size = 400x70
+prefills = VN,DUAL,SMP
+editable = false
+useHistory = true
+
+[BG_CONNECT]
+type = TextCombo
+title = BlueGene interconnect mode
+size = 400x70
+prefills = TORUS,MESH
+editable = false
+useHistory = true
+
+[GBLL_BLOCKING]
+type = CheckBox
+title = LoadLeveler unlimited blocking
+help = allows LoadLeveler to scatter tasks over an ulimited number of nodes
+checkedValue = unlimited
+uncheckedValue =
+defaultValue =
+size = 400x70

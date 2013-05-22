@@ -1,0 +1,47 @@
+commandline = OpenBUGS ${file}
+application = OpenBUGS
+cpus = 1
+force_single = true
+submissionLocation = pan:pan.nesi.org.nz
+= OpenBUGS input files = 
+-
+[file]
+type = TextFile
+mode = text
+title = OpenBUGS script file
+size = 2000x500
+filter = BasenameFilter
+help = you need to specify an OpenBUGS script file
+setJobname = true
+-
+[inputFiles]
+title = Other inputfiles
+type = MultipleInputFiles
+size = 2000x200
+title = Inputfiles
+= Job properties =
+- 
+[queueSel]
+type = QueueSelector
+title = SubmissionLocation
+size = 2000x70
+[ApplicationVersionSelector]
+type = ApplicationVersionSelector
+size = 200x70
+title = OpenBUGS version
+-
+[jobname]
+type = Jobname
+defaultValue = OpenBUGS_job
+title = Jobname
+size = 2000x70
+[memory]
+type = Memory
+title = Memory per core (in GB)
+defaultValue = 2
+#prefills = 0,1024,2048,4096,8192,16384,32768
+size = 200x70
+-
+[email]
+type = Email
+size = 2000x100

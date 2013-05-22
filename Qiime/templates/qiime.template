@@ -1,0 +1,45 @@
+commandline = Qiime split_libraries.py -m ${map} -f ${file2} -q ${file3} -d -M 2 -l 75 -L 900 -b 10 -z truncate_only -w 50 -s 25
+cpus = 1
+application = Qiime
+applicationVersion = 1.4.0
+submissionLocation = pan:pan.nesi.org.nz
+
+= Qiime = 
+-
+[map]
+type = SingleInputFile
+title = map input file
+size = 2000x70
+filter = BasenameFilter
+-
+[file2]
+type = SingleInputFile
+title = .fna input file
+size = 2000x70
+filter = BasenameFilter
+-
+[file3]
+type = SingleInputFile
+title = .qual input file
+size = 2000x70
+filter = BasenameFilter
+-------
+[walltime]
+type = Walltime
+title = Wall clock time limit
+defaultAmount = 1
+defaultUnit = hours
+#useHistory = false
+size = 200x70
+[mem]
+type = Memory
+title = Memory 
+prefills = 0,1024,2048,4096,8192,16384,32768,49152,65536
+size = 350x70
+-
+[jobname]
+type = Jobname
+defaultValue = qiime_job
+title = Jobname
+size = 2000x70
+

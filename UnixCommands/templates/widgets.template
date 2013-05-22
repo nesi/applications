@@ -1,0 +1,227 @@
+commandline = executable ${CheckBox} ${MultipleInputFiles} --SingleInputFile=${SingleInputFile} --spinnerValue ${Spinner} ${TextCombo} ${TextField} --textFile ${TextFile}
+useScrollbars = true
+environmentVariables = [key1=val1][key2=val2]
+modules = module1;module2
+= Widgets = 
+-
+[ApplicationSelectorInfo]
+type = InfoField
+title = ApplicationSelector
+size = 800x80
+defaultValue = This only makes sense for a generic template where you don't know which application package is used by the submitted job. It'll parse the current commandline of the job, extract the executable and either display all available Appliations grid-wide (if it can't find a suitable application package) or display all application package that provide the executable1;5D.
+-
+[ApplicationSelector]
+type = ApplicationSelector
+size = 800x70
+title = Application package
+-
+[ApplicationVersionSelectorInfo]
+type = InfoField
+title = ApplicationVersionSelector
+size = 800x80
+defaultValue = Displays a list of available versions for the currently selected application package in combination with the selected VO.
+-
+[ApplicationVersionSelector]
+type = ApplicationVersionSelector
+size = 800x70
+title = Application version
+-
+[CheckBoxInfo]
+type = InfoField
+title = CheckBox
+size = 800x80
+defaultValue = The email address to notify users when the job is done.
+-
+[CheckBox]
+type = CheckBox
+title = A checkbox value
+size = 800x70
+defaultValue = --checkboxChecked
+label = Here's a text to describe what that checkbox does
+checkedValue = --checkboxChecked
+uncheckedValue = --checkboxNotChecked
+useHistory = false
+-
+[CpusInfo]
+type = InfoField
+title = Cpus
+size = 800x70
+defaultValue = CPU number to use in the job. 
+- 
+[Cpus]
+type = Cpus
+size = 800x80
+-
+[EmailInfo]
+type = InfoField
+size = 800x70
+title = Email
+defaultValue = The email address to notify users when the job is done.
+-
+[Email]
+type = Email
+size = 800x100
+-
+[EnvVar]
+type = EnvironmentVariablePanel
+size = 800x250
+-
+[InfoFieldInfo]
+type = InfoField
+title = InfoField
+size = 800x70
+defaultValue = A widget to display some text, e.g. help information.
+-
+[InfoField]
+type = InfoField
+title = Information about a widget
+size = 800x70
+defaultValue = blahblahblah
+-
+[JobnameInfo]
+type = InfoField
+size = 800x70
+title = Jobname
+defaultValue = The jobname. Does some auto-suggesting...
+-
+[Jobname]
+type = Jobname
+size = 800x70
+defaultValue = defaultJobname
+- 
+[JobTypeInfo]
+type = InfoField
+size = 800x70
+title = JobType
+defaultValue = The type of the job (single/threaded/mpi).
+-
+[JobType]
+type = JobType
+size = 800x70
+defaultValue = Single
+-
+[MonitorCommandlinePanelInfo]
+type = InfoField
+size = 800x70
+title = MonitorCommandlinePanel
+defaultValue = A (non-input) panel that displays the commandline as it would be submitted if the user would click the submitbutton now. Takes into account the current job properties.
+-
+[MonitorCommandlinePanel]
+type = MonitorCommandlinePanel
+size = 800x70
+title = The current commandline
+-
+[MultipleInputFilesInfo]
+type = InfoField
+size = 800x70
+title = MultipleInputFiles
+defaultValue = Multiple input files selection.
+-
+[MultipleInputFiles]
+type = MultipleInputFiles
+size = 800x190
+title = Add multiple input files here
+filter = BasenameFilter[separator=,:prefix=--multiInputFiles=:multiPrefix=FILE=:multiPostfix==FILEEND]
+-
+[QueueSelectorInfo]
+type = InfoField
+size = 800x70
+title = QueueSelector
+defaultValue = Displays a list of queues that support the job as it is currently set up (job properties & selected VO).
+-
+[QueueSelector]
+type = QueueSelector
+size = 800x70
+-
+[SimpleCommandlineInfo]
+type = InfoField
+size = 800x70
+title = SimpleCommandline
+defaultValue = A widget where a user can directly input the commandline that is used to submit a job. You probably don't need this.
+-
+[SimpleCommandline]
+type = SimpleCommandline
+size = 800x70
+title = Direct commandline input
+-
+[SingleInputFileInfo]
+type = InfoField
+size = 800x70
+title = SingleInputFile
+defaultValue = Single input file selection.
+-
+[SingleInputFile]
+type = SingleInputFile
+title = Please select an input file
+size = 800x70
+historyItems = 8
+filter = BasenameFilter
+-
+[SpinnerInfo]
+type = InfoField
+title = Spinner
+size = 800x70
+defaultValue = A widget to display a spinner.
+-
+[Spinner]
+type = Spinner
+size = 800x70
+title = Please select a value
+defaultValue = three
+prefills = one,two,three,four
+useHistory = false
+-
+[TextComboInfo]
+type = InfoField
+size = 800x70
+title = TextCombo
+defaultValue = A combo box widget to receive parameters for the job. It is configured with a list of prefilled values. It can be editable or non-editable.
+-
+[TextCombo]
+type = TextCombo
+size = 800x70
+title = Please select or input a text
+prefills = First token,Second token,Third token
+editable = true
+useHistory = true
+historyItems = 5
+filter = SimpleStringFilter[prefix=--textCombo :prefixWhenEmpty=false]
+-
+[TextFieldInfo]
+type = InfoField
+size = 800x70
+title = TextField
+defaultValue = A widget for user to enter free text, without drop-down list of values.
+-
+[TextField]
+type = TextField
+size = 800x70
+title = Free form text
+filter = SimpleStringFilter[prefix=--textField :prefixWhenEmpty=false:postfix=_XXX]
+-
+[TextFileInfo]
+type = InfoField
+size = 800x70
+title = TextFile
+defaultValue = A widget that allows the loading of a textfile and displays its content in a text-editor widget (with syntax highlighting).
+-
+[TextFile]
+type = TextFile
+size = 800x500
+title = A text input file
+mode = python
+historyItems = 8
+fillWithDefaultValue = false
+filter = BasenameFilter
+-
+[WalltimeInfo]
+type = InfoField
+size = 800x70
+title = Walltime
+defaultValue = Wall time of the job.
+-
+[Walltime]
+type = Walltime
+size = 800x70
+defaultAmount = 5
+defaultUnit = days

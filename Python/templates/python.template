@@ -1,0 +1,43 @@
+commandline = python2.6 ${parameters} ${file}
+application = python
+applicationVersion = 2.6
+cpus = 1
+force_single = true
+= Single cpu python job = 
+-
+[file]
+type = TextFile
+mode = python
+title = python script file
+size = 2000x1000
+filter = BasenameFilter
+help = you need to specify an python input file
+setJobname = true
+- 
+[parameters]
+type = TextCombo
+title = Additional commandline parameters
+size = 2000x70
+[walltime]
+type = Walltime
+title = Walltime
+defaultAmount = 1
+defaultUnit = hours
+#useHistory = false
+size = 200x70
+-
+[jobname]
+type = Jobname
+defaultValue = python_job
+title = Jobname
+size = 2000x100
+= Optional parameters =
+-
+[file2]
+type = MultipleInputFiles
+title = Additional files
+size = 2000x210
+-
+[email]
+type = Email
+size = 2000x100

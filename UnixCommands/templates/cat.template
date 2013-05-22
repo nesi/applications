@@ -1,0 +1,34 @@
+commandline = cat ${parameters} ${file}
+= Generic = 
+-
+
+[parameters]
+
+type = TextField
+size = 2000x70
+title = Parameters
+
+-
+
+[file]
+
+type = SingleInputFile
+title = File
+size = 2000x70
+filter = BasenameFilter
+setJobname = true
+-------
+
+[walltime]
+type = Walltime
+title = Walltime
+defaultAmount = 10
+defaultUnit = minutes
+size = 200x70
+
+
+[jobname]
+type = Jobname
+defaultValue = catjob
+title = Jobname
+size = 2000x70

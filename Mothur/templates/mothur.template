@@ -1,0 +1,56 @@
+commandline = mothur ${file} 
+application = mothur
+
+= Create a java job = 
+-
+[file]
+type = SingleInputFile
+title = Batch file
+size = 2000x70
+filter = BasenameFilter
+help = please select the mothur .batch file here
+setJobname = true
+- 
+[other files]
+type = MultipleInputFiles
+title = Additional input files
+size = 2000x240
+help = All the additional files that are necessary for running the mothur job
+-
+[cpus]
+type = Cpus
+title = CPUs
+size = 150x70
+[walltime]
+type = Walltime
+title = Walltime
+defaultAmount = 1
+defaultUnit = hours
+#useHistory = false
+size = 200x70
+[QueueSelector]
+title = Queue
+type = QueueSelector
+size = 1000x70
+
+-
+[version]
+type = ApplicationVersionSelector
+title = Mothur version
+size = 200x70
+defaultValue = 1.6.0
+#type = TextCombo
+#title = Mothur version
+#size = 200x70
+#prefills = 1.22,1.21,1.20
+#defaultValue = 1.22
+#useHistory = false
+#property = ApplicationVersion
+#editable = false
+
+[jobname]
+type = Jobname
+defaultValue = mothur_job
+title = Jobname
+size = 2000x70
+

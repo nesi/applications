@@ -1,0 +1,35 @@
+commandline = octave ${file}
+application = octave
+= Create an Octave job = 
+-
+[file]
+type = SingleInputFile
+title = Input file
+size = 2000x70
+filter = BasenameFilter
+help = you need to specify an Octave input file
+setJobname = true
+- 
+[cpus]
+type = Cpus
+title = CPUs
+size = 100x70
+defaultValue = 1
+
+[walltime]
+type = Walltime
+title = Walltime
+defaultAmount = 1
+defaultUnit = hours
+#useHistory = false
+size = 200x70
+
+[email]
+type = Email
+size = 400x100
+-
+[jobname]
+type = Jobname
+defaultValue = octave_job
+title = Jobname
+size = 2000x70

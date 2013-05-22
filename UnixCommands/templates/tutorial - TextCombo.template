@@ -1,0 +1,112 @@
+commandline = echo ${var-argument}
+useScrollbars = true
+
+= Generic =
+-
+[InfoField1]
+type = InfoField
+size = 1000x80
+defaultValue = This tutorial template covers the TextCombo (text input) type.
+-
+[InfoField2]
+type = InfoField
+size = 1000x40
+defaultValue = Your template will need a commandline:
+-
+[InfoField2a]
+type = InfoField
+size = 1000x40
+defaultValue = >    commandline = echo ${var-argument}
+-
+[InfoField3]
+type = InfoField
+size = 1000x40
+defaultValue = Next, optional static key values are initialised:
+-
+[InfoField4]
+type = InfoField
+size = 1000x40
+defaultValue =  The valid keys are:   application   applicationVersion   cpus   force_mpi   memory   walltimeInSeconds
+-
+[InfoField4a]
+type = InfoField
+size = 1000x40
+defaultValue =  >   application = echo
+-
+[InfoField5]
+type = InfoField
+size = 1000x40
+defaultValue = Now setup your input panel(s):
+-
+[InfoField6]
+type = InfoField
+size = 1000x40
+defaultValue = >   = Generic =
+-
+[InfoField7]
+type = InfoField
+size = 1000x40
+defaultValue = >   [var-argument]
+-
+[InfoField8]
+type = InfoField
+size = 1000x40
+defaultValue = >   type = TextCombo
+-
+[InfoField9]
+type = InfoField
+size = 1000x40
+defaultValue = >   title = var-argument
+-
+[InfoField10]
+type = InfoField
+size = 1000x40
+defaultValue = >   editable = true
+-
+[InfoField11]
+type = InfoField
+size = 1000x40
+defaultValue = >   useHistory = false (true setting causes value used previously to carry forward...this only works while editable = false)
+-
+[InfoField12]
+type = InfoField
+size = 1000x40
+defaultValue = >   prefills = hello,how are you
+-
+[var-argument]
+type = TextCombo
+title = var-argument
+editable = true
+useHistory = false
+prefills = hello,how are you
+-
+[InfoField13]
+type = InfoField
+size = 1000x40
+defaultValue = >   [jobname]
+-
+[InfoField14]
+type = InfoField
+size = 1000x40
+defaultValue = >   type = Jobname
+-
+[InfoField15]
+type = InfoField
+size = 1000x40
+defaultValue = >   title = Job Name - Automatically assigned (may be overriden by you with any unique name)
+-
+[jobname]
+type = Jobname
+defaultValue = tutorialjob
+title = Job Name - Automatically assigned (may be overriden by you with any unique name)
+size = 1000x80
+-
+[finalcomment]
+type = InfoField
+size = 1000x80
+defaultValue = Here is what the resulting command looks like:
+-
+[dummy]
+type = MonitorCommandlinePanel
+size = 1000x70
+title = Monitor commandline

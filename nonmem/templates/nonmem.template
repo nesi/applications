@@ -1,0 +1,33 @@
+commandline = /share/apps/nonmem72/run/nmfe72 ${controlfile} output.lst
+submissionLocation = pan:pan.nesi.org.nz
+
+= Generic = 
+
+-
+[controlfile]
+type = SingleInputFile
+title = Control stream
+size = 2000x70
+filter = BasenameFilter
+setJobname = true
+-
+[file]
+type = SingleInputFile
+title = Data file
+size = 2000x70
+-------
+[walltime]
+type = Walltime
+title = Walltime
+defaultAmount = 10
+defaultUnit = minutes
+size = 200x70
+[jobname]
+type = Jobname
+defaultValue = nonmem
+title = Jobname
+size = 2000x70
+-
+[email]
+type = Email
+size = 2000x100

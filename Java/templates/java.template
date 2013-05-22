@@ -1,0 +1,40 @@
+commandline = java -jar ${file} ${arguments}
+application = java
+
+= Create a java job = 
+
+-
+
+[file]
+
+type = SingleInputFile
+title = File
+size = 2000x70
+filter = BasenameFilter
+help = you need to specify an executable jar file here
+setJobname = true
+- 
+
+[arguments]
+
+type = TextCombo
+title = Arguments for the java application
+size = 2000x70
+help = The arguments for the java application (the ones that gets passed to the main method as String[] args)
+
+-
+
+[walltime]
+type = Walltime
+title = Walltime
+defaultAmount = 1
+defaultUnit = hours
+#useHistory = false
+size = 200x70
+
+
+[jobname]
+type = Jobname
+defaultValue = javajob
+title = Jobname
+size = 2000x70

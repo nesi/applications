@@ -1,0 +1,81 @@
+commandline = ${command} ${query} -db ${db} -task ${task}  ${ncbiGi}  ${numthreads}  ${outformat}
+application = BLAST+
+applicationVersion = 2.2.27
+
+= Blast = 
+-
+[command]
+type = TextCombo
+title = Blast Command
+size = 200x70
+prefills = blastn,blastp,blastx,tblastn,tblastx,mpiBLAST
+editable = false
+
+[db]
+type = TextCombo
+title = Database
+size = 2000x70
+prefills =Nucleotide collection (nr),Nucleotide collection (nt),Reference RNA sequences (refseq_rna),Protein reference sequences (refseq_protein),Non-redundant UniProtKB/SwissProt sequences (swissprot),Reference genomic sequences (refseq_genomic),Human Genomic (human_genomic),chromosome,Expressed sequence tags (est),Genomic survey sequences (gss),High throughput genomic sequences (htgs),Nucleotide sequences derived from the Patent division of GenBank (patnt),Protein sequences derived from the Patent division of GenBank (pataa),Protein Data Bank nucleotide database (pdbnt),Protein Data Bank protein database (pdbaa),Proteins from WGS metagenomic projects (env_nr),alu_repeats,dbsts,Whole-Genome-Shotgun Sequences (wgs),Transcriptome Shotgun Assembly (TSA) sequences (tsa_nt), Bacteria and Archaea
+editable = false
+filter = KeyValueFilter
+
+-
+[query]
+type = SingleInputFile
+title = Query File
+size = 2000x70
+filter = BasenameFilter
+filter = SimpleStringFilter[prefix=-query :prefixWhenEmpty=false]
+setJobname = true
+-
+[task]
+type = TextCombo
+title = Task
+size = 200x70
+prefills = blastn,blastn-short,blastp,blastp-short,megablast,dc-megablast
+editable = false
+
+[dust]
+type = TextCombo
+title = Dust
+size = 200x70
+prefills = yes, no
+editable = false
+-
+[numthreads]
+type = TextField
+title = Parallel Threads
+size = 200x70
+filter = SimpleStringFilter[prefix=-num_threads :prefixWhenEmpty=false]
+
+[outformat]
+type = TextField
+title = Output Format
+size = 200x70
+filter = SimpleStringFilter[prefix=-outfmt :prefixWhenEmpty=false]
+
+-
+
+[ncbiGi]
+type = CheckBox
+title = Show NCBI GIs in Report
+uncheckedValue = 
+checkedValue = -show_gis
+size = 2000x70
+-
+[queueSel]
+type = QueueSelector
+title = SubmissionLocation
+size = 2000x70
+-------
+[walltime]
+type = Walltime
+title = Walltime
+defaultAmount = 10
+defaultUnit = minutes
+size = 200x70
+[jobname]
+type = Jobname
+defaultValue = blastjob
+title = Jobname
+size = 2000x70

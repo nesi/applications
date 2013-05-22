@@ -1,0 +1,45 @@
+commandline = povray +I${InputFile} +W${width} +H${height} +FN +A
+= povray template =
+-
+[jobname]
+type = Jobname
+defaultValue = povray
+title = Jobname
+size = 550x80
+-
+[InputFile]
+type = SingleInputFile
+size = 550x80
+title = Input File
+filter = BasenameFilter
+setJobname = true
+
+-
+[width]
+title = Image Width
+type = Spinner
+size = 150x80
+min = 100
+max = 5000
+step = 100
+defaultValue = 300
+useHistory = false
+
+[height]
+title = Image Height
+type = Spinner
+size = 150x80
+min = 100
+max = 5000
+step = 100
+defaultValue = 300
+useHistory = false
+
+[walltime]
+type = Walltime
+title = Time Limit
+defaultAmount = 10
+defaultUnit = minutes
+size = 250x80
+useHistory = false
+-
