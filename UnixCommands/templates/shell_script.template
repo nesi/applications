@@ -50,4 +50,4 @@ size = 2000x100
 type = InfoField
 title =
 size = 2000x70
-defaultValue = This template is useful if you want to submit a (single-cpu) job that contains multiple steps, each of which is started from a shell script that acts as a wrapper for the whole job.
+defaultValue = This template is useful for if you want to submit a (single-cpu) job that contains multiple steps, each of which is started from a shell script that acts as a wrapper for the whole job.
