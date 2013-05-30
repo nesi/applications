@@ -1,5 +1,5 @@
 commandline = RMPISNOW -f ${file} --args ${parameters}
-application = RMPISNOW
+application = R
 force_mpi = true
 
 = MPI SNOW R job = 
