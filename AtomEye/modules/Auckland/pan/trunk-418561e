@@ -1,0 +1,11 @@
+#%Module1.0
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tAtomEye 3: atomistic configuration viewer\n"
+        puts stderr "\tCompiled version of GITHUB branch https://github.com/jameskermode/AtomEye\n"
+}
+
+module-whatis "AtomEye 3: atomistic configuration viewer"
+
+prepend-path    PATH            /share/apps/AtomEye/noarch/trunk-418561e/gcc-4.4.5

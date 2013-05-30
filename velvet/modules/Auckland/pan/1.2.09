@@ -1,0 +1,9 @@
+#%Module1.0
+
+module-whatis "Velvet (version 1.2.09)"
+
+set root /share/apps/velvet
+
+prepend-path PATH $root
+prepend-path PATH $root/obj
+

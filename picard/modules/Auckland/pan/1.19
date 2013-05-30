@@ -1,0 +1,10 @@
+#%Module1.0
+
+module-whatis "Picard (version 1.19) for working with next generation sequencing data in BAM format"
+
+set root /share/apps/picard
+
+prepend-path PATH $root
+
+
+

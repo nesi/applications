@@ -1,0 +1,12 @@
+#%Module1.0
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\t GMAP: A Genomic Mapping and Alignment Program for mRNA and EST Sequences, and\n"
+        puts stderr "\t GSNAP: Genomic Short-read Nucleotide Alignment Program  - Version 2013-05-09 \n"
+}
+
+module-whatis "GMAP and GSNAP - Version 2013-05-09"
+
+prepend-path    PATH     /share/apps/GMAP/noarch/2013-05-09/gcc-4.4.6/bin
+

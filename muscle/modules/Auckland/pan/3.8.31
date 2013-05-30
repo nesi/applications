@@ -1,0 +1,7 @@
+#%Module1.0
+
+module-whatis "Muscle: A multiple sequence aligner (version 3.8.31)"
+
+set root /share/apps/muscle/noarch/3.8.31
+
+prepend-path PATH $root/bin

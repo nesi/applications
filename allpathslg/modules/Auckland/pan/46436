@@ -1,0 +1,8 @@
+#%Module1.0
+
+module-whatis "Allpathslg (version 46436)"
+
+module load gcc/4.7.3
+
+set root /share/apps/allpathslg/noarch/46436/gcc-4.7.3
+prepend-path PATH $root/bin

@@ -1,0 +1,12 @@
+#%Module1.0
+
+module-whatis "MsBayes (version 20120510)"
+
+set root /gpfs1m/apps/apps/msbayes
+
+prepend-path PATH $root
+prepend-path PATH $root/bin
+prepend-path PATH $root/help
+prepend-path PATH $root/schema
+
+

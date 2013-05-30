@@ -1,0 +1,7 @@
+#%Module1.0
+
+module-whatis "Mothur sequence analyser (version 1.30.2)"
+
+set root /share/apps/mothur
+
+prepend-path PATH $root

@@ -1,0 +1,8 @@
+#%Module1.0
+
+module-whatis "A Java-based GUI front end for WPS, the WRF Preprocessing System"
+
+set root /share/apps/WRFDomainWizard-2.75
+
+setenv WRFDOMAINWIZARD_HOME $root
+prepend-path PATH $root

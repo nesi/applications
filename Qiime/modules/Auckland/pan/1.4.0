@@ -1,0 +1,51 @@
+#%Module1.0
+
+module-whatis "QIIME: A collection of bioinformatics workflows (version 1.4.0)"
+
+conflict blast/2.2.9
+
+set pyNASTroot /share/apps/PyNAST-1.1
+set AmpliconNoiseroot /share/apps/AmpliconNoise-1.25
+set cdhitroot /share/apps/cd-hit-3.1.1
+set blastroot /share/apps/blast-2.2.26
+set cdbfastaroot /share/apps/cdbfasta
+set ChimeraSlayerroot /share/apps/microbiomeutil-r20110519/ChimeraSlayer
+set clustalwroot /share/apps/clustalw-2.1
+set FastTreeroot /share/apps/FastTree-2.1.3
+set infernalroot /share/apps/infernal-1.0.2
+set mafftroot /share/apps/mafft-6.864
+set mothurroot /share/apps/mothur-1.6.0
+set muscleroot /share/apps/muscle-3.8.31
+set rdpclassifierroot /share/apps/rdp_classifier-2.2
+set uclustroot /share/apps/uclust-1.2.22q
+set Qiimeroot /share/apps/Qiime-1.4.0
+
+# set up python
+set ve_base "Qiime_Python"
+set virtual_env "/share/apps/$ve_base"
+setenv VIRTUAL_ENV "$virtual_env"
+prepend-path PATH "$virtual_env/bin"
+
+if { [ info exists ::env(PYTHONHOME) ] } {
+        unsetenv PYTHONHOME "$::env(PYTHONHOME)"
+}
+
+prepend-path PATH $pyNASTroot/bin
+prepend-path PATH $AmpliconNoiseroot/Scripts
+prepend-path PATH $AmpliconNoiseroot/bin
+prepend-path PATH $cdhitroot
+prepend-path PATH $blastroot/bin
+prepend-path PATH $cdbfastaroot
+prepend-path PATH $ChimeraSlayerroot
+prepend-path PATH $clustalwroot/bin
+prepend-path PATH $FastTreeroot
+prepend-path PATH $infernalroot/bin
+prepend-path PATH $mafftroot/bin
+prepend-path PATH $mothurroot
+prepend-path PATH $muscleroot/bin
+prepend-path PATH $uclustroot/bin
+prepend-path PATH $Qiimeroot/bin
+
+setenv PYRO_LOOKUP_FILE $AmpliconNoiseroot/Data/LookUp_E123.dat
+setenv SEQ_LOOKUP_FILE  $AmpliconNoiseroot/Data/Tran.dat
+setenv RDP_JAR_PATH "$rdpclassifierroot/rdp_classifier-2.2.jar"

@@ -1,0 +1,7 @@
+#%Module1.0
+
+module-whatis "uclust: sequence clustering (version 1.2.22q)"
+
+set root /share/apps/uclust/noarch/1.2.22q
+
+prepend-path PATH $root/bin

@@ -1,0 +1,22 @@
+#%Module1.0
+ 
+module-whatis "NWChem 6.3-2013-05-17 compiled with Intel Cluster Studio 2013"
+
+module load intel/ics-2013
+
+set root /share/apps/NWChem/sandybridge/6.3-2013-05-17/ics-2013
+prepend-path PATH $root/bin
+
+setenv  nwchem_basis_library $root/data/libraries/
+setenv  nwchem_nwpw_library $root/data/libraryps/
+setenv  ffield amber
+setenv  amber_1 $root/data/amber_s/
+setenv  amber_2 $root/data/amber_q/
+setenv  amber_3 $root/data/amber_x/
+setenv  amber_4 $root/data/amber_u/
+setenv  spce    $root/data/solvents/spce.rst
+setenv  charmm_s $root/data/charmm_s/
+setenv  charmm_x $root/data/charmm_x/
+setenv NWCHEM_BASIS_LIBRARY $root/data/libraries/
+
+set-alias MPIRUN "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -genv I_MPI_FABRICS dapl -genv I_MPI_PIN_PROCESSOR_LIST='grain=cache2,shift=sock' -envall \$*"

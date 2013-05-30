@@ -1,0 +1,7 @@
+#%Module1.0
+
+module-whatis "SSPACE BASIC 2.0"
+
+set root /share/apps/SSPACE-BASIC/noarch/2.0
+
+prepend-path PATH $root/bin

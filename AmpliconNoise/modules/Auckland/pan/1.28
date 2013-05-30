@@ -1,0 +1,11 @@
+#%Module1.0
+
+module-whatis "AmpliconNoise: Noise removal from sequence amplicons (v. 1.25)"
+
+set root /share/apps/AmpliconNoise/noarch/1.28/gcc-4.4.6/openmpi-1.4.3
+
+setenv PYRO_LOOKUP_FILE $root/Data/LookUp_E123.dat
+setenv SEQ_LOOKUP_FILE  $root/Data/Tran.dat
+
+prepend-path PATH $root/Scripts
+prepend-path PATH $root/bin

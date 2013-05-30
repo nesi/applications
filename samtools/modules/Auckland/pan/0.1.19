@@ -1,0 +1,12 @@
+#%Module1.0
+
+module-whatis "Sequence alignment map (SAM) Toolkit (version 0.1.19)"
+
+set root /share/apps/samtools
+
+prepend-path PATH $root
+prepend-path PATH $root/bcftools
+prepend-path PATH $root/examples
+prepend-path PATH $root/misc
+
+
