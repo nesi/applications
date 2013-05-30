@@ -28,7 +28,7 @@ type = Walltime
 title = Walltime
 defaultAmount = 10
 defaultUnit = minutes
-size = 200x70
+size = 400x700
 [jobname]
 type = Jobname
 defaultValue = gaussian_job
