@@ -4,6 +4,8 @@
 commandline = /share/test/MPI_pi/mpipi 1000000000000
 walltime = 2h
 
+application = generic
+
 // optional parameters
 // --------------------
 env = [LL_VAR=requirements=(Feature=="sandybridge")]

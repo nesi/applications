@@ -4,7 +4,7 @@
 commandline = g09
 stdin = input.gjf
 application = Gaussian
-applicationVersion = C.01
+applicationVersion = D.01
 walltime = 1m
 stdout = output.log
 jobname = gaussian
