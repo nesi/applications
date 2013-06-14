@@ -1,5 +1,5 @@
 commandline = matlab -nodesktop -nosplash -r ${file}
-application = matlab
+application = MATLAB
 hostCount = 1
 = Matlab job = 
 -
