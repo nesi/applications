@@ -1,11 +1,10 @@
-commandline = matlab -nodesktop -nosplash -r ${file}
-application = matlab
-applicationVersion = uoafoe
+commandline = matlab -singleCompThread -nodesktop -nosplash -r ${file}
+application = MATLAB
+applicationVersion = UoA-FoE
 hostCount = 1
 cpus = 1
 environmentVariable = [PROLOG=cp -r -u ~/MSM_2013_04_23/* .]
 submissionLocation = pan:pan.nesi.org.nz
-
 = Matlab job = 
 -
 [file]
@@ -42,6 +41,3 @@ defaultUnit = hours
 [email]
 type = Email
 size = 2000x100
-
-
-
