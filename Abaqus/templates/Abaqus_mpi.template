@@ -1,0 +1,47 @@
+commandline = /share/apps/aba/6.10-EF1/exec/abq610ef1.exe job=test input=${file} cpus=${cpus} standard_parallel=all mp_mode=mpi interactive
+application = Abaqus
+applicationVersion = 6.10-EF1
+force_mpi = atrue
+environmentVariable = [PROLOG=/share/apps/aba/6.10-EF1/exec/abq_prepare.sh]
+submissionLocation = pan:pan.nesi.org.nz
+= Matlab job = 
+-
+[file]
+type = SingleInputFile
+title = Abaqus input file
+size = 2000x70
+filter = BasenameFilter
+help = you need to specify an input file for your Abaqus job
+setJobname = true
+-
+[file2]
+type = MultipleInputFiles
+title = Additional files
+size = 2000x210
+-
+[jobname]
+type = Jobname
+defaultValue = Abaqus_job
+title = Jobname
+size = 2000x70
+[cpus]
+type = Cpus
+title = CPUs
+size = 150x70
+defaultValue = 2
+prefills = 2,3,4,5,6,7,8,16,32,64
+[memory]
+type = Memory
+title = Memory per core (in GB)
+defaultValue = 4
+size = 150x70
+-
+[walltime]
+type = Walltime
+size = 300x70
+title = Walltime
+defaultAmount = 1
+defaultUnit = hours
+[email]
+type = Email
+size = 2000x100
