@@ -1,5 +1,5 @@
 commandline = /share/apps/nonmem72/run/nmfe72 ${controlfile} output.lst
-submissionLocation = pan:pan.nesi.org.nz
+submissionLocation = pan:gram.uoa.nesi.org.nzz
 
 = Generic = 
 

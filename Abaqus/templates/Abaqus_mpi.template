@@ -3,7 +3,7 @@ application = Abaqus
 applicationVersion = 6.10-EF1
 force_mpi = atrue
 environmentVariable = [PROLOG=/share/apps/aba/6.10-EF1/exec/abq_prepare.sh]
-submissionLocation = pan:pan.nesi.org.nz
+submissionLocation = pan:gram.uoa.nesi.org.nz
 = Matlab job = 
 -
 [file]

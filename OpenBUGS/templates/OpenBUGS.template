@@ -2,7 +2,7 @@ commandline = OpenBUGS ${file}
 application = OpenBUGS
 cpus = 1
 force_single = true
-submissionLocation = pan:pan.nesi.org.nz
+submissionLocation = pan:gram.uoa.nesi.org.nz
 = OpenBUGS input files = 
 -
 [file]

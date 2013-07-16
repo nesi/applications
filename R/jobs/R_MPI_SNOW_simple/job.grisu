@@ -2,8 +2,8 @@
 // -------------------
 
 commandline = RMPISNOW -f generateIntermediates.r --args 40 20000 
-application = RMPISNOW
-submissionLocation = pan:pan.nesi.org.nz
+application = R
+submissionLocation = pan:gram.uoa.nesi.org.nz
 walltime = 1h
 
 // optional parameters

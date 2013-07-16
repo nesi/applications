@@ -3,5 +3,5 @@
 commandline = OpenBUGS -h
 application = OpenBUGS
 version = 3.3.2
-submissionLocation = pan:pan.nesi.org.nz
+submissionLocation = pan:gram.uoa.nesi.org.nz
 walltime = 1m

@@ -6,7 +6,7 @@ commandline = cat
 // optional parameters
 // --------------------
 application = generic
-submissionLocation = pan:pan.nesi.org.nz
+submissionLocation = pan:gram.uoa.nesi.org.nz
 // applicationVersion = 1.6.0
 // cpus = 1
 stderr = stderr.txt

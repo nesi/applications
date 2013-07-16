@@ -1,4 +1,4 @@
 job = .
 group = /nz/nesi
-queue = pan:pan.nesi.org.nz
+queue = pan:gram.uoa.nesi.org.nz
 cpus = 2

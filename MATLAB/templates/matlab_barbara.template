@@ -4,7 +4,7 @@ applicationVersion = UoA-FoE
 hostCount = 1
 cpus = 1
 environmentVariable = [PROLOG=cp -r -u ~/MSM_2013_06_13/* .]
-submissionLocation = pan:pan.nesi.org.nz
+submissionLocation = pan:gram.uoa.nesi.org.nz
 = Matlab job = 
 -
 [file]

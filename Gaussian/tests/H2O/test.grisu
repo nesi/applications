@@ -2,6 +2,6 @@
 
 job = ../../jobs/H2O/job.grisu
 group = /nz/nesi
-queue = pan:pan.nesi.org.nz
+queue = pan:gram.uoa.nesi.org.nz
 jobname = gee_gaussian_h2o
 

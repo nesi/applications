@@ -2,7 +2,7 @@ commandline = Qiime split_libraries.py -m ${map} -f ${file2} -q ${file3} -d -M 2
 cpus = 1
 application = Qiime
 applicationVersion = 1.4.0
-submissionLocation = pan:pan.nesi.org.nz
+submissionLocation = pan:gram.uoa.nesi.org.nz
 
 = Qiime = 
 -
