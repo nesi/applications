@@ -1,0 +1,46 @@
+commandline = beast -beagle -beagle_CPU -beagle_instances ${cpus} -beagle_SSE ${file}
+application = BEAST
+cpus = 1
+force_single = true
+= Create a BEAST job = 
+-
+[file]
+type = SingleInputFile
+title = BEAST XML file
+size = 2000x70
+filter = BasenameFilter
+help = you need to specify a BEAST XML input file
+setJobname = true
+- 
+[ApplicationVersionSelector]
+type = ApplicationVersionSelector
+size = 350x70
+title = Application version
+[walltime]
+type = Walltime
+title = Walltime
+defaultAmount = 1
+defaultUnit = hours
+#useHistory = false
+size = 300x70
+[cpus]
+type = Cpus
+title = CPUs
+size = 150x70
+prefills = 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+defaultValue = 1
+-
+[QueueSelector]
+title = Queue
+type = QueueSelector
+size = 1000x70
+-
+[jobname]
+type = Jobname
+defaultValue = beast_job
+title = Jobname
+size = 2000x70
+-
+[email]
+type = Email
+size = 2000x120
