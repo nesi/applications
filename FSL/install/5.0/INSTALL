@@ -14,5 +14,5 @@ cp -f fsl_sub $FSLDIR/bin/fsl_sub
 cp -f randomise_parallel $FSLDIR/bin/randomise_parallel
 
 Note than in order for the integration to work, llwait needs to be built and placed on the user PATH
-llwait source can be found in the 'other' directory.
+llwait source can be found in the 'other' directory under applications/FSL
 
