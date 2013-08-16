@@ -7,7 +7,6 @@ application = Gaussian
 applicationVersion = D.01
 walltime = 1m
 stdout = output.log
-jobname = gaussian
 
 // optional parameters
 // --------------------
