@@ -1,0 +1,8 @@
+commandline = phyml-mpi -i nucleic -b 4
+application = PhyML
+applicationVersion = 20120412-sandybridge
+walltime = 10m
+mpi = true
+cpus = 4
+env = [LL_VAR=requirements=(Feature=="sandybridge")][MPI_PREFIX=mpiexec.hydra --machinefile \\${LOADL_HOSTFILE} -genv I_MPI_FABRICS dapl -genv I_MPI_PIN_PROCESSOR_LIST="grain=cache2,shift=sock" -envall]
+

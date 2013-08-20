@@ -1,10 +1,8 @@
 // required parameters
 
-job = ../../jobs/java_sleep/job.grisu
+job = ../../jobs/monolix_original/job.grisu
 group = /nz/nesi
 queue = pan:gram.uoa.nesi.org.nz
-
-commandline = java -XX:MaxHeapSize=64m -Xmx128m -cp JavaSleep.jar nz.org.nesi.javaTestJob.JavaTestJob 60 1
 
 // optional parameters
 
