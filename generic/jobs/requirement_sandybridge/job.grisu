@@ -1,7 +1,7 @@
 // required parameters
 // -------------------
 
-commandline = env
+commandline = cat /proc/cpuinfo
 application = generic
 walltime = 1m
 
