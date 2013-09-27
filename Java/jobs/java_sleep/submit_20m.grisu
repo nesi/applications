@@ -1,0 +1,14 @@
+// required
+// --------
+
+job = grisu.job
+
+commandline = java -XX:MaxHeapSize=64m -Xmx128m -cp JavaSleep.jar nz.org.nesi.javaTestJob.JavaTestJob 120 10
+walltime = 30m
+
+//edit, for example: group = /nz/nesi
+group = /nz/nesi
+
+//edit, for example: queue = pan:gram.uoa.nesi.org.nz
+queue = pan:gram.uoa.nesi.org.nz
+
