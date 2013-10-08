@@ -1,5 +1,7 @@
 commandline = octave ${file}
-application = octave
+application = Octave
+applicationVersion = 3.6.4
+
 = Create an Octave job = 
 -
 [file]
