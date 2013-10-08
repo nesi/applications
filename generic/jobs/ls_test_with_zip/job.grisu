@@ -1,0 +1,19 @@
+// required parameter
+// -------------------
+
+commandline = find .
+
+// optional parameters
+// --------------------
+application = generic
+submissionLocation = pan:gram.uoa.nesi.org.nz
+
+stderr = stderr.txt
+stdout = stdout.txt
+
+compressInputFiles = true
+compressOutputFiles = true
+
+walltime = 1m
+
+group = /nz/nesi

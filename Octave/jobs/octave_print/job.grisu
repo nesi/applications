@@ -1,0 +1,10 @@
+// required parameters
+
+commandline = octave script.m
+application = Octave
+applicationVersion = 3.6.4
+submissionLocation = pan:gram.uoa.nesi.org.nz
+walltime = 1m
+
+stdout = stdout.txt
+stderr = stderr.txt

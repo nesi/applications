@@ -1,0 +1,24 @@
+// required parameters
+
+job = .
+group = /nz/nesi
+queue = pan:gram.uoa.nesi.org.nz
+
+// optional parameters
+
+// application = generic
+// applicationVersion = 1.6.0
+// cpus = 1
+// email_address = m.binsteiner@auckland.ac.nz
+// email_on_job_finish = false
+// email_on_job_start = false
+// env = [LL_VAR=requirements=(Feature=="sandybridge")][other_env=othervalue][....]
+// mpi = false
+// single = false
+// hostCount = 0
+// memory = 2g
+// stderr = stderr.txt
+// stdout = stdout.txt
+// stdin = input.txt
+// virtualMemory = 2g
+// walltime = 10h

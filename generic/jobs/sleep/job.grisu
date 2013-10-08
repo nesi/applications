@@ -1,0 +1,13 @@
+// required parameter
+// -------------------
+
+commandline = sleep 3600
+
+// optional parameters
+// --------------------
+application = generic
+submissionLocation = pan:gram.uoa.nesi.org.nz
+stderr = stderr.txt
+stdout = stdout.txt
+walltime = 2h
+
