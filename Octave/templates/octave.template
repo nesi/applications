@@ -1,7 +1,6 @@
 commandline = octave ${file}
 application = Octave
 applicationVersion = 3.6.4
-
 = Create an Octave job = 
 -
 [file]
@@ -15,9 +14,15 @@ setJobname = true
 [cpus]
 type = Cpus
 title = CPUs
-size = 100x70
+size = 200x70
 defaultValue = 1
-
+[memory]
+type = Memory
+title = Memory per core (in GB)
+defaultValue = 2
+#prefills = 0,1024,2048,4096,8192,16384,32768
+size = 350x70
+-
 [walltime]
 type = Walltime
 title = Walltime
@@ -25,13 +30,12 @@ defaultAmount = 1
 defaultUnit = hours
 #useHistory = false
 size = 200x70
-
-[email]
-type = Email
-size = 400x100
--
 [jobname]
 type = Jobname
 defaultValue = octave_job
 title = Jobname
 size = 2000x70
+-
+[email]
+type = Email
+size = 2000x100
