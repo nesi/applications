@@ -268,7 +268,7 @@ echo "Job ids are valid" >&2
 
 for i in $1; do
 	echo "Waiting for $i ..." >&2
-	ssh login1-p /share/apps/util/llwait $i
+	ssh login1-p /share/bin/llwait $i
 	echo "$i finished" >&2
 done
 IFS=$old_ifs
