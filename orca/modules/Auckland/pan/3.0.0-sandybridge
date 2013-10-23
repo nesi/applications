@@ -1,0 +1,8 @@
+#%Module1.0
+
+module-whatis "The Orca computational chemistry package (version 3.0.0)"
+
+# Start commands common to all shells
+
+module load       openmpi/1.6.5_gcc-4.7.3-OFED-sandybridge
+prepend-path PATH /share/apps/orca/3.0.0/noarch/gcc-4.4.7
