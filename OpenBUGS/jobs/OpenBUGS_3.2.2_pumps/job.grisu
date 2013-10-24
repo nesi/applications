@@ -3,6 +3,6 @@
 
 commandline = OpenBUGS Pumps.txt
 application = OpenBUGS
-version = 3.3.2
+applicationVersion = 3.2.2
 submissionLocation = pan:gram.uoa.nesi.org.nz
 walltime = 10m

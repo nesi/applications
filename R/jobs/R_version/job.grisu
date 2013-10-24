@@ -3,3 +3,7 @@
 commandline = R --version
 application = generic
 submissionLocation = pan:gram.uoa.nesi.org.nz
+walltime = 1m
+
+stdout = stdout.txt
+stderr = stderr.txt

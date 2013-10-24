@@ -1,0 +1,18 @@
+FSL has been modified to work with LoadLeveler job submission. 
+Several files have been modified and these need to replace the original files
+
+eg:
+
+FSLDIR=/share/apps/FSL/noarch/5.0
+CONFDIR=$FSLDIR/etc/fslconf
+
+
+# Copy files over
+cp -f fsl.sh $CONFDIR/fsl.sh
+cp -f feat $FSLDIR/bin/feat
+cp -f fsl_sub $FSLDIR/bin/fsl_sub
+cp -f randomise_parallel $FSLDIR/bin/randomise_parallel
+
+Note than in order for the integration to work, llwait needs to be built and placed on the user PATH
+llwait source can be found in the 'other' directory under applications/FSL
+

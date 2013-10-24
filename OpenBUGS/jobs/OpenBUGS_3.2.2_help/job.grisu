@@ -2,6 +2,6 @@
 
 commandline = OpenBUGS -h
 application = OpenBUGS
-version = 3.3.2
-submissionLocation = pan:gram.uoa.nesi.org.nz
+applicationVersion = 3.2.2
+queue = pan:gram.uoa.nesi.org.nz
 walltime = 1m

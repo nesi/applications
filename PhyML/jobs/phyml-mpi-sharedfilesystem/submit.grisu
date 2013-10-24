@@ -1,0 +1,6 @@
+// required parameters
+
+job = .
+group = /nz/nesi
+queue = pan:gram.uoa.nesi.org.nz
+

@@ -1,0 +1,59 @@
+; this script is generated automatically
+
+DESCRIPTION: 
+warfarin_PK_project.mlxtran
+
+DATA: 
+    path="%MLXPROJECT%/",
+    file="warfarin_data.txt",
+    headers={ID,TIME,DOSE,Y,YTYPE,COV,COV,CAT},
+    columnDelimiter="\t"
+
+VARIABLES: 
+    age [use=cov],
+    sex [use=cov,  type=cat],
+    t_wt=log(wt/70) [use=cov],
+    wt
+
+INDIVIDUAL: 
+    Cl={distribution=logNormal, covariate=t_wt, iiv=yes},
+    V={distribution=logNormal, covariate=t_wt, iiv=yes},
+    ka={distribution=logNormal, iiv=yes},
+    tlag={distribution=logNormal, iiv=yes}
+
+STRUCTURAL_MODEL: 
+    file="oral1_1cpt_TlagkaVCl",
+    path="%MLXPATH%/libraries/PKLibrary",
+    output={Cc}
+
+
+OBSERVATIONS: 
+    concentration={type=continuous, prediction=Cc, error=combined1}
+
+TASKS: 
+    ; settings
+    globalSettings={
+        withVariance=no,
+        settingsGraphics="%MLXPROJECT%/warfarin_PK_project_graphics.xmlx",
+        settingsAlgorithms="%MLXPROJECT%/warfarin_PK_project_algorithms.xmlx",
+        resultFolder="%MLXPROJECT%/warfarin_PK_project"},
+    ; workflow
+    estimatePopulationParameters(
+        initialValues={
+            pop_Cl=1,
+            beta_{Cl,t_wt}=0 ,
+            pop_V=10,
+            beta_{V,t_wt}=0 ,
+            pop_ka=1,
+            pop_tlag=1,
+            a_concentration=1,
+            b_concentration=0.1,
+            omega_Cl=1,
+            omega_V=1,
+            omega_ka=1,
+            omega_tlag=1
+            } ),
+    estimateFisherInformationMatrix( method={linearization} ),
+    estimateIndividualParameters( method={conditionalMode} ),
+    displayGraphics(),
+
