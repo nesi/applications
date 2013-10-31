@@ -1,4 +1,4 @@
-Gee -- Job setup
+Job setup 
 ----------------------
 
 1) Configure the job
