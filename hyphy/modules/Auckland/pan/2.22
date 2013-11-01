@@ -1,0 +1,6 @@
+#%Module1.0
+ 
+module-whatis "hyphy: Hypothesis testing using Phylogenies"
+
+set root /share/apps/hyphy
+prepend-path PATH $root/bin

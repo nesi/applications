@@ -1,0 +1,52 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   WRF Preprocessing System (WPS) for WRF. The Weather Research and Forecasting (WRF) Model is 
+ a next-generation mesoscale numerical weather prediction system designed to serve both operational 
+ forecasting and atmospheric research needs. - Homepage: http://www.wrf-model.org
+}
+}
+
+module-whatis {WRF Preprocessing System (WPS) for WRF. The Weather Research and Forecasting (WRF) Model is 
+ a next-generation mesoscale numerical weather prediction system designed to serve both operational 
+ forecasting and atmospheric research needs. - Homepage: http://www.wrf-model.org}
+
+set root    /share/apps/software/WPS/3.4-goalf-1.1.0-no-OFED-dmpar
+
+conflict    WPS
+
+if { ![is-loaded goalf/1.1.0-no-OFED] } {
+    module load goalf/1.1.0-no-OFED
+}
+
+if { ![is-loaded WRF/3.4-goalf-1.1.0-no-OFED-dmpar] } {
+    module load WRF/3.4-goalf-1.1.0-no-OFED-dmpar
+}
+
+if { ![is-loaded netCDF/4.2-goalf-1.1.0-no-OFED] } {
+    module load netCDF/4.2-goalf-1.1.0-no-OFED
+}
+
+if { ![is-loaded netCDF-Fortran/4.2-goalf-1.1.0-no-OFED] } {
+    module load netCDF-Fortran/4.2-goalf-1.1.0-no-OFED
+}
+
+if { ![is-loaded libpng/1.5.11-goalf-1.1.0-no-OFED] } {
+    module load libpng/1.5.11-goalf-1.1.0-no-OFED
+}
+
+if { ![is-loaded JasPer/1.900.1-goalf-1.1.0-no-OFED] } {
+    module load JasPer/1.900.1-goalf-1.1.0-no-OFED
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/WPS
+prepend-path	PATH		$root/WPS
+
+setenv	EBROOTWPS		"$root"
+setenv	EBVERSIONWPS		"3.4"
+setenv	EBDEVELWPS		"$root/easybuild/WPS-3.4-goalf-1.1.0-no-OFED-dmpar-easybuild-devel"
+
+setenv NETCDF /share/apps/software/netCDF/4.2-goalf-1.1.0-no-OFED
+setenv NETCDFF /share/apps/software/netCDF-Fortran/4.2-goalf-1.1.0-no-OFED
+
+# built with EasyBuild version 1.4.0

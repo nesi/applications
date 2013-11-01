@@ -1,0 +1,12 @@
+#%Module1.0
+
+module-whatis "Amber: A molecular dynamics and refinement package (version 12)"
+
+set root /share/apps/AMBER/12/sandybridge/intel-2013.1.117/impi-4.1.0.024
+
+#module load python/2.6.8
+module load intel/ics-2013
+
+setenv AMBERHOME $root
+setenv MKL_HOME $::env(MKLROOT)
+prepend-path PATH $root/bin

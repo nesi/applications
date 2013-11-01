@@ -1,0 +1,19 @@
+#%Module1.0
+
+module-whatis "ImageMagic (version 6.8.6-1) for manipulating bitmap images"
+
+set root /share/apps/ImageMagic
+
+prepend-path PATH $root
+prepend-path PATH $root/bin
+prepend-path PATH $root/etc
+prepend-path PATH $root/include
+prepend-path PATH $root/lib
+prepend-path PATH $root/share
+
+setenv MAGICK_HOME /share/apps/ImageMagic
+setenv LD_LIBRARY_PATH /share/apps/ImageMagic/lib
+
+
+
+

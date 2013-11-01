@@ -1,0 +1,11 @@
+#%Module1.0
+
+module-whatis "OpenCMISS: A mathematical modelling environment for complex bioengineering problems (build 2013-08-14)"
+
+set root      /share/apps/OpenCMISS
+
+setenv OPENCMISS_ROOT $root/OpenCMISS
+setenv OPENCMISSEXTRAS_ROOT $root/OpenCMISSExtras
+setenv COMPILER intel
+setenv OPENCMISSEXTRAS_RUN_CONFIG optimised
+setenv MPI intel

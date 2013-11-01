@@ -1,0 +1,9 @@
+#%Module1.0
+
+module-whatis ""
+
+set root /share/apps/PhymmBL/noarch/4.0
+
+module load NCBI-BLAST+/2.2.22
+
+prepend-path PATH $root

@@ -4,7 +4,9 @@ module-whatis "Migrate estimates effective population sizes and past migration r
 
 module load intel/ics-2013
 
-set-alias MPIRUN "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -genv I_MPI_FABRICS dapl -genv I_MPI_PIN_PROCESSOR_LIST='grain=cache2,shift=sock' -envall \$*"
 prepend-path PATH "/share/apps/migrate/sandybridge/3.4.4/ics-2013/bin"
 prepend-path MANPATH "/share/apps/migrate/sandybridge/3.4.4/ics-2013/man"
 
+set-alias MPIRUN "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -genv I_MPI_FABRICS shm:dapl -genv I_MPI_DAPL_PROVIDER ofa-v2-mlx4_0-1 -genv I_MPI_ADJUST_ALLTOALLV 2 -genv I_MPI_PIN_PROCESSOR_LIST='grain=cache2,shift=sock' -envall \$*"
+#set-alias MPIRUN "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -genv I_MPI_DEBUG 5 -genv I_MPI_FABRICS shm:dapl -genv I_MPI_DAPL_PROVIDER ofa-v2-mlx4_0-1 -genv I_MPI_ADJUST_ALLTOALLV 2 -genv I_MPI_PIN_PROCESSOR_LIST='grain=cache2,shift=sock' -envall \$*"
+#set-alias MPIRUN "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -genv I_MPI_FABRICS shm:ofa -genv I_MPI_DAPL_PROVIDER=ofa-v2-mlx4_0-1 -genv I_MPI_ADJUST_ALLTOALLV=2 -genv I_MPI_PIN_PROCESSOR_LIST='grain=cache2,shift=sock' -envall \$*"

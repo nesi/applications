@@ -1,0 +1,13 @@
+#%Module1.0
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tNcview: a netCDF visual browser - version 1.93h\n"
+}
+
+module-whatis "Ncview: a netCDF visual browser - version 1.93h"
+
+module load netCDF-Fortran/4.2-goalf-1.1.0-no-OFED
+
+set root /share/apps/ncview/noarch/1.93h
+prepend-path    PATH            $root/bin

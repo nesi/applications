@@ -1,0 +1,16 @@
+#%Module1.0
+
+module-whatis {OpenCMISS: A mathematical modelling environment for complex bioengineering problems (build 2013-10-02) 
+ compiled with Intel Cluster Studio 2013, Intel MPI, HDF5 1.8.11, fortran NetCDF 4.2, NetDCF 4.3.0, PETSc 3.4 & PARMETIS 4.0.3}
+
+set root      /share/apps/OpenCMISS/sandybridge/ics-2013/netcdf-4.3.0/hdf5-1.8.11/petsc-3.4.3
+
+module load petsc/3.4.2_intel-2013-sandybridge
+
+setenv OPENCMISS_ROOT $root/OpenCMISS
+setenv OPENCMISSEXTRAS_ROOT $root/OpenCMISSExtras
+setenv COMPILER intel
+setenv OPENCMISSEXTRAS_RUN_CONFIG optimised
+setenv MPI intel
+
+set-alias MPIRUN "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -genv I_MPI_FABRICS shm:dapl -genv I_MPI_DAPL_PROVIDER ofa-v2-mlx4_0-1 -genv I_MPI_ADJUST_ALLTOALLV 2 -genv I_MPI_PIN_PROCESSOR_LIST='grain=cache2,shift=sock' -envall \$*"

@@ -1,0 +1,31 @@
+#%Module1.0
+
+set ABAQUS_HOME /share/apps/aba/6.10-EF1
+
+# Binaries
+prepend-path PATH $ABAQUS_HOME/exec
+prepend-path PATH $ABAQUS_HOME/External/mpi/hpmpi-2.3/bin
+prepend-path PATH $ABAQUS_HOME/External/mpi/hpmpi-2.3/ia32/bin
+
+# Libraries
+prepend-path LD_LIBRARY_PATH $ABAQUS_HOME/exec/lbr
+prepend-path LD_LIBRARY_PATH $ABAQUS_HOME/Python/Obj
+prepend-path LD_LIBRARY_PATH $ABAQUS_HOME/Python/Obj/lbr
+prepend-path LD_LIBRARY_PATH $ABAQUS_HOME/External/Acis
+prepend-path LD_LIBRARY_PATH $ABAQUS_HOME/External/Elysium
+prepend-path LD_LIBRARY_PATH $ABAQUS_HOME/External/Interop_32
+prepend-path LD_LIBRARY_PATH $ABAQUS_HOME/External/mesa/full
+prepend-path LD_LIBRARY_PATH $ABAQUS_HOME/External/mesa/stub
+prepend-path LD_LIBRARY_PATH $ABAQUS_HOME/External/32
+prepend-path LD_LIBRARY_PATH $ABAQUS_HOME/External
+
+# Python Environment
+setenv PYTHONPATH $ABAQUS_HOME/Python/Lib
+prepend-path PYTHONPATH $ABAQUS_HOME/Python/Obj
+prepend-path PYTHONPATH /share/apps/Python/noarch/2.6.8/gcc-4.4.6/lib/python2.6
+prepend-path PYTHONPATH /share/apps/Python/noarch/2.6.8/gcc-4.4.6/lib/python2.6/site-packages
+
+# Licensce details
+setenv LM_LICENSE_FILE @abaqus.licenses.foe.auckland.ac.nz
+
+

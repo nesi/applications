@@ -1,0 +1,37 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   TopHat is a fast splice junction mapper for RNA-Seq reads. - Homepage: http://tophat.cbcb.umd.edu/
+}
+}
+
+module-whatis {TopHat is a fast splice junction mapper for RNA-Seq reads. - Homepage: http://tophat.cbcb.umd.edu/}
+
+set root    /share/apps/software/TopHat/2.0.4-goalf-1.1.0-no-OFED
+
+conflict    TopHat
+
+if { ![is-loaded goalf/1.1.0-no-OFED] } {
+    module load goalf/1.1.0-no-OFED
+}
+
+if { ![is-loaded Boost/1.51.0-goalf-1.1.0-no-OFED-Python-2.7.3] } {
+    module load Boost/1.51.0-goalf-1.1.0-no-OFED-Python-2.7.3
+}
+
+if { ![is-loaded SAMtools/0.1.18-goalf-1.1.0-no-OFED] } {
+    module load SAMtools/0.1.18-goalf-1.1.0-no-OFED
+}
+
+if { ![is-loaded zlib/1.2.7-goalf-1.1.0-no-OFED] } {
+    module load zlib/1.2.7-goalf-1.1.0-no-OFED
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTTOPHAT		"$root"
+setenv	EBVERSIONTOPHAT		"2.0.4"
+setenv	EBDEVELTOPHAT		"$root/easybuild/TopHat-2.0.4-goalf-1.1.0-no-OFED-easybuild-devel"
+
+
+# built with EasyBuild version 1.4.0

@@ -19,4 +19,5 @@ setenv  charmm_s $root/data/charmm_s/
 setenv  charmm_x $root/data/charmm_x/
 setenv NWCHEM_BASIS_LIBRARY $root/data/libraries/
 
-set-alias MPIRUN "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -genv I_MPI_FABRICS dapl -genv I_MPI_PIN_PROCESSOR_LIST='grain=cache2,shift=sock' -envall \$*"
+#set-alias MPIRUN "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -genv I_MPI_FABRICS dapl -genv I_MPI_PIN_PROCESSOR_LIST='grain=cache2,shift=sock' -envall \$*"
+set-alias MPIRUN "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -genv I_MPI_PIN_PROCESSOR_LIST='grain=cache2,shift=sock' -envall \$*"

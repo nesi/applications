@@ -1,0 +1,9 @@
+#%Module1.0
+ 
+module-whatis "geneid: a program to predict genes in anonymous genomic sequences designed with a hierarchical structure."
+ 
+module load intel/ics-2013
+set root /share/apps/geneid/sandybridge/1.4.4.Jan_13_2011/ics-2013/
+prepend-path PATH  $root/bin
+prepend-path CPATH $root/bin
+

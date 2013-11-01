@@ -1,0 +1,10 @@
+#%Module1.0
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tOVITO - The Open Visualization Tool - Scientific visualization and analysis software for atomistic simulation data - version 1.1.0"
+}
+
+module-whatis "OVITO - The Open Visualization Tool - version 1.1.0"
+
+prepend-path    PATH            /share/apps/OVITO/1.1.0/noarch/bin

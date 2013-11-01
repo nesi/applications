@@ -1,0 +1,7 @@
+#%Module1.0
+
+module-whatis "Cytoscape: Complex network analysis and visualisation (v. 2.7.0)"
+
+set root /share/apps/Cytoscape-2.7.0
+
+prepend-path PATH $root

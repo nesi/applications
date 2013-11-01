@@ -1,0 +1,9 @@
+#%Module1.0
+
+module-whatis "A collection of programs for high-level ab initio molecular electronic structure calculations"
+
+set root /share/apps/COLUMBUS-7.0
+
+setenv COLUMBUS $root/Columbus
+
+prepend-path PATH $root/Columbus

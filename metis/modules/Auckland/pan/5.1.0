@@ -1,0 +1,9 @@
+#%Module1.0
+
+module-whatis "METIS 5.1.0 compiled with GCC 4.4.6"
+
+set root /share/apps/metis/noarch/5.1.0/gcc-4.4.6
+
+prepend-path PATH 		$root/bin
+prepend-path LD_LIBRARY_PATH 	$root/lib
+prepend-path CPATH 		$root/include

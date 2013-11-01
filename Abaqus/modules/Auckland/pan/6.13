@@ -1,0 +1,10 @@
+#%Module1.0
+
+set ABAQUS_HOME /share/apps/Abaqus/6.13/installation
+
+# Binaries
+prepend-path PATH $ABAQUS_HOME/Commands
+# Licensce details
+setenv LM_LICENSE_FILE @abaqus.licenses.foe.auckland.ac.nz
+
+

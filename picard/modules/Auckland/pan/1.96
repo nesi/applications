@@ -1,0 +1,12 @@
+#%Module1.0
+
+module-whatis "Picard (version 1.96) for working with next generation sequencing data in BAM format"
+
+set root /share/apps/picard1.96/noarch/1.96
+
+prepend-path PATH $root
+prepend-path PATH $root/picard-tools-1.96
+
+
+
+

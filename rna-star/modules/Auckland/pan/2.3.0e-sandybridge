@@ -1,0 +1,8 @@
+#%Module1.0
+
+module-whatis "STAR aligns RNA-seq reads to a reference genome using uncompressed suffix arrays. Version 2.3.0e"
+ 
+set root /share/apps/rna-star/sandybridge/2.3.0e/gcc-4.7.3/smp
+
+module load gcc/4.7.3
+prepend-path PATH $root

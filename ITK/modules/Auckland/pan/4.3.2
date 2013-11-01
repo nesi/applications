@@ -2,7 +2,9 @@
 
 module-whatis "Insight Toolkit (ITK) (version 4.3.2)"
 
-set root /share/apps/ITK
+setenv ITK_DIR /share/apps/ITK
+
+set root /share/apps/ITK/ITK-build
 
 prepend-path PATH $root
 prepend-path PATH $root/bin

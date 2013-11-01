@@ -1,0 +1,3 @@
+#%Module1.0
+
+prepend-path PATH /share/apps/MATLAB/prod/UoA-FoS/R2012a/bin
