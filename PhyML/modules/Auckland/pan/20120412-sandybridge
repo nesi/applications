@@ -6,5 +6,5 @@ set root /share/apps/PHYML/sandybridge/20120412/ics-2013
 prepend-path PATH $root/bin
 
 set-alias       MPIRUN      "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -genv I_MPI_FABRICS dapl -genv I_MPI_PIN_PROCESSOR_LIST='grain=cache2,shift=sock' -envall \$*" 
-#set-alias       MPIRUN      "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -envall \$*" 
 
+#set-alias       MPIRUN      "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -envall \$*" 

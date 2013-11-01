@@ -1,0 +1,9 @@
+#%Module1.0
+
+module-whatis "Integrated Genome Viewer (version 2.3.11)"
+
+set root /share/apps/IGV
+
+prepend-path PATH $root
+
+

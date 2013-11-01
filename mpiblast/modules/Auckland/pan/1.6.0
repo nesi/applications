@@ -1,0 +1,5 @@
+#%Module1.0
+ 
+module-whatis "mpiBLAST built against OpenMPI 1.4.3 using GCC"
+
+prepend-path PATH /share/apps/mpiblast-1.6.0/bin

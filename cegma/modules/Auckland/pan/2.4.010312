@@ -1,0 +1,15 @@
+#%Module1.0
+ 
+module-whatis "CEGMA: (Core Eukaryotic Genes Mapping Approach) is a pipeline for building a set of high reliable set of gene annotations in virtually any eukaryotic genome."
+
+module load geneid/1.4.4.Jan_13_2011-sandybridge 
+module load wise/2.2.3-rc7 
+module load hmmer/3.0-ics-2013-serial-sandybridge
+module load NCBI-BLAST+/2.2.28_ics-2013-sandybridge
+
+set root      /share/apps/CEGMA/noarch/2.4.010312
+
+setenv CEGMA "$root" 
+setenv CEGMATMP /tmp 
+prepend-path PERL5LIB "$root/lib"
+prepend-path PATH "$root/bin"

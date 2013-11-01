@@ -8,4 +8,5 @@ module-whatis "LAMMPS (version 24Apr13) compiled with Intel Cluster Studio XE 20
 
 module load     intel/ics-2013
 prepend-path    PATH        /share/apps/LAMMPS/sandybridge/24Apr13/ics-2013
-set-alias       MPIRUN      "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -binding -genv I_MPI_FABRICS dapl -envall \$*" 
+#set-alias       MPIRUN      "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -genv I_MPI_FABRICS dapl -genv I_MPI_PIN_PROCESSOR_LIST='grain=cache2,shift=sock' -envall \$*" 
+set-alias       MPIRUN      "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -envall \$*" 

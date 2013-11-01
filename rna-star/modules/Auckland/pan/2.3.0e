@@ -1,0 +1,7 @@
+#%Module1.0
+
+module-whatis "STAR aligns RNA-seq reads to a reference genome using uncompressed suffix arrays. Version 2.3.0e pre-build"
+ 
+set root /share/apps/rna-star/noarch/2.3.0e/gcc-3.0/smp
+
+prepend-path PATH $root

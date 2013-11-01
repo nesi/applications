@@ -1,0 +1,21 @@
+#%Module1.0
+
+module-whatis "TURBOMOLE -- electronic structure calculations (v6.4 MPI)"
+
+module load turbomole/6.4/serial
+
+setenv PARA_ARCH MPI
+
+# This is set in the "serial" modulefile and must be removed.
+set root /share/apps/turbomole
+remove-path PATH $root/bin/em64t-unknown-linux-gnu
+prepend-path PATH $root/bin/em64t-unknown-linux-gnu_mpi
+
+puts stderr "Note: Before running a parallel TURBOMOLE job, set the environment"
+puts stderr "variable PARNODES to the number of tasks you intend to run in that"
+puts stderr "job."
+puts stderr ""
+puts stderr "Also, all parallel TURBOMOLE programs except ricc2 need an extra"
+puts stderr "\"server task\". This does not need to be included in the count"
+puts stderr "for PARNODES, but will need to be included in the number of tasks"
+puts stderr "you request from the queueing system."

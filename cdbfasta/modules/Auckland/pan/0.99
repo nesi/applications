@@ -1,0 +1,7 @@
+#%Module1.0
+
+module-whatis "A FASTA file indexing and retrieval tool"
+
+set root /share/apps/cdbfasta
+
+prepend-path PATH $root

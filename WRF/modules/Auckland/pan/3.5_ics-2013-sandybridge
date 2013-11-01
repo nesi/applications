@@ -1,0 +1,12 @@
+#%Module1.0
+
+module-whatis "WRF 3.5 compiled with Intel Cluster Studio XE 2013, NetCDF-4.3.0 HDF5-1.8.9 and GPFS serial-suport"
+
+module load jasper/1.900.1_intel-2013-sandybridge
+module load netcdf/4.3.0_intel-2013-serial-sandybridge  
+
+set root /share/apps/WRF/sandybridge/3.5/ics-2013/netcdf-4.3.0/hdf5-1.8.9/WRFV3
+
+prepend-path PATH $root/run
+prepend-path PATH $root/main
+

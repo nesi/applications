@@ -1,0 +1,12 @@
+#%Module1.0
+
+module-whatis "WRFDA: The WRF data assimilator (version 3.4) Compiled with GCC, OpenMPI and ATLAS"
+
+module load WRF/3.4-goalf-1.1.0-no-OFED-dmpar
+setenv WRFIO_NCD_LARGE_FILE_SUPPORT 1
+setenv JASPERLIB /share/apps/software/JasPer/1.900.1-goalf-1.1.0-no-OFED/lib
+setenv JASPERINC /share/apps/software/JasPer/1.900.1-goalf-1.1.0-no-OFED/include
+
+prepend-path PATH /share/apps/WRFDA/noarch/3.4/ompi-1.4.5/var/build
+prepend-path PATH /share/apps/WRFDA/noarch/3.4/ompi-1.4.5/var/obsproc
+prepend-path PATH /share/apps/WRFDA/noarch/3.4/ompi-1.4.5/var/da

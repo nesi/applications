@@ -1,0 +1,8 @@
+#%Module1.0
+
+module-whatis "R (version 2.15.3) built with configure option --enable-R-shlib to enable SAS-R communication"
+
+set root /share/apps/R/noarch/2.15.3-sas-support/gcc-4.4.6/openmpi/1.4.3
+setenv R_HOME $root
+prepend-path PATH $root/bin
+

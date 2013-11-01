@@ -1,0 +1,8 @@
+#%Module1.0
+
+module-whatis "BEAST is a cross-platform program for Bayesian MCMC analysis of molecular sequences (version 1.8.0)"
+
+set root /share/apps/BEAST/noarch/1.8.0
+
+prepend-path PATH $root/bin
+prepend-path LD_LIBRARY_PATH $root/lib

@@ -1,0 +1,11 @@
+#%Module1.0
+
+set ROOT /share/apps/FSL/noarch/5.0-test
+set CONF $ROOT/etc/fslconf/
+
+setenv FSLDIR $ROOT
+setenv FSLCONF_DIR $CONF
+
+prepend-path PATH $ROOT/bin
+prepend-path PATH $CONF
+

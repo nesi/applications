@@ -1,0 +1,14 @@
+#%Module1.0
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tCrystal Analysis Tool - installed on 31 July 2013 from the official Git repository"
+}
+
+module-whatis "Crystal Analysis Tool - installed on 31 July 2013 from the official Git repository"
+
+module load     openmpi/1.6.4_gcc-4.4.6
+set             root            /share/apps/CrystalAnalysis/sandybridge/build-31-Jul-13/ompi-1.6.4/gcc-4.4.6/build
+prepend-path    PATH            $root/catool
+prepend-path    PATH            $root/catalog_generator
+prepend-path    LD_LIBRARY_PATH $root/calib

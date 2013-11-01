@@ -1,0 +1,9 @@
+#%Module1.0
+
+module-whatis "OpenCV 2.4.5 compiled with GCC 4.4.6"
+
+set root /share/apps/opencv/noarch/2.4.5/gcc-4.4.6
+
+prepend-path PATH 		$root/bin
+prepend-path LD_LIBRARY_PATH 	$root/lib
+prepend-path CPATH 		$root/include

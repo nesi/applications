@@ -1,0 +1,9 @@
+#%Module1.0
+
+module-whatis "Plink (Whole Genome Association analysis toolkit (version 1..07)"
+
+set root /share/apps/plink
+
+prepend-path PATH $root
+
+

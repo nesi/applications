@@ -1,0 +1,11 @@
+#%Module1.0
+ 
+module-whatis "NAMD : Scalable molecular dynamics - Compiled with Intel Cluster Studio 2013, Charm++ 6.4.0 and FFTW 2.1.5"
+
+module           load intel/ics-2013
+module 		 load fftw2/2.1.5_intel-2013-smp-sandybridge
+
+set root /share/apps/NAMD/sandybridge/2.9/ics-2013/Linux-x86_64-ics-2013
+prepend-path PATH 		$root
+
+set-alias MPIRUN "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -genv I_MPI_FABRICS dapl -genv I_MPI_PIN_PROCESSOR_LIST='grain=cache2,shift=sock' -envall \$*"

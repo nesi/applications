@@ -1,0 +1,12 @@
+#%Module1.0
+proc ModulesHelp { } {
+        global version
+        puts stderr "\t LAMMPS (version 12Aug13) compiled with Intel Cluster Studio XE 2013\n"
+}
+
+module-whatis "LAMMPS (version 12Aug13) compiled with Intel Cluster Studio XE 2013"
+
+module load     intel/ics-2013
+prepend-path    PATH        /share/apps/LAMMPS/sandybridge/12Aug13/ics-2013
+set-alias       MPIRUN      "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -genv I_MPI_FABRICS dapl -genv I_MPI_PIN_PROCESSOR_LIST='grain=cache2,shift=sock' -envall \$*" 
+#set-alias       MPIRUN      "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -envall \$*" 
