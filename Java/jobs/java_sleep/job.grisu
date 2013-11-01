@@ -1,7 +1,7 @@
 // required
 // --------
 
-commandline = java -XX:MaxHeapSize=64m -Xmx128m -cp JavaSleep.jar nz.org.nesi.javaTestJob.JavaTestJob 60 10
+commandline = java -XX:MaxHeapSize=64m -Xmx128m -cp JavaSleep.jar nz.org.nesi.javaTestJob.JavaTestJob 6 10
 
 // optional
 // --------

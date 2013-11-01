@@ -1,7 +1,7 @@
 // required
 // --------
 
-job = grisu.job
+job = ./job.grisu
 
 //edit, for example: group = /nz/nesi
 group = /nz/nesi
