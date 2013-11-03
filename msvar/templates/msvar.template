@@ -1,8 +1,6 @@
 commandline = msvar
-
 application = msvar
 applicationVersion = 1.3
-
 = Generic = 
 ------
 [inputFiles]
@@ -16,8 +14,18 @@ title = Walltime
 defaultAmount = 10
 defaultUnit = minutes
 size = 200x70
+[memory]
+type = Memory
+title = Memory per core (in GB)
+defaultValue = 2
+#prefills = 0,1024,2048,4096,8192,16384,32768,49152,65536
+size = 350x70
 [jobname]
 type = Jobname
 defaultValue = msvar
 title = Jobname
 size = 2000x70
+-
+[email]
+type = Email
+size = 1500x100
