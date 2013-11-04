@@ -1,0 +1,13 @@
+#%Module1.0
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "\tThe Gromacs molecular dynamics package (version 4.5.7) compiled with Intel Cluster Studio XE 2013, MKL and OpenMPI-1.6.4\n"
+}
+
+module-whatis "The Gromacs molecular dynamics package (version 4.5.7) compiled with Intel Cluster Studio XE 2013, MKL and OpenMPI-1.6.4"
+
+module load     openmpi/1.6.4_intel-2013-sandybridge
+set             GROMACS         /share/apps/GROMACS/4.5.7/sandybridge/ics-2013/mkl/ompi-1.6.4
+prepend-path    PATH            $GROMACS/bin
+prepend-path    LD_LIBRARY_PATH $GROMACS/lib
