@@ -1,0 +1,41 @@
+commandline = bedpostx ${file}
+application = FSL
+applicationVersion = 5.0.4
+hostCount = 1
+cpus = 1
+environmentVariable = [PROLOG=source fsl.sh]
+= Matlab job = 
+-
+[file]
+type = SingleInputFile
+title = Input folder
+size = 2000x70
+filter = BasenameFilter
+help = select your input folder
+-
+[jobname]
+type = Jobname
+defaultValue = bedpostx
+title = Jobname
+size = 1000x70
+[memory]
+type = Memory
+title = Memory per core (in GB)
+defaultValue = 2
+#prefills = 0,1024,2048,4096,8192,16384,32768
+size = 300x70
+-
+[QueueSelector]
+title = Queue
+type = QueueSelector
+size = 1000x70
+[walltime]
+type = Walltime
+size = 300x70
+title = Walltime
+defaultAmount = 1
+defaultUnit = hours
+-
+[email]
+type = Email
+size = 2000x100
