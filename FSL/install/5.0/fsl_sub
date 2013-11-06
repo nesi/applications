@@ -87,7 +87,7 @@
 METHOD=LL
 JOBFILE=$PWD/fsl_job.ll
 
-if [ $LOADLBATCH == "yes"  ]; then
+if [ "$LOADLBATCH" == "yes"  ]; then
         echo "$JOBFILE is created" >&2
 	echo "#@ shell = /bin/bash" > $JOBFILE
 else
@@ -114,15 +114,15 @@ setLLenv () {
 
      echo "Checking LoadLeveler environment ..." >&2
      if [ "${LL_MEMORY_GB}" = "" ]; then
-        echo "LoadLeveler environment not available" >&2
+        echo "LoadLeveler environment not available, need to export LL_MEMORY_GB" >&2
         exit 127
      else
         echo "LoadLeveler environment is available" >&2
      fi
 
-     echo "#@ class = ${LL_CLASS}" >> $JOBFILE
-     echo "#@ account_no = ${LL_ACCOUNT}" >> $JOBFILE
-     echo "#@ group = ${LL_GROUP}" >> $JOBFILE
+     echo "#@ class = ${LOADL_STEP_CLASS}" >> $JOBFILE
+     echo "#@ account_no = ${LOADL_STEP_ACCT}" >> $JOBFILE
+     echo "#@ group = ${LOADL_STEP_GROUP}" >> $JOBFILE
      echo "#@ job_type = serial" >> $JOBFILE
      echo "#@ parallel_threads = ${OMP_NUM_THREADS}" >> $JOBFILE
      echo "#@ resources = ConsumableMemory(${LL_MEMORY_GB}gb) ConsumableVirtualMemory(${LL_MEMORY_GB}gb)" >> $JOBFILE
