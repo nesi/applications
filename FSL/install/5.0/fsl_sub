@@ -87,7 +87,7 @@
 METHOD=LL
 JOBFILE=$PWD/fsl_job.ll
 
-if [ $LOADLBATCH == "yes"  ]; then
+if [ "$LOADLBATCH" == "yes"  ]; then
         echo "$JOBFILE is created" >&2
 	echo "#@ shell = /bin/bash" > $JOBFILE
 else
