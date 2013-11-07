@@ -11,10 +11,21 @@ title = Gaussian input file
 setJobname = true
 setAsStdin = true
 -
+[appVersion]
+type = ApplicationVersionSelector
+size = 400x70
+title = Version
 [queueSel]
 type = QueueSelector
 title = SubmissionLocation
-size = 800x70
+size = 1000x70
+-
+[walltime]
+type = Walltime
+title = Walltime
+defaultAmount = 10
+defaultUnit = minutes
+size = 400x70
 [outfile]
 type = TextCombo
 title = Output filename
@@ -23,12 +34,6 @@ defaultValue = output.log
 fillWithDefaultValue = true
 property = stdout
 -
-[walltime]
-type = Walltime
-title = Walltime
-defaultAmount = 10
-defaultUnit = minutes
-size = 400x70
 [jobname]
 type = Jobname
 defaultValue = gaussian_job
