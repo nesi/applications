@@ -86,12 +86,13 @@
 
 METHOD=LL
 JOBFILE=$PWD/fsl_job.ll
-
+JOB_MEMORY_KB=""
+DEFAULT_JOB_MEMORY_KB=5242880
 if [ "$LOADLBATCH" == "yes"  ]; then
-        echo "$JOBFILE is created" >&2
+	echo "$JOBFILE is created" >&2
 	echo "#@ shell = /bin/bash" > $JOBFILE
 else
-        METHOD=NONE
+	METHOD=NONE
 fi
 
 #METHOD=SGE
@@ -112,20 +113,28 @@ fi
 
 setLLenv () {
 
-     echo "Checking LoadLeveler environment ..." >&2
-     if [ "${LL_MEMORY_GB}" = "" ]; then
-        echo "LoadLeveler environment not available, need to export LL_MEMORY_GB" >&2
-        exit 127
-     else
-        echo "LoadLeveler environment is available" >&2
-     fi
+     echo "Checking batch job environment ..." >&2
+	 # Check Memory from LL or Grisu submission
+     if [ ! -z "${LL_MEMORY_GB}" ]; then
+		JOB_MEMORY_KB=$((${LL_MEMORY_GB} * 1024 * 1024))
+	 elif [ ! -z ${GRISU_MEMORY} ]; then
+		# Check nonzero
+		if [ ${GRISU_MEMORY} -eq 0 ]; then
+			JOB_MEMORY_KB=${DEFAULT_JOB_MEMORY_KB}
+		else
+			JOB_MEMORY_KB=$((${GRISU_MEMORY} / 1024)) # Grisu provides bytes
+		fi
+	 else
+		JOB_MEMORY_KB=${DEFAULT_JOB_MEMORY_KB}
+	 fi
+	 echo "Setting job memory to ${JOB_MEMORY_KB} KB" >&2
 
      echo "#@ class = ${LOADL_STEP_CLASS}" >> $JOBFILE
      echo "#@ account_no = ${LOADL_STEP_ACCT}" >> $JOBFILE
      echo "#@ group = ${LOADL_STEP_GROUP}" >> $JOBFILE
      echo "#@ job_type = serial" >> $JOBFILE
      echo "#@ parallel_threads = ${OMP_NUM_THREADS}" >> $JOBFILE
-     echo "#@ resources = ConsumableMemory(${LL_MEMORY_GB}gb) ConsumableVirtualMemory(${LL_MEMORY_GB}gb)" >> $JOBFILE
+     echo "#@ resources = ConsumableMemory(${JOB_MEMORY_KB}kb) ConsumableVirtualMemory(${JOB_MEMORY_KB}kb)" >> $JOBFILE
      echo "#@ environment = COPY_ALL" >> $JOBFILE
      echo "#@ initialdir = $PWD" >> $JOBFILE
      echo "#@ restart = yes" >> $JOBFILE
@@ -253,10 +262,9 @@ IFS=,
 # First make sure job ids are not bogus
 
 echo "Checking for valid job ids ..." >&2
-
 for i in $1; do
 	echo "'$i'" >&2
-	if [ "$i" = "" ]; then
+	if [[ "$i" != login* ]]; then
 		echo "Invalid job id: '$i'" >&2
 		exit 127
 	fi
@@ -268,7 +276,7 @@ echo "Job ids are valid" >&2
 
 for i in $1; do
 	echo "Waiting for $i ..." >&2
-	/share/bin/llwait $i
+	/share/bin/llwait $i >&2
 	echo "$i finished" >&2
 done
 IFS=$old_ifs
@@ -541,9 +549,7 @@ case $METHOD in
 # 		FSL 5.0 has a PE component to this call
 	    setLLenv
 	    echo "#@ queue" >> $JOBFILE
-		# add ulimit -- assume memory is specified in GB
-		memKB=$((${LL_MEMORY_GB} * 1024 * 1024))
-		echo "ulimit -m ${memKB} -v ${memKB}" >> $JOBFILE
+		echo "ulimit -m ${JOB_MEMORY_KB} -v ${JOB_MEMORY_KB}" >> $JOBFILE
 	    echo $@ >> $JOBFILE
 
         if [ $verbose -eq 1 ] ; then 
@@ -567,9 +573,7 @@ case $METHOD in
 # 		FSL 5.0 has a PE component to this call
 	    setLLenv
 	    echo "#@ queue" >> $JOBFILE
-		# add ulimit -- assume memory is specified in GB
-		memKB=$((${LL_MEMORY_GB} * 1024 * 1024))
-		echo "ulimit -m ${memKB} -v ${memKB}" >> $JOBFILE
+		echo "ulimit -m ${JOB_MEMORY_KB} -v ${JOB_MEMORY_KB}" >> $JOBFILE
         echo $@ >> $JOBFILE
 	   
 	    if [ $verbose -eq 1 ] ; then 
