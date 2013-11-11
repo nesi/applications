@@ -3,7 +3,7 @@ application = FSL
 applicationVersion = 5.0.4
 hostCount = 1
 cpus = 1
-environmentVariable = [PROLOG=. fsl.sh][LL_MEMORY_GB=4][SGE_ROOT=y]
+environmentVariable = [PROLOG=. fsl.sh][SGE_ROOT=y]
 = Matlab job = 
 -
 [file]
