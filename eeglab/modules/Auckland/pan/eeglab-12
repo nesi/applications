@@ -2,6 +2,6 @@
 
 module-whatis "EEGLAB - v12: an interactive Matlab toolbox for processing continuous and event-related EEG, MEG"
 
-setenv root /share/apps/EEGLAB/eeglab12_0_2_5b
+set root /share/apps/EEGLAB/eeglab12_0_2_5b
 prepend-path PATH $root
 
