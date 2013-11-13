@@ -1,7 +1,7 @@
 // required parameters
 
 job = ../../jobs/monolix_original/job.grisu
-group = /nz/nesi
+group = /nz/uoa/projects/uoa99999
 queue = pan:gram.uoa.nesi.org.nz
 
 // optional parameters
