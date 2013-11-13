@@ -1,8 +1,7 @@
 #%Module1.0
 
-module-whatis "R (version 3.0.1)"
+module-whatis "EEGLAB - v12: an interactive Matlab toolbox for processing continuous and event-related EEG, MEG"
 
-set root /share/apps/R/noarch/3.0.1/gcc-4.4.6/openmpi/1.4.3
-setenv R_HOME $root
-prepend-path PATH $root/bin:$root/lib64/R/library/snow
+setenv  MATLABPATH :/share/apps/EEGLAB/eeglab12_0_2_5b
+prepend-path PATH $MATLABPATH
 
