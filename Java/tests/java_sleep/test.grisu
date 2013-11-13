@@ -1,7 +1,7 @@
 // required parameters
 
 job = ../../jobs/java_sleep/job.grisu
-group = /nz/nesi
+group = /nz/uoa/projects/uoa99999
 queue = pan:gram.uoa.nesi.org.nz
 
 commandline = java -XX:MaxHeapSize=64m -Xmx128m -cp JavaSleep.jar nz.org.nesi.javaTestJob.JavaTestJob 60 1
