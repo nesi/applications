@@ -1,0 +1,11 @@
+#%Module1.0
+
+module-whatis "Amber: A molecular dynamics and refinement package (version 12)"
+
+set root /share/apps/amber12.pgi
+
+module load pgi/12.10/64bit
+module load python/2.6_virtualenv
+
+setenv AMBERHOME $root
+prepend-path PATH $root/bin

@@ -1,0 +1,24 @@
+#%Module1.0
+ 
+module-whatis "NWChem 6.3-2013-05-17 compiled with Intel Cluster Studio 2013"
+
+module load intel/ics-2013
+module load openmpi/1.6.5_intel-2013-sandybridge-static
+
+set root /share/apps/NWChem/sandybridge/6.3-2013-05-28/ics-2013/ompi-1.6.5/mlnx-ofed
+prepend-path PATH $root/bin
+
+setenv  nwchem_basis_library $root/data/libraries/
+setenv  nwchem_nwpw_library  $root/data/libraryps/
+setenv  NWCHEM_BASIS_LIBRARY $root/data/libraries/
+setenv  NWCHEM_NWPW_LIBRARY  $root/data/libraryps/
+setenv  ffield amber
+setenv  amber_1 $root/data/amber_s/
+setenv  amber_2 $root/data/amber_q/
+setenv  amber_3 $root/data/amber_x/
+setenv  amber_4 $root/data/amber_u/
+setenv  spce    $root/data/solvents/spce.rst
+setenv  charmm_s $root/data/charmm_s/
+setenv  charmm_x $root/data/charmm_x/
+
+set-alias MPIRUN "mpirun -machinefile \$LOADL_HOSTFILE -x PATH -x LD_LIBRARY_PATH -x OMP_NUM_THREADS --bind-to-core -mca btl self,sm,openib -mca btl_sm_use_knem 1 -mca mpi_paffinity_alone 1 \$*"
