@@ -1,0 +1,14 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Meep (or MEEP) is a free finite-difference time-domain (FDTD) simulation software package
+ developed at MIT to model electromagnetic systems. - Homepage: http://ab-initio.mit.edu/wiki/index.php/Meep
+}
+}
+
+module-whatis {Meep (or MEEP) is a free finite-difference time-domain (FDTD) simulation software package
+ developed at MIT to model electromagnetic systems. - Homepage: http://ab-initio.mit.edu/wiki/index.php/Meep}
+
+module use /share/apps/modules/all
+module load Meep/1.2-goalf-1.1.0-no-OFED
+

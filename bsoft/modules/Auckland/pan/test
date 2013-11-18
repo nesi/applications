@@ -1,0 +1,7 @@
+#%Module1.0
+
+module-whatis "Bsoft is a collection of programs and a platform for development of software for image and molecular processing in structural biology"
+
+set root /share/apps/bsoft/noarch/test/gcc-4.4.6
+
+prepend-path PATH $root/bin
