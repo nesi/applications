@@ -1,0 +1,12 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   TopHat is a fast splice junction mapper for RNA-Seq reads. - Homepage: http://tophat.cbcb.umd.edu/
+}
+}
+
+module-whatis {TopHat is a fast splice junction mapper for RNA-Seq reads. - Homepage: http://tophat.cbcb.umd.edu/}
+
+module add /share/apps/modules/all
+module load TopHat/2.0.4-goalf-1.1.0-no-OFED
+
