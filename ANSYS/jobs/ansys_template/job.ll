@@ -26,7 +26,7 @@ export CFX5RSH
 export MPI_REMSH
 
 # Executable and input file.
-defname=M010015.def
+defname=<input>.def
 exe=$ANSYS/CFX/bin/cfx5solve
 
 # Get list of hosts, and count them
