@@ -5,6 +5,6 @@ module-whatis {Julia is a high-level, high-performance dynamic programming langu
 set root /share/apps/julia/0.2.0
 
 prepend-path PATH $root/bin
-prepend-path MANPATH $root/share
+prepend-path MANPATH $root/share/man
 prepend-path LD_LIBRARY_PATH $root/lib
 prepend-path CPATH $root/include
