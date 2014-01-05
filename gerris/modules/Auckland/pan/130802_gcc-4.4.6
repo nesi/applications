@@ -1,0 +1,12 @@
+#%Module1.0
+
+module load GSL/1.15-gcc-4.4.6
+module load openmpi/1.6.4_gcc-4.4.6
+module load netCDF/4.2-goalf-1.1.0-no-OFED
+module load gts/for-gerris_gcc-4.4.6
+
+set ROOT /share/apps/gerris/noarch/130802/gcc_4.4.6
+prepend-path PATH $ROOT/bin
+prepend-path LD_LIBRARY_PATH $ROOT/lib
+prepend-path PKG_CONFIG_PATH $ROOT/lib/pkgconfig
+

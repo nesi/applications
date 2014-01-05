@@ -2,7 +2,11 @@
  
 module-whatis "SGA - String Graph Assembler - Compiled on 01 Aug 2013 with GCC 4.4.6 (NOARCH)"
 
-module load python/2.7.4 ABYSS/1.3.5 samtools/0.1.19 bwa/0.7.4 BamTools/2d7685d2ae_gcc-4.6
+module load python/2.7.4
+module load ABYSS/1.3.5
+module load samtools/0.1.19
+module load bwa/0.7.4 
+module load BamTools/2d7685d2ae_gcc-4.6
 
 set root      /share/apps/SGA/noarch/475e1bca46/gcc-4.4.6
 

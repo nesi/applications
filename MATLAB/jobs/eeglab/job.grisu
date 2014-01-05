@@ -1,0 +1,15 @@
+// required parameter
+// -------------------
+
+commandline = matlab -nodesktop -nosplash -r RunPCAc
+
+// optional parameters
+// --------------------
+application = MATLAB
+applicationVersion = UoA-FoS-R2012a
+submissionLocation = pan:gram.uoa.nesi.org.nz
+stderr = stderr.txt
+stdout = stdout.txt
+walltime = 1m
+
+

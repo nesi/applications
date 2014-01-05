@@ -1,5 +1,6 @@
 logs/*
 */logs/*
+**/logs/**
 **~
 .project
 *iml
