@@ -1,6 +1,6 @@
 #%Module1.0
 
-set ANSYS_HOME /share/apps/ansys/v145
+set ANSYS_HOME /share/apps/ansys/v150/v150
 
 prepend-path PATH $ANSYS_HOME/tgrid/bin
 prepend-path PATH $ANSYS_HOME/Framework/bin/Linux64

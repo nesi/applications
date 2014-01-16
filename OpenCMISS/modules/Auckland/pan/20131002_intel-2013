@@ -8,11 +8,78 @@ set root      /share/apps/OpenCMISS/sandybridge/ics-2013/netcdf-4.3.0/hdf5-1.8.1
 module load netcdf-fortran/4.2_intel-2013-impi-sandybridge
 module load python/2.7.4
 
-setenv OPENCMISS_ROOT 		$root/OpenCMISS
-setenv OPENCMISSEXAMPLES_ROOT 	$root/OpenCMISS/examples
-setenv OPENCMISSEXTRAS_ROOT 	$root/OpenCMISSExtras
-setenv COMPILER 		intel
-setenv OPENCMISSEXTRAS_RUN_CONFIG optimised
-setenv MPI 			intel
+setenv 		OPENCMISS_ROOT 			$root/OpenCMISS
+setenv 		OPENCMISSEXAMPLES_ROOT 		$root/OpenCMISS/examples
+setenv 		OPENCMISSEXTRAS_ROOT 		$root/OpenCMISSExtras
+setenv 		OPENCMISSEXTRAS_RUN_CONFIG 	optimised
 
 set-alias MPIRUN "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -genv I_MPI_FABRICS shm:dapl -genv I_MPI_DAPL_PROVIDER ofa-v2-mlx4_0-1 -genv I_MPI_ADJUST_ALLTOALLV 2 -genv I_MPI_PIN_PROCESSOR_LIST='grain=cache2,shift=sock' -envall \$*"
+
+# Other environment variables also needed to compile the with the OpenCMISS library
+setenv          COMPILER			intel
+setenv          INTEL_COMPILER_VERSION		13.0.1
+setenv          INTEL_TRACE_COLLECTOR_VERSION	8.1.0.024
+setenv          INTEL_MPI_VERSION		4.1.0.024
+setenv          ABI				64
+setenv          OPT				true
+setenv          MPI				intel
+
+
+setenv          OPENCMISS_USE_CELLML		true
+setenv          OPENCMISS_USE_CHOLMOD		true
+setenv          OPENCMISS_USE_CUBPACK		true
+setenv          OPENCMISS_USE_CUDA		false
+setenv          OPENCMISS_USE_FIELDML		true
+setenv          OPENCMISS_USE_HDF5		true
+setenv          OPENCMISS_USE_HYPRE		true
+setenv          OPENCMISS_USE_LIBXML2		true
+setenv          OPENCMISS_USE_MUMPS		true
+setenv          OPENCMISS_USE_NETCDF		false
+setenv          OPENCMISS_USE_OMNIORB		false
+setenv          OPENCMISS_USE_PAPI		false
+setenv          OPENCMISS_USE_PARMETIS		true
+setenv          OPENCMISS_USE_PASTIX		true
+setenv          OPENCMISS_USE_PETSC		true
+setenv          OPENCMISS_USE_PLAPACK		true
+setenv          OPENCMISS_USE_SCOTCH		true
+setenv          OPENCMISS_USE_SLEPC		true
+setenv          OPENCMISS_USE_SUITESPARSE	true
+setenv          OPENCMISS_USE_SUNDIALS		true
+setenv          OPENCMISS_USE_SUPERLU		true
+setenv          OPENCMISS_USE_SUPERLU_DIST	true
+setenv          OPENCMISS_USE_SZIP		true
+setenv          OPENCMISS_USE_TAO		true
+setenv          OPENCMISS_USE_TAU		false
+setenv          OPENCMISS_USE_UMFPACK		true
+setenv          OPENCMISS_USE_ZLIB		true
+setenv          FORCE_OCE_BLACSSCALAPACK	true
+setenv          FORCE_OCE_BLASLAPACK		false
+setenv          FORCE_OCE_CELLML		false
+setenv          FORCE_OCE_CHOLMOD		false
+setenv          FORCE_OCE_FIELDML		false
+setenv          FORCE_OCE_HDF5			true
+setenv          FORCE_OCE_HYPRE			false
+setenv          FORCE_OCE_LIBXML2		false
+setenv          FORCE_OCE_MPI			false
+setenv          FORCE_OCE_MUMPS			false
+setenv          FORCE_OCE_NETCDF		true
+setenv          FORCE_OCE_OMNIORB		true
+setenv          FORCE_OCE_PAPI			true
+setenv          FORCE_OCE_PARMETIS		false
+setenv          FORCE_OCE_PASTIX		false
+setenv          FORCE_OCE_PETSC			false
+setenv          FORCE_OCE_PLAPACK		false
+setenv          FORCE_OCE_SCOTCH		false
+setenv          FORCE_OCE_SLEPC			false
+setenv          FORCE_OCE_SPARSESUITE		false
+setenv          FORCE_OCE_SUNDIALS		false
+setenv          FORCE_OCE_SZIP			false
+setenv          FORCE_OCE_TAO			false
+setenv          FORCE_OCE_TAU			false
+setenv          FORCE_OCE_UMFPACK		false
+setenv          FORCE_OCE_ZLIB			false
+
+setenv          USECELLML			true
+setenv          USEFIELDML			true
+
+

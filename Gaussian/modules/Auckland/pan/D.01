@@ -1,13 +1,13 @@
 #%Module1.0
 
-module-whatis "The Gaussian computational chemistry package (G09, rev. C.01)"
+module-whatis "The Gaussian computational chemistry package (G09, rev. D.01)"
 
 # This module file was prepared chiefly by comparing and contrasting the
 # environments (using "env") and aliases (using "alias") before and after the
 # resource files (g09.profile and g09.login) were sourced. It is therefore
 # unique to the hardware and software environment of Pan.
 
-# Can't have G09-B.01 and G09-C.01 loaded at the same time
+# Can't have G09-B.01 and G09-D.01 loaded at the same time
 conflict g09/B.01
 
 # Start commands common to all shells

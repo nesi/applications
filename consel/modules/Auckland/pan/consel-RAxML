@@ -1,0 +1,5 @@
+#%Module1.0
+
+module-whatis "CONSEL: a program for assessing the confidence of phylogenetic tree selection used with RAxML"
+prepend-path PATH /share/apps/consel/consel/bin
+

@@ -1,0 +1,10 @@
+#%Module1.0
+
+module load Mesa/9.2.3
+
+set ROOT /share/apps/gfsview/121130/noarch/gcc_4.4.6
+prepend-path PATH $ROOT/bin
+prepend-path CPATH $ROOT/include
+prepend-path LD_LIBRARY_PATH $ROOT/lib
+prepend-path PKG_CONFIG_PATH $ROOT/lib/pkgconfig
+

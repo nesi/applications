@@ -1,0 +1,7 @@
+#%Module1.0
+ 
+module-whatis "The Vienna Ab initio Simulation Package version 5.2 compiled with OpenMpi 1.6 (which was compiled with icc)"
+
+module load openmpi/1.6_intel-2011
+prepend-path PATH "/share/apps/VASP-5.2/src/vasp.5.2"
+

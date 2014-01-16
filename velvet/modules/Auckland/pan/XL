@@ -1,0 +1,10 @@
+#%Module
+
+module-whatis {Velvet sequence assembler compiled with MAXKMERLENGTH=95}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Velvet/XL-1.2.10-goolf-1.6.10
+
+conflict    Velvet
+conflict    velvet
+
+prepend-path	PATH		$root/bin

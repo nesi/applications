@@ -1,7 +1,12 @@
 #%Module
 
 ## This file is a temporary hack because:
-module use /share/apps/modules/all
+
+setenv	GUILE_WARN_DEPRECATED	"no" 
+set-alias	MPIRUN		"mpirun -machinefile \$LOADL_HOSTFILE -x PATH -x LD_LIBRARY_PATH -x GUILE_WARN_DEPRECATED -mca btl ^tcp \$*"
+append-path	MODULEPATH	/share/apps/modules/all
+
+
 ## The rest of this is a copy from /share/apps/modules/all/
 
 proc ModulesHelp { } {
