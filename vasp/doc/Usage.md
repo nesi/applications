@@ -1,0 +1,3 @@
+VASP 4.6, 5.2 and 5.3 are available to certain researchers at the University of Auckland and elsewhere, under the terms of restrictive licences. You should arrange access through your institutional contact person. For example, any University of Auckland staff or students who wish to use VASP should contact Dr Tilo Soehnel.
+
+Your access may be version specific. If you are in doubt about which versions are available to you, check with your institutional contact. If you believe that you should have access to a particular version of VASP on the cluster but cannot get to it, please contact eResearch support personnel.
