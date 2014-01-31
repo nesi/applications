@@ -1,0 +1,18 @@
+#%Module
+
+set-alias	MPIRUN		"mpirun -machinefile \$LOADL_HOSTFILE -x PATH -x LD_LIBRARY_PATH -mca btl ^tcp \$*"
+append-path	MODULEPATH	/share/easybuild/RHEL6.3/westmere/modules/all
+
+module-whatis {Simulation of flow, sediment transport and morphology, waves, water quality and ecology}
+
+set root    /share/apps/Delft3D/3377-goolf
+
+conflict    Delft3D
+
+if { ![is-loaded OpenMPI/1.7.3-GCC-4.8.2] } {
+    module load OpenMPI/1.7.3-GCC-4.8.2
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
