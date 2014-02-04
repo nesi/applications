@@ -16,6 +16,9 @@
 #@ error = $(job_name).$(jobid).err
 #@ queue
 
+let "limit = 3000 * 1024"
+ulimit -v ${limit} -m ${limit}
+
 # Script to run a CFX job under LoadLeveler
 ANSYS=/share/apps/ansys/v145
 

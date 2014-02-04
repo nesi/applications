@@ -1,1 +1,3 @@
-Abaqus is ... 
+ANSYS, Inc. is an engineering simulation software (computer-aided engineering, or CAE) that is headquartered in Canonsburg, Pennsylvania, United States.
+
+ANSYS Fluent software contains the broad physical modeling capabilities needed to model flow, turbulence, heat transfer, and reactions for industrial applications ranging from air flow over an aircraft wing to combustion in a furnace, from bubble columns to oil platforms, from blood flow to semiconductor manufacturing, and from clean room design to wastewater treatment plants. Special models that give the software the ability to model in-cylinder combustion, aeroacoustics, turbomachinery, and multiphase systems have served to broaden its reach. 
