@@ -5,8 +5,9 @@
 #@ job_name = PhyML_TEST
 #@ class = default
 #@ group = nesi
+#@ account_no = uoa123456
+#@ initialdir = /projects/uoa12345
 #@ notification = never
-#@ account_no = uoa
 #@ wall_clock_limit = 00:20:00
 #@ resources = ConsumableMemory(4096mb) ConsumableVirtualMemory(4096mb)
 #@ job_type = MPICH

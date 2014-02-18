@@ -3,12 +3,12 @@
 #@ notification = complete
 #@ class = default
 #@ group = nesi
-#@ account_no = uoa
+#@ account_no = uoa12345
+#@ initialdir = /projects/uoa12345
 #@ environment=COPY_ALL
 #@ wall_clock_limit = 00:30:00
 #@ resources = ConsumableMemory(1048mb) ConsumableVirtualMemory(1048mb)
 #@ job_type = parallel
-#@ initialdir = $(HOME)
 #@ total_tasks=8
 #@ output = $(job_name).$(jobid).out
 #@ error = $(job_name).$(jobid).err

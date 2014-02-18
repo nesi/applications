@@ -6,6 +6,8 @@
 #!/bin/sh
  
 #@ job_name         = run33
+#@ group            = nesi
+#@ account_no       = uoa12345
 #@ job_type         = MPICH
 #@ node             = 1
 #@ tasks_per_node   = 12
@@ -13,8 +15,8 @@
 #@ wall_clock_limit = 48:00:00
 #@ shell            = /bin/sh
 #@ initialdir       = /share/test/VASP/PTGa3Al17_FinalStp
-#@ output           = /home/bver018/$(job_name).$(jobid).out
-#@ error            = /home/bver018/$(job_name).$(jobid).err
+#@ output           = /projects/uoa12345/$(job_name).$(jobid).out
+#@ error            = /projects/uoa12345/$(job_name).$(jobid).err
 #@ notification     = complete
 #@ queue
  

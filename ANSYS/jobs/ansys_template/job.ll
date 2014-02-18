@@ -4,14 +4,14 @@
 #@ notification = complete
 #@ class = default
 #@ group = nesi
-#@ account_no = /nz/nesi
+#@ account_no = uoa12345
+#@ initialdir = /projects/uoa12345
 #@ wall_clock_limit = 00:30:00
 #@ resources = ConsumableMemory(3000mb) ConsumableVirtualMemory(3000mb)
 #@ job_type = parallel
 #@ total_tasks=40
 #@ requirements = (Feature != "rackA")
 #@ blocking=unlimited
-#@ initialdir = /home/<mydir>
 #@ output = $(job_name).$(jobid).out
 #@ error = $(job_name).$(jobid).err
 #@ queue

@@ -9,11 +9,12 @@
 #@ job_name = test
 #@ class = default
 #@ group = nesi
+#@ account_no = uoa12345
+#@ initialdir = $(HOME)
 #@ wall_clock_limit = 1:00:00
 #@ resources = ConsumableMemory(10gb) ConsumableVirtualMemory(10gb)
 #@ job_type = parallel
 #@ total_tasks = 10
-#@ initialdir = ~
 #@ output = stdout.txt
 #@ error = stderr.txt
 #@ queue

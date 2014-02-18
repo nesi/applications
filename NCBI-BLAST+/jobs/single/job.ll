@@ -4,7 +4,8 @@
 #@ wall_clock_limit = 00:30:00
 #@ class = default
 #@ group = nesi
-#@ initialdir = $(home)
+#@ account_no = uoa12345
+#@ initialdir = /projects/uoa12345
 #@ output = $(job_name).$(jobid).$(stepid).out
 #@ error = $(job_name).$(jobid).$(stepid).err
 #@ resources = ConsumableMemory(2048mb) ConsumableVirtualMemory(2048mb)
