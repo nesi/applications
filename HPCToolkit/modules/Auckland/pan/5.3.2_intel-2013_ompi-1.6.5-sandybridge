@@ -1,0 +1,11 @@
+#%Module1.0
+
+module-whatis "HPCToolkit is an integrated suite of tools for measurement and analysis of program performance. Compiled with Intel Cluster Studio XE 2013, PAPI 5.2.0 and OpenMPI 1.6.5"
+module load PAPI/5.2.0-intel-2013-sandybridge
+module load openmpi/1.6.5_intel-2013-sandybridge-static
+set root 			/share/apps/HPCToolkit/5.3.2/sandybridge/intel-2013/papi-5.2.0/ompi-1.6.5/hpctoolkit
+prepend-path PATH 		$root/bin
+prepend-path CPATH 		$root/include
+prepend-path LD_LIBRARY_PATH 	$root/lib
+prepend-path MANPATH 		$root/man
+

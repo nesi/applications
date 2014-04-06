@@ -1,0 +1,5 @@
+#%Module1.0
+
+set root /share/apps/autoconf/2.69/noarch/gcc_4.4.6 
+
+prepend-path PATH $root/bin

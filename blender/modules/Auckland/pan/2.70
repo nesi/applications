@@ -1,0 +1,7 @@
+#%Module1.0
+ 
+module-whatis "The Blender animation suite "
+
+set root /share/apps/blender/2.70/noarch
+
+prepend-path PATH $root

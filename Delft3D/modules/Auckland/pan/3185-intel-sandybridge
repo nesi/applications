@@ -1,0 +1,14 @@
+#%Module
+
+module-whatis {Simulation of flow, sediment transport and morphology, waves, water quality and ecology}
+
+set root    /share/apps/Delft3D/3185-ics-2013
+
+conflict    Delft3D
+
+module load intel/ics-2013
+module load mpich2/3.0.4_intel-2013
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+

@@ -1,0 +1,16 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+  puts stderr "Intel MPI 4.0 Update2 with Intel Composer XE 2011"
+  puts stderr "TAGS: mpi"
+  puts stderr "URL: http://www.intel.com/"
+}
+
+module-whatis "Intel MPI 4.0 Update2 with Intel Composer XE 2011"
+
+prepend-path PATH            /share/apps/intel/2011/composer_xe_2011_sp1.10.319/mpirt/bin/intel64
+prepend-path MANPATH         /share/apps/intel/2011/composer_xe_2011_sp1.10.319/man
+prepend-path LD_LIBRARY_PATH /share/apps/intel/2011/composer_xe_2011_sp1.10.319/mpirt/lib/intel64
+prepend-path I_MPI_ROOT      /share/apps/intel/2011/composer_xe_2011_sp1.10.319/mpirt
+
+set-alias  MPIRUN  "mpirun -np \$LOADL_TOTAL_TASKS -machinefile \$LOADL_HOSTFILE -envuser \$*"

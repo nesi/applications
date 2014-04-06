@@ -1,0 +1,14 @@
+#%Module1.0
+
+module-whatis "NetCDF-Fortran Serial 4.2 compiled with Intel Cluster Studio XE 2013, HDF5 1.8.11 and GPFS (STATIC)"
+
+module load netcdf/4.3.0_intel-2013-impi-sandybridge
+
+set root /share/libs/netcdf/sandybridge/4.3.0/hdf5-1.8.11/impi-4.1.0.024
+
+setenv       NETCDF $root
+prepend-path PATH $root/bin
+prepend-path CPATH $root/include
+prepend-path LD_LIBRARY_PATH $root/lib
+prepend-path MANPATH $root/share/man
+prepend-path INFOPATH $root/share/info

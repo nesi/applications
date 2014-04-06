@@ -1,0 +1,16 @@
+#%Module1.0
+
+module-whatis "NetCDF Serial 4.3.0 compiled with Intel Cluster Studio XE 2013, HDF5 1.8.11 and GPFS (STATIC)"
+
+module load hdf5/1.8.11_intel-2013-mpi-sandybridge
+module load cmake/2.8.11.2
+
+set netcdfroot /share/libs/netcdf/4.3.0/sandybridge/ics-2013/hdf5-1.8.11/impi-4.1.0.024
+
+setenv       NETCDF $netcdfroot
+prepend-path PATH $netcdfroot/bin
+prepend-path CPATH $netcdfroot/include
+prepend-path LD_LIBRARY_PATH $netcdfroot/lib
+prepend-path MANPATH $netcdfroot/share/man
+prepend-path INFOPATH $netcdfroot/share/info
+prepend-path PKG_CONFIG_PATH $netcdfroot/lib/pkgconfig

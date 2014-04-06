@@ -1,0 +1,5 @@
+#%Module1.0
+
+set root /share/apps/automake/1.14/noarch/gcc_4.4.6 
+setenv ACLOCAL "aclocal -I/share/apps/automake/1.14/noarch/gcc_4.4.6/share/aclocal-1.14 -I/usr/share/aclocal"
+prepend-path PATH $root/bin

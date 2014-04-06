@@ -1,0 +1,10 @@
+#%Module1.0
+
+module-whatis "GNU Libtool 2.4.2 built with GCC 4.4.6"
+
+set root /share/libs/libtool/noarch/2.4.2
+prepend-path LD_LIBRARY_PATH $root/lib
+prepend-path CPATH           $root/include
+prepend-path PATH            $root/bin
+prepend-path MANPATH         $root/share/man
+

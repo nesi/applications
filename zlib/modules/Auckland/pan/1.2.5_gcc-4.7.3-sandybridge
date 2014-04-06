@@ -1,0 +1,17 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+  puts stderr "ZLIB 1.2.5 compiled with GCC 4.7.3"
+  puts stderr "TAGS: zlib"
+}
+
+module-whatis "ZLIB 1.2.5 compiled with GCC 4.7.3"
+
+module load gcc/4.7.3
+
+set root     /share/libs/zlib/sandybridge/1.2.5/gcc-4.7.3
+setenv       ZLIB_ROOT       $root
+prepend-path MANPATH         $root/share/man/man3
+prepend-path LD_LIBRARY_PATH $root/lib
+prepend-path CPATH 	     $root/include
+

@@ -1,0 +1,8 @@
+#%Module1.0
+
+set root /share/libs/qt/noarch/5.1.0/gcc-4.4.6
+
+prepend-path PATH $root/bin
+prepend-path CPATH $root/include
+prepend-path LD_LIBRARY_PATH $root/lib
+

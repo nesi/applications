@@ -1,0 +1,10 @@
+#%Module1.0
+
+module-whatis "HPCToolkit is an integrated suite of tools for measurement and analysis of program performance. Compiled with GCC 4.4.6, PAPI 5.2.0 and OpenMPI 1.6.4"
+module load PAPI/5.2.0-gcc-4.4.6-sandybridge
+set root 			/share/apps/HPCToolkit/5.3.2/sandybridge/gcc-4.4.6/papi-5.2.0/ompi-1.6.4/hpctoolkit
+prepend-path PATH 		$root/bin
+prepend-path CPATH 		$root/include
+prepend-path LD_LIBRARY_PATH 	$root/lib
+prepend-path MANPATH 		$root/man
+

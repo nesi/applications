@@ -1,0 +1,13 @@
+#%Module1.0
+module load xorg-dir2proto/2.8
+module load xorg-glproto/1.4.16
+module load xorg-libxcb/1.9.3
+module load xorg-pciaccess/0.13.2
+module load xorg-util-macros/1.17.1
+module load xorg-xcb-proto/1.9
+module load libdrm/2.4.49 
+
+prepend-path LD_LIBRARY_PATH /share/libs/mesa/9.2.3/noarch/gcc_4.4.6/lib
+prepend-path PKG_CONFIG_PATH /share/libs/mesa/9.2.3/noarch/gcc_4.4.6/lib/pkgconfig
+prepend-path CPATH /share/libs/mesa/9.2.3/noarch/gcc_4.4.6/include
+

@@ -1,0 +1,9 @@
+#%Module1.0
+
+module-whatis "hpcviewer is part of HPCToolkit, an integrated suite of tools for measurement and analysis of program performance."
+set root 			/share/apps/HPCToolkit/5.3.2/noarch/hpcviewer
+prepend-path PATH 		$root/bin
+prepend-path CPATH 		$root/include
+prepend-path LD_LIBRARY_PATH 	$root/lib
+prepend-path MANPATH 		$root/man
+

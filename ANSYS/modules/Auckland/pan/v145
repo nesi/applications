@@ -8,9 +8,9 @@ prepend-path PATH $ANSYS_HOME/aisol/bin/linx64
 prepend-path PATH $ANSYS_HOME/RSM/bin
 prepend-path PATH $ANSYS_HOME/ansys/bin
 prepend-path PATH $ANSYS_HOME/autodyn/bin
+prepend-path PATH $ANSYS_HOME/CFD-Post/bin
 prepend-path PATH $ANSYS_HOME/CFX/bin
 prepend-path PATH $ANSYS_HOME/fluent/bin
-prepend-path PATH $ANSYS_HOME/CFD-Post/bin
 prepend-path PATH $ANSYS_HOME/TurboGrid/bin
 prepend-path PATH $ANSYS_HOME/polyflow/bin
 prepend-path PATH $ANSYS_HOME/Icepak/bin

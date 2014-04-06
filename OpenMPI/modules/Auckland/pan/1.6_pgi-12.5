@@ -1,0 +1,17 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+  puts stderr "OpenMPI 1.6 compiled with PGI Compilers 12.10"
+  puts stderr "TAGS: mpi"
+  puts stderr "URL: http://www.open-mpi.org/"
+}
+
+module-whatis "OpenMPI 1.6 compiled with PGI Compilers 12.10"
+
+module load pgi/12.5/64bit
+
+prepend-path PATH            /usr/mpi/pgi/openmpi-1.6/bin
+prepend-path MANPATH         /usr/mpi/pgi/openmpi-1.6/man
+prepend-path LD_LIBRARY_PATH /usr/mpi/pgi/openmpi-1.6/lib
+
+set-alias  MPIRUN  "mpirun -machinefile \$LOADL_HOSTFILE -x PATH -x LD_LIBRARY_PATH -mca btl ^tcp \$*" 

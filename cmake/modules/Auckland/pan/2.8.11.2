@@ -1,0 +1,17 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   The CMake, the cross-platform, open-source build system. Version 2.8.11.2 
+}
+}
+
+module-whatis {The CMake, the cross-platform, open-source build system. Version 2.8.11.2 }
+
+set root    /share/apps/cmake/noarch/gcc-4.4.6
+
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	MANPATH			$root/share/man
+prepend-path	PATH			$root/bin
+
+

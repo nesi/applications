@@ -1,0 +1,23 @@
+#%Module1.0
+
+module-whatis "The Intel Cluster Studio XE 2013 - Intel Phi Environment"
+
+set root /share/apps/intel
+
+setenv	MKLROOT			$root/composer_xe_2013.1.117/mkl
+setenv	INTEL_LICENSE_FILE	$root/licenses
+setenv	IPPROOT			$root/composer_xe_2013.1.117/ipp
+setenv	NLSPATH			$root/composer_xe_2013.1.117/debugger/intel64/locale/%l_%t/%N:$root/composer_xe_2013.1.117/compiler/lib/intel64/locale/%l_%t/%N:$root/composer_xe_2013.1.117/ipp/lib/intel64/locale/%l_%t/%N:$root/composer_xe_2013.1.117/mkl/lib/intel64/locale/%l_%t/%N:$root/composer_xe_2013.1.117/debugger/intel64/locale/%l_%t/%N:$root/composer_xe_2013.1.117/mkl/lib/intel64/locale/%l_%t/%N
+setenv	MIC_LD_LIBRARY_PATH	$root/composer_xe_2013.1.117/tbb/lib/mic:$root/composer_xe_2013.1.117/compiler/lib/mic:/opt/intel/mic/coi/device-linux-release/lib:/opt/intel/mic/myo/lib:$root/composer_xe_2013.1.117/compiler/lib/mic:$root/composer_xe_2013.1.117/mkl/lib/mic:$root/composer_xe_2013.1.117/tbb/lib/mic:$root/composer_xe_2013.1.117/compiler/lib/mic:$root/composer_xe_2013.1.117/mkl/lib/mic
+setenv	TBBROOT			$root/composer_xe_2013.1.117/tbb
+setenv	I_MPI_ROOT		$root/impi/4.1.0.024
+setenv  VTUNE_AMPLIFIER_XE_2013_DIR /share/apps/intel/vtune_amplifier_xe_2013
+prepend-path	PATH		$root/impi/4.1.0.024/mic/bin:$root/composer_xe_2013.1.117/bin/intel64:$root/composer_xe_2013.1.117/mpirt/bin/intel64:$root/composer_xe_2013.1.117/bin/intel64:$root/composer_xe_2013.1.117/bin/intel64_mic:$root/composer_xe_2013.1.117/debugger/gui/intel64
+prepend-path	INCLUDE		$root/composer_xe_2013.1.117/mkl/include:$root/composer_xe_2013.1.117/mkl/include
+prepend-path	CPATH		$root/composer_xe_2013.1.117/tbb/include:$root/composer_xe_2013.1.117/mkl/include:$root/composer_xe_2013.1.117/tbb/include:$root/composer_xe_2013.1.117/mkl/include:$root/impi/4.1.0.024/intel64/include
+prepend-path	LD_LIBRARY_PATH	$root/composer_xe_2013.1.117/tbb/lib/intel64:/share/apps/intel/impi/4.1.0.024/mic/lib:$root/composer_xe_2013.1.117/compiler/lib/intel64:/opt/intel/mic/coi/host-linux-release/lib:/opt/intel/mic/myo/lib:$root/composer_xe_2013.1.117/mpirt/lib/intel64:$root/composer_xe_2013.1.117/ipp/../compiler/lib/intel64:$root/composer_xe_2013.1.117/ipp/lib/intel64:$root/composer_xe_2013.1.117/compiler/lib/intel64:$root/composer_xe_2013.1.117/mkl/lib/intel64:$root/composer_xe_2013.1.117/tbb/lib/intel64:$root/composer_xe_2013.1.117/compiler/lib/intel64:$root/composer_xe_2013.1.117/mkl/lib/intel64:/share/apps/intel/vtune_amplifier_xe_2013/lib64
+prepend-path	LIBRARY_PATH	$root/composer_xe_2013.1.117/tbb/lib/intel64:$root/composer_xe_2013.1.117/compiler/lib/intel64:$root/composer_xe_2013.1.117/ipp/../compiler/lib/intel64:$root/composer_xe_2013.1.117/ipp/lib/intel64:$root/composer_xe_2013.1.117/compiler/lib/intel64:$root/composer_xe_2013.1.117/mkl/lib/intel64:$root/composer_xe_2013.1.117/tbb/lib/intel64:$root/composer_xe_2013.1.117/compiler/lib/intel64:$root/composer_xe_2013.1.117/mkl/lib/intel64
+prepend-path	MANPATH		$root/impi/4.1.0.024/man:$root/composer_xe_2013.1.117/man/en_US:$root/composer_xe_2013.1.117/man/en_US:$root/composer_xe_2013.1.117/man/en_US
+
+set-alias MPIRUN "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -genv I_MPI_FABRICS dapl -envall \$*"
+

@@ -1,0 +1,10 @@
+#%Module1.0
+
+set CUDA_HOME /share/apps/NVIDIA/CUDA-4.0
+
+setenv CUDA_HOME $CUDA_HOME
+
+prepend-path PATH $CUDA_HOME/bin
+prepend-path LD_LIBRARY_PATH $CUDA_HOME/lib64
+prepend-path LD_LIBRARY_PATH $CUDA_HOME/lib
+prepend-path CPATH $CUDA_HOME/include

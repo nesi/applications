@@ -1,0 +1,14 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+  puts stderr "BOOST Libraries compiled with GCC 4.4.6 with MPI support"
+  puts stderr "TAGS: boost"
+}
+
+module-whatis "BOOST Libraries compiled with GCC 4.4.6 with MPI support"
+
+set root     /share/libs/boost/1.53.0/noarch/gcc/4.4.6
+prepend-path LD_LIBRARY_PATH $root/lib
+prepend-path CPATH           $root/include
+prepend-path PATH            $root/bin
+

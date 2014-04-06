@@ -1,0 +1,31 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+  puts stderr "Mellanox OFED and tune libraries for IB 2.0.5"
+  puts stderr "TAGS: mpi"
+  puts stderr "URL: http://www.mellanox.com"
+}
+
+module-whatis "Mellanox OFED and tune libraries for IB 2.0.5"
+
+
+set root /opt/mellanox/mxm
+prepend-path PATH            $root/bin
+prepend-path CPATH           $root/include
+prepend-path LD_LIBRARY_PATH $root/lib
+
+set root /opt/mellanox/fca
+prepend-path PATH            $root/bin
+prepend-path CPATH           $root/include
+prepend-path LD_LIBRARY_PATH $root/lib
+
+set root /opt/mellanox/bupc/2.2
+prepend-path PATH            $root/bin
+prepend-path CPATH           $root/include
+prepend-path LD_LIBRARY_PATH $root/lib
+
+#set root /opt/mellanox/openshmem/2.2
+#prepend-path PATH            $root/bin
+#prepend-path CPATH           $root/include
+#prepend-path LD_LIBRARY_PATH $root/lib
+

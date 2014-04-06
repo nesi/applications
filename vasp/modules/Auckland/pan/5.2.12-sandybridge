@@ -1,0 +1,8 @@
+#%Module1.0
+ 
+module-whatis "The Vienna Ab initio Simulation Package version 5.2 compiled with Intel compilers and Intel MPI"
+
+module load intel/ics-2013.SP1
+prepend-path PATH "/share/apps/VASP/5.2.12/sandybridge/intel-2013_sp1.0.080/impi-4.1.1.036"
+
+set-alias MPIRUN "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -genv I_MPI_FABRICS dapl -genv I_MPI_PIN_PROCESSOR_LIST='grain=cache2,shift=sock' -envall \$*"
