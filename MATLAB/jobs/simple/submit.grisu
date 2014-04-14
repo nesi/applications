@@ -1,0 +1,11 @@
+// required
+// --------
+
+job = grisu.job
+
+//edit, for example: group = /nz/nesi
+group = /nz/nesi
+
+//edit, for example: queue = pan:gram.uoa.nesi.org.nz
+queue = pan:gram.uoa.nesi.org.nz
+
