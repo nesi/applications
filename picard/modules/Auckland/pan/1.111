@@ -1,0 +1,79 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   A set of tools (in Java) for working with next generation sequencing data in the BAM format. - Homepage: http://sourceforge.net/projects/picard
+    }
+}
+
+module-whatis {Description: A set of tools (in Java) for working with next generation sequencing data in the BAM format. - Homepage: http://sourceforge.net/projects/picard}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/picard/1.111
+
+conflict    picard
+
+if { ![is-loaded Java/1.7.0_51] } {
+    module load Java/1.7.0_51
+}
+
+prepend-path	CLASSPATH		$root/AddOrReplaceReadGroups.jar
+prepend-path	CLASSPATH		$root/BamIndexStats.jar
+prepend-path	CLASSPATH		$root/BamToBfq.jar
+prepend-path	CLASSPATH		$root/BuildBamIndex.jar
+prepend-path	CLASSPATH		$root/CalculateHsMetrics.jar
+prepend-path	CLASSPATH		$root/CheckIlluminaDirectory.jar
+prepend-path	CLASSPATH		$root/CleanSam.jar
+prepend-path	CLASSPATH		$root/CollectAlignmentSummaryMetrics.jar
+prepend-path	CLASSPATH		$root/CollectGcBiasMetrics.jar
+prepend-path	CLASSPATH		$root/CollectInsertSizeMetrics.jar
+prepend-path	CLASSPATH		$root/CollectMultipleMetrics.jar
+prepend-path	CLASSPATH		$root/CollectRnaSeqMetrics.jar
+prepend-path	CLASSPATH		$root/CollectTargetedPcrMetrics.jar
+prepend-path	CLASSPATH		$root/CompareSAMs.jar
+prepend-path	CLASSPATH		$root/CreateSequenceDictionary.jar
+prepend-path	CLASSPATH		$root/DownsampleSam.jar
+prepend-path	CLASSPATH		$root/EstimateLibraryComplexity.jar
+prepend-path	CLASSPATH		$root/ExtractIlluminaBarcodes.jar
+prepend-path	CLASSPATH		$root/ExtractSequences.jar
+prepend-path	CLASSPATH		$root/FastqToSam.jar
+prepend-path	CLASSPATH		$root/FilterSamReads.jar
+prepend-path	CLASSPATH		$root/FixMateInformation.jar
+prepend-path	CLASSPATH		$root/GatherBamFiles.jar
+prepend-path	CLASSPATH		$root/IlluminaBasecallsToFastq.jar
+prepend-path	CLASSPATH		$root/IlluminaBasecallsToSam.jar
+prepend-path	CLASSPATH		$root/IntervalListTools.jar
+prepend-path	CLASSPATH		$root/MakeSitesOnlyVcf.jar
+prepend-path	CLASSPATH		$root/MarkDuplicates.jar
+prepend-path	CLASSPATH		$root/MarkIlluminaAdapters.jar
+prepend-path	CLASSPATH		$root/MeanQualityByCycle.jar
+prepend-path	CLASSPATH		$root/MergeBamAlignment.jar
+prepend-path	CLASSPATH		$root/MergeSamFiles.jar
+prepend-path	CLASSPATH		$root/MergeVcfs.jar
+prepend-path	CLASSPATH		$root/NormalizeFasta.jar
+prepend-path	CLASSPATH		$root/QualityScoreDistribution.jar
+prepend-path	CLASSPATH		$root/ReorderSam.jar
+prepend-path	CLASSPATH		$root/ReplaceSamHeader.jar
+prepend-path	CLASSPATH		$root/RevertOriginalBaseQualitiesAndAddMateCigar.jar
+prepend-path	CLASSPATH		$root/RevertSam.jar
+prepend-path	CLASSPATH		$root/SamFormatConverter.jar
+prepend-path	CLASSPATH		$root/SamToFastq.jar
+prepend-path	CLASSPATH		$root/SortSam.jar
+prepend-path	CLASSPATH		$root/SplitVcfs.jar
+prepend-path	CLASSPATH		$root/ValidateSamFile.jar
+prepend-path	CLASSPATH		$root/VcfFormatConverter.jar
+prepend-path	CLASSPATH		$root/ViewSam.jar
+prepend-path	CLASSPATH		$root/apache-ant-1.8.2-bzip2.jar
+prepend-path	CLASSPATH		$root/commons-jexl-2.1.1.jar
+prepend-path	CLASSPATH		$root/commons-logging-1.1.1.jar
+prepend-path	CLASSPATH		$root/picard-1.111.jar
+prepend-path	CLASSPATH		$root/sam-1.111.jar
+prepend-path	CLASSPATH		$root/snappy-java-1.0.3-rc3.jar
+prepend-path	CLASSPATH		$root/tribble-1.111.jar
+prepend-path	CLASSPATH		$root/variant-1.111.jar
+
+setenv	EBROOTPICARD		"$root"
+setenv	EBVERSIONPICARD		"1.111"
+setenv	EBDEVELPICARD		"$root/easybuild/picard-1.111-easybuild-devel"
+
+prepend-path	PATH		$root/
+
+# Built with EasyBuild version 1.12.0
