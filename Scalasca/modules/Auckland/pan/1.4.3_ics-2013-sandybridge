@@ -1,0 +1,10 @@
+#%Module1.0
+
+module-whatis "Scalasca Open source toolset for scalable performance (compiled with Intel Cluster Studio XE 2013)"
+
+module load  intel/ics-2013
+set SCALASCA_ROOT        	/share/apps/scalasca/1.4.3/sandybridge/ics-2013/intel-mpi
+prepend-path PATH 		$SCALASCA_ROOT/bin
+prepend-path LD_LIBRARY_PATH 	$SCALASCA_ROOT/lib
+prepend-path MANPATH 		$SCALASCA_ROOT/man
+

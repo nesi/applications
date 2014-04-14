@@ -1,0 +1,15 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+  puts stderr "ZLIB 1.2.8 compiled with PGI 13.6"
+  puts stderr "TAGS: zlib"
+}
+
+module-whatis "ZLIB 1.2.8 compiled with PGI 13.6"
+
+module load pgi/13.6/64bit
+
+set root     /share/libs/zlib/sandybridge/1.2.8/pgi-13.6
+prepend-path MANPATH         $root/share/man/man3
+prepend-path LD_LIBRARY_PATH $root/lib
+

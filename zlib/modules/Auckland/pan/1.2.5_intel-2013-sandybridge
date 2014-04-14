@@ -1,0 +1,16 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+  puts stderr "ZLIB 1.2.5 compiled with Intel Cluster Studio XE 2013 (STATIC)"
+  puts stderr "TAGS: zlib"
+  puts stderr "URL: http://www.open-mpi.org/"
+}
+
+module-whatis "ZLIB 1.2.5 compiled with Intel Cluster Studio XE 2013"
+
+module load intel/ics-2013
+
+set root     /share/libs/zlib/sandybridge/1.2.5/ics-2013
+prepend-path MANPATH         $root/share/man/man3
+prepend-path LD_LIBRARY_PATH $root/lib
+

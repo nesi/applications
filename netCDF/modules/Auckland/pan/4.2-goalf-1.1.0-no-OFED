@@ -1,0 +1,41 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   NetCDF (network Common Data Form) is a set of software libraries 
+ and machine-independent data formats that support the creation, access, and sharing of array-oriented 
+ scientific data. - Homepage: http://www.unidata.ucar.edu/software/netcdf/
+}
+}
+
+module-whatis {NetCDF (network Common Data Form) is a set of software libraries 
+ and machine-independent data formats that support the creation, access, and sharing of array-oriented 
+ scientific data. - Homepage: http://www.unidata.ucar.edu/software/netcdf/}
+
+set root    /share/apps/software/netCDF/4.2-goalf-1.1.0-no-OFED
+
+conflict    netCDF
+
+if { ![is-loaded goalf/1.1.0-no-OFED] } {
+    module load goalf/1.1.0-no-OFED
+}
+
+if { ![is-loaded HDF5/1.8.9-goalf-1.1.0-no-OFED] } {
+    module load HDF5/1.8.9-goalf-1.1.0-no-OFED
+}
+
+if { ![is-loaded Doxygen/1.8.1.1-goalf-1.1.0-no-OFED] } {
+    module load Doxygen/1.8.1.1-goalf-1.1.0-no-OFED
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTNETCDF		"$root"
+setenv	EBVERSIONNETCDF		"4.2"
+setenv	EBDEVELNETCDF		"$root/easybuild/netCDF-4.2-goalf-1.1.0-no-OFED-easybuild-devel"
+
+
+# built with EasyBuild version 1.4.0

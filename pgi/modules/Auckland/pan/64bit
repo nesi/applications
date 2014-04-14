@@ -1,0 +1,26 @@
+#%Module1.0
+
+module-whatis "The Portland Group compilers (version 13.5, 64-bit)"
+
+conflict pgi/12.4/32bit
+conflict pgi/12.4/64bit
+conflict pgi/12.5/32bit
+conflict pgi/12.5/64bit
+conflict pgi/12.10/32bit
+conflict pgi/12.10/64bit
+conflict pgi/13.4/64bit
+conflict pgi/13.4/32bit
+conflict pgi/13.5/32bit
+conflict pgi/13.5/64bit
+conflict pgi/13.6/32bit
+
+set pgi /share/apps/pgi
+set root $pgi/linux86-64/13.6
+
+setenv PGI $pgi
+#setenv LM_LICENSE_FILE $pgi/license.dat
+
+prepend-path PATH $root/bin
+prepend-path LD_LIBRARY_PATH $root/lib
+prepend-path LD_LIBRARY_PATH $root/libso
+prepend-path MANPATH $root/man

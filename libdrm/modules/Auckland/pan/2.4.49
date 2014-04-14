@@ -1,0 +1,9 @@
+#%Module1.0
+
+set root /share/libs/libdrm/2.4.49/norch/gcc_4.4.6 
+
+prepend-path PKG_CONFIG_PATH $root/lib/pkgconfig
+prepend-path LD_LBIRARY_PATH $root/lib
+prepend-path CPATH $root/include
+
+

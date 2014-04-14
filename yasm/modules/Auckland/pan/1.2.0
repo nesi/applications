@@ -1,0 +1,9 @@
+#%Module1.0
+
+set root /share/libs/yasm/1.2.0/noarch/gcc_4.4.6/
+
+prepend-path LD_LIBRARY_PATH $root/lib
+prepend-path PKG_CONFIG_PATH $root/lib/pkgconfig
+prepend-path CPATH $root/include
+prepend-path PATH $root/bin
+

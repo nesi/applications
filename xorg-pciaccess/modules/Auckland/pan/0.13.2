@@ -1,0 +1,9 @@
+#%Module1.0
+
+set root /share/libs/Xorg/libpciaccess/0.13.2/noarch/gcc_4.4.6
+
+prepend-path PKG_CONFIG_PATH $root/lib/pkgconfig
+prepend-path LD_LIBRARY_PATH $root/lib
+prepend-path CPATH $root/include
+
+

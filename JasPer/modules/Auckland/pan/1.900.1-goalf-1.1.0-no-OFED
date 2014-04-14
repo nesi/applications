@@ -1,0 +1,30 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   The JasPer Project is an open-source initiative to provide a free
+ software-based reference implementation of the codec specified in the JPEG-2000 Part-1 standard. - Homepage: http://www.ece.uvic.ca/~frodo/jasper/
+}
+}
+
+module-whatis {The JasPer Project is an open-source initiative to provide a free
+ software-based reference implementation of the codec specified in the JPEG-2000 Part-1 standard. - Homepage: http://www.ece.uvic.ca/~frodo/jasper/}
+
+set root    /share/apps/software/JasPer/1.900.1-goalf-1.1.0-no-OFED
+
+conflict    JasPer
+
+if { ![is-loaded goalf/1.1.0-no-OFED] } {
+    module load goalf/1.1.0-no-OFED
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTJASPER		"$root"
+setenv	EBVERSIONJASPER		"1.900.1"
+setenv	EBDEVELJASPER		"$root/easybuild/JasPer-1.900.1-goalf-1.1.0-no-OFED-easybuild-devel"
+
+
+# built with EasyBuild version 1.4.0

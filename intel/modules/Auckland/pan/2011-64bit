@@ -1,0 +1,36 @@
+#%Module1.0
+
+module-whatis "The Intel compiler suite (2011 version, 64-bit)"
+
+set root /share/apps/intel/composer_xe_2011_sp1.13.367
+set home $env(HOME)
+set shell [module-info shell]
+
+append-path CPATH $root/mkl/include
+append-path CPATH $root/tbb/include
+append-path FPATH $root/mkl/include
+append-path INCLUDE $root/ipp/include
+append-path INCLUDE $root/mkl/include
+append-path INTEL_LICENSE_FILE /share/apps/intel/licenses
+setenv IPPROOT $root/ipp
+prepend-path LD_LIBRARY_PATH $root/tbb/lib/intel64/cc3.4.3_libc2.3.4_kernel2.6.9
+prepend-path LD_LIBRARY_PATH $root/mkl/lib/intel64
+prepend-path LD_LIBRARY_PATH $root/ipp/lib/intel64
+prepend-path LD_LIBRARY_PATH $root/compiler/lib/intel64
+if {[string match $shell "sh"] || [string match $shell "bash"]} {
+	append-path LD_LIBRARY_PATH $root/debugger/lib/intel64
+}
+append-path LD_LIBRARY_PATH $root/mpirt/lib/intel64
+prepend-path LIBRARY_PATH $root/tbb/lib/intel64/cc3.4.3_libc2.3.4_kernel2.6.9
+prepend-path LIBRARY_PATH $root/mkl/lib/intel64
+prepend-path LIBRARY_PATH $root/ipp/lib/intel64
+prepend-path LIBRARY_PATH $root/compiler/lib/intel64
+prepend-path MANPATH $root/man/en_US
+setenv MKLROOT $root/mkl
+append-path NLSPATH $root/compiler/lib/intel64/locale/%l_%t/%N
+append-path NLSPATH $root/ipp/lib/intel64/locale/%l_%t/%N
+append-path NLSPATH $root/mkl/lib/intel64/locale/%l_%t/%N
+append-path NLSPATH $root/debugger/intel64/locale/%l_%t/%N
+prepend-path PATH $root/bin/intel64
+append-path PATH $root/mpirt/bin/intel64
+setenv TBBROOT $root/tbb

@@ -1,0 +1,11 @@
+#%Module1.0
+
+module-whatis "PAPI performance monitoring programming interface (SandyBridge Version)"
+
+module load gcc/4.7.3
+set root 			/share/apps/PAPI/sandybridge/5.2.0/gcc-4.7.3
+prepend-path PATH 		$root/bin
+prepend-path CPATH 		$root/include
+prepend-path LD_LIBRARY_PATH 	$root/lib
+prepend-path MANPATH 		$root/man
+

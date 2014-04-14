@@ -1,0 +1,11 @@
+#%Module1.0
+
+module-whatis "NetCDF (version 4.1.3) with GNU compilers"
+
+set netcdfroot /share/apps/lib/netcdf-4.1.3
+
+prepend-path PATH $netcdfroot/bin
+prepend-path LD_LIBRARY_PATH $netcdfroot/lib
+prepend-path PKG_CONFIG_PATH $netcdfroot/lib/pkgconfig
+prepend-path MANPATH $netcdfroot/share/man
+prepend-path INFOPATH $netcdfroot/share/info

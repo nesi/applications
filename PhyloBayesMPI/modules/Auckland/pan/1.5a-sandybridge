@@ -1,8 +1,6 @@
 #%Module
 
 append-path	MODULEPATH /share/easybuild/RHEL6.3/sandybridge/modules/all/
-set-alias	MPIRUN	   "mpirun -machinefile \$LOADL_HOSTFILE -x PATH -x LD_LIBRARY_PATH -mca btl ^tcp \$*"
-
  
 proc ModulesHelp { } {
     puts stderr {   Phylogenetic reconstruction using infinite mixtures - Homepage: http://megasun.bch.umontreal.ca/People/lartillot/www/index.htm

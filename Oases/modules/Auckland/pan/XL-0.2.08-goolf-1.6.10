@@ -1,0 +1,27 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Oases is a de novo transcriptome assembler designed to produce transcripts from
+ short read sequencing technologies, such as Illumina, SOLiD, or 454 in the absence of any genomic assembly. Compiled with MAXKMERLENGTH=95. - Homepage: http://www.ebi.ac.uk/~zerbino/oases/
+    }
+}
+
+module-whatis {Oases is a de novo transcriptome assembler designed to produce transcripts from
+ short read sequencing technologies, such as Illumina, SOLiD, or 454 in the absence of any genomic assembly. Compiled with MAXKMERLENGTH=95. - Homepage: http://www.ebi.ac.uk/~zerbino/oases/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Oases/XL-0.2.08-goolf-1.6.10
+
+conflict    Oases
+
+if { ![is-loaded goolf/1.6.10] } {
+    module load goolf/1.6.10
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTOASES		"$root"
+setenv	EBVERSIONOASES		"0.2.08"
+setenv	EBDEVELOASES		"$root/easybuild/Oases-XL-0.2.08-goolf-1.6.10-easybuild-devel"
+
+
+# built with EasyBuild version 1.9.0

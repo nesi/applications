@@ -1,0 +1,19 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+  puts stderr "MPICH2 3.0.4 compiled with Intel Composer Studio 2013"
+  puts stderr "TAGS: mpi"
+  puts stderr "URL: http://www.mpich.org " 
+}
+
+module-whatis "MPICH2 3.0.4 compiled with Intel Composer Studio 2013"
+
+set root /share/mpi/mpich2/sandybridge/3.0.4/ics-2013
+
+prepend-path PATH            $root/bin
+prepend-path MANPATH         $root/man
+prepend-path LD_LIBRARY_PATH $root/lib
+prepend-path LIBRARY_PATH $root/lib
+prepend-path CPATH $root/include
+
+set-alias  MPIRUN  "mpirun -np \$LOADL_TOTAL_TASKS -machinefile \$LOADL_HOSTFILE -envall \$*"

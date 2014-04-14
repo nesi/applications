@@ -1,0 +1,17 @@
+#%Module1.0
+
+module-whatis "Jasper 1.900.1 compiled with Intel Cluster Studio XE 2013"
+
+module load intel/ics-2013
+
+set root /share/libs/jasper/sandybridge/1.900.1/intel-2013
+
+# vars needed by WRF
+setenv       JASPERLIB $root/lib
+setenv       JASPERINC $root/include
+
+prepend-path PATH $root/bin
+prepend-path CPATH $root/include
+prepend-path LD_LIBRARY_PATH $root/lib
+prepend-path MANPATH $root/share/man
+prepend-path INFOPATH $root/share/info

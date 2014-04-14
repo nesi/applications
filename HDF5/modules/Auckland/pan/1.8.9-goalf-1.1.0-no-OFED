@@ -1,0 +1,37 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   HDF5 is a unique technology suite that makes possible the management of 
+ extremely large and complex data collections. - Homepage: http://www.hdfgroup.org/HDF5/
+}
+}
+
+module-whatis {HDF5 is a unique technology suite that makes possible the management of 
+ extremely large and complex data collections. - Homepage: http://www.hdfgroup.org/HDF5/}
+
+set root    /share/apps/software/HDF5/1.8.9-goalf-1.1.0-no-OFED
+
+conflict    HDF5
+
+if { ![is-loaded goalf/1.1.0-no-OFED] } {
+    module load goalf/1.1.0-no-OFED
+}
+
+if { ![is-loaded zlib/1.2.7-goalf-1.1.0-no-OFED] } {
+    module load zlib/1.2.7-goalf-1.1.0-no-OFED
+}
+
+if { ![is-loaded Szip/2.1-goalf-1.1.0-no-OFED] } {
+    module load Szip/2.1-goalf-1.1.0-no-OFED
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTHDF5		"$root"
+setenv	EBVERSIONHDF5		"1.8.9"
+setenv	EBDEVELHDF5		"$root/easybuild/HDF5-1.8.9-goalf-1.1.0-no-OFED-easybuild-devel"
+
+
+# built with EasyBuild version 1.4.0

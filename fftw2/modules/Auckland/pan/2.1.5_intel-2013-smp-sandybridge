@@ -1,0 +1,16 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+  puts stderr "FFTW 2.1.5 compiled with Intel Cluster Studio XE 2013"
+  puts stderr "TAGS: fftw2"
+}
+
+module-whatis "FFTW 2.1.5 compiled with Intel Cluster Studio XE 2013"
+
+module load intel/ics-2013
+
+set root     /share/libs/fftw/2.1.5/sandybridge/intel-2013/smp
+prepend-path MANPATH         $root/share/man/man3
+prepend-path LD_LIBRARY_PATH $root/lib
+prepend-path CPATH 	     $root/include
+

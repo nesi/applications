@@ -1,0 +1,17 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+  puts stderr "OpenMPI 1.6 compiled with Intel Composer XE 2011"
+  puts stderr "TAGS: mpi"
+  puts stderr "URL: http://www.open-mpi.org/"
+}
+
+module-whatis "OpenMPI 1.6 compiled with Intel Composer XE 2011"
+
+module load intel/2011-64bit
+
+prepend-path PATH            /share/mpi/openmpi/noarch/1.6/bin
+prepend-path MANPATH         /share/mpi/openmpi/noarch/1.6/man
+prepend-path LD_LIBRARY_PATH /share/mpi/openmpi/noarch/1.6/lib
+
+set-alias  MPIRUN  "mpirun -machinefile \$LOADL_HOSTFILE -x PATH -x LD_LIBRARY_PATH -mca btl ^tcp \$*"

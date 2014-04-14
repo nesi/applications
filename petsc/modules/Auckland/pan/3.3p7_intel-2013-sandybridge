@@ -1,0 +1,20 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+  puts stderr "PETSc 3.3p7 compiled with Intel Cluster Studio XE 2013 MPI version"
+  puts stderr "TAGS: PETSc"
+  puts stderr "URL: http://www.mcs.anl.gov/petsc/"
+}
+
+module-whatis "PETSc 3.3p7 compiled with Intel Cluster Studio XE 2013 MPI Version"
+
+module load netcdf-fortran/4.2_intel-2013-impi-sandybridge 
+module load parmetis/4.0.3_intel-2013-sandybridge 
+module load metis/5.1.0_intel-2013-sandybridge 
+module load cmake/2.8.11.2
+
+set root     /share/libs/petsc/sandybridge/3.3p7/intel-2013/parmetis-4.0.3/netcdf-4.3.0/impi-4.1.0.024
+prepend-path LD_LIBRARY_PATH $root/lib
+prepend-path CPATH           $root/include
+prepend-path PATH            $root/bin
+

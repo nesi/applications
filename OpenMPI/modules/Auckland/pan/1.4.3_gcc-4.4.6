@@ -1,0 +1,15 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+  puts stderr "OpenMPI 1.4.3 compiled with GNU Compilers 4.3"
+  puts stderr "TAGS: mpi"
+  puts stderr "URL: http://www.open-mpi.org/"
+}
+
+module-whatis "OpenMPI 1.4.3 compiled with GNU Compilers 4.3"
+
+prepend-path PATH            /usr/mpi/gcc/openmpi-1.4.3/bin
+prepend-path MANPATH         /usr/mpi/gcc/openmpi-1.4.3/man
+prepend-path LD_LIBRARY_PATH /usr/mpi/gcc/openmpi-1.4.3/lib
+
+set-alias  MPIRUN  "mpirun -machinefile \$LOADL_HOSTFILE -x PATH -x LD_LIBRARY_PATH -mca btl ^tcp \$*"

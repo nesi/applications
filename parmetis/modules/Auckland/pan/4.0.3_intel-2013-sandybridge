@@ -1,0 +1,11 @@
+#%Module1.0
+
+module-whatis "Parmetis 4.0.3 commpiled with Intel Cluster Studio XE 2013" 
+
+module load intel/ics-2013
+
+set root /share/libs/parmetis/sandybridge/4.0.3/ics-2013
+
+prepend-path PATH $root/bin
+prepend-path CPATH $root/include
+prepend-path LD_LIBRARY_PATH $root/lib

@@ -1,0 +1,25 @@
+#%Module1.0
+
+module-whatis "An environment in which Python 2.7.4 is the default python, with packages installed for the computational evolution group"
+
+conflict python/2.6.8
+conflict python/2.7.3
+conflict python/2.7.4
+
+set ve_base "2.7.4_compevol" 
+set virtual_env "/share/apps/Python/noarch/$ve_base"
+set shell [module-info shell]
+
+setenv VIRTUAL_ENV "$virtual_env"
+
+prepend-path PATH "$virtual_env/bin"
+
+#if {[string match $shell "sh"] || [string match $shell "bash"]} {
+#	prepend-path LD_LIBRARY_PATH /opt/lib
+#	prepend-path LD_LIBRARY_PATH /share/apps/lib/wxPython # wxPython libraries are required for some applicaitons e.g. Relax
+#	prepend-path LD_LIBRARY_PATH /share/apps/lib/gdal/lib # osgeo libraries
+#}
+
+#if { [ info exists ::env(PYTHONHOME) ] } {
+#	unsetenv PYTHONHOME "$::env(PYTHONHOME)"
+#}

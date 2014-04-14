@@ -1,0 +1,28 @@
+#%Module1.0
+
+module-whatis "An environment in which Python 3.3.2 is the default python"
+
+# Can't have Python 2.6 and Python 2.7 loaded at the same time
+conflict python/2.6.8
+conflict python/2.7.3
+conflict python/2.7.4
+
+module load openmpi/1.6.4_gcc-4.4.6
+
+set ve_base "3.3.2" 
+set virtual_env "/share/apps/Python/noarch/$ve_base/gcc-4.4.6"
+set shell [module-info shell]
+
+setenv VIRTUAL_ENV "$virtual_env"
+
+prepend-path PATH "$virtual_env/bin"
+
+#if {[string match $shell "sh"] || [string match $shell "bash"]} {
+#	prepend-path LD_LIBRARY_PATH /opt/lib
+#	prepend-path LD_LIBRARY_PATH /share/apps/lib/wxPython # wxPython libraries are required for some applicaitons e.g. Relax
+#	prepend-path LD_LIBRARY_PATH /share/apps/lib/gdal/lib # osgeo libraries
+#}
+
+#if { [ info exists ::env(PYTHONHOME) ] } {
+#	unsetenv PYTHONHOME "$::env(PYTHONHOME)"
+#}

@@ -1,0 +1,11 @@
+#%Module1.0
+
+module-whatis "metis 5.1.0 commpiled with Intel Cluster Studio XE 2013" 
+
+module load intel/ics-2013
+
+set root /share/libs/metis/5.1.0/sandybridge/intel-2013
+
+prepend-path PATH $root/bin
+prepend-path CPATH $root/include
+prepend-path LD_LIBRARY_PATH $root/lib

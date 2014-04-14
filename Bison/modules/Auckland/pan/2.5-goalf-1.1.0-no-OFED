@@ -1,0 +1,29 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Bison is a general-purpose parser generator that converts an annotated context-free grammar
+ into a deterministic LR or generalized LR (GLR) parser employing LALR(1) parser tables. - Homepage: http://www.gnu.org/software/bison
+}
+}
+
+module-whatis {Bison is a general-purpose parser generator that converts an annotated context-free grammar
+ into a deterministic LR or generalized LR (GLR) parser employing LALR(1) parser tables. - Homepage: http://www.gnu.org/software/bison}
+
+set root    /share/apps/software/Bison/2.5-goalf-1.1.0-no-OFED
+
+conflict    Bison
+
+if { ![is-loaded goalf/1.1.0-no-OFED] } {
+    module load goalf/1.1.0-no-OFED
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTBISON		"$root"
+setenv	EBVERSIONBISON		"2.5"
+setenv	EBDEVELBISON		"$root/easybuild/Bison-2.5-goalf-1.1.0-no-OFED-easybuild-devel"
+
+
+# built with EasyBuild version 1.4.0

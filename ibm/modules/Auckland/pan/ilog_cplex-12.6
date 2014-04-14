@@ -1,0 +1,13 @@
+#%Module1.0
+
+module-whatis "IBM ILOG CPLEX (version 12.6)"
+
+set root /share/apps/IBM/ILOG_CPLEX
+
+prepend-path PATH $root/opl/bin
+prepend-path PATH $root/cplex/bin
+prepend-path PATH $root/cpoptimizer/bin
+
+prepend-path LD_LIBRARY_PATH $root/cplex/lib
+prepend-path LD_LIBRARY_PATH $root/cplex/bin
+

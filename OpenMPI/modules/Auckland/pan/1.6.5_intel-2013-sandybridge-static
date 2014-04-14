@@ -1,0 +1,19 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+  puts stderr "OpenMPI 1.6.5 compiled with Intel Cluster Studio XE 2013 and MLNX drivers and OFED libraries (STATIC)"
+  puts stderr "TAGS: mpi"
+  puts stderr "URL: http://www.open-mpi.org/"
+}
+
+module-whatis "OpenMPI 1.6.5 compiled with Intel Cluster Studio XE 2013 (STATIC)"
+
+module load intel/ics-2013
+module load MLNX-OFED/2.0.5
+
+set root     /share/mpi/openmpi/sandybridge/1.6.5/intel-2013/mlnx-ofed-2.0.5/normal
+prepend-path PATH            $root/bin
+prepend-path MANPATH         $root/man
+prepend-path LD_LIBRARY_PATH $root/lib
+
+set-alias  MPIRUN  "mpirun -machinefile \$LOADL_HOSTFILE -x PATH -x LD_LIBRARY_PATH -mca btl ^tcp \$*"
