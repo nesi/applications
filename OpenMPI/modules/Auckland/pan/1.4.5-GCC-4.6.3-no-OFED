@@ -2,12 +2,12 @@
 
 proc ModulesHelp { } {
     puts stderr {   The Open MPI Project is an open source MPI-2 implementation. - Homepage: http://www.open-mpi.org/
-}
+    }
 }
 
-module-whatis {The Open MPI Project is an open source MPI-2 implementation. - Homepage: http://www.open-mpi.org/}
+module-whatis {Description: The Open MPI Project is an open source MPI-2 implementation. - Homepage: http://www.open-mpi.org/}
 
-set root    /share/apps/software/OpenMPI/1.4.5-GCC-4.6.3-no-OFED
+set root    /share/easybuild/RHEL6.3/westmere/software/OpenMPI/1.4.5-GCC-4.6.3-no-OFED
 
 conflict    OpenMPI
 
@@ -17,6 +17,7 @@ if { ![is-loaded GCC/4.6.3] } {
 
 prepend-path	CPATH		$root/include
 prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
 prepend-path	MANPATH		$root/share/man
 prepend-path	PATH		$root/bin
 
@@ -25,7 +26,4 @@ setenv	EBVERSIONOPENMPI		"1.4.5"
 setenv	EBDEVELOPENMPI		"$root/easybuild/OpenMPI-1.4.5-GCC-4.6.3-no-OFED-easybuild-devel"
 
 
-# built with EasyBuild version 1.4.0
-
-set-alias  MPIRUN  "mpirun -machinefile \$LOADL_HOSTFILE -x PATH -x LD_LIBRARY_PATH -mca btl ^tcp \$*"
-
+# Built with EasyBuild version 1.11.0

@@ -1,0 +1,42 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   GNU Compiler Collection (GCC) based compiler toolchain, including
+ OpenMPI for MPI support, ATLAS (BLAS and LAPACK support), FFTW and ScaLAPACK. - Homepage: (none)
+    }
+}
+
+module-whatis {Description: GNU Compiler Collection (GCC) based compiler toolchain, including
+ OpenMPI for MPI support, ATLAS (BLAS and LAPACK support), FFTW and ScaLAPACK. - Homepage: (none)}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/goalf/1.6.10
+
+conflict    goalf
+
+if { ![is-loaded GCC/4.8.2] } {
+    module load GCC/4.8.2
+}
+
+if { ![is-loaded OpenMPI/1.7.3-GCC-4.8.2] } {
+    module load OpenMPI/1.7.3-GCC-4.8.2
+}
+
+if { ![is-loaded ATLAS/3.10.1-gompi-1.6.10-LAPACK-3.4.2] } {
+    module load ATLAS/3.10.1-gompi-1.6.10-LAPACK-3.4.2
+}
+
+if { ![is-loaded FFTW/3.3.3-gompi-1.6.10] } {
+    module load FFTW/3.3.3-gompi-1.6.10
+}
+
+if { ![is-loaded ScaLAPACK/2.0.2-gompi-1.6.10-ATLAS-3.10.1-LAPACK-3.4.2] } {
+    module load ScaLAPACK/2.0.2-gompi-1.6.10-ATLAS-3.10.1-LAPACK-3.4.2
+}
+
+
+setenv	EBROOTGOALF		"$root"
+setenv	EBVERSIONGOALF		"1.6.10"
+setenv	EBDEVELGOALF		"$root/easybuild/goalf-1.6.10-easybuild-devel"
+
+
+# built with EasyBuild version 1.10.0

@@ -1,0 +1,28 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   GMP is a free library for arbitrary precision arithmetic, 
+operating on signed integers, rational numbers, and floating point numbers.  - Homepage: http://gmplib.org/
+    }
+}
+
+module-whatis {Description: GMP is a free library for arbitrary precision arithmetic, 
+operating on signed integers, rational numbers, and floating point numbers.  - Homepage: http://gmplib.org/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/GMP/5.1.3-goalf-1.6.10
+
+conflict    GMP
+
+if { ![is-loaded goalf/1.6.10] } {
+    module load goalf/1.6.10
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+
+setenv	EBROOTGMP		"$root"
+setenv	EBVERSIONGMP		"5.1.3"
+setenv	EBDEVELGMP		"$root/easybuild/GMP-5.1.3-goalf-1.6.10-easybuild-devel"
+
+
+# built with EasyBuild version 1.10.0

@@ -1,0 +1,33 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   GNU `gettext' is an important step for the GNU Translation Project, as it is an asset on which we may
+build many other steps. This package offers to programmers, translators, and even users, a well integrated set of tools
+and documentation - Homepage: http://www.gnu.org/software/gettext/
+    }
+}
+
+module-whatis {Description: GNU `gettext' is an important step for the GNU Translation Project, as it is an asset on which we may
+build many other steps. This package offers to programmers, translators, and even users, a well integrated set of tools
+and documentation - Homepage: http://www.gnu.org/software/gettext/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/gettext/0.18.2-goolf-1.6.10
+
+conflict    gettext
+
+if { ![is-loaded goolf/1.6.10] } {
+    module load goolf/1.6.10
+}
+
+prepend-path	ACLOCAL_PATH		$root/share/aclocal
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTGETTEXT		"$root"
+setenv	EBVERSIONGETTEXT		"0.18.2"
+setenv	EBDEVELGETTEXT		"$root/easybuild/gettext-0.18.2-goolf-1.6.10-easybuild-devel"
+
+
+# built with EasyBuild version 1.10.0

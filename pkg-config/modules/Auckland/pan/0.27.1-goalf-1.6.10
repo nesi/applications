@@ -1,0 +1,35 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   pkg-config is a helper tool used when compiling applications and libraries. It helps you insert the
+correct compiler options on the command line so an application can use  
+gcc -o test test.c `pkg-config --libs --cflags glib-2.0`
+for instance, rather than hard-coding values on where to find glib (or other libraries).
+ - Homepage: http://www.freedesktop.org/wiki/Software/pkg-config/
+    }
+}
+
+module-whatis {Description: pkg-config is a helper tool used when compiling applications and libraries. It helps you insert the
+correct compiler options on the command line so an application can use  
+gcc -o test test.c `pkg-config --libs --cflags glib-2.0`
+for instance, rather than hard-coding values on where to find glib (or other libraries).
+ - Homepage: http://www.freedesktop.org/wiki/Software/pkg-config/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/pkg-config/0.27.1-goalf-1.6.10
+
+conflict    pkg-config
+
+if { ![is-loaded goalf/1.6.10] } {
+    module load goalf/1.6.10
+}
+
+prepend-path	ACLOCAL_PATH		$root/share/aclocal
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTPKGMINCONFIG		"$root"
+setenv	EBVERSIONPKGMINCONFIG		"0.27.1"
+setenv	EBDEVELPKGMINCONFIG		"$root/easybuild/pkg-config-0.27.1-goalf-1.6.10-easybuild-devel"
+
+
+# built with EasyBuild version 1.10.0

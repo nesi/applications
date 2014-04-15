@@ -1,0 +1,42 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   gcc and GFortran based compiler toolchain,
+ MPICH for MPI support, OpenBLAS (BLAS and LAPACK support), FFTW and ScaLAPACK. - Homepage: (none)
+    }
+}
+
+module-whatis {Description: gcc and GFortran based compiler toolchain,
+ MPICH for MPI support, OpenBLAS (BLAS and LAPACK support), FFTW and ScaLAPACK. - Homepage: (none)}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/gmpolf/1.4.9
+
+conflict    gmpolf
+
+if { ![is-loaded GCC/4.8.2] } {
+    module load GCC/4.8.2
+}
+
+if { ![is-loaded MPICH2/3.0.4-GCC-4.8.2] } {
+    module load MPICH2/3.0.4-GCC-4.8.2
+}
+
+if { ![is-loaded OpenBLAS/0.2.6-gmpich2-1.4.9-LAPACK-3.4.2] } {
+    module load OpenBLAS/0.2.6-gmpich2-1.4.9-LAPACK-3.4.2
+}
+
+if { ![is-loaded FFTW/3.3.3-gmpich2-1.4.9] } {
+    module load FFTW/3.3.3-gmpich2-1.4.9
+}
+
+if { ![is-loaded ScaLAPACK/2.0.2-gmpich2-1.4.9-OpenBLAS-0.2.6-LAPACK-3.4.2] } {
+    module load ScaLAPACK/2.0.2-gmpich2-1.4.9-OpenBLAS-0.2.6-LAPACK-3.4.2
+}
+
+
+setenv	EBROOTGMPOLF		"$root"
+setenv	EBVERSIONGMPOLF		"1.4.9"
+setenv	EBDEVELGMPOLF		"$root/easybuild/gmpolf-1.4.9-easybuild-devel"
+
+
+# built with EasyBuild version 1.10.0

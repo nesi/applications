@@ -1,0 +1,27 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version. - Homepage: http://xianyi.github.com/OpenBLAS/
+    }
+}
+
+module-whatis {Description: OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version. - Homepage: http://xianyi.github.com/OpenBLAS/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/OpenBLAS/0.2.6-gmvapich2-1.7.12-LAPACK-3.4.2
+
+conflict    OpenBLAS
+
+if { ![is-loaded gmvapich2/1.7.12] } {
+    module load gmvapich2/1.7.12
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+
+setenv	EBROOTOPENBLAS		"$root"
+setenv	EBVERSIONOPENBLAS		"0.2.6"
+setenv	EBDEVELOPENBLAS		"$root/easybuild/OpenBLAS-0.2.6-gmvapich2-1.7.12-LAPACK-3.4.2-easybuild-devel"
+
+
+# Built with EasyBuild version 1.11.0

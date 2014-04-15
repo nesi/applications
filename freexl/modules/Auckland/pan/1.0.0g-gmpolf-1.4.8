@@ -1,0 +1,28 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   FreeXL is an open source library to extract valid data from within an Excel (.xls) spreadsheet. - Homepage: https://www.gaia-gis.it/fossil/freexl/index
+    }
+}
+
+module-whatis {Description: FreeXL is an open source library to extract valid data from within an Excel (.xls) spreadsheet. - Homepage: https://www.gaia-gis.it/fossil/freexl/index}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/freexl/1.0.0g-gmpolf-1.4.8
+
+conflict    freexl
+
+if { ![is-loaded gmpolf/1.4.8] } {
+    module load gmpolf/1.4.8
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTFREEXL		"$root"
+setenv	EBVERSIONFREEXL		"1.0.0g"
+setenv	EBDEVELFREEXL		"$root/easybuild/freexl-1.0.0g-gmpolf-1.4.8-easybuild-devel"
+
+
+# Built with EasyBuild version 1.11.0

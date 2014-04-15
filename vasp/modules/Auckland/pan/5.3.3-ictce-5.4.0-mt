@@ -1,0 +1,27 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   VAMP/VASP is a package for performing ab-initio quantum-mechanical molecular
+dynamics (MD) using pseudopotentials and a plane wave basis set. - Homepage: http://www.vasp.at/
+    }
+}
+
+module-whatis {Description: VAMP/VASP is a package for performing ab-initio quantum-mechanical molecular
+dynamics (MD) using pseudopotentials and a plane wave basis set. - Homepage: http://www.vasp.at/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/VASP/5.3.3-ictce-5.4.0-mt
+
+conflict    VASP
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTVASP		"$root"
+setenv	EBVERSIONVASP		"5.3.3"
+setenv	EBDEVELVASP		"$root/easybuild/VASP-5.3.3-ictce-5.4.0-mt-easybuild-devel"
+
+
+# Built with EasyBuild version 1.11.0dev

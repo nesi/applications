@@ -3,13 +3,13 @@
 proc ModulesHelp { } {
     puts stderr {   GNU Compiler Collection (GCC) based compiler toolchain,
  including OpenMPI for MPI support. - Homepage: (none)
-}
+    }
 }
 
-module-whatis {GNU Compiler Collection (GCC) based compiler toolchain,
+module-whatis {Description: GNU Compiler Collection (GCC) based compiler toolchain,
  including OpenMPI for MPI support. - Homepage: (none)}
 
-set root    /share/apps/software/gompi/1.1.0-no-OFED
+set root    /share/easybuild/RHEL6.3/westmere/software/gompi/1.1.0-no-OFED
 
 conflict    gompi
 
@@ -23,8 +23,8 @@ if { ![is-loaded OpenMPI/1.4.5-GCC-4.6.3-no-OFED] } {
 
 
 setenv	EBROOTGOMPI		"$root"
-setenv	EBVERSIONGOMPI		"1.1.0"
+setenv	EBVERSIONGOMPI		"1.1.0-no-OFED"
 setenv	EBDEVELGOMPI		"$root/easybuild/gompi-1.1.0-no-OFED-easybuild-devel"
 
 
-# built with EasyBuild version 1.4.0
+# Built with EasyBuild version 1.11.0

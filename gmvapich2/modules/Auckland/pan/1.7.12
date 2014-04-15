@@ -1,0 +1,30 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   GNU Compiler Collection (GCC) based compiler toolchain,
+ including MVAPICH2 for MPI support. - Homepage: (none)
+    }
+}
+
+module-whatis {Description: GNU Compiler Collection (GCC) based compiler toolchain,
+ including MVAPICH2 for MPI support. - Homepage: (none)}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/gmvapich2/1.7.12
+
+conflict    gmvapich2
+
+if { ![is-loaded GCC/4.7.3] } {
+    module load GCC/4.7.3
+}
+
+if { ![is-loaded MVAPICH2/1.9-GCC-4.7.3] } {
+    module load MVAPICH2/1.9-GCC-4.7.3
+}
+
+
+setenv	EBROOTGMVAPICH2		"$root"
+setenv	EBVERSIONGMVAPICH2		"1.7.12"
+setenv	EBDEVELGMVAPICH2		"$root/easybuild/gmvapich2-1.7.12-easybuild-devel"
+
+
+# Built with EasyBuild version 1.11.0

@@ -1,0 +1,42 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   GNU Compiler Collection (GCC) based compiler toolchain, including
+ MVAPICH2 for MPI support, OpenBLAS (BLAS and LAPACK support), FFTW and ScaLAPACK. - Homepage: (none)
+    }
+}
+
+module-whatis {Description: GNU Compiler Collection (GCC) based compiler toolchain, including
+ MVAPICH2 for MPI support, OpenBLAS (BLAS and LAPACK support), FFTW and ScaLAPACK. - Homepage: (none)}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/gmvolf/1.7.12
+
+conflict    gmvolf
+
+if { ![is-loaded GCC/4.7.3] } {
+    module load GCC/4.7.3
+}
+
+if { ![is-loaded MVAPICH2/1.9-GCC-4.7.3] } {
+    module load MVAPICH2/1.9-GCC-4.7.3
+}
+
+if { ![is-loaded OpenBLAS/0.2.6-gmvapich2-1.7.12-LAPACK-3.4.2] } {
+    module load OpenBLAS/0.2.6-gmvapich2-1.7.12-LAPACK-3.4.2
+}
+
+if { ![is-loaded FFTW/3.3.3-gmvapich2-1.7.12] } {
+    module load FFTW/3.3.3-gmvapich2-1.7.12
+}
+
+if { ![is-loaded ScaLAPACK/2.0.2-gmvapich2-1.7.12-OpenBLAS-0.2.6-LAPACK-3.4.2] } {
+    module load ScaLAPACK/2.0.2-gmvapich2-1.7.12-OpenBLAS-0.2.6-LAPACK-3.4.2
+}
+
+
+setenv	EBROOTGMVOLF		"$root"
+setenv	EBVERSIONGMVOLF		"1.7.12"
+setenv	EBDEVELGMVOLF		"$root/easybuild/gmvolf-1.7.12-easybuild-devel"
+
+
+# Built with EasyBuild version 1.11.0

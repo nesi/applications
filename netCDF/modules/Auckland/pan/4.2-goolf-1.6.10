@@ -1,0 +1,38 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   NetCDF (network Common Data Form) is a set of software libraries 
+and machine-independent data formats that support the creation, access, and sharing of array-oriented 
+scientific data. - Homepage: http://www.unidata.ucar.edu/software/netcdf/
+    }
+}
+
+module-whatis {Description: NetCDF (network Common Data Form) is a set of software libraries 
+and machine-independent data formats that support the creation, access, and sharing of array-oriented 
+scientific data. - Homepage: http://www.unidata.ucar.edu/software/netcdf/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/netCDF/4.2-goolf-1.6.10
+
+conflict    netCDF
+
+if { ![is-loaded goolf/1.6.10] } {
+    module load goolf/1.6.10
+}
+
+if { ![is-loaded HDF5/1.8.9-goolf-1.6.10] } {
+    module load HDF5/1.8.9-goolf-1.6.10
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTNETCDF		"$root"
+setenv	EBVERSIONNETCDF		"4.2"
+setenv	EBDEVELNETCDF		"$root/easybuild/netCDF-4.2-goolf-1.6.10-easybuild-devel"
+
+
+# Built with EasyBuild version 1.11.0

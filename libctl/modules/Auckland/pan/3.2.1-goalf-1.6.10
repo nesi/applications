@@ -1,0 +1,32 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   libctl is a free Guile-based library implementing flexible control files for scientific simulations. - Homepage: http://ab-initio.mit.edu/libctl
+    }
+}
+
+module-whatis {Description: libctl is a free Guile-based library implementing flexible control files for scientific simulations. - Homepage: http://ab-initio.mit.edu/libctl}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/libctl/3.2.1-goalf-1.6.10
+
+conflict    libctl
+
+if { ![is-loaded goalf/1.6.10] } {
+    module load goalf/1.6.10
+}
+
+if { ![is-loaded guile/1.8.8-goalf-1.6.10] } {
+    module load guile/1.8.8-goalf-1.6.10
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTLIBCTL		"$root"
+setenv	EBVERSIONLIBCTL		"3.2.1"
+setenv	EBDEVELLIBCTL		"$root/easybuild/libctl-3.2.1-goalf-1.6.10-easybuild-devel"
+
+
+# built with EasyBuild version 1.10.0

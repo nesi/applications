@@ -1,0 +1,31 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Automake: GNU Standards-compliant Makefile generator - Homepage: http://www.gnu.org/software/automake/automake.html
+    }
+}
+
+module-whatis {Description: Automake: GNU Standards-compliant Makefile generator - Homepage: http://www.gnu.org/software/automake/automake.html}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Automake/1.14-goolf-1.6.10
+
+conflict    Automake
+
+if { ![is-loaded goolf/1.6.10] } {
+    module load goolf/1.6.10
+}
+
+if { ![is-loaded Autoconf/2.69-goolf-1.6.10] } {
+    module load Autoconf/2.69-goolf-1.6.10
+}
+
+prepend-path	ACLOCAL_PATH		$root/share/aclocal
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTAUTOMAKE		"$root"
+setenv	EBVERSIONAUTOMAKE		"1.14"
+setenv	EBDEVELAUTOMAKE		"$root/easybuild/Automake-1.14-goolf-1.6.10-easybuild-devel"
+
+
+# built with EasyBuild version 1.10.0

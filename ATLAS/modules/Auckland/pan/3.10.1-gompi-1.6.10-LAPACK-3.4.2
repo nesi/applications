@@ -1,0 +1,32 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   ATLAS (Automatically Tuned Linear Algebra Software) is the application of
+ the AEOS (Automated Empirical Optimization of Software) paradigm, with the present emphasis 
+ on the Basic Linear Algebra Subprograms (BLAS), a widely used, performance-critical, linear 
+ algebra kernel library. - Homepage: http://math-atlas.sourceforge.net
+    }
+}
+
+module-whatis {Description: ATLAS (Automatically Tuned Linear Algebra Software) is the application of
+ the AEOS (Automated Empirical Optimization of Software) paradigm, with the present emphasis 
+ on the Basic Linear Algebra Subprograms (BLAS), a widely used, performance-critical, linear 
+ algebra kernel library. - Homepage: http://math-atlas.sourceforge.net}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/ATLAS/3.10.1-gompi-1.6.10-LAPACK-3.4.2
+
+conflict    ATLAS
+
+if { ![is-loaded gompi/1.6.10] } {
+    module load gompi/1.6.10
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+
+setenv	EBROOTATLAS		"$root"
+setenv	EBVERSIONATLAS		"3.10.1"
+setenv	EBDEVELATLAS		"$root/easybuild/ATLAS-3.10.1-gompi-1.6.10-LAPACK-3.4.2-easybuild-devel"
+
+
+# built with EasyBuild version 1.10.0

@@ -1,0 +1,32 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   GNU M4 is an implementation of the traditional Unix macro processor.
+ It is mostly SVR4 compatible although it has some extensions 
+ (for example, handling more than 9 positional parameters to macros).
+ GNU M4 also has built-in functions for including files, running shell commands, doing arithmetic, etc. - Homepage: http://www.gnu.org/software/m4/m4.html
+    }
+}
+
+module-whatis {GNU M4 is an implementation of the traditional Unix macro processor.
+ It is mostly SVR4 compatible although it has some extensions 
+ (for example, handling more than 9 positional parameters to macros).
+ GNU M4 also has built-in functions for including files, running shell commands, doing arithmetic, etc. - Homepage: http://www.gnu.org/software/m4/m4.html}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/M4/1.4.16-GCC-4.8.2
+
+conflict    M4
+
+if { ![is-loaded GCC/4.8.2] } {
+    module load GCC/4.8.2
+}
+
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTM4		"$root"
+setenv	EBVERSIONM4		"1.4.16"
+setenv	EBDEVELM4		"$root/easybuild/M4-1.4.16-GCC-4.8.2-easybuild-devel"
+
+
+# built with EasyBuild version 1.9.0

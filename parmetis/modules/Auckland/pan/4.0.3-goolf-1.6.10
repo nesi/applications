@@ -1,0 +1,36 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   ParMETIS is an MPI-based parallel library that implements a variety of algorithms for partitioning unstructured graphs,
+ meshes, and for computing fill-reducing orderings of sparse matrices. ParMETIS extends the functionality provided by METIS and includes
+ routines that are especially suited for parallel AMR computations and large scale numerical simulations. The algorithms implemented in
+ ParMETIS are based on the parallel multilevel k-way graph-partitioning, adaptive repartitioning, and parallel multi-constrained partitioning
+ schemes. - Homepage: http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview
+    }
+}
+
+module-whatis {Description: ParMETIS is an MPI-based parallel library that implements a variety of algorithms for partitioning unstructured graphs,
+ meshes, and for computing fill-reducing orderings of sparse matrices. ParMETIS extends the functionality provided by METIS and includes
+ routines that are especially suited for parallel AMR computations and large scale numerical simulations. The algorithms implemented in
+ ParMETIS are based on the parallel multilevel k-way graph-partitioning, adaptive repartitioning, and parallel multi-constrained partitioning
+ schemes. - Homepage: http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/ParMETIS/4.0.3-goolf-1.6.10
+
+conflict    ParMETIS
+
+if { ![is-loaded goolf/1.6.10] } {
+    module load goolf/1.6.10
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTPARMETIS		"$root"
+setenv	EBVERSIONPARMETIS		"4.0.3"
+setenv	EBDEVELPARMETIS		"$root/easybuild/ParMETIS-4.0.3-goolf-1.6.10-easybuild-devel"
+
+
+# Built with EasyBuild version 1.11.0

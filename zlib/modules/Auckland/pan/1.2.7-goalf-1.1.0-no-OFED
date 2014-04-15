@@ -4,14 +4,14 @@ proc ModulesHelp { } {
     puts stderr {   zlib is designed to be a free, general-purpose, legally unencumbered -- that is, 
  not covered by any patents -- lossless data-compression library for use on virtually any 
  computer hardware and operating system. - Homepage: http://www.zlib.net/
-}
+    }
 }
 
-module-whatis {zlib is designed to be a free, general-purpose, legally unencumbered -- that is, 
+module-whatis {Description: zlib is designed to be a free, general-purpose, legally unencumbered -- that is, 
  not covered by any patents -- lossless data-compression library for use on virtually any 
  computer hardware and operating system. - Homepage: http://www.zlib.net/}
 
-set root    /share/apps/software/zlib/1.2.7-goalf-1.1.0-no-OFED
+set root    /share/easybuild/RHEL6.3/westmere/software/zlib/1.2.7-goalf-1.1.0-no-OFED
 
 conflict    zlib
 
@@ -21,6 +21,7 @@ if { ![is-loaded goalf/1.1.0-no-OFED] } {
 
 prepend-path	CPATH		$root/include
 prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
 prepend-path	MANPATH		$root/share/man
 prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
 
@@ -29,4 +30,4 @@ setenv	EBVERSIONZLIB		"1.2.7"
 setenv	EBDEVELZLIB		"$root/easybuild/zlib-1.2.7-goalf-1.1.0-no-OFED-easybuild-devel"
 
 
-# built with EasyBuild version 1.4.0
+# Built with EasyBuild version 1.11.0

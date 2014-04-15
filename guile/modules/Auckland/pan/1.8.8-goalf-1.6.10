@@ -1,0 +1,56 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Guile is the GNU Ubiquitous Intelligent Language for Extensions,
+the official extension language for the GNU operating system. - Homepage: http://www.gnu.org/software/guile
+    }
+}
+
+module-whatis {Description: Guile is the GNU Ubiquitous Intelligent Language for Extensions,
+the official extension language for the GNU operating system. - Homepage: http://www.gnu.org/software/guile}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/guile/1.8.8-goalf-1.6.10
+
+conflict    guile
+
+if { ![is-loaded goalf/1.6.10] } {
+    module load goalf/1.6.10
+}
+
+if { ![is-loaded libtool/2.4.2-goalf-1.6.10] } {
+    module load libtool/2.4.2-goalf-1.6.10
+}
+
+if { ![is-loaded GMP/5.1.3-goalf-1.6.10] } {
+    module load GMP/5.1.3-goalf-1.6.10
+}
+
+if { ![is-loaded libunistring/0.9.3-goalf-1.6.10] } {
+    module load libunistring/0.9.3-goalf-1.6.10
+}
+
+if { ![is-loaded pkg-config/0.27.1-goalf-1.6.10] } {
+    module load pkg-config/0.27.1-goalf-1.6.10
+}
+
+if { ![is-loaded libffi/3.0.13-goalf-1.6.10] } {
+    module load libffi/3.0.13-goalf-1.6.10
+}
+
+if { ![is-loaded libreadline/6.2-goalf-1.6.10] } {
+    module load libreadline/6.2-goalf-1.6.10
+}
+
+prepend-path	ACLOCAL_PATH		$root/share/aclocal
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTGUILE		"$root"
+setenv	EBVERSIONGUILE		"1.8.8"
+setenv	EBDEVELGUILE		"$root/easybuild/guile-1.8.8-goalf-1.6.10-easybuild-devel"
+
+
+# built with EasyBuild version 1.10.0

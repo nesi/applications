@@ -1,0 +1,38 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   GLib is one of the base libraries of the GTK+ project - Homepage: http://www.gtk.org/
+    }
+}
+
+module-whatis {Description: GLib is one of the base libraries of the GTK+ project - Homepage: http://www.gtk.org/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/GLib/2.34.3-goolf-1.6.10
+
+conflict    GLib
+
+if { ![is-loaded goolf/1.6.10] } {
+    module load goolf/1.6.10
+}
+
+if { ![is-loaded libffi/3.0.13-goolf-1.6.10] } {
+    module load libffi/3.0.13-goolf-1.6.10
+}
+
+if { ![is-loaded gettext/0.18.2-goolf-1.6.10] } {
+    module load gettext/0.18.2-goolf-1.6.10
+}
+
+prepend-path	ACLOCAL_PATH		$root/share/aclocal
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTGLIB		"$root"
+setenv	EBVERSIONGLIB		"2.34.3"
+setenv	EBDEVELGLIB		"$root/easybuild/GLib-2.34.3-goolf-1.6.10-easybuild-devel"
+
+
+# built with EasyBuild version 1.10.0

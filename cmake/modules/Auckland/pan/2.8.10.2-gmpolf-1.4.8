@@ -1,0 +1,29 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   CMake, the cross-platform, open-source build system.
+ CMake is a family of tools designed to build, test and package software. - Homepage: http://www.cmake.org
+    }
+}
+
+module-whatis {Description: CMake, the cross-platform, open-source build system.
+ CMake is a family of tools designed to build, test and package software. - Homepage: http://www.cmake.org}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/CMake/2.8.10.2-gmpolf-1.4.8
+
+conflict    CMake
+
+if { ![is-loaded gmpolf/1.4.8] } {
+    module load gmpolf/1.4.8
+}
+
+prepend-path	ACLOCAL_PATH		$root/share/aclocal
+prepend-path	MANPATH		$root/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTCMAKE		"$root"
+setenv	EBVERSIONCMAKE		"2.8.10.2"
+setenv	EBDEVELCMAKE		"$root/easybuild/CMake-2.8.10.2-gmpolf-1.4.8-easybuild-devel"
+
+
+# built with EasyBuild version 1.10.0

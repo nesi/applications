@@ -1,0 +1,38 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   HDF5 is a unique technology suite that makes possible the management of 
+ extremely large and complex data collections. - Homepage: http://www.hdfgroup.org/HDF5/
+    }
+}
+
+module-whatis {Description: HDF5 is a unique technology suite that makes possible the management of 
+ extremely large and complex data collections. - Homepage: http://www.hdfgroup.org/HDF5/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/HDF5/1.8.9-gmpolf-1.4.8
+
+conflict    HDF5
+
+if { ![is-loaded gmpolf/1.4.8] } {
+    module load gmpolf/1.4.8
+}
+
+if { ![is-loaded zlib/1.2.8-gmpolf-1.4.8] } {
+    module load zlib/1.2.8-gmpolf-1.4.8
+}
+
+if { ![is-loaded Szip/2.1-gmpolf-1.4.8] } {
+    module load Szip/2.1-gmpolf-1.4.8
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTHDF5		"$root"
+setenv	EBVERSIONHDF5		"1.8.9"
+setenv	EBDEVELHDF5		"$root/easybuild/HDF5-1.8.9-gmpolf-1.4.8-easybuild-devel"
+
+
+# Built with EasyBuild version 1.11.0

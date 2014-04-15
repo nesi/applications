@@ -1,0 +1,31 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Bison is a general-purpose parser generator that converts an annotated context-free grammar
+into a deterministic LR or generalized LR (GLR) parser employing LALR(1) parser tables. - Homepage: http://www.gnu.org/software/bison
+    }
+}
+
+module-whatis {Description: Bison is a general-purpose parser generator that converts an annotated context-free grammar
+into a deterministic LR or generalized LR (GLR) parser employing LALR(1) parser tables. - Homepage: http://www.gnu.org/software/bison}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Bison/2.7-GCC-4.7.3
+
+conflict    Bison
+
+if { ![is-loaded GCC/4.7.3] } {
+    module load GCC/4.7.3
+}
+
+prepend-path	ACLOCAL_PATH		$root/share/aclocal
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTBISON		"$root"
+setenv	EBVERSIONBISON		"2.7"
+setenv	EBDEVELBISON		"$root/easybuild/Bison-2.7-GCC-4.7.3-easybuild-devel"
+
+
+# Built with EasyBuild version 1.11.0

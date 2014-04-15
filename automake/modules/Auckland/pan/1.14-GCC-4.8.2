@@ -1,0 +1,31 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Automake: GNU Standards-compliant Makefile generator - Homepage: http://www.gnu.org/software/automake/automake.html
+    }
+}
+
+module-whatis {Automake: GNU Standards-compliant Makefile generator - Homepage: http://www.gnu.org/software/automake/automake.html}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Automake/1.14-GCC-4.8.2
+
+conflict    Automake
+
+if { ![is-loaded GCC/4.8.2] } {
+    module load GCC/4.8.2
+}
+
+if { ![is-loaded Autoconf/2.69-GCC-4.8.2] } {
+    module load Autoconf/2.69-GCC-4.8.2
+}
+
+prepend-path	ACLOCAL_PATH		$root/share/aclocal
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTAUTOMAKE		"$root"
+setenv	EBVERSIONAUTOMAKE		"1.14"
+setenv	EBDEVELAUTOMAKE		"$root/easybuild/Automake-1.14-GCC-4.8.2-easybuild-devel"
+
+
+# built with EasyBuild version 1.9.0

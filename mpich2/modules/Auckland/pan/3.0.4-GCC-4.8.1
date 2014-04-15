@@ -1,0 +1,31 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   MPICH v3.x is an open source high-performance MPI 3.0 implementation.
+It does not support InfiniBand (use MVAPICH2 with InfiniBand devices). - Homepage: http://www.mpich.org/
+    }
+}
+
+module-whatis {Description: MPICH v3.x is an open source high-performance MPI 3.0 implementation.
+It does not support InfiniBand (use MVAPICH2 with InfiniBand devices). - Homepage: http://www.mpich.org/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/MPICH2/3.0.4-GCC-4.8.1
+
+conflict    MPICH2
+
+if { ![is-loaded GCC/4.8.1] } {
+    module load GCC/4.8.1
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTMPICH2		"$root"
+setenv	EBVERSIONMPICH2		"3.0.4"
+setenv	EBDEVELMPICH2		"$root/easybuild/MPICH2-3.0.4-GCC-4.8.1-easybuild-devel"
+
+
+# built with EasyBuild version 1.10.0
