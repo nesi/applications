@@ -1,0 +1,38 @@
+// required
+// --------
+
+commandline = cat inputFile.txt
+
+// optional
+// --------
+
+// job properties
+// --------------
+
+//application = generic
+//applicationVersion = generic
+//cpus = 1
+//memory = 2g
+//virtualMemory = 2g
+//walltime = 5m
+
+//mpi = false
+//single = true
+//hostCount = 1
+
+// files
+
+//stderr = stderr.txt
+//stdout = stdout.txt
+//stdin = stdin.txt
+
+// email settings
+
+//email_address = m.binsteiner@auckland.ac.nz
+//email_on_job_finish = true
+//email_on_job_start = false
+
+// environment variables
+
+//env = [LL_VAR=requirements=(Feature=="sandybridge")][other_env=othervalue][....]
+
