@@ -1,0 +1,28 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   TEMPLATE DESCRIPTION - Homepage: http://www.example.com
+    }
+}
+
+module-whatis {Description: TEMPLATE DESCRIPTION - Homepage: http://www.example.com}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/LLVM/3.2-goolf-1.5.14
+
+conflict    LLVM
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTLLVM		"$root"
+setenv	EBVERSIONLLVM		"3.2"
+setenv	EBDEVELLLVM		"$root/easybuild/LLVM-3.2-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1
