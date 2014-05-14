@@ -1,0 +1,27 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version. - Homepage: http://xianyi.github.com/OpenBLAS/
+    }
+}
+
+module-whatis {Description: OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version. - Homepage: http://xianyi.github.com/OpenBLAS/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/OpenBLAS/0.2.8-gompi-1.5.14-LAPACK-3.5.0
+
+conflict    OpenBLAS
+
+if { ![is-loaded gompi/1.5.14] } {
+    module load gompi/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+
+setenv	EBROOTOPENBLAS		"$root"
+setenv	EBVERSIONOPENBLAS		"0.2.8"
+setenv	EBDEVELOPENBLAS		"$root/easybuild/OpenBLAS-0.2.8-gompi-1.5.14-LAPACK-3.5.0-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1
