@@ -16,10 +16,10 @@ Then connect to one of the build nodes:
 
 Load the Abaqus module
 
-    module load Abaqus/6.10-EF1
+    module load Abaqus/6.13
 
 Start Abaqus CAE
 
-    abq610ef1.exe cae
+    abq6132 cae
 
 NOTE: This doesn't seem to work with Mac OS X

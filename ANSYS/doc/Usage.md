@@ -12,7 +12,7 @@ Then connect to one of the build nodes:
 
 Load the Abaqus module:
 
-    module load ANSYS/v145
+    module load ANSYS
 
 Run e.g.
 	
@@ -26,6 +26,6 @@ and the GUI will appear.
 
 $H$H$H$H Running compute jobs
 
-See the two example jobs below. You can submit them to the compute nodes by running
+See the example jobs below. You can submit them to the compute nodes by running
 	
-	llsubmit job.ll
+	sbatch job.sl
