@@ -1,0 +1,11 @@
+#%Module
+
+module-whatis {Make available the modules built with EasyBuild}
+
+set EB  /share/easybuild
+set OS  RHEL6.3
+set HARDWARE    westmere
+
+conflict    easybuilt
+
+module use  $EB/$OS/$HARDWARE/modules/all

@@ -5,6 +5,7 @@ module-whatis "The Intel Cluster Studio XE 2013"
 set root /share/apps/intel
 
 setenv	MKLROOT			$root/composer_xe_2013.1.117/mkl
+setenv  I_MPI_PMI_LIBRARY	/usr/lib64/libpmi.so
 setenv	INTEL_LICENSE_FILE	$root/licenses
 setenv	IPPROOT			$root/composer_xe_2013.1.117/ipp
 setenv	NLSPATH			$root/composer_xe_2013.1.117/debugger/intel64/locale/%l_%t/%N:$root/composer_xe_2013.1.117/compiler/lib/intel64/locale/%l_%t/%N:$root/composer_xe_2013.1.117/ipp/lib/intel64/locale/%l_%t/%N:$root/composer_xe_2013.1.117/mkl/lib/intel64/locale/%l_%t/%N:$root/composer_xe_2013.1.117/debugger/intel64/locale/%l_%t/%N:$root/composer_xe_2013.1.117/mkl/lib/intel64/locale/%l_%t/%N
