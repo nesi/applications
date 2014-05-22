@@ -1,0 +1,38 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Image processing algorithms for SciPy, including IO, morphology, filtering, warping, color manipulation, object detection, etc.
+ - Homepage: http://scikit-image.org/docs/dev/api/skimage.html
+    }
+}
+
+module-whatis {Description: Image processing algorithms for SciPy, including IO, morphology, filtering, warping, color manipulation, object detection, etc.
+ - Homepage: http://scikit-image.org/docs/dev/api/skimage.html}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/scikit-image/0.9.3-goolf-1.5.14-Python-2.7.6
+
+conflict    scikit-image
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded Python/2.7.6-goolf-1.5.14] } {
+    module load Python/2.7.6-goolf-1.5.14
+}
+
+if { ![is-loaded Pillow/2.4.0-goolf-1.5.14-Python-2.7.6] } {
+    module load Pillow/2.4.0-goolf-1.5.14-Python-2.7.6
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTSCIKITMINIMAGE		"$root"
+setenv	EBVERSIONSCIKITMINIMAGE		"0.9.3"
+setenv	EBDEVELSCIKITMINIMAGE		"$root/easybuild/scikit-image-0.9.3-goolf-1.5.14-Python-2.7.6-easybuild-devel"
+
+prepend-path	PYTHONPATH		$root/lib/python2.7/site-packages
+
+# Built with EasyBuild version 1.12.1

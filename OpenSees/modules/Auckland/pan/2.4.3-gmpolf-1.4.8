@@ -1,0 +1,45 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   OpenSees is a software framework for developing applications to simulate the performance of structural and geotechnical systems subjected to earthquakes. - Homepage: http://opensees.berkeley.edu
+    }
+}
+
+module-whatis {Description: OpenSees is a software framework for developing applications to simulate the performance of structural and geotechnical systems subjected to earthquakes. - Homepage: http://opensees.berkeley.edu}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/OpenSees/2.4.3-gmpolf-1.4.8
+
+conflict    OpenSees
+
+if { ![is-loaded gmpolf/1.4.8] } {
+    module load gmpolf/1.4.8
+}
+
+if { ![is-loaded Tcl/8.5.12-gmpolf-1.4.8] } {
+    module load Tcl/8.5.12-gmpolf-1.4.8
+}
+
+if { ![is-loaded ParMETIS/3.2.0-gmpolf-1.4.8] } {
+    module load ParMETIS/3.2.0-gmpolf-1.4.8
+}
+
+if { ![is-loaded MUMPS/4.10.0-gmpolf-1.4.8-parmetis] } {
+    module load MUMPS/4.10.0-gmpolf-1.4.8-parmetis
+}
+
+if { ![is-loaded SCOTCH/6.0.0_esmumps-gmpolf-1.4.8] } {
+    module load SCOTCH/6.0.0_esmumps-gmpolf-1.4.8
+}
+
+if { ![is-loaded BLACS/1.1-gmpolf-1.4.8] } {
+    module load BLACS/1.1-gmpolf-1.4.8
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTOPENSEES		"$root"
+setenv	EBVERSIONOPENSEES		"2.4.3"
+setenv	EBDEVELOPENSEES		"$root/easybuild/OpenSees-2.4.3-gmpolf-1.4.8-easybuild-devel"
+
+
+# Built with EasyBuild version 1.11.0dev

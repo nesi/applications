@@ -1,0 +1,30 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Berkeley DB enables the development of custom data management solutions,
+ without the overhead traditionally associated with such custom projects. - Homepage: http://www.oracle.com/technetwork/products/berkeleydb
+    }
+}
+
+module-whatis {Description: Berkeley DB enables the development of custom data management solutions,
+ without the overhead traditionally associated with such custom projects. - Homepage: http://www.oracle.com/technetwork/products/berkeleydb}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/DB/6.0.30-goolf-1.6.10
+
+conflict    DB
+
+if { ![is-loaded goolf/1.6.10] } {
+    module load goolf/1.6.10
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTDB		"$root"
+setenv	EBVERSIONDB		"6.0.30"
+setenv	EBDEVELDB		"$root/easybuild/DB-6.0.30-goolf-1.6.10-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.0

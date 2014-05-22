@@ -1,0 +1,30 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   X.org macros utilities. - Homepage: http://cgit.freedesktop.org/xorg/util/macros
+    }
+}
+
+module-whatis {Description: X.org macros utilities. - Homepage: http://cgit.freedesktop.org/xorg/util/macros}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/xorg-macros/1.17-GCC-4.7.2
+
+conflict    xorg-macros
+
+if { ![is-loaded GCC/4.7.2] } {
+    module load GCC/4.7.2
+}
+
+if { ![is-loaded Autoconf/2.69-GCC-4.7.2] } {
+    module load Autoconf/2.69-GCC-4.7.2
+}
+
+prepend-path	ACLOCAL_PATH		$root/share/aclocal
+prepend-path	PKG_CONFIG_PATH		$root/share/pkgconfig
+
+setenv	EBROOTXORGMINMACROS		"$root"
+setenv	EBVERSIONXORGMINMACROS		"1.17"
+setenv	EBDEVELXORGMINMACROS		"$root/easybuild/xorg-macros-1.17-GCC-4.7.2-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1

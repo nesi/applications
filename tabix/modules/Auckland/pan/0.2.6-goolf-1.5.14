@@ -1,0 +1,26 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Generic indexer for TAB-delimited genome position files. - Homepage: http://samtools.sourceforge.net/tabix.shtml
+    }
+}
+
+module-whatis {Description: Generic indexer for TAB-delimited genome position files. - Homepage: http://samtools.sourceforge.net/tabix.shtml}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/tabix/0.2.6-goolf-1.5.14
+
+conflict    tabix
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	MANPATH		$root/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTTABIX		"$root"
+setenv	EBVERSIONTABIX		"0.2.6"
+setenv	EBDEVELTABIX		"$root/easybuild/tabix-0.2.6-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1

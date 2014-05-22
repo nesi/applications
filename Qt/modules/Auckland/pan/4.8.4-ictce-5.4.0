@@ -1,0 +1,33 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Qt is a comprehensive cross-platform C++ application framework. - Homepage: http://qt-project.org/
+    }
+}
+
+module-whatis {Description: Qt is a comprehensive cross-platform C++ application framework. - Homepage: http://qt-project.org/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Qt/4.8.4-ictce-5.4.0
+
+conflict    Qt
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+if { ![is-loaded GLib/2.34.3-ictce-5.4.0] } {
+    module load GLib/2.34.3-ictce-5.4.0
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTQT		"$root"
+setenv	EBVERSIONQT		"4.8.4"
+setenv	EBDEVELQT		"$root/easybuild/Qt-4.8.4-ictce-5.4.0-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1

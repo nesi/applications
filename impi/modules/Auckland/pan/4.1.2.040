@@ -26,5 +26,5 @@ setenv	EBDEVELIMPI		"$root/easybuild/impi-4.1.2.040-easybuild-devel"
 
 prepend-path	INTEL_LICENSE_FILE		/share/apps/intel/licenses/license.lic
 setenv	I_MPI_ROOT		$root
-
+set-alias MPIRUN "mpiexec.hydra -machinefile \$LOADL_HOSTFILE -genv I_MPI_FABRICS shm:ofa -genv I_MPI_DAPL_PROVIDER=ofa-v2-mlx4_0-1 -envall \$*"
 # built with EasyBuild version 1.9.0

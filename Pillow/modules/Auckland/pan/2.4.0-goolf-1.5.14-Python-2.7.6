@@ -1,0 +1,48 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   A fork of the Python Imaging Library - Homepage: http://pillow.readthedocs.org
+    }
+}
+
+module-whatis {Description: A fork of the Python Imaging Library - Homepage: http://pillow.readthedocs.org}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Pillow/2.4.0-goolf-1.5.14-Python-2.7.6
+
+conflict    Pillow
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded Python/2.7.6-goolf-1.5.14] } {
+    module load Python/2.7.6-goolf-1.5.14
+}
+
+if { ![is-loaded libjpeg-turbo/1.3.0-goolf-1.5.14] } {
+    module load libjpeg-turbo/1.3.0-goolf-1.5.14
+}
+
+if { ![is-loaded libpng/1.6.10-goolf-1.5.14] } {
+    module load libpng/1.6.10-goolf-1.5.14
+}
+
+if { ![is-loaded zlib/1.2.8-goolf-1.5.14] } {
+    module load zlib/1.2.8-goolf-1.5.14
+}
+
+if { ![is-loaded freetype/2.5.3-goolf-1.5.14] } {
+    module load freetype/2.5.3-goolf-1.5.14
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTPILLOW		"$root"
+setenv	EBVERSIONPILLOW		"2.4.0"
+setenv	EBDEVELPILLOW		"$root/easybuild/Pillow-2.4.0-goolf-1.5.14-Python-2.7.6-easybuild-devel"
+
+prepend-path	PYTHONPATH		$root/lib/python2.7/site-packages
+
+# Built with EasyBuild version 1.12.1

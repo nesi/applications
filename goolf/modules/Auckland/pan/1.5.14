@@ -1,0 +1,42 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   GNU Compiler Collection (GCC) based compiler toolchain, including
+ OpenMPI for MPI support, OpenBLAS (BLAS and LAPACK support), FFTW and ScaLAPACK. - Homepage: (none)
+    }
+}
+
+module-whatis {Description: GNU Compiler Collection (GCC) based compiler toolchain, including
+ OpenMPI for MPI support, OpenBLAS (BLAS and LAPACK support), FFTW and ScaLAPACK. - Homepage: (none)}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/goolf/1.5.14
+
+conflict    goolf
+
+if { ![is-loaded GCC/4.8.2] } {
+    module load GCC/4.8.2
+}
+
+if { ![is-loaded OpenMPI/1.6.5-GCC-4.8.2] } {
+    module load OpenMPI/1.6.5-GCC-4.8.2
+}
+
+if { ![is-loaded OpenBLAS/0.2.8-gompi-1.5.14-LAPACK-3.5.0] } {
+    module load OpenBLAS/0.2.8-gompi-1.5.14-LAPACK-3.5.0
+}
+
+if { ![is-loaded FFTW/3.3.4-gompi-1.5.14] } {
+    module load FFTW/3.3.4-gompi-1.5.14
+}
+
+if { ![is-loaded ScaLAPACK/2.0.2-gompi-1.5.14-OpenBLAS-0.2.8-LAPACK-3.5.0] } {
+    module load ScaLAPACK/2.0.2-gompi-1.5.14-OpenBLAS-0.2.8-LAPACK-3.5.0
+}
+
+
+setenv	EBROOTGOOLF		"$root"
+setenv	EBVERSIONGOOLF		"1.5.14"
+setenv	EBDEVELGOOLF		"$root/easybuild/goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1

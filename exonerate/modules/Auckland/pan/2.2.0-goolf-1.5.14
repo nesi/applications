@@ -1,0 +1,26 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Generic tool for pairwise sequence comparison - Homepage: http://www.ebi.ac.uk/~guy/exonerate/
+    }
+}
+
+module-whatis {Description: Generic tool for pairwise sequence comparison - Homepage: http://www.ebi.ac.uk/~guy/exonerate/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/exonerate/2.2.0-goolf-1.5.14
+
+conflict    exonerate
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTEXONERATE		"$root"
+setenv	EBVERSIONEXONERATE		"2.2.0"
+setenv	EBDEVELEXONERATE		"$root/easybuild/exonerate-2.2.0-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1

@@ -1,0 +1,26 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   ClustalW2 is a general purpose multiple sequence alignment program for DNA or proteins. - Homepage: http://www.ebi.ac.uk/Tools/msa/clustalw2/
+    }
+}
+
+module-whatis {Description: ClustalW2 is a general purpose multiple sequence alignment program for DNA or proteins. - Homepage: http://www.ebi.ac.uk/Tools/msa/clustalw2/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/ClustalW2/2.1-goolf-1.5.14
+
+conflict    ClustalW2
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	ACLOCAL_PATH		$root/share/aclocal
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTCLUSTALW2		"$root"
+setenv	EBVERSIONCLUSTALW2		"2.1"
+setenv	EBDEVELCLUSTALW2		"$root/easybuild/ClustalW2-2.1-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1

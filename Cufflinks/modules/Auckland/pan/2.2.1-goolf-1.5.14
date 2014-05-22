@@ -1,0 +1,41 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Transcript assembly, differential expression, and differential regulation for RNA-Seq - Homepage: http://cufflinks.cbcb.umd.edu/
+    }
+}
+
+module-whatis {Description: Transcript assembly, differential expression, and differential regulation for RNA-Seq - Homepage: http://cufflinks.cbcb.umd.edu/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Cufflinks/2.2.1-goolf-1.5.14
+
+conflict    Cufflinks
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded Boost/1.55.0-goolf-1.5.14-Python-2.7.6] } {
+    module load Boost/1.55.0-goolf-1.5.14-Python-2.7.6
+}
+
+if { ![is-loaded SAMtools/0.1.19-goolf-1.5.14] } {
+    module load SAMtools/0.1.19-goolf-1.5.14
+}
+
+if { ![is-loaded Eigen/3.2.1-goolf-1.5.14] } {
+    module load Eigen/3.2.1-goolf-1.5.14
+}
+
+if { ![is-loaded zlib/1.2.8-goolf-1.5.14] } {
+    module load zlib/1.2.8-goolf-1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTCUFFLINKS		"$root"
+setenv	EBVERSIONCUFFLINKS		"2.2.1"
+setenv	EBDEVELCUFFLINKS		"$root/easybuild/Cufflinks-2.2.1-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1

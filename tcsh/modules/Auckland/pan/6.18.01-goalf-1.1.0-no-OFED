@@ -1,0 +1,36 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Tcsh is an enhanced, but completely compatible version of the Berkeley UNIX C shell (csh). 
+ It is a command language interpreter usable both as an interactive login shell and a shell script command 
+ processor. It includes a command-line editor, programmable word completion, spelling correction, a history 
+ mechanism, job control and a C-like syntax. - Homepage: http://www.tcsh.org
+    }
+}
+
+module-whatis {Description: Tcsh is an enhanced, but completely compatible version of the Berkeley UNIX C shell (csh). 
+ It is a command language interpreter usable both as an interactive login shell and a shell script command 
+ processor. It includes a command-line editor, programmable word completion, spelling correction, a history 
+ mechanism, job control and a C-like syntax. - Homepage: http://www.tcsh.org}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/tcsh/6.18.01-goalf-1.1.0-no-OFED
+
+conflict    tcsh
+
+if { ![is-loaded goalf/1.1.0-no-OFED] } {
+    module load goalf/1.1.0-no-OFED
+}
+
+if { ![is-loaded ncurses/5.9-goalf-1.1.0-no-OFED] } {
+    module load ncurses/5.9-goalf-1.1.0-no-OFED
+}
+
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTTCSH		"$root"
+setenv	EBVERSIONTCSH		"6.18.01"
+setenv	EBDEVELTCSH		"$root/easybuild/tcsh-6.18.01-goalf-1.1.0-no-OFED-easybuild-devel"
+
+
+# Built with EasyBuild version 1.11.0

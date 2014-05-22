@@ -1,0 +1,41 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   SGA is a de novo genome assembler based on the concept of string graphs. 
+The major goal of SGA is to be very memory efficient, which is achieved by using a compressed 
+representation of DNA sequence reads. - Homepage: https://github.com/jts/sga/wiki
+    }
+}
+
+module-whatis {Description: SGA is a de novo genome assembler based on the concept of string graphs. 
+The major goal of SGA is to be very memory efficient, which is achieved by using a compressed 
+representation of DNA sequence reads. - Homepage: https://github.com/jts/sga/wiki}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/SGA/0.10.13-goolf-1.5.14
+
+conflict    SGA
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded google-sparsehash/2.0.2-goolf-1.5.14] } {
+    module load google-sparsehash/2.0.2-goolf-1.5.14
+}
+
+if { ![is-loaded BamTools/2.3.0-goolf-1.5.14] } {
+    module load BamTools/2.3.0-goolf-1.5.14
+}
+
+if { ![is-loaded zlib/1.2.8-goolf-1.5.14] } {
+    module load zlib/1.2.8-goolf-1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTSGA		"$root"
+setenv	EBVERSIONSGA		"0.10.13"
+setenv	EBDEVELSGA		"$root/easybuild/SGA-0.10.13-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1

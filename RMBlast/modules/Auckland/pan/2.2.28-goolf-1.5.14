@@ -1,0 +1,38 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   RMBlast supports RepeatMasker searches by adding a few necessary features to the stock NCBI blastn program. These include:
+Support for custom matrices ( without KA-Statistics ).
+Support for cross_match-like complexity adjusted scoring. Cross_match is Phil Green's seeded smith-waterman search algorithm.
+Support for cross_match-like masklevel filtering.. - Homepage: http://www.repeatmasker.org/RMBlast.html
+    }
+}
+
+module-whatis {Description: RMBlast supports RepeatMasker searches by adding a few necessary features to the stock NCBI blastn program. These include:
+Support for custom matrices ( without KA-Statistics ).
+Support for cross_match-like complexity adjusted scoring. Cross_match is Phil Green's seeded smith-waterman search algorithm.
+Support for cross_match-like masklevel filtering.. - Homepage: http://www.repeatmasker.org/RMBlast.html}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/RMBlast/2.2.28-goolf-1.5.14
+
+conflict    RMBlast
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded Boost/1.53.0-goolf-1.5.14] } {
+    module load Boost/1.53.0-goolf-1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTRMBLAST		"$root"
+setenv	EBVERSIONRMBLAST		"2.2.28"
+setenv	EBDEVELRMBLAST		"$root/easybuild/RMBlast-2.2.28-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1

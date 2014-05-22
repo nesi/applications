@@ -1,0 +1,35 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {    AUGUSTUS is a program that predicts genes in eukaryotic genomic sequences.  - Homepage: http://bioinf.uni-greifswald.de/augustus/
+    }
+}
+
+module-whatis {Description:  AUGUSTUS is a program that predicts genes in eukaryotic genomic sequences.  - Homepage: http://bioinf.uni-greifswald.de/augustus/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Augustus/3.0.2-goolf-1.6.10
+
+conflict    Augustus
+
+if { ![is-loaded goolf/1.6.10] } {
+    module load goolf/1.6.10
+}
+
+if { ![is-loaded Boost/1.53.0-goolf-1.6.10] } {
+    module load Boost/1.53.0-goolf-1.6.10
+}
+
+if { ![is-loaded zlib/1.2.8-goolf-1.6.10] } {
+    module load zlib/1.2.8-goolf-1.6.10
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTAUGUSTUS		"$root"
+setenv	EBVERSIONAUGUSTUS		"3.0.2"
+setenv	EBDEVELAUGUSTUS		"$root/easybuild/Augustus-3.0.2-goolf-1.6.10-easybuild-devel"
+
+setenv	AUGUSTUS_CONFIG_PATH		"$root/config"
+prepend-path	PATH		$root/scripts
+
+# Built with EasyBuild version 1.12.0

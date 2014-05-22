@@ -1,0 +1,41 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Estimates gene and isoform expression levels from RNA-Seq data - Homepage: http://deweylab.biostat.wisc.edu/rsem/
+    }
+}
+
+module-whatis {Description: Estimates gene and isoform expression levels from RNA-Seq data - Homepage: http://deweylab.biostat.wisc.edu/rsem/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/RSEM/1.2.11-goolf-1.5.14
+
+conflict    RSEM
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded zlib/1.2.8-goolf-1.5.14] } {
+    module load zlib/1.2.8-goolf-1.5.14
+}
+
+if { ![is-loaded ncurses/5.9-goolf-1.5.14] } {
+    module load ncurses/5.9-goolf-1.5.14
+}
+
+if { ![is-loaded R/3.0.3-goolf-1.5.14] } {
+    module load R/3.0.3-goolf-1.5.14
+}
+
+if { ![is-loaded Bowtie2/2.2.0-goolf-1.5.14] } {
+    module load Bowtie2/2.2.0-goolf-1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTRSEM		"$root"
+setenv	EBVERSIONRSEM		"1.2.11"
+setenv	EBDEVELRSEM		"$root/easybuild/RSEM-1.2.11-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1

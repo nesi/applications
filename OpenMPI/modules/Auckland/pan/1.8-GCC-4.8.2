@@ -1,0 +1,34 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   The Open MPI Project is an open source MPI-2 implementation. - Homepage: http://www.open-mpi.org/
+    }
+}
+
+module-whatis {Description: The Open MPI Project is an open source MPI-2 implementation. - Homepage: http://www.open-mpi.org/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/OpenMPI/1.8-GCC-4.8.2
+
+conflict    OpenMPI
+
+if { ![is-loaded GCC/4.8.2] } {
+    module load GCC/4.8.2
+}
+
+if { ![is-loaded hwloc/1.7.2-GCC-4.8.2] } {
+    module load hwloc/1.7.2-GCC-4.8.2
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTOPENMPI		"$root"
+setenv	EBVERSIONOPENMPI		"1.8"
+setenv	EBDEVELOPENMPI		"$root/easybuild/OpenMPI-1.8-GCC-4.8.2-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.0

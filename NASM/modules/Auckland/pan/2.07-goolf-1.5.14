@@ -1,0 +1,26 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   NASM-2.07: General-purpose x86 assembler - Homepage: http://nasm.sourceforge.net/
+    }
+}
+
+module-whatis {Description: NASM-2.07: General-purpose x86 assembler - Homepage: http://nasm.sourceforge.net/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/NASM/2.07-goolf-1.5.14
+
+conflict    NASM
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTNASM		"$root"
+setenv	EBVERSIONNASM		"2.07"
+setenv	EBDEVELNASM		"$root/easybuild/NASM-2.07-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1

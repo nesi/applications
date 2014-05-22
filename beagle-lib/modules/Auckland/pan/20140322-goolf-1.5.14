@@ -1,0 +1,40 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   
+beagle-lib is a high-performance library that can perform the core
+calculations at the heart of most Bayesian and Maximum Likelihood
+phylogenetics packages.
+ - Homepage: http://code.google.com/p/beagle-lib/
+    }
+}
+
+module-whatis {Description: 
+beagle-lib is a high-performance library that can perform the core
+calculations at the heart of most Bayesian and Maximum Likelihood
+phylogenetics packages.
+ - Homepage: http://code.google.com/p/beagle-lib/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/beagle-lib/20140322-goolf-1.5.14
+
+conflict    beagle-lib
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded Java/1.7.0_51] } {
+    module load Java/1.7.0_51
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTBEAGLEMINLIB		"$root"
+setenv	EBVERSIONBEAGLEMINLIB		"20140322"
+setenv	EBDEVELBEAGLEMINLIB		"$root/easybuild/beagle-lib-20140322-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1

@@ -1,0 +1,35 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Boost provides free peer-reviewed portable C++ source libraries. - Homepage: http://www.boost.org/
+    }
+}
+
+module-whatis {Description: Boost provides free peer-reviewed portable C++ source libraries. - Homepage: http://www.boost.org/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Boost/1.49.0-ictce-5.4.0-Python-2.7.3
+
+conflict    Boost
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+if { ![is-loaded bzip2/1.0.6-ictce-5.4.0] } {
+    module load bzip2/1.0.6-ictce-5.4.0
+}
+
+if { ![is-loaded Python/2.7.3-ictce-5.4.0] } {
+    module load Python/2.7.3-ictce-5.4.0
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+
+setenv	EBROOTBOOST		"$root"
+setenv	EBVERSIONBOOST		"1.49.0"
+setenv	EBDEVELBOOST		"$root/easybuild/Boost-1.49.0-ictce-5.4.0-Python-2.7.3-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1

@@ -1,0 +1,47 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Genome annotation pipeline - Homepage: http://www.yandell-lab.org/software/maker.html
+    }
+}
+
+module-whatis {Description: Genome annotation pipeline - Homepage: http://www.yandell-lab.org/software/maker.html}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/MAKER/2.31.3-goolf-1.5.14-Perl-5.18.2
+
+conflict    MAKER
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded BioPerl/1.6.923-goolf-1.5.14-Perl-5.18.2] } {
+    module load BioPerl/1.6.923-goolf-1.5.14-Perl-5.18.2
+}
+
+if { ![is-loaded SNAP/2013-11-29-goolf-1.5.14] } {
+    module load SNAP/2013-11-29-goolf-1.5.14
+}
+
+if { ![is-loaded exonerate/2.2.0-goolf-1.5.14] } {
+    module load exonerate/2.2.0-goolf-1.5.14
+}
+
+if { ![is-loaded RepeatMasker/4.0.5] } {
+    module load RepeatMasker/4.0.5
+}
+
+if { ![is-loaded Augustus/3.0.2-goolf-1.5.14] } {
+    module load Augustus/3.0.2-goolf-1.5.14
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTMAKER		"$root"
+setenv	EBVERSIONMAKER		"2.31.3"
+setenv	EBDEVELMAKER		"$root/easybuild/MAKER-2.31.3-goolf-1.5.14-Perl-5.18.2-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1

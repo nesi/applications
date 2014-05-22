@@ -1,0 +1,25 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Phylogenetic reconstruction using infinite mixtures - Homepage: http://megasun.bch.umontreal.ca/People/lartillot/www/index.htm
+    }
+}
+
+module-whatis {Description: Phylogenetic reconstruction using infinite mixtures - Homepage: http://megasun.bch.umontreal.ca/People/lartillot/www/index.htm}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/PhyloBayesMPI/1.5a-goolf-1.5.14
+
+conflict    PhyloBayesMPI
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTPHYLOBAYESMPI		"$root"
+setenv	EBVERSIONPHYLOBAYESMPI		"1.5a"
+setenv	EBDEVELPHYLOBAYESMPI		"$root/easybuild/PhyloBayesMPI-1.5a-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1

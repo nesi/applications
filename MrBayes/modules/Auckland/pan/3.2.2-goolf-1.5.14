@@ -1,0 +1,33 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   MrBayes is a program for the Bayesian estimation of phylogeny. - Homepage: http://mrbayes.csit.fsu.edu
+    }
+}
+
+module-whatis {Description: MrBayes is a program for the Bayesian estimation of phylogeny. - Homepage: http://mrbayes.csit.fsu.edu}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/MrBayes/3.2.2-goolf-1.5.14
+
+conflict    MrBayes
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded beagle-lib/20140322-goolf-1.5.14] } {
+    module load beagle-lib/20140322-goolf-1.5.14
+}
+
+if { ![is-loaded libreadline/6.2-goolf-1.5.14] } {
+    module load libreadline/6.2-goolf-1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTMRBAYES		"$root"
+setenv	EBVERSIONMRBAYES		"3.2.2"
+setenv	EBDEVELMRBAYES		"$root/easybuild/MrBayes-3.2.2-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1

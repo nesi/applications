@@ -1,0 +1,30 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   MATLAB is a high-level language and interactive environment
+ that enables you to perform computationally intensive tasks faster than with
+ traditional programming languages such as C, C++, and Fortran. - Homepage: http://www.mathworks.com/products/matlab
+    }
+}
+
+module-whatis {Description: MATLAB is a high-level language and interactive environment
+ that enables you to perform computationally intensive tasks faster than with
+ traditional programming languages such as C, C++, and Fortran. - Homepage: http://www.mathworks.com/products/matlab}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/MATLAB/2012b
+
+conflict    MATLAB
+
+if { ![is-loaded Java/1.8.0_5] } {
+    module load Java/1.8.0_5
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTMATLAB		"$root"
+setenv	EBVERSIONMATLAB		"2012b"
+setenv	EBDEVELMATLAB		"$root/easybuild/MATLAB-2012b-easybuild-devel"
+
+setenv	_JAVA_OPTIONS		"-Xmx256m"
+
+# Built with EasyBuild version 1.12.1

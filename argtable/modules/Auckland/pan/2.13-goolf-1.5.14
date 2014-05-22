@@ -1,0 +1,31 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {    Argtable is an ANSI C library for parsing GNU style 
+ command line options with a minimum of fuss.  - Homepage: http://argtable.sourceforge.net/
+    }
+}
+
+module-whatis {Description:  Argtable is an ANSI C library for parsing GNU style 
+ command line options with a minimum of fuss.  - Homepage: http://argtable.sourceforge.net/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/argtable/2.13-goolf-1.5.14
+
+conflict    argtable
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTARGTABLE		"$root"
+setenv	EBVERSIONARGTABLE		"2.13"
+setenv	EBDEVELARGTABLE		"$root/easybuild/argtable-2.13-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1

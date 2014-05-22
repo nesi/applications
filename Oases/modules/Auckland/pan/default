@@ -1,18 +1,27 @@
 #%Module
 
-module-whatis {Oases is a de novo transcriptome assembler designed to produce transcripts from
- short read sequencing technologies, such as Illumina, SOLiD, or 454 in the absence of any genomic assembly. - Homepage: http://www.ebi.ac.uk/~zerbino/oases/}
-
-if { ![is-loaded velvet] } {
-  if { ![is-loaded Velvet] } {
-    module load Velvet/1.2.10/L
-  }
+proc ModulesHelp { } {
+    puts stderr {   Oases is a de novo transcriptome assembler designed to produce transcripts from
+ short read sequencing technologies, such as Illumina, SOLiD, or 454 in the absence of any genomic assembly. - Homepage: http://www.ebi.ac.uk/~zerbino/oases/
+    }
 }
 
-set root    /share/easybuild/RHEL6.3/westmere/software/Oases/0.2.08-goolf-1.6.10
+module-whatis {Description: Oases is a de novo transcriptome assembler designed to produce transcripts from
+ short read sequencing technologies, such as Illumina, SOLiD, or 454 in the absence of any genomic assembly. - Homepage: http://www.ebi.ac.uk/~zerbino/oases/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Oases/0.2.08-goolf-1.5.14
 
 conflict    Oases
 
-prepend-path	PATH		$root/bin
-prepend-path	PATH		$root/scripts
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
 
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTOASES		"$root"
+setenv	EBVERSIONOASES		"0.2.08"
+setenv	EBDEVELOASES		"$root/easybuild/Oases-0.2.08-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1

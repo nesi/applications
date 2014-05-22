@@ -1,0 +1,27 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Short Oligonucleotide Analysis Package - novel short-read assembly
+method that can build a de novo draft assembly for the human-sized genomes - Homepage: http://soap.genomics.org.cn/index.html
+    }
+}
+
+module-whatis {Description: Short Oligonucleotide Analysis Package - novel short-read assembly
+method that can build a de novo draft assembly for the human-sized genomes - Homepage: http://soap.genomics.org.cn/index.html}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/SOAPdenovo2/r240-goolf-1.5.14
+
+conflict    SOAPdenovo2
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTSOAPDENOVO2		"$root"
+setenv	EBVERSIONSOAPDENOVO2		"r240"
+setenv	EBDEVELSOAPDENOVO2		"$root/easybuild/SOAPdenovo2-r240-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1

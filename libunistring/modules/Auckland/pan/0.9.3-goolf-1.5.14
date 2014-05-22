@@ -1,0 +1,29 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   This library provides functions for manipulating Unicode strings and for manipulating C strings
+according to the Unicode standard. - Homepage: http://www.gnu.org/software/libunistring/
+    }
+}
+
+module-whatis {Description: This library provides functions for manipulating Unicode strings and for manipulating C strings
+according to the Unicode standard. - Homepage: http://www.gnu.org/software/libunistring/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/libunistring/0.9.3-goolf-1.5.14
+
+conflict    libunistring
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+
+setenv	EBROOTLIBUNISTRING		"$root"
+setenv	EBVERSIONLIBUNISTRING		"0.9.3"
+setenv	EBDEVELLIBUNISTRING		"$root/easybuild/libunistring-0.9.3-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.1

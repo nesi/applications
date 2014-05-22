@@ -1,0 +1,39 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   FreeType 2 is a software font engine that is designed to be small, efficient, highly customizable, and
+ portable while capable of producing high-quality output (glyph images). It can be used in graphics libraries, display
+ servers, font conversion tools, text image generation tools, and many other products as well. - Homepage: http://freetype.org
+    }
+}
+
+module-whatis {Description: FreeType 2 is a software font engine that is designed to be small, efficient, highly customizable, and
+ portable while capable of producing high-quality output (glyph images). It can be used in graphics libraries, display
+ servers, font conversion tools, text image generation tools, and many other products as well. - Homepage: http://freetype.org}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/freetype/2.5.3-goolf-1.6.10
+
+conflict    freetype
+
+if { ![is-loaded goolf/1.6.10] } {
+    module load goolf/1.6.10
+}
+
+if { ![is-loaded libpng/1.6.10-goolf-1.6.10] } {
+    module load libpng/1.6.10-goolf-1.6.10
+}
+
+prepend-path	ACLOCAL_PATH		$root/share/aclocal
+prepend-path	CPATH		$root/include/freetype2
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTFREETYPE		"$root"
+setenv	EBVERSIONFREETYPE		"2.5.3"
+setenv	EBDEVELFREETYPE		"$root/easybuild/freetype-2.5.3-goolf-1.6.10-easybuild-devel"
+
+
+# Built with EasyBuild version 1.12.0

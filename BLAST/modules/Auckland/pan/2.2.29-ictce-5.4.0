@@ -31,5 +31,6 @@ setenv	EBROOTBLAST		"$root"
 setenv	EBVERSIONBLAST		"2.2.29"
 setenv	EBDEVELBLAST		"$root/easybuild/BLAST-2.2.29-ictce-5.4.0-easybuild-devel"
 
+setenv BLASTDB /share/db/blast/db
 
 # built with EasyBuild version 1.10.0
