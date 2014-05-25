@@ -4,6 +4,7 @@ set ABAQUS_HOME /share/apps/Abaqus/6.13/installation
 
 # Binaries
 prepend-path PATH $ABAQUS_HOME/Commands
+prepend-path PATH $ABAQUS_HOME/6.13-2/code/bin/SMAExternal/pmpi-8.3/bin
 # Licensce details
 setenv LM_LICENSE_FILE @abaqus.licenses.foe.auckland.ac.nz
 

@@ -1,0 +1,18 @@
+#%Module1.0
+
+proc ModulesHelp { } {
+  puts stderr "OpenMPI 1.6.5 compiled with GNU Compilers 4.8.2"
+  puts stderr "TAGS: mpi"
+  puts stderr "URL: http://www.open-mpi.org/"
+}
+
+module-whatis "OpenMPI 1.6.5 compiled with GNU Compilers 4.8.2"
+
+module load easybuilt/westmere 
+module load GCC/4.8.2
+set		root		/share/mpi/openmpi/noarch/1.6.5/gcc-4.8.2/normal
+prepend-path 	PATH            $root/bin
+prepend-path 	MANPATH         $root/man
+prepend-path 	LD_LIBRARY_PATH $root/lib
+
+set-alias  MPIRUN  "mpirun -machinefile \$LOADL_HOSTFILE -x PATH -x LD_LIBRARY_PATH -mca btl ^tcp \$*"

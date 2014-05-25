@@ -4,6 +4,7 @@ module-whatis "The Intel Cluster Studio XE 2013 SP1"
 
 set root /share/apps/intel
 
+setenv  	I_MPI_PMI_LIBRARY       /usr/lib64/libpmi.so
 setenv		INTEL_LICENSE_FILE	$root/licenses
 
 setenv		MKLROOT			$root/composer_xe_2013_sp1.0.080/mkl
