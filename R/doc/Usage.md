@@ -23,7 +23,7 @@ To install more libraries use install.packages("package_name"). It's best to do 
 	> install.packages("sampling")
 
 You may be asked to select a directory for installing libraries. The default location is recommended.
-If you are installing several packages, the first may be ask you to choose a download mirror. New Zealand should be listed.
+If you are installing several packages, you may be asked to choose a download mirror. New Zealand should be listed.
 
 You can confirm the library has been installed by using the library() command:
 	
@@ -42,4 +42,3 @@ You can compile custom C libraries for use with R using the R shared library com
 This will create the shared object mylib.so. You can then reference the library in your R script
 
 	dyn.load("~/R/lib64/mylib.so")
-
