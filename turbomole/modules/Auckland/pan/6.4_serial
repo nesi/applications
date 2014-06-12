@@ -1,0 +1,10 @@
+#%Module1.0
+
+module-whatis "TURBOMOLE -- electronic structure calculations (v 6.4, serial)"
+
+set root /share/apps/turbomole
+
+setenv TURBODIR $root
+
+prepend-path PATH $root/scripts
+prepend-path PATH $root/bin/em64t-unknown-linux-gnu

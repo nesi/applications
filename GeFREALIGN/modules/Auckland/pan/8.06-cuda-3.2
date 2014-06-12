@@ -1,0 +1,11 @@
+#%Module1.0
+proc ModulesHelp { } {
+        global version
+        puts stderr "\tModification of FREALIGN v8.06 to run on GPU processors so that the refinement process of single particle 3D reconstruction can be speedup.\n"
+}
+
+module-whatis "Modification of FREALIGN v8.06 to run on GPU processors so that the refinement process of single particle 3D reconstruction can be speedup."
+
+module load     CUDA/3.2
+prepend-path    PATH /share/apps/GeFREALIGN/8.06/cuda_32/bin
+

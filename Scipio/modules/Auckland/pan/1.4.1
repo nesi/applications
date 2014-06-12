@@ -1,0 +1,19 @@
+#%Module
+
+module-whatis {Scipio locates the regions coding for a query protein sequence in a DNA target sequence. 
+It is a convenient tool for the determination of exact gene structures and reverse translations.}
+
+set root    /share/apps/software/Scipio/1.4.1
+
+conflict    Scipio
+
+if { ![is-loaded BioPerl] } {
+    module load BioPerl
+}
+
+if { ![is-loaded BLAT] } {
+    module load BLAT
+}
+
+prepend-path	PATH		$root
+
