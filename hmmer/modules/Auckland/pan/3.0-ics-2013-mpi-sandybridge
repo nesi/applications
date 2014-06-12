@@ -1,8 +1,0 @@
-#%Module1.0
- 
-module-whatis "HMMER: HMMER is used for searching sequence databases for homologs of protein sequences, and for making protein sequence alignments. It implements methods using probabilistic models called profile hidden Markov models."
-module-whatis "Compiled with Intel Cluster Studio XE 2013 (MPI Version)"
-
-module load intel/ics-2013 
-set root /share/apps/HMMER/westmere/3.0/intel-2013/impi
-prepend-path PATH $root/bin
