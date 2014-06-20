@@ -4,7 +4,7 @@ You can use the graphical interfaces of Ansys on the build nodes. Be aware that 
 
 First connect to the login node with X forwarding enabled:
 
-    ssh -CY you@login.uoa.nesi.org.nz
+    ssh -YC you@login.uoa.nesi.org.nz
 
 Then connect to one of the build nodes:
 

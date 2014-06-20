@@ -8,11 +8,11 @@ NOTE: If you want to test your model you must submit it as a job.
 
 Connect to the login node with X forwarding enabled.
 
-    ssh -Y you@login.uoa.nesi.org.nz
+    ssh -YC you@login.uoa.nesi.org.nz
 
 Then connect to one of the build nodes:
 
-    ssh -Y build-gpu-p
+    ssh -YC build-wm
 
 Load the Abaqus module
 
