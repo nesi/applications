@@ -4,11 +4,11 @@ You can use the graphical interfaces of Ansys on the build nodes. Be aware that 
 
 First connect to the login node with X forwarding enabled:
 
-    ssh -YC you@login.uoa.nesi.org.nz
+    ssh -YC <login>@login.uoa.nesi.org.nz
 
 Then connect to one of the build nodes:
 
-    ssh -YC build
+    ssh -YC build-wm
 
 Load the Abaqus module:
 

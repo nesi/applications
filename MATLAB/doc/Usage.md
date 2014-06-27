@@ -14,9 +14,3 @@ As member of the Faculty of Engineering:
 
 	/share/apps/MATLAB/prod/UoA-FoE/R2012b/etc/glnxa64/lmutil lmstat -c /share/apps/MATLAB/prod/UoA-FoE/R2012b/licenses/network.lic -a
 
-$H$H$H$H Single and Multi-core usage
-
-Matlab runs by default in multi-core mode. However, it does not allow to control to amount of CPUs used. This makes that your job may interfere with other users jobs. Therefore, you have have two options:
-
-+ run Matlab with the '-singleCompThread' flag.
-+ reserve a whole node, by adding '#@ node_usage=not_shared' to the submission script. 
