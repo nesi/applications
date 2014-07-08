@@ -7,7 +7,6 @@
 #SBATCH --time=02:00:00     # Walltime
 #SBATCH --ntasks=4         # number of tasks
 #SBATCH --mem-per-cpu=4096  # memory/cpu (in MB)
-#SBATCH -C wm               # sb=Sandybridge,wm=Westmere
 ######################################################
 ###  Load the module
 

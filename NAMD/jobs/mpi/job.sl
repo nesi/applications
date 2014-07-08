@@ -6,7 +6,6 @@
 #SBATCH -A uoa99999         # Project Account
 #SBATCH --mem-per-cpu=2048  # memory/cpu (in MB)
 #SBATCH --ntasks=24         # number of tasks
-#SBATCH -C sb               # sb=Sandybridge,wm=Westmere
 ##########################################################################
 ###  Load the Enviroment Modules for Gromacs 4.5.4
 source /etc/profile

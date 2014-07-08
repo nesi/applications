@@ -3,7 +3,6 @@
 #SBATCH -A uoa12345         # Project Account
 #SBATCH --time=01:00:00     # Walltime (hh:mm:ss)
 #SBATCH --mem-per-cpu=2048  # memory/cpu (in MB)
-#SBATCH -C wm               # sb=Sandybridge,wm=Westmere
 #SBATCH --array=1-10        # Array definition (max 1000 jobs)
 
 # SLURM creates an environment variable that holds the array id (e.g 1 - 10)

@@ -7,7 +7,6 @@
 #SBATCH --time=01:03:00     # Walltime
 #SBATCH --ntasks=24         # number of tasks
 #SBATCH --mem-per-cpu=1024  # memory/cpu (in MB)
-#SBATCH -C wm               # sb=Sandybridge,wm=Westmere
 ######################################################
 ###  Load the Environment
 module load ANSYS/15.0

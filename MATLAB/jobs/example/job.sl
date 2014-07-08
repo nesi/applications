@@ -7,6 +7,5 @@
 #SBATCH --cpus-per-task=5 
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=
-#SBATCH -C wm               # sb=Sandybridge,wm=Westmere
 module load MATLAB/UoA-FoE-R2012b
 srun matlab -nodesktop -nosplash -r myLu

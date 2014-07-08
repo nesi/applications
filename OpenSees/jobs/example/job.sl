@@ -5,7 +5,6 @@
 #SBATCH --ntasks=48         # number of tasks
 #SBATCH --mem-per-cpu=2048  # memory/cpu (in MB)
 #SBATCH --workdir=/projects/uoa99999
-#SBATCH -C wm               # sb=Sandybridge,wm=Westmere
 source /etc/profile
 module load OpenSees
 srun OpenSeesMP ./example.tcl
