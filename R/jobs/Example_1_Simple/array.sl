@@ -12,4 +12,4 @@
 # You can access this value from within R using Sys.getenv e.g:
 # jobid = as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID"))
 
-srun R CMD BATCH test.R
+srun Rscript test.R

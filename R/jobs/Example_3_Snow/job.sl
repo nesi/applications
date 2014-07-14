@@ -6,4 +6,4 @@
 #SBATCH --mem-per-cpu=2G
 module load R/3.1.1-goolf-1.5.14  
 # this version of R has a patched version of the snow library so that there is no need to use RMPISNOW.
-srun Rscript parallel.R
+srun Rscript parallel-snow.R

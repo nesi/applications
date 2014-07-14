@@ -14,4 +14,4 @@
 
 # Load the default R environment, for specific versions available see: module spider R
 module load R
-srun R CMD BATCH array.R
+srun RScript array.R
