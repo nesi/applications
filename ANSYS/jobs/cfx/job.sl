@@ -14,8 +14,7 @@
 ### CFX only runs in exclusive mode.
 
 ###  Load the Environment
-module load ANSYS
-#module load ANSYS/v145
+module load ANSYS/15.0
 
 source /share/SubmitScripts/slurm/slurm_setup_cfx-env.sh
 
