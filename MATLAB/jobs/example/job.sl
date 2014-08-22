@@ -1,9 +1,8 @@
 #!/bin/bash
-#SBATCH -J Serial_Job
-#SBATCH --job-name=matlab
+#SBATCH -J matlab
 #SBATCH -A uoa99999         # Project Account
 #SBATCH --time=00:10:00     # Walltime
-#SBATCH --mem-per-cpu=4096  # memory/cpu (in MB)
+#SBATCH --mem-per-cpu=2G    # memory/cpu 
 #SBATCH --cpus-per-task=5 
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=

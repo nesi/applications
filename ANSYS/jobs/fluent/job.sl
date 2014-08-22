@@ -6,7 +6,7 @@
 #SBATCH -A uoa99999         # Project Account
 #SBATCH --time=01:03:00     # Walltime
 #SBATCH --ntasks=24         # number of tasks
-#SBATCH --mem-per-cpu=1024  # memory/cpu (in MB)
+#SBATCH --mem-per-cpu=2G    # memory/cpu 
 ######################################################
 ###  Load the Environment
 module load ANSYS/15.0
@@ -25,7 +25,7 @@ cat FLUENT_HOSTFILE
 # and writes the results fluent.dat. 
 # 'yes' is the answer to 'do you want to overwrite data in fluent.dat'
 
-fluent -v2d -g -t$SLURM_NTASKS -mpi=pcmpi -cnf=FLUENT_HOSTFILE -pib -ssh << EOFluentInput > output.dat
+fluent -v2d -g -t$SLURM_NTASKS -mpi=pcmpi -cnf=FLUENT_HOSTFILE -ssh << EOFluentInput > output.dat
   rc fluent.cas
   rd fluent.dat
   /solve/init/init
