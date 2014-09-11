@@ -17,4 +17,4 @@
 
 module load Gaussian/D.01
 export GAUSS_SCRDIR=${SCRATCH_DIR}
-srun g09 < water.gjf
+srun g09 < H2O.gjf
