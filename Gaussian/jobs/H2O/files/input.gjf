@@ -1,7 +1,7 @@
 $RunGauss$
 
-%NProcShared=1
-%Mem=4096MB
+%NProcShared=8
+%Mem=8192MB
 %Chk=H2O.chk
 
 #P HF/STO-3G SP
