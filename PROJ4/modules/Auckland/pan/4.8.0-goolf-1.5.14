@@ -1,0 +1,30 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Cartographic Projections Library - Homepage: http://trac.osgeo.org/proj/
+    }
+}
+
+module-whatis {Description: Cartographic Projections Library - Homepage: http://trac.osgeo.org/proj/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/PROJ4/4.8.0-goolf-1.5.14
+
+conflict    PROJ4
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTPROJ4		"$root"
+setenv	EBVERSIONPROJ4		"4.8.0"
+setenv	EBDEVELPROJ4		"$root/easybuild/PROJ4-4.8.0-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.13.0

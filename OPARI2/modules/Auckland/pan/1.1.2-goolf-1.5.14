@@ -1,0 +1,34 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   OPARI2, the successor of Forschungszentrum Juelich's OPARI,
+ is a source-to-source instrumentation tool for OpenMP and hybrid codes.
+ It surrounds OpenMP directives and runtime library calls with calls to
+ the POMP2 measurement interface. - Homepage: http://www.score-p.org
+    }
+}
+
+module-whatis {Description: OPARI2, the successor of Forschungszentrum Juelich's OPARI,
+ is a source-to-source instrumentation tool for OpenMP and hybrid codes.
+ It surrounds OpenMP directives and runtime library calls with calls to
+ the POMP2 measurement interface. - Homepage: http://www.score-p.org}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/OPARI2/1.1.2-goolf-1.5.14
+
+conflict    OPARI2
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTOPARI2		"$root"
+setenv	EBVERSIONOPARI2		"1.1.2"
+setenv	EBDEVELOPARI2		"$root/easybuild/OPARI2-1.1.2-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

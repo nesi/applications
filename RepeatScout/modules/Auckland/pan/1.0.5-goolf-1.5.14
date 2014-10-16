@@ -1,0 +1,37 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   De novo identification of repeat families in large genomes - Homepage: http://bix.ucsd.edu/repeatscout/
+    }
+}
+
+module-whatis {Description: De novo identification of repeat families in large genomes - Homepage: http://bix.ucsd.edu/repeatscout/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/RepeatScout/1.0.5-goolf-1.5.14
+
+conflict    RepeatScout
+
+if { ![is-loaded Perl/5.18.2-goolf-1.5.14] } {
+    module load Perl/5.18.2-goolf-1.5.14
+}
+
+if { ![is-loaded nseg/1998-GCC-4.8.2] } {
+    module load nseg/1998-GCC-4.8.2
+}
+
+if { ![is-loaded trf/4.04] } {
+    module load trf/4.04
+}
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTREPEATSCOUT		"$root"
+setenv	EBVERSIONREPEATSCOUT		"1.0.5"
+setenv	EBDEVELREPEATSCOUT		"$root/easybuild/RepeatScout-1.0.5-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

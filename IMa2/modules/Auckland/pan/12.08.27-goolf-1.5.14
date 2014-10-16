@@ -1,0 +1,25 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   A program for population genetic analysis that extends the method of Hey and Nielsen (2007) to two or more populations - Homepage: https://bio.cst.temple.edu/~hey/software/software.htm#IMa2
+    }
+}
+
+module-whatis {Description: A program for population genetic analysis that extends the method of Hey and Nielsen (2007) to two or more populations - Homepage: https://bio.cst.temple.edu/~hey/software/software.htm#IMa2}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/IMa2/12.08.27-goolf-1.5.14
+
+conflict    IMa2
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTIMA2		"$root"
+setenv	EBVERSIONIMA2		"12.08.27"
+setenv	EBDEVELIMA2		"$root/easybuild/IMa2-12.08.27-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

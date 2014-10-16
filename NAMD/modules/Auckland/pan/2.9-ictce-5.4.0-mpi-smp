@@ -1,0 +1,33 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   NAMD is a parallel molecular dynamics code designed for high-performance simulation of large biomolecular systems. - Homepage: http://www.ks.uiuc.edu/Research/namd/
+    }
+}
+
+module-whatis {Description: NAMD is a parallel molecular dynamics code designed for high-performance simulation of large biomolecular systems. - Homepage: http://www.ks.uiuc.edu/Research/namd/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/NAMD/2.9-ictce-5.4.0-mpi-smp
+
+conflict NAMD
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+if { ![is-loaded Tcl/8.5.12-ictce-5.4.0] } {
+    module load Tcl/8.5.12-ictce-5.4.0
+}
+
+if { ![is-loaded FFTW/3.3.4-ictce-5.4.0] } {
+    module load FFTW/3.3.4-ictce-5.4.0
+}
+
+
+setenv	EBROOTNAMD		"$root"
+setenv	EBVERSIONNAMD		"2.9"
+setenv	EBDEVELNAMD		"$root/easybuild/NAMD-2.9-ictce-5.4.0-mpi-smp-easybuild-devel"
+
+prepend-path	PATH		$root/
+
+# Built with EasyBuild version 1.15.1

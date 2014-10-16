@@ -1,0 +1,25 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Estimates population-genetic parameters such as population size, population growth rate, recombination rate, and migration rates. - Homepage: http://evolution.gs.washington.edu/lamarc/index.html
+    }
+}
+
+module-whatis {Description: Estimates population-genetic parameters such as population size, population growth rate, recombination rate, and migration rates. - Homepage: http://evolution.gs.washington.edu/lamarc/index.html}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/LAMARC/2.1.9-goolf-1.5.14
+
+conflict    LAMARC
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTLAMARC		"$root"
+setenv	EBVERSIONLAMARC		"2.1.9"
+setenv	EBDEVELLAMARC		"$root/easybuild/LAMARC-2.1.9-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

@@ -1,0 +1,34 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   SQLite: SQL Database Engine in a C Library - Homepage: http://www.hwaci.com/sw/sqlite/
+    }
+}
+
+module-whatis {Description: SQLite: SQL Database Engine in a C Library - Homepage: http://www.hwaci.com/sw/sqlite/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/SQLite/3.8.4.3-iomkl-6.5.4
+
+conflict    SQLite
+
+if { ![is-loaded libreadline/6.2-iomkl-6.5.4] } {
+    module load libreadline/6.2-iomkl-6.5.4
+}
+
+if { ![is-loaded iomkl/6.5.4] } {
+    module load iomkl/6.5.4
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTSQLITE		"$root"
+setenv	EBVERSIONSQLITE		"3.8.4.3"
+setenv	EBDEVELSQLITE		"$root/easybuild/SQLite-3.8.4.3-iomkl-6.5.4-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

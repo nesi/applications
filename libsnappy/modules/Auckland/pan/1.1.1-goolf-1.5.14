@@ -1,0 +1,27 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Snappy is a compression/decompression library. It does not aim for maximum compression, or compatibility with any other compression library; instead, it aims for very high speeds and reasonable compression. - Homepage: https://code.google.com/p/snappy/
+    }
+}
+
+module-whatis {Description: Snappy is a compression/decompression library. It does not aim for maximum compression, or compatibility with any other compression library; instead, it aims for very high speeds and reasonable compression. - Homepage: https://code.google.com/p/snappy/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/libsnappy/1.1.1-goolf-1.5.14
+
+conflict    libsnappy
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+
+setenv	EBROOTLIBSNAPPY		"$root"
+setenv	EBVERSIONLIBSNAPPY		"1.1.1"
+setenv	EBDEVELLIBSNAPPY		"$root/easybuild/libsnappy-1.1.1-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

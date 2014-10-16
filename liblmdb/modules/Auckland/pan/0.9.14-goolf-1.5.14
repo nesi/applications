@@ -1,0 +1,29 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   LMDB is an ultra-fast, ultra-compact key-value embedded data store developed by Symas for the OpenLDAP Project - Homepage: http://symas.com/mdb
+    }
+}
+
+module-whatis {Description: LMDB is an ultra-fast, ultra-compact key-value embedded data store developed by Symas for the OpenLDAP Project - Homepage: http://symas.com/mdb}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/liblmdb/0.9.14-goolf-1.5.14
+
+conflict    liblmdb
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTLIBLMDB		"$root"
+setenv	EBVERSIONLIBLMDB		"0.9.14"
+setenv	EBDEVELLIBLMDB		"$root/easybuild/liblmdb-0.9.14-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

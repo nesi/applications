@@ -1,0 +1,37 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   libjpeg-turbo is a fork of the original IJG libjpeg which uses SIMD to accelerate baseline JPEG 
+compression and decompression. libjpeg is a library that implements JPEG image encoding, decoding and transcoding.
+ - Homepage: http://sourceforge.net/libjpeg-turbo/
+    }
+}
+
+module-whatis {Description: libjpeg-turbo is a fork of the original IJG libjpeg which uses SIMD to accelerate baseline JPEG 
+compression and decompression. libjpeg is a library that implements JPEG image encoding, decoding and transcoding.
+ - Homepage: http://sourceforge.net/libjpeg-turbo/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/libjpeg-turbo/1.3.0-iomkl-6.5.4
+
+conflict    libjpeg-turbo
+
+if { ![is-loaded NASM/2.07-iomkl-6.5.4] } {
+    module load NASM/2.07-iomkl-6.5.4
+}
+
+if { ![is-loaded iomkl/6.5.4] } {
+    module load iomkl/6.5.4
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTLIBJPEGMINTURBO		"$root"
+setenv	EBVERSIONLIBJPEGMINTURBO		"1.3.0"
+setenv	EBDEVELLIBJPEGMINTURBO		"$root/easybuild/libjpeg-turbo-1.3.0-iomkl-6.5.4-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

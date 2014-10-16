@@ -1,0 +1,16 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   SCons is a software construction tool. - Homepage: http://www.scons.org/
+    }
+}
+
+module-whatis {Description: SCons is a software construction tool. - Homepage: http://www.scons.org/}
+
+set root    /share/apps/SCons
+
+conflict    SCons
+
+prepend-path	MANPATH		$root/man
+prepend-path	PATH		$root/bin
+setenv          SCONS_LIB_DIR   $root/lib/scons-2.3.0

@@ -1,0 +1,8 @@
+#%Module1.0
+
+module-whatis {A single-particle based helical reconstruction package used to 
+determine 3D structures from electron micrographs - Homepage: http://www.sachse.embl.de/emspring }
+
+set root /share/apps/Spring/spring_v0-82-1339dev-reslurmed
+
+prepend-path PATH $root/bin

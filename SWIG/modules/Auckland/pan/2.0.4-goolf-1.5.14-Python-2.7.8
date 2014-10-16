@@ -1,0 +1,36 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   SWIG is a software development tool that connects programs written in C and C++ with
+a variety of high-level programming languages. - Homepage: http://www.swig.org/
+    }
+}
+
+module-whatis {Description: SWIG is a software development tool that connects programs written in C and C++ with
+a variety of high-level programming languages. - Homepage: http://www.swig.org/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/SWIG/2.0.4-goolf-1.5.14-Python-2.7.8
+
+conflict SWIG
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded Python/2.7.8-goolf-1.5.14] } {
+    module load Python/2.7.8-goolf-1.5.14
+}
+
+if { ![is-loaded PCRE/8.12-goolf-1.5.14] } {
+    module load PCRE/8.12-goolf-1.5.14
+}
+
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTSWIG		"$root"
+setenv	EBVERSIONSWIG		"2.0.4"
+setenv	EBDEVELSWIG		"$root/easybuild/SWIG-2.0.4-goolf-1.5.14-Python-2.7.8-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1

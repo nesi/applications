@@ -1,0 +1,32 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {    mdtest is an MPI-coordinated metadata benchmark test that performs 
+ open/stat/close operations on files and directories and then reports the performance. - Homepage: http://sourceforge.net/projects/mdtest/
+    }
+}
+
+module-whatis {Description:  mdtest is an MPI-coordinated metadata benchmark test that performs 
+ open/stat/close operations on files and directories and then reports the performance. - Homepage: http://sourceforge.net/projects/mdtest/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/mdtest/1.9.3-goolf-1.5.14
+
+conflict    mdtest
+
+if { ![is-loaded zlib/1.2.8-goolf-1.5.14] } {
+    module load zlib/1.2.8-goolf-1.5.14
+}
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	MANPATH		$root/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTMDTEST		"$root"
+setenv	EBVERSIONMDTEST		"1.9.3"
+setenv	EBDEVELMDTEST		"$root/easybuild/mdtest-1.9.3-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

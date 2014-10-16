@@ -1,0 +1,40 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Cube, which is used as performance report explorer for Scalasca and
+ Score-P, is a generic tool for displaying a multi-dimensional performance space
+ consisting of the dimensions (i) performance metric, (ii) call path, and (iii) system
+ resource. Each dimension can be represented as a tree, where non-leaf nodes of the tree
+ can be collapsed or expanded to achieve the desired level of granularity. - Homepage: http://www.scalasca.org/software/cube-4.x/download.html
+    }
+}
+
+module-whatis {Description: Cube, which is used as performance report explorer for Scalasca and
+ Score-P, is a generic tool for displaying a multi-dimensional performance space
+ consisting of the dimensions (i) performance metric, (ii) call path, and (iii) system
+ resource. Each dimension can be represented as a tree, where non-leaf nodes of the tree
+ can be collapsed or expanded to achieve the desired level of granularity. - Homepage: http://www.scalasca.org/software/cube-4.x/download.html}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Cube/4.2.3-goolf-1.5.14
+
+conflict    Cube
+
+if { ![is-loaded Qt/4.8.4-goolf-1.5.14] } {
+    module load Qt/4.8.4-goolf-1.5.14
+}
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTCUBE		"$root"
+setenv	EBVERSIONCUBE		"4.2.3"
+setenv	EBDEVELCUBE		"$root/easybuild/Cube-4.2.3-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

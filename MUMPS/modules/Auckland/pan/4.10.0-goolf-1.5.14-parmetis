@@ -1,0 +1,35 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   A parallel sparse direct solver - Homepage: http://graal.ens-lyon.fr/MUMPS/
+    }
+}
+
+module-whatis {Description: A parallel sparse direct solver - Homepage: http://graal.ens-lyon.fr/MUMPS/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/MUMPS/4.10.0-goolf-1.5.14-parmetis
+
+conflict    MUMPS
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded SCOTCH/6.0.0_esmumps-goolf-1.5.14] } {
+    module load SCOTCH/6.0.0_esmumps-goolf-1.5.14
+}
+
+if { ![is-loaded ParMETIS/3.2.0-goolf-1.5.14] } {
+    module load ParMETIS/3.2.0-goolf-1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+
+setenv	EBROOTMUMPS		"$root"
+setenv	EBVERSIONMUMPS		"4.10.0"
+setenv	EBDEVELMUMPS		"$root/easybuild/MUMPS-4.10.0-goolf-1.5.14-parmetis-easybuild-devel"
+
+
+# Built with EasyBuild version 1.13.0

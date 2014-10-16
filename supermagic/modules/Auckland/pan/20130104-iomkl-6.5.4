@@ -1,0 +1,27 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Very simple MPI sanity code. Nothing more, nothing less. - Homepage: https://github.com/hpc/supermagic
+    }
+}
+
+module-whatis {Description: Very simple MPI sanity code. Nothing more, nothing less. - Homepage: https://github.com/hpc/supermagic}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/supermagic/20130104-iomkl-6.5.4
+
+conflict    supermagic
+
+if { ![is-loaded iomkl/6.5.4] } {
+    module load iomkl/6.5.4
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTSUPERMAGIC		"$root"
+setenv	EBVERSIONSUPERMAGIC		"20130104"
+setenv	EBDEVELSUPERMAGIC		"$root/easybuild/supermagic-20130104-iomkl-6.5.4-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

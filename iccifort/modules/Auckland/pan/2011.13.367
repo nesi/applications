@@ -1,0 +1,28 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Intel Cluster Toolkit Compiler Edition provides Intel C,C++ and fortran compilers, Intel MPI and Intel MKL - Homepage: http://software.intel.com/en-us/intel-cluster-toolkit-compiler/
+    }
+}
+
+module-whatis {Description: Intel Cluster Toolkit Compiler Edition provides Intel C,C++ and fortran compilers, Intel MPI and Intel MKL - Homepage: http://software.intel.com/en-us/intel-cluster-toolkit-compiler/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/iccifort/2011.13.367
+
+conflict    iccifort
+
+if { ![is-loaded icc/2011.13.367] } {
+    module load icc/2011.13.367
+}
+
+if { ![is-loaded ifort/2011.13.367] } {
+    module load ifort/2011.13.367
+}
+
+
+setenv	EBROOTICCIFORT		"$root"
+setenv	EBVERSIONICCIFORT		"2011.13.367"
+setenv	EBDEVELICCIFORT		"$root/easybuild/iccifort-2011.13.367-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

@@ -1,0 +1,44 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   libcurl is a free and easy-to-use client-side URL transfer library,
+supporting DICT, FILE, FTP, FTPS, Gopher, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS,
+POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, Telnet and TFTP. libcurl supports
+SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP form based upload,
+proxies, cookies, user+password authentication (Basic, Digest, NTLM, Negotiate,
+Kerberos), file transfer resume, http proxy tunneling and more. - Homepage: http://curl.haxx.se
+    }
+}
+
+module-whatis {Description: libcurl is a free and easy-to-use client-side URL transfer library,
+supporting DICT, FILE, FTP, FTPS, Gopher, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS,
+POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, Telnet and TFTP. libcurl supports
+SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP form based upload,
+proxies, cookies, user+password authentication (Basic, Digest, NTLM, Negotiate,
+Kerberos), file transfer resume, http proxy tunneling and more. - Homepage: http://curl.haxx.se}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/cURL/7.29.0-goolf-1.5.14
+
+conflict    cURL
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded OpenSSL/1.0.1f-goolf-1.5.14] } {
+    module load OpenSSL/1.0.1f-goolf-1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTCURL		"$root"
+setenv	EBVERSIONCURL		"7.29.0"
+setenv	EBDEVELCURL		"$root/easybuild/cURL-7.29.0-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.13.0

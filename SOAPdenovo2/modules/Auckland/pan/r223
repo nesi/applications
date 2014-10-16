@@ -1,0 +1,8 @@
+#%Module1.0
+
+module-whatis "SOAPdenovo (version r223)"
+
+set root /share/apps/SOAPdenovo/noarch/r223
+
+prepend-path PATH $root
+

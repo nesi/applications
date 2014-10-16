@@ -1,0 +1,31 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   A fast and lightweight key/value database library by Google. - Homepage: https://code.google.com/p/leveldb/
+    }
+}
+
+module-whatis {Description: A fast and lightweight key/value database library by Google. - Homepage: https://code.google.com/p/leveldb/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/libleveldb/1.15.0-goolf-1.5.14
+
+conflict    libleveldb
+
+if { ![is-loaded libsnappy/1.1.1-goolf-1.5.14] } {
+    module load libsnappy/1.1.1-goolf-1.5.14
+}
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+
+setenv	EBROOTLIBLEVELDB		"$root"
+setenv	EBVERSIONLIBLEVELDB		"1.15.0"
+setenv	EBDEVELLIBLEVELDB		"$root/easybuild/libleveldb-1.15.0-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

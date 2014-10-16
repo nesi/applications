@@ -1,0 +1,51 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   A profile hidden Markov model based tool for a directed ortholog search in EST or protein sequence data - Homepage: http://sourceforge.net/projects/hamstr/
+    }
+}
+
+module-whatis {Description: A profile hidden Markov model based tool for a directed ortholog search in EST or protein sequence data - Homepage: http://sourceforge.net/projects/hamstr/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/HaMStR/13.2.3-goolf-1.5.14
+
+conflict    HaMStR
+
+if { ![is-loaded BLAST/2.2.29-ictce-5.4.0] } {
+    module load BLAST/2.2.29-ictce-5.4.0
+}
+
+if { ![is-loaded Perl/5.18.2-goolf-1.5.14] } {
+    module load Perl/5.18.2-goolf-1.5.14
+}
+
+if { ![is-loaded HMMER/3.0-goolf-1.5.14] } {
+    module load HMMER/3.0-goolf-1.5.14
+}
+
+if { ![is-loaded Wise2/2.4.1-ictce-5.4.0] } {
+    module load Wise2/2.4.1-ictce-5.4.0
+}
+
+if { ![is-loaded ClustalW2/2.1-goolf-1.5.14] } {
+    module load ClustalW2/2.1-goolf-1.5.14
+}
+
+if { ![is-loaded MAFFT/7.164-goolf-1.5.14-with-extensions] } {
+    module load MAFFT/7.164-goolf-1.5.14-with-extensions
+}
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTHAMSTR		"$root"
+setenv	EBVERSIONHAMSTR		"13.2.3"
+setenv	EBDEVELHAMSTR		"$root/easybuild/HaMStR-13.2.3-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

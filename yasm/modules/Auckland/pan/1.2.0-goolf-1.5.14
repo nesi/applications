@@ -1,0 +1,29 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Yasm-1.2.0: Complete rewrite of the NASM assembler with BSD license - Homepage: http://www.tortall.net/projects/yasm/
+    }
+}
+
+module-whatis {Description: Yasm-1.2.0: Complete rewrite of the NASM assembler with BSD license - Homepage: http://www.tortall.net/projects/yasm/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Yasm/1.2.0-goolf-1.5.14
+
+conflict    Yasm
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTYASM		"$root"
+setenv	EBVERSIONYASM		"1.2.0"
+setenv	EBDEVELYASM		"$root/easybuild/Yasm-1.2.0-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

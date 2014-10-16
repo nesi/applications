@@ -1,0 +1,42 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Scalasca is a software tool that supports the performance optimization of
+ parallel programs by measuring and analyzing their runtime behavior. The analysis identifies
+ potential performance bottlenecks -- in particular those concerning communication and
+ synchronization -- and offers guidance in exploring their causes. - Homepage: http://www.scalasca.org/
+    }
+}
+
+module-whatis {Description: Scalasca is a software tool that supports the performance optimization of
+ parallel programs by measuring and analyzing their runtime behavior. The analysis identifies
+ potential performance bottlenecks -- in particular those concerning communication and
+ synchronization -- and offers guidance in exploring their causes. - Homepage: http://www.scalasca.org/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Scalasca/2.0-goolf-1.5.14
+
+conflict    Scalasca
+
+if { ![is-loaded Cube/4.2.3-goolf-1.5.14] } {
+    module load Cube/4.2.3-goolf-1.5.14
+}
+
+if { ![is-loaded OTF2/1.2.1-goolf-1.5.14] } {
+    module load OTF2/1.2.1-goolf-1.5.14
+}
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTSCALASCA		"$root"
+setenv	EBVERSIONSCALASCA		"2.0"
+setenv	EBDEVELSCALASCA		"$root/easybuild/Scalasca-2.0-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

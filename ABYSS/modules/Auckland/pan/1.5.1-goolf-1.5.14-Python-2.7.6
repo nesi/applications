@@ -1,0 +1,34 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Assembly By Short Sequences - a de novo, parallel, paired-end sequence assembler - Homepage: http://www.bcgsc.ca/platform/bioinfo/software/abyss
+    }
+}
+
+module-whatis {Description: Assembly By Short Sequences - a de novo, parallel, paired-end sequence assembler - Homepage: http://www.bcgsc.ca/platform/bioinfo/software/abyss}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/ABySS/1.5.1-goolf-1.5.14-Python-2.7.6
+
+conflict    ABySS
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded google-sparsehash/2.0.2-goolf-1.5.14] } {
+    module load google-sparsehash/2.0.2-goolf-1.5.14
+}
+
+if { ![is-loaded Boost/1.55.0-goolf-1.5.14-Python-2.7.6] } {
+    module load Boost/1.55.0-goolf-1.5.14-Python-2.7.6
+}
+
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTABYSS		"$root"
+setenv	EBVERSIONABYSS		"1.5.1"
+setenv	EBDEVELABYSS		"$root/easybuild/ABySS-1.5.1-goolf-1.5.14-Python-2.7.6-easybuild-devel"
+
+
+# Built with EasyBuild version 1.13.0

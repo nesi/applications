@@ -1,0 +1,36 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   The Visualization Toolkit (VTK) is an open-source, freely available software system for
+  3D computer graphics, image processing and visualization. VTK consists of a C++ class library and several
+  interpreted interface layers including Tcl/Tk, Java, and Python. VTK supports a wide variety of visualization
+  algorithms including: scalar, vector, tensor, texture, and volumetric methods; and advanced modeling techniques
+  such as: implicit modeling, polygon reduction, mesh smoothing, cutting, contouring, and Delaunay triangulation. - Homepage: http://www.vtk.org
+    }
+}
+
+module-whatis {Description: The Visualization Toolkit (VTK) is an open-source, freely available software system for
+  3D computer graphics, image processing and visualization. VTK consists of a C++ class library and several
+  interpreted interface layers including Tcl/Tk, Java, and Python. VTK supports a wide variety of visualization
+  algorithms including: scalar, vector, tensor, texture, and volumetric methods; and advanced modeling techniques
+  such as: implicit modeling, polygon reduction, mesh smoothing, cutting, contouring, and Delaunay triangulation. - Homepage: http://www.vtk.org}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/VTK/5.10.1-goolf-1.5.14
+
+conflict    VTK
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTVTK		"$root"
+setenv	EBVERSIONVTK		"5.10.1"
+setenv	EBDEVELVTK		"$root/easybuild/VTK-5.10.1-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

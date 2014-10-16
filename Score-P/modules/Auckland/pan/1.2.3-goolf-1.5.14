@@ -1,0 +1,56 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   The Score-P measurement infrastructure is a highly scalable and
+ easy-to-use tool suite for profiling, event tracing, and online analysis of HPC
+ applications. - Homepage: http://www.score-p.org
+    }
+}
+
+module-whatis {Description: The Score-P measurement infrastructure is a highly scalable and
+ easy-to-use tool suite for profiling, event tracing, and online analysis of HPC
+ applications. - Homepage: http://www.score-p.org}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Score-P/1.2.3-goolf-1.5.14
+
+conflict    Score-P
+
+if { ![is-loaded binutils/2.22-goolf-1.5.14] } {
+    module load binutils/2.22-goolf-1.5.14
+}
+
+if { ![is-loaded Cube/4.2.3-goolf-1.5.14] } {
+    module load Cube/4.2.3-goolf-1.5.14
+}
+
+if { ![is-loaded OPARI2/1.1.2-goolf-1.5.14] } {
+    module load OPARI2/1.1.2-goolf-1.5.14
+}
+
+if { ![is-loaded OTF2/1.2.1-goolf-1.5.14] } {
+    module load OTF2/1.2.1-goolf-1.5.14
+}
+
+if { ![is-loaded PAPI/5.2.0-goolf-1.5.14] } {
+    module load PAPI/5.2.0-goolf-1.5.14
+}
+
+if { ![is-loaded PDT/3.20-goolf-1.5.14] } {
+    module load PDT/3.20-goolf-1.5.14
+}
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTSCOREMINP		"$root"
+setenv	EBVERSIONSCOREMINP		"1.2.3"
+setenv	EBDEVELSCOREMINP		"$root/easybuild/Score-P-1.2.3-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

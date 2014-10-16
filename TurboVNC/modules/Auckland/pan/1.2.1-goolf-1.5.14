@@ -1,0 +1,30 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   TurboVNC is a high-performance, enterprise-quality version of VNC based on TightVNC, x4vnc, TigerVNC, and X.org. - Homepage: http://www.turbovnc.org/
+    }
+}
+
+module-whatis {Description: TurboVNC is a high-performance, enterprise-quality version of VNC based on TightVNC, x4vnc, TigerVNC, and X.org. - Homepage: http://www.turbovnc.org/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/TurboVNC/1.2.1-goolf-1.5.14
+
+conflict    TurboVNC
+
+if { ![is-loaded libjpeg-turbo/1.3.0-goolf-1.5.14] } {
+    module load libjpeg-turbo/1.3.0-goolf-1.5.14
+}
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	MANPATH		$root/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTTURBOVNC		"$root"
+setenv	EBVERSIONTURBOVNC		"1.2.1"
+setenv	EBDEVELTURBOVNC		"$root/easybuild/TurboVNC-1.2.1-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

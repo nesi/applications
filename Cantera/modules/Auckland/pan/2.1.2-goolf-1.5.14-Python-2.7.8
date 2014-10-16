@@ -1,0 +1,45 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   A suite of object-oriented software tools for problems involving chemical kinetics, thermodynamics, and/or transport processes.
+Cantera provides types (or classes) of objects representing phases of matter, 
+interfaces between these phases, reaction managers, time-dependent reactor networks, 
+and steady one-dimensional reacting flows. Cantera is currently used for applications 
+including combustion, detonations, electrochemical energy conversion and storage, 
+fuel cells, batteries, aqueous electrolyte solutions, plasmas, and thin film deposition. - Homepage: http://cantera.github.io/docs/sphinx/html/index.html
+    }
+}
+
+module-whatis {Description: A suite of object-oriented software tools for problems involving chemical kinetics, thermodynamics, and/or transport processes.
+Cantera provides types (or classes) of objects representing phases of matter, 
+interfaces between these phases, reaction managers, time-dependent reactor networks, 
+and steady one-dimensional reacting flows. Cantera is currently used for applications 
+including combustion, detonations, electrochemical energy conversion and storage, 
+fuel cells, batteries, aqueous electrolyte solutions, plasmas, and thin film deposition. - Homepage: http://cantera.github.io/docs/sphinx/html/index.html}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Cantera/2.1.2-goolf-1.5.14-Python-2.7.8
+
+conflict Cantera
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded Python/2.7.8-goolf-1.5.14] } {
+    module load Python/2.7.8-goolf-1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/man
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTCANTERA		"$root"
+setenv	EBVERSIONCANTERA		"2.1.2"
+setenv	EBDEVELCANTERA		"$root/easybuild/Cantera-2.1.2-goolf-1.5.14-Python-2.7.8-easybuild-devel"
+
+prepend-path	PYTHONPATH		$root/lib/python2.7/site-packages
+
+# Built with EasyBuild version 1.15.1

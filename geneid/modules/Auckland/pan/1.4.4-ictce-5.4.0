@@ -1,0 +1,38 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Predicts genes in anonymous genomic sequences. In the first step, splice sites, start and stop 
+codons are predicted and scored along the sequence using Position Weight Arrays (PWAs). In the second step, 
+exons are built from the sites. Exons are scored as the sum of the scores of the defining sites, plus the 
+log-likelihood ratio of a Markov Model for coding DNA. Finally, from the set of predicted exons, the gene 
+structure is assembled, maximizing the sum of the scores of the assembled exons. geneid offers some type of 
+support to integrate predictions from multiple source via external gff files and the redefinition of the 
+general gene structure or model is also feasible. - Homepage: http://genome.crg.es/software/geneid/index.html
+    }
+}
+
+module-whatis {Description: Predicts genes in anonymous genomic sequences. In the first step, splice sites, start and stop 
+codons are predicted and scored along the sequence using Position Weight Arrays (PWAs). In the second step, 
+exons are built from the sites. Exons are scored as the sum of the scores of the defining sites, plus the 
+log-likelihood ratio of a Markov Model for coding DNA. Finally, from the set of predicted exons, the gene 
+structure is assembled, maximizing the sum of the scores of the assembled exons. geneid offers some type of 
+support to integrate predictions from multiple source via external gff files and the redefinition of the 
+general gene structure or model is also feasible. - Homepage: http://genome.crg.es/software/geneid/index.html}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/geneid/1.4.4-ictce-5.4.0
+
+conflict    geneid
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTGENEID		"$root"
+setenv	EBVERSIONGENEID		"1.4.4"
+setenv	EBDEVELGENEID		"$root/easybuild/geneid-1.4.4-ictce-5.4.0-easybuild-devel"
+
+setenv	GENEID		"$root/param/human3isoU12.param"
+
+# Built with EasyBuild version 1.12.1

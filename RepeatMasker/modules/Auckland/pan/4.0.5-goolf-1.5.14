@@ -1,0 +1,28 @@
+#%Module
+
+module-whatis {RepeatMasker is a program that screens DNA sequences for interspersed repeats
+  and low complexity DNA sequences. The output of the program is a detailed annotation of the
+  repeats that are present in the query sequence as well as a modified version of the query
+  sequence in which all the annotated repeats have been masked (default: replaced by Ns).
+  On average, almost 50% of a human genomic DNA sequence currently will be masked by the program.
+  Sequence comparisons in RepeatMasker are performed by one of several popular search engines
+  including, cross_match, ABBlast/WUBlast, RMBlast and Decypher.}
+
+set root    /share/apps/software/RepeatMasker/4.0.5
+
+conflict    RepeatMasker
+
+if { ![is-loaded RMBlast] } {
+    module load RMBlast/2.2.28-goolf-1.5.14
+}
+
+if { ![is-loaded Perl] } {
+    module load Perl/5.18.2-goolf-1.5.14
+}
+
+prepend-path	PATH		$root
+
+## Added because easybuild made MAKER depends on this module:
+setenv  EBROOTREPEATMASKER             "$root"
+setenv  EBVERSIONREPEATMASKER          "4.0.5"
+

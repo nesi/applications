@@ -1,0 +1,22 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   System for Processing Image Data from Electron microscopy and Related fields - Homepage: http://spider.wadsworth.org/spider_doc/spider/docs/spider.html
+    }
+}
+
+module-whatis {Description: System for Processing Image Data from Electron microscopy and Related fields - Homepage: http://spider.wadsworth.org/spider_doc/spider/docs/spider.html}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/SPIDER/22.02
+
+conflict    SPIDER
+
+prepend-path	MANPATH		$root/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTSPIDER		"$root"
+setenv	EBVERSIONSPIDER		"22.02"
+setenv	EBDEVELSPIDER		"$root/easybuild/SPIDER-22.02-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

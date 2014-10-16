@@ -1,0 +1,45 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library. OpenCV was built to provide a common infrastructure for computer vision applications and to accelerate the use of machine perception in the commercial products. - Homepage: http://opencv.org/
+    }
+}
+
+module-whatis {Description: OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library. OpenCV was built to provide a common infrastructure for computer vision applications and to accelerate the use of machine perception in the commercial products. - Homepage: http://opencv.org/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/OpenCV/2.4.9-goolf-1.5.14
+
+conflict    OpenCV
+
+if { ![is-loaded Python/2.7.6-goolf-1.5.14] } {
+    module load Python/2.7.6-goolf-1.5.14
+}
+
+if { ![is-loaded CUDA/6.0.37] } {
+    module load CUDA/6.0.37
+}
+
+if { ![is-loaded FFmpeg/2.3.3-goolf-1.5.14] } {
+    module load FFmpeg/2.3.3-goolf-1.5.14
+}
+
+if { ![is-loaded Java/1.8.0_5] } {
+    module load Java/1.8.0_5
+}
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTOPENCV		"$root"
+setenv	EBVERSIONOPENCV		"2.4.9"
+setenv	EBDEVELOPENCV		"$root/easybuild/OpenCV-2.4.9-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

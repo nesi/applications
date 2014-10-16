@@ -1,0 +1,31 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   SOAPec is a short-read correction tool and part of SOAPdenovo.
+ It is specially designed to correct Illum ina GA short reads. - Homepage: http://soap.genomics.org.cn/index.html
+    }
+}
+
+module-whatis {Description: SOAPec is a short-read correction tool and part of SOAPdenovo.
+ It is specially designed to correct Illum ina GA short reads. - Homepage: http://soap.genomics.org.cn/index.html}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/SOAPec/2.03-ictce-5.4.0
+
+conflict    SOAPec
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+if { ![is-loaded zlib/1.2.8-ictce-5.4.0] } {
+    module load zlib/1.2.8-ictce-5.4.0
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTSOAPEC		"$root"
+setenv	EBVERSIONSOAPEC		"2.03"
+setenv	EBDEVELSOAPEC		"$root/easybuild/SOAPec-2.03-ictce-5.4.0-easybuild-devel"
+
+
+# Built with EasyBuild version 1.13.0

@@ -1,0 +1,7 @@
+#%Module1.0
+
+module load OpenMPI/1.6.4-GCC-4.6.4
+set root /share/apps/Rosetta/3.5/rosetta-mpi-gcc-4.4.6/rosetta-3.5 
+prepend-path PATH $root/rosetta_source/bin
+
+setenv MODULE_ROSETTA_ROOT $root

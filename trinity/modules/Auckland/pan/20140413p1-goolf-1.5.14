@@ -1,0 +1,53 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Trinity represents a novel method for the efficient and robust de novo reconstruction
+ of transcriptomes from RNA-Seq data. Trinity combines three independent software modules: Inchworm,
+ Chrysalis, and Butterfly, applied sequentially to process large volumes of RNA-Seq reads. - Homepage: http://trinityrnaseq.sourceforge.net/
+    }
+}
+
+module-whatis {Description: Trinity represents a novel method for the efficient and robust de novo reconstruction
+ of transcriptomes from RNA-Seq data. Trinity combines three independent software modules: Inchworm,
+ Chrysalis, and Butterfly, applied sequentially to process large volumes of RNA-Seq reads. - Homepage: http://trinityrnaseq.sourceforge.net/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Trinity/20140413p1-goolf-1.5.14
+
+conflict    Trinity
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded Java/1.7.0_51] } {
+    module load Java/1.7.0_51
+}
+
+if { ![is-loaded ant/1.9.0-Java-1.7.0_51] } {
+    module load ant/1.9.0-Java-1.7.0_51
+}
+
+if { ![is-loaded ncurses/5.9-goolf-1.5.14] } {
+    module load ncurses/5.9-goolf-1.5.14
+}
+
+if { ![is-loaded zlib/1.2.8-goolf-1.5.14] } {
+    module load zlib/1.2.8-goolf-1.5.14
+}
+
+if { ![is-loaded Bowtie/1.0.1-goolf-1.5.14] } {
+    module load Bowtie/1.0.1-goolf-1.5.14
+}
+
+if { ![is-loaded SAMtools/0.1.19-goolf-1.5.14] } {
+    module load SAMtools/0.1.19-goolf-1.5.14
+}
+
+prepend-path	PATH		$root/trinityrnaseq_r20140413p1
+
+setenv	EBROOTTRINITY		"$root"
+setenv	EBVERSIONTRINITY		"20140413p1"
+setenv	EBDEVELTRINITY		"$root/easybuild/Trinity-20140413p1-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.13.0

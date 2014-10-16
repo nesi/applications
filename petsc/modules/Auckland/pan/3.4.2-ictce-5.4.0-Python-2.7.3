@@ -1,0 +1,41 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   PETSc, pronounced PET-see (the S is silent), is a suite of data structures and routines for the scalable (parallel) solution
+ of scientific applications modeled by partial differential equations. - Homepage: http://www.mcs.anl.gov/petsc
+    }
+}
+
+module-whatis {Description: PETSc, pronounced PET-see (the S is silent), is a suite of data structures and routines for the scalable (parallel) solution
+ of scientific applications modeled by partial differential equations. - Homepage: http://www.mcs.anl.gov/petsc}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/PETSc/3.4.2-ictce-5.4.0-Python-2.7.3
+
+conflict    PETSc
+
+if { ![is-loaded netCDF/4.2-ictce-5.4.0] } {
+    module load netCDF/4.2-ictce-5.4.0
+}
+
+if { ![is-loaded Boost/1.55.0-ictce-5.4.0-Python-2.7.3] } {
+    module load Boost/1.55.0-ictce-5.4.0-Python-2.7.3
+}
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTPETSC		"$root"
+setenv	EBVERSIONPETSC		"3.4.2"
+setenv	EBDEVELPETSC		"$root/easybuild/PETSc-3.4.2-ictce-5.4.0-Python-2.7.3-easybuild-devel"
+
+setenv	PETSC_DIR		"$root"
+
+# Built with EasyBuild version 1.14.0

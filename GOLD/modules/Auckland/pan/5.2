@@ -1,0 +1,17 @@
+#%Module1.0
+
+module-whatis "Genetic Optimisation for Ligand Docking (GOLD) (version 5.2)"
+
+set root /share/apps/goldsuite-5.2
+set golddir $root/GOLD
+set port 27000
+
+setenv GOLD_DIR $golddir
+setenv GOLD_VERSION 5.2                                       
+setenv GOLD_LICENCE_CHECKER $golddir/bin/gold_licence      
+setenv GOLD_LICENCE_PORT $port
+#setenv CCDC_LICENCE_FILE /share/apps/goldsuite-${GOLD_VERSION}/ccdc_licence.dat
+setenv CCDC_LICENCE_FILE $port@xcat-p               
+setenv PVM_ROOT $golddir/pvm3                              
+
+prepend-path PATH $root/bin

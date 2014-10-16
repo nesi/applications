@@ -1,0 +1,29 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Google Protocol Buffers - Homepage: https://code.google.com/p/protobuf/
+    }
+}
+
+module-whatis {Description: Google Protocol Buffers - Homepage: https://code.google.com/p/protobuf/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/protobuf/2.5.0-goolf-1.5.14
+
+conflict    protobuf
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTPROTOBUF		"$root"
+setenv	EBVERSIONPROTOBUF		"2.5.0"
+setenv	EBDEVELPROTOBUF		"$root/easybuild/protobuf-2.5.0-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

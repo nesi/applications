@@ -1,0 +1,26 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   An ultrafast, memory-efficient and highly accurate pair-end read merger. - Homepage: http://sco.h-its.org/exelixis/web/software/pear/
+    }
+}
+
+module-whatis {Description: An ultrafast, memory-efficient and highly accurate pair-end read merger. - Homepage: http://sco.h-its.org/exelixis/web/software/pear/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/PEAR/0.9.1-goolf-1.5.14
+
+conflict    PEAR
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTPEAR		"$root"
+setenv	EBVERSIONPEAR		"0.9.1"
+setenv	EBDEVELPEAR		"$root/easybuild/PEAR-0.9.1-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.13.0

@@ -1,0 +1,30 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Aligning proteins or protein HMMs to DNA - Homepage: http://www.ebi.ac.uk/~birney/wise2/
+    }
+}
+
+module-whatis {Description: Aligning proteins or protein HMMs to DNA - Homepage: http://www.ebi.ac.uk/~birney/wise2/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Wise2/2.4.1-ictce-5.4.0
+
+conflict    Wise2
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+if { ![is-loaded GLib/2.34.3-ictce-5.4.0] } {
+    module load GLib/2.34.3-ictce-5.4.0
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTWISE2		"$root"
+setenv	EBVERSIONWISE2		"2.4.1"
+setenv	EBDEVELWISE2		"$root/easybuild/Wise2-2.4.1-ictce-5.4.0-easybuild-devel"
+
+setenv	WISECONFIGDIR		"$root/wisecfg"
+
+# Built with EasyBuild version 1.12.1

@@ -1,0 +1,33 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   ORCA is a flexible, efficient and easy-to-use general purpose tool for quantum chemistry
+ with specific emphasis on spectroscopic properties of open-shell molecules. 
+  It features a wide variety of standard quantum chemical methods ranging from semiempirical methods to DFT to single-
+ and multireference correlated ab initio methods. 
+ It can also treat environmental and relativistic effects. - Homepage: http://www.thch.uni-bonn.de/tc/orca/
+    }
+}
+
+module-whatis {Description: ORCA is a flexible, efficient and easy-to-use general purpose tool for quantum chemistry
+ with specific emphasis on spectroscopic properties of open-shell molecules. 
+  It features a wide variety of standard quantum chemical methods ranging from semiempirical methods to DFT to single-
+ and multireference correlated ab initio methods. 
+ It can also treat environmental and relativistic effects. - Homepage: http://www.thch.uni-bonn.de/tc/orca/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/ORCA/3_0_2-linux_x86-64
+
+conflict    ORCA
+
+if { ![is-loaded OpenMPI/1.6.5-GCC-4.7.2] } {
+    module load OpenMPI/1.6.5-GCC-4.7.2
+}
+
+
+setenv	EBROOTORCA		"$root"
+setenv	EBVERSIONORCA		"3_0_2-linux_x86-64"
+setenv	EBDEVELORCA		"$root/easybuild/ORCA-3_0_2-linux_x86-64-easybuild-devel"
+
+prepend-path	PATH		$root/
+
+# Built with EasyBuild version 1.12.1

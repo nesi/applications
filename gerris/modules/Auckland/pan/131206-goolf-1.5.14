@@ -1,0 +1,34 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Solution of the partial differential equations describing fluid flow - Homepage: http://gfs.sourceforge.net/wiki/index.php/Main_Page
+    }
+}
+
+module-whatis {Description: Solution of the partial differential equations describing fluid flow - Homepage: http://gfs.sourceforge.net/wiki/index.php/Main_Page}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Gerris/131206-goolf-1.5.14
+
+conflict    Gerris
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded GTS/121130-goolf-1.5.14] } {
+    module load GTS/121130-goolf-1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTGERRIS		"$root"
+setenv	EBVERSIONGERRIS		"131206"
+setenv	EBDEVELGERRIS		"$root/easybuild/Gerris-131206-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.13.0

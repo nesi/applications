@@ -1,0 +1,31 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Flex (Fast Lexical Analyzer) is a tool for generating scanners. A scanner, 
+ sometimes called a tokenizer, is a program which recognizes lexical patterns in text. - Homepage: http://flex.sourceforge.net/
+    }
+}
+
+module-whatis {Description: Flex (Fast Lexical Analyzer) is a tool for generating scanners. A scanner, 
+ sometimes called a tokenizer, is a program which recognizes lexical patterns in text. - Homepage: http://flex.sourceforge.net/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/flex/2.5.35-ictce-5.4.0
+
+conflict    flex
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTFLEX		"$root"
+setenv	EBVERSIONFLEX		"2.5.35"
+setenv	EBDEVELFLEX		"$root/easybuild/flex-2.5.35-ictce-5.4.0-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

@@ -1,0 +1,28 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   The gflags package contains a library that implements commandline flags processing. As such it's a replacement for getopt(). It has increased flexibility, including built-in support for C++ types like string, and the ability to define flags in the source file in which they're used. - Homepage: https://code.google.com/p/gflags
+    }
+}
+
+module-whatis {Description: The gflags package contains a library that implements commandline flags processing. As such it's a replacement for getopt(). It has increased flexibility, including built-in support for C++ types like string, and the ability to define flags in the source file in which they're used. - Homepage: https://code.google.com/p/gflags}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/libgflags/2.1.1-goolf-1.5.14
+
+conflict    libgflags
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTLIBGFLAGS		"$root"
+setenv	EBVERSIONLIBGFLAGS		"2.1.1"
+setenv	EBDEVELLIBGFLAGS		"$root/easybuild/libgflags-2.1.1-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

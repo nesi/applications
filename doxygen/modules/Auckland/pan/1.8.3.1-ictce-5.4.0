@@ -1,0 +1,36 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Doxygen is a documentation system for C++, C, Java, Objective-C, Python, 
+ IDL (Corba and Microsoft flavors), Fortran, VHDL, PHP, C#, and to some extent D. - Homepage: http://www.doxygen.org
+    }
+}
+
+module-whatis {Description: Doxygen is a documentation system for C++, C, Java, Objective-C, Python, 
+ IDL (Corba and Microsoft flavors), Fortran, VHDL, PHP, C#, and to some extent D. - Homepage: http://www.doxygen.org}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Doxygen/1.8.3.1-ictce-5.4.0
+
+conflict Doxygen
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+if { ![is-loaded flex/2.5.37-ictce-5.4.0] } {
+    module load flex/2.5.37-ictce-5.4.0
+}
+
+if { ![is-loaded Bison/2.7-ictce-5.4.0] } {
+    module load Bison/2.7-ictce-5.4.0
+}
+
+prepend-path	MANPATH		$root/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTDOXYGEN		"$root"
+setenv	EBVERSIONDOXYGEN		"1.8.3.1"
+setenv	EBDEVELDOXYGEN		"$root/easybuild/Doxygen-1.8.3.1-ictce-5.4.0-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.0

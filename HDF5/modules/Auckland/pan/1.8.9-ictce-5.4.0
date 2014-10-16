@@ -1,0 +1,38 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   HDF5 is a unique technology suite that makes possible the management of 
+ extremely large and complex data collections. - Homepage: http://www.hdfgroup.org/HDF5/
+    }
+}
+
+module-whatis {Description: HDF5 is a unique technology suite that makes possible the management of 
+ extremely large and complex data collections. - Homepage: http://www.hdfgroup.org/HDF5/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/HDF5/1.8.9-ictce-5.4.0
+
+conflict    HDF5
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+if { ![is-loaded zlib/1.2.7-ictce-5.4.0] } {
+    module load zlib/1.2.7-ictce-5.4.0
+}
+
+if { ![is-loaded Szip/2.1-ictce-5.4.0] } {
+    module load Szip/2.1-ictce-5.4.0
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTHDF5		"$root"
+setenv	EBVERSIONHDF5		"1.8.9"
+setenv	EBDEVELHDF5		"$root/easybuild/HDF5-1.8.9-ictce-5.4.0-easybuild-devel"
+
+
+# Built with EasyBuild version 1.13.0

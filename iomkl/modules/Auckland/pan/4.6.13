@@ -1,0 +1,36 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Intel Cluster Toolchain Compiler Edition provides Intel C/C++ and Fortran compilers, Intel MKL & OpenMPI. - Homepage: http://software.intel.com/en-us/intel-cluster-toolkit-compiler/
+    }
+}
+
+module-whatis {Description: Intel Cluster Toolchain Compiler Edition provides Intel C/C++ and Fortran compilers, Intel MKL & OpenMPI. - Homepage: http://software.intel.com/en-us/intel-cluster-toolkit-compiler/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/iomkl/4.6.13
+
+conflict    iomkl
+
+if { ![is-loaded icc/2011.13.367] } {
+    module load icc/2011.13.367
+}
+
+if { ![is-loaded ifort/2011.13.367] } {
+    module load ifort/2011.13.367
+}
+
+if { ![is-loaded OpenMPI/1.6.5-iccifort-2011.13.367] } {
+    module load OpenMPI/1.6.5-iccifort-2011.13.367
+}
+
+if { ![is-loaded imkl/10.3.12.361-OpenMPI-1.6.5] } {
+    module load imkl/10.3.12.361-OpenMPI-1.6.5
+}
+
+
+setenv	EBROOTIOMKL		"$root"
+setenv	EBVERSIONIOMKL		"4.6.13"
+setenv	EBDEVELIOMKL		"$root/easybuild/iomkl-4.6.13-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

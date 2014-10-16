@@ -1,0 +1,26 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   gnuplot-4.6.0: Portable interactive, function plotting utility - Homepage: http://gnuplot.sourceforge.net/
+    }
+}
+
+module-whatis {Description: gnuplot-4.6.0: Portable interactive, function plotting utility - Homepage: http://gnuplot.sourceforge.net/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/gnuplot/4.6.5-goolf-1.5.14
+
+conflict    gnuplot
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTGNUPLOT		"$root"
+setenv	EBVERSIONGNUPLOT		"4.6.5"
+setenv	EBDEVELGNUPLOT		"$root/easybuild/gnuplot-4.6.5-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.13.0

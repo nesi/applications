@@ -1,0 +1,27 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   A programmer-oriented testing framework for Java. - Homepage: http://sourceforge.net/projects/junit
+    }
+}
+
+module-whatis {Description: A programmer-oriented testing framework for Java. - Homepage: http://sourceforge.net/projects/junit}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/JUnit/4.11-Java-1.7.0_51
+
+conflict    JUnit
+
+if { ![is-loaded Java/1.7.0_51] } {
+    module load Java/1.7.0_51
+}
+
+prepend-path	CLASSPATH		$root/junit-4.11.jar
+
+setenv	EBROOTJUNIT		"$root"
+setenv	EBVERSIONJUNIT		"4.11"
+setenv	EBDEVELJUNIT		"$root/easybuild/JUnit-4.11-Java-1.7.0_51-easybuild-devel"
+
+prepend-path	PATH		$root/
+prepend-path	CLASSPATH		$root/junit-4.11.jar
+
+# Built with EasyBuild version 1.13.0

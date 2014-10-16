@@ -1,0 +1,24 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Bayesian inference Using Gibbs Sampling - Homepage: http://www.openbugs.net
+    }
+}
+
+module-whatis {Description: Bayesian inference Using Gibbs Sampling - Homepage: http://www.openbugs.net}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/OpenBUGS/3.2.3
+
+conflict    OpenBUGS
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTOPENBUGS		"$root"
+setenv	EBVERSIONOPENBUGS		"3.2.3"
+setenv	EBDEVELOPENBUGS		"$root/easybuild/OpenBUGS-3.2.3-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

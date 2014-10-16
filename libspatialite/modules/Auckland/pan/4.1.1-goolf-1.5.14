@@ -1,0 +1,44 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   SpatiaLite is an open source library intended to extend the SQLite core to support fully fledged Spatial SQL capabilities. - Homepage: https://www.gaia-gis.it/fossil/libspatialite/home
+    }
+}
+
+module-whatis {Description: SpatiaLite is an open source library intended to extend the SQLite core to support fully fledged Spatial SQL capabilities. - Homepage: https://www.gaia-gis.it/fossil/libspatialite/home}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/libspatialite/4.1.1-goolf-1.5.14
+
+conflict    libspatialite
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded FreeXL/1.0.0g-goolf-1.5.14] } {
+    module load FreeXL/1.0.0g-goolf-1.5.14
+}
+
+if { ![is-loaded GEOS/3.3.5-goolf-1.5.14] } {
+    module load GEOS/3.3.5-goolf-1.5.14
+}
+
+if { ![is-loaded SQLite/3.8.4.3-goolf-1.5.14] } {
+    module load SQLite/3.8.4.3-goolf-1.5.14
+}
+
+if { ![is-loaded PROJ4/4.8.0-goolf-1.5.14] } {
+    module load PROJ4/4.8.0-goolf-1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTLIBSPATIALITE		"$root"
+setenv	EBVERSIONLIBSPATIALITE		"4.1.1"
+setenv	EBDEVELLIBSPATIALITE		"$root/easybuild/libspatialite-4.1.1-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.13.0

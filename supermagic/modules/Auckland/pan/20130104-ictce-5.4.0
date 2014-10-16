@@ -1,0 +1,27 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Very simple MPI sanity code. Nothing more, nothing less. - Homepage: https://github.com/hpc/supermagic
+    }
+}
+
+module-whatis {Description: Very simple MPI sanity code. Nothing more, nothing less. - Homepage: https://github.com/hpc/supermagic}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/supermagic/20130104-ictce-5.4.0
+
+conflict    supermagic
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTSUPERMAGIC		"$root"
+setenv	EBVERSIONSUPERMAGIC		"20130104"
+setenv	EBDEVELSUPERMAGIC		"$root/easybuild/supermagic-20130104-ictce-5.4.0-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

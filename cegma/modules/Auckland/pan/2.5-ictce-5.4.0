@@ -1,0 +1,51 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   CEGMA (Core Eukaryotic Genes Mapping Approach) is a pipeline for building a set
+of high reliable set of gene annotations in virtually any eukaryotic genome. The
+strategy relies on a simple fact: some highly conserved proteins are encoded in
+essentially all eukaryotic genomes. - Homepage: http://korflab.ucdavis.edu/datasets/cegma
+    }
+}
+
+module-whatis {Description: CEGMA (Core Eukaryotic Genes Mapping Approach) is a pipeline for building a set
+of high reliable set of gene annotations in virtually any eukaryotic genome. The
+strategy relies on a simple fact: some highly conserved proteins are encoded in
+essentially all eukaryotic genomes. - Homepage: http://korflab.ucdavis.edu/datasets/cegma}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/CEGMA/2.5-ictce-5.4.0
+
+conflict    CEGMA
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+if { ![is-loaded geneid/1.4.4-ictce-5.4.0] } {
+    module load geneid/1.4.4-ictce-5.4.0
+}
+
+if { ![is-loaded BLAST/2.2.29-ictce-5.4.0] } {
+    module load BLAST/2.2.29-ictce-5.4.0
+}
+
+if { ![is-loaded HMMER/3.0-ictce-5.4.0] } {
+    module load HMMER/3.0-ictce-5.4.0
+}
+
+if { ![is-loaded Wise2/2.4.1-ictce-5.4.0] } {
+    module load Wise2/2.4.1-ictce-5.4.0
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTCEGMA		"$root"
+setenv	EBVERSIONCEGMA		"2.5"
+setenv	EBDEVELCEGMA		"$root/easybuild/CEGMA-2.5-ictce-5.4.0-easybuild-devel"
+
+setenv	CEGMA		"$root"
+setenv	PERL5LIB		"$root/lib"
+
+# Built with EasyBuild version 1.12.1

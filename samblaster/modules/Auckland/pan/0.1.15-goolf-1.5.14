@@ -1,0 +1,31 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   samblaster is a fast and flexible program for marking duplicates in read-id grouped paired-end SAM files. 
+It can also optionally output discordant read pairs and/or split read mappings to separate SAM files, and/or unmapped/clipped 
+reads to a separate FASTQ file. When marking duplicates, samblaster will require approximately 20MB of memory per 1M read pairs.
+ - Homepage: http://github.com/GregoryFaust/samblaster
+    }
+}
+
+module-whatis {Description: samblaster is a fast and flexible program for marking duplicates in read-id grouped paired-end SAM files. 
+It can also optionally output discordant read pairs and/or split read mappings to separate SAM files, and/or unmapped/clipped 
+reads to a separate FASTQ file. When marking duplicates, samblaster will require approximately 20MB of memory per 1M read pairs.
+ - Homepage: http://github.com/GregoryFaust/samblaster}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/samblaster/0.1.15-goolf-1.5.14
+
+conflict    samblaster
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTSAMBLASTER		"$root"
+setenv	EBVERSIONSAMBLASTER		"0.1.15"
+setenv	EBDEVELSAMBLASTER		"$root/easybuild/samblaster-0.1.15-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.13.0

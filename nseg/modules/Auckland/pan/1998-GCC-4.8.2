@@ -1,0 +1,25 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Used to mask nucleic acid sequences - Homepage: http://www.google.com/?gws_rd=ssl#q=Wooton%2C+J.+C.+%26+Federhen%2C+S.+Comp.+Chem.+17%2C+149−163+(1993)
+    }
+}
+
+module-whatis {Description: Used to mask nucleic acid sequences - Homepage: http://www.google.com/?gws_rd=ssl#q=Wooton%2C+J.+C.+%26+Federhen%2C+S.+Comp.+Chem.+17%2C+149−163+(1993)}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/nseg/1998-GCC-4.8.2
+
+conflict    nseg
+
+if { ![is-loaded GCC/4.8.2] } {
+    module load GCC/4.8.2
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTNSEG		"$root"
+setenv	EBVERSIONNSEG		"1998"
+setenv	EBDEVELNSEG		"$root/easybuild/nseg-1998-GCC-4.8.2-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

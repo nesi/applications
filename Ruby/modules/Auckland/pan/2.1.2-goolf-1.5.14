@@ -1,0 +1,34 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Ruby is a dynamic, open source programming language with 
+ a focus on simplicity and productivity. It has an elegant syntax that is 
+ natural to read and easy to write. - Homepage: https://www.ruby-lang.org
+    }
+}
+
+module-whatis {Description: Ruby is a dynamic, open source programming language with 
+ a focus on simplicity and productivity. It has an elegant syntax that is 
+ natural to read and easy to write. - Homepage: https://www.ruby-lang.org}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Ruby/2.1.2-goolf-1.5.14
+
+conflict    Ruby
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTRUBY		"$root"
+setenv	EBVERSIONRUBY		"2.1.2"
+setenv	EBDEVELRUBY		"$root/easybuild/Ruby-2.1.2-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

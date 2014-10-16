@@ -1,0 +1,25 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   De novo identification and classification of repeat sequence families from genomic sequences - Homepage: http://selab.janelia.org/recon.html
+    }
+}
+
+module-whatis {Description: De novo identification and classification of repeat sequence families from genomic sequences - Homepage: http://selab.janelia.org/recon.html}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/RECON/1.08-goolf-1.5.14
+
+conflict    RECON
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTRECON		"$root"
+setenv	EBVERSIONRECON		"1.08"
+setenv	EBDEVELRECON		"$root/easybuild/RECON-1.08-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

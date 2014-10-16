@@ -1,0 +1,30 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Just Another Gibbs Sampler - a program for the statistical analysis of Bayesian hierarchical models by Markov Chain Monte Carlo. - Homepage: http://sourceforge.net/projects/mcmc-jags
+    }
+}
+
+module-whatis {Description: Just Another Gibbs Sampler - a program for the statistical analysis of Bayesian hierarchical models by Markov Chain Monte Carlo. - Homepage: http://sourceforge.net/projects/mcmc-jags}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/JAGS/3.4.0-ictce-5.4.0
+
+conflict    JAGS
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTJAGS		"$root"
+setenv	EBVERSIONJAGS		"3.4.0"
+setenv	EBDEVELJAGS		"$root/easybuild/JAGS-3.4.0-ictce-5.4.0-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

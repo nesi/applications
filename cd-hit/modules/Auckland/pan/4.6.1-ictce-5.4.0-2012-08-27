@@ -1,0 +1,27 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {    CD-HIT is a very widely used program for clustering and 
+ comparing protein or nucleotide sequences. - Homepage: http://weizhong-lab.ucsd.edu/cd-hit/
+    }
+}
+
+module-whatis {Description:  CD-HIT is a very widely used program for clustering and 
+ comparing protein or nucleotide sequences. - Homepage: http://weizhong-lab.ucsd.edu/cd-hit/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/CD-HIT/4.6.1-ictce-5.4.0-2012-08-27
+
+conflict    CD-HIT
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTCDMINHIT		"$root"
+setenv	EBVERSIONCDMINHIT		"4.6.1"
+setenv	EBDEVELCDMINHIT		"$root/easybuild/CD-HIT-4.6.1-ictce-5.4.0-2012-08-27-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

@@ -1,0 +1,45 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   
+beagle-lib is a high-performance library that can perform the core
+calculations at the heart of most Bayesian and Maximum Likelihood
+phylogenetics packages.
+ - Homepage: http://code.google.com/p/beagle-lib/
+    }
+}
+
+module-whatis {Description: 
+beagle-lib is a high-performance library that can perform the core
+calculations at the heart of most Bayesian and Maximum Likelihood
+phylogenetics packages.
+ - Homepage: http://code.google.com/p/beagle-lib/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/beagle-lib/20140322-ictce-5.4.0
+
+conflict beagle-lib
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+if { ![is-loaded CUDA/6.0.37] } {
+    module load CUDA/6.0.37
+}
+
+if { ![is-loaded Java/1.7.0_51] } {
+    module load Java/1.7.0_51
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTBEAGLEMINLIB		"$root"
+setenv	EBVERSIONBEAGLEMINLIB		"20140322"
+setenv	EBDEVELBEAGLEMINLIB		"$root/easybuild/beagle-lib-20140322-ictce-5.4.0-easybuild-devel"
+
+setenv	BEAGLE_LIB_PATH		"$root/lib"
+
+# Built with EasyBuild version 1.15.1

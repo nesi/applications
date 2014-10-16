@@ -1,0 +1,29 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Xcursor is a simple library designed to help locate and load cursors - Homepage: http://www.freedesktop.org/wiki/Software/xlibs
+    }
+}
+
+module-whatis {Description: Xcursor is a simple library designed to help locate and load cursors - Homepage: http://www.freedesktop.org/wiki/Software/xlibs}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/libXcursor/1.1.14-goolf-1.5.14
+
+conflict    libXcursor
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTLIBXCURSOR		"$root"
+setenv	EBVERSIONLIBXCURSOR		"1.1.14"
+setenv	EBDEVELLIBXCURSOR		"$root/easybuild/libXcursor-1.1.14-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

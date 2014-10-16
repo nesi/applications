@@ -1,0 +1,32 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   VirtualGL is an open source toolkit that gives any Unix or Linux remote display software the ability to run OpenGL applications with full 3D hardware acceleration. - Homepage: http://www.virtualgl.org/
+    }
+}
+
+module-whatis {Description: VirtualGL is an open source toolkit that gives any Unix or Linux remote display software the ability to run OpenGL applications with full 3D hardware acceleration. - Homepage: http://www.virtualgl.org/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/VirtualGL/2.3.3-goolf-1.5.14
+
+conflict    VirtualGL
+
+if { ![is-loaded libjpeg-turbo/1.3.0-goolf-1.5.14] } {
+    module load libjpeg-turbo/1.3.0-goolf-1.5.14
+}
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTVIRTUALGL		"$root"
+setenv	EBVERSIONVIRTUALGL		"2.3.3"
+setenv	EBDEVELVIRTUALGL		"$root/easybuild/VirtualGL-2.3.3-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

@@ -1,0 +1,49 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   manipulates and analyzes data stored in netCDF-accessible formats, including DAP, HDF4, and HDF5 - Homepage: http://nco.sourceforge.net
+    }
+}
+
+module-whatis {Description: manipulates and analyzes data stored in netCDF-accessible formats, including DAP, HDF4, and HDF5 - Homepage: http://nco.sourceforge.net}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/NCO/4.4.4-ictce-5.4.0
+
+conflict    NCO
+
+if { ![is-loaded UDUNITS/2.1.24-ictce-5.4.0] } {
+    module load UDUNITS/2.1.24-ictce-5.4.0
+}
+
+if { ![is-loaded expat/2.1.0-ictce-5.4.0] } {
+    module load expat/2.1.0-ictce-5.4.0
+}
+
+if { ![is-loaded ANTLR/2.7.7-ictce-5.4.0] } {
+    module load ANTLR/2.7.7-ictce-5.4.0
+}
+
+if { ![is-loaded GSL/1.16-ictce-5.4.0] } {
+    module load GSL/1.16-ictce-5.4.0
+}
+
+if { ![is-loaded netCDF/4.2-ictce-5.4.0] } {
+    module load netCDF/4.2-ictce-5.4.0
+}
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTNCO		"$root"
+setenv	EBVERSIONNCO		"4.4.4"
+setenv	EBDEVELNCO		"$root/easybuild/NCO-4.4.4-ictce-5.4.0-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

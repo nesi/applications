@@ -1,0 +1,21 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Locates tandem repeats in DNA sequences. - Homepage: http://tandem.bu.edu/trf/trf.html
+    }
+}
+
+module-whatis {Description: Locates tandem repeats in DNA sequences. - Homepage: http://tandem.bu.edu/trf/trf.html}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/trf/4.04
+
+conflict    trf
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTTRF		"$root"
+setenv	EBVERSIONTRF		"4.04"
+setenv	EBDEVELTRF		"$root/easybuild/trf-4.04-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

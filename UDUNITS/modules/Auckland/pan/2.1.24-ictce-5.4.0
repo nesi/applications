@@ -1,0 +1,30 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   UDUNITS supports conversion of unit specifications between formatted and binary forms,
+ arithmetic manipulation of units, and conversion of values between compatible scales of measurement. - Homepage: http://www.unidata.ucar.edu/software/udunits/
+    }
+}
+
+module-whatis {Description: UDUNITS supports conversion of unit specifications between formatted and binary forms,
+ arithmetic manipulation of units, and conversion of values between compatible scales of measurement. - Homepage: http://www.unidata.ucar.edu/software/udunits/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/UDUNITS/2.1.24-ictce-5.4.0
+
+conflict    UDUNITS
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTUDUNITS		"$root"
+setenv	EBVERSIONUDUNITS		"2.1.24"
+setenv	EBDEVELUDUNITS		"$root/easybuild/UDUNITS-2.1.24-ictce-5.4.0-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

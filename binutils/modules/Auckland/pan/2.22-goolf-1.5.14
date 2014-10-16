@@ -1,0 +1,31 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   binutils-2.22: GNU binary utilities - Homepage: http://directory.fsf.org/project/binutils/
+    }
+}
+
+module-whatis {Description: binutils-2.22: GNU binary utilities - Homepage: http://directory.fsf.org/project/binutils/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/binutils/2.22-goolf-1.5.14
+
+conflict    binutils
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LD_LIBRARY_PATH		$root/lib64
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib64
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTBINUTILS		"$root"
+setenv	EBVERSIONBINUTILS		"2.22"
+setenv	EBDEVELBINUTILS		"$root/easybuild/binutils-2.22-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

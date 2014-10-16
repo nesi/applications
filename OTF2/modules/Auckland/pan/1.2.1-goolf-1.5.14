@@ -1,0 +1,32 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   The Open Trace Format 2 is a highly scalable, memory efficient event
+ trace data format plus support library. It will become the new standard trace format
+ for Scalasca, Vampir, and Tau and is open for other tools. - Homepage: http://www.score-p.org
+    }
+}
+
+module-whatis {Description: The Open Trace Format 2 is a highly scalable, memory efficient event
+ trace data format plus support library. It will become the new standard trace format
+ for Scalasca, Vampir, and Tau and is open for other tools. - Homepage: http://www.score-p.org}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/OTF2/1.2.1-goolf-1.5.14
+
+conflict    OTF2
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTOTF2		"$root"
+setenv	EBVERSIONOTF2		"1.2.1"
+setenv	EBDEVELOTF2		"$root/easybuild/OTF2-1.2.1-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

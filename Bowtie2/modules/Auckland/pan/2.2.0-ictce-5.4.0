@@ -1,0 +1,27 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Bowtie 2 is an ultrafast and memory-efficient tool
+for aligning sequencing reads to long reference sequences. - Homepage: http://bowtie-bio.sourceforge.net/bowtie2/index.shtml
+    }
+}
+
+module-whatis {Description: Bowtie 2 is an ultrafast and memory-efficient tool
+for aligning sequencing reads to long reference sequences. - Homepage: http://bowtie-bio.sourceforge.net/bowtie2/index.shtml}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Bowtie2/2.2.0-ictce-5.4.0
+
+conflict    Bowtie2
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTBOWTIE2		"$root"
+setenv	EBVERSIONBOWTIE2		"2.2.0"
+setenv	EBDEVELBOWTIE2		"$root/easybuild/Bowtie2-2.2.0-ictce-5.4.0-easybuild-devel"
+
+
+# Built with EasyBuild version 1.13.0

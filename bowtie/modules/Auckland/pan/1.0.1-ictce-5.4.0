@@ -1,0 +1,29 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Bowtie is an ultrafast, memory-efficient short read aligner.
+It aligns short DNA sequences (reads) to the human genome.
+ - Homepage: http://bowtie-bio.sourceforge.net/index.shtml
+    }
+}
+
+module-whatis {Description: Bowtie is an ultrafast, memory-efficient short read aligner.
+It aligns short DNA sequences (reads) to the human genome.
+ - Homepage: http://bowtie-bio.sourceforge.net/index.shtml}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Bowtie/1.0.1-ictce-5.4.0
+
+conflict    Bowtie
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTBOWTIE		"$root"
+setenv	EBVERSIONBOWTIE		"1.0.1"
+setenv	EBDEVELBOWTIE		"$root/easybuild/Bowtie-1.0.1-ictce-5.4.0-easybuild-devel"
+
+
+# Built with EasyBuild version 1.13.0

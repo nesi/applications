@@ -1,0 +1,11 @@
+#%Module1.0
+proc ModulesHelp { } {
+        global version
+        puts stderr "\tThe I-TASSER protein structure prediction workflow (version 4.0)\n"
+}
+
+module-whatis "The I-TASSER protein structure prediction workflow (version 4.0)"
+
+set             ITASSER_ROOT    /share/apps/I-TASSER/4.0/noarch
+prepend-path    PATH            $ITASSER_ROOT/bin
+prepend-path    PATH            $ITASSER_ROOT

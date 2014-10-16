@@ -1,0 +1,9 @@
+#%Module1.0
+
+module-whatis "PHENIX is a software suite for the automated determination of macromolecular structures using X-ray crystallography and other methods."
+
+module load goolf/1.5.14
+module load Python/2.7.6-goolf-1.5.14
+
+set phenix /share/apps/phenix/1.9-1692/goolf-1.5.14/phenix-1.9-1692 
+prepend-path PATH $phenix
