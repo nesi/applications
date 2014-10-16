@@ -5,21 +5,23 @@ proc ModulesHelp { } {
     }
 }
 
-module-whatis {Paraview is a scientific parallel visualizer - Homepage: http://www.paraview.org}
+module-whatis {Description: Paraview is a scientific parallel visualizer - Homepage: http://www.paraview.org}
 
 set root    /share/easybuild/RHEL6.3/westmere/software/Paraview/4.1.0-gmpolf-1.4.8
 
 conflict    Paraview
 
-if { ![is-loaded gmpolf/1.4.8] } {
-    module load gmpolf/1.4.8
-}
-
 if { ![is-loaded Qt/4.8.5-gmpolf-1.4.8] } {
     module load Qt/4.8.5-gmpolf-1.4.8
 }
 
+if { ![is-loaded gmpolf/1.4.8] } {
+    module load gmpolf/1.4.8
+}
+
+prepend-path	CPATH		$root/include
 prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
 prepend-path	PATH		$root/bin
 
 setenv	EBROOTPARAVIEW		"$root"
@@ -27,4 +29,4 @@ setenv	EBVERSIONPARAVIEW		"4.1.0"
 setenv	EBDEVELPARAVIEW		"$root/easybuild/Paraview-4.1.0-gmpolf-1.4.8-easybuild-devel"
 
 
-# built with EasyBuild version 1.9.0
+# Built with EasyBuild version 1.14.0

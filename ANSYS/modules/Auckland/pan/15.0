@@ -18,15 +18,18 @@ conflict    ANSYS
 prepend-path	PATH		$root/v150/tgrid/bin
 prepend-path	PATH		$root/v150/RSM/bin
 prepend-path	PATH		$root/v150/ansys/bin
+prepend-path	PATH		$root/v150/CFD-Post/bin
 prepend-path	PATH		$root/v150/CFX/bin
 prepend-path	PATH		$root/v150/fluent/bin
-prepend-path	PATH		$root/v150/CFD-Post/bin
 prepend-path	PATH		$root/v150/TurboGrid/bin
 prepend-path	PATH		$root/v150/polyflow/bin
+prepend-path	PATH		$root/v150/icemcfd/linux64_amd/bin
 
 setenv	EBROOTANSYS		"$root"
 setenv	EBVERSIONANSYS		"15.0"
 setenv	EBDEVELANSYS		"$root/easybuild/ANSYS-15.0-easybuild-devel"
+setenv  I_MPI_PMI_LIBRARY       "/usr/lib64/libpmi.so"
 
+setenv	ICEM_ACN	$root/icemcfd/linux64_amd
 
-# Built with EasyBuild version 1.13.0dev
+# Built with EasyBuild version 1.13.0

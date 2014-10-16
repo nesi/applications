@@ -21,6 +21,7 @@ if { ![is-loaded ictce/5.4.0] } {
 
 prepend-path	CPATH		$root/include
 prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
 prepend-path	MANPATH		$root/man
 prepend-path	PATH		$root/bin
 
@@ -29,4 +30,4 @@ setenv	EBVERSIONNCURSES		"5.9"
 setenv	EBDEVELNCURSES		"$root/easybuild/ncurses-5.9-ictce-5.4.0-easybuild-devel"
 
 
-# built with EasyBuild version 1.10.0
+# Built with EasyBuild version 1.13.0

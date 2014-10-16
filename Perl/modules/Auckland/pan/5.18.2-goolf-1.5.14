@@ -1,11 +1,11 @@
 #%Module
 
 proc ModulesHelp { } {
-    puts stderr {   Larry Wall's Practical Extraction and Report Language - Homepage: http://www.perl.org
+    puts stderr {   Larry Wall's Practical Extraction and Report Language - Homepage: http://www.perl.org/
     }
 }
 
-module-whatis {Description: Larry Wall's Practical Extraction and Report Language - Homepage: http://www.perl.org }
+module-whatis {Description: Larry Wall's Practical Extraction and Report Language - Homepage: http://www.perl.org/ }
 
 set root    /share/easybuild/RHEL6.3/westmere/software/Perl/5.18.2-goolf-1.5.14
 

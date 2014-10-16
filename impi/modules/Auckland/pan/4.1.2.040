@@ -15,14 +15,15 @@ set root    /share/easybuild/RHEL6.3/westmere/software/impi/4.1.2.040
 
 conflict    impi
 
-prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	CPATH		$root/include64
 prepend-path	LD_LIBRARY_PATH		$root/lib64
-prepend-path	PATH		$root/bin
+prepend-path	LIBRARY_PATH		$root/lib64
 prepend-path	PATH		$root/bin64
 
 setenv	EBROOTIMPI		"$root"
 setenv	EBVERSIONIMPI		"4.1.2.040"
 setenv	EBDEVELIMPI		"$root/easybuild/impi-4.1.2.040-easybuild-devel"
+setenv  I_MPI_PMI_LIBRARY /usr/lib64/libpmi.so
 
 prepend-path	INTEL_LICENSE_FILE		/share/apps/intel/licenses/license.lic
 setenv	I_MPI_ROOT		$root

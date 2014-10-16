@@ -17,6 +17,8 @@ prepend-path	CPATH		$root/include
 prepend-path	LD_LIBRARY_PATH		$root/lib
 prepend-path	LD_LIBRARY_PATH		$root/lib64
 prepend-path	LD_LIBRARY_PATH		$root/lib/gcc/x86_64-unknown-linux-gnu/4.8.1
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib64
 prepend-path	MANPATH		$root/share/man
 prepend-path	PATH		$root/bin
 
@@ -25,4 +27,4 @@ setenv	EBVERSIONGCC		"4.8.1"
 setenv	EBDEVELGCC		"$root/easybuild/GCC-4.8.1-easybuild-devel"
 
 
-# built with EasyBuild version 1.10.0
+# Built with EasyBuild version 1.13.0

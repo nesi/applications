@@ -2,9 +2,10 @@
  
 module-whatis "NAMD : Scalable molecular dynamics - Compiled with CUDA 5.0 and GCC"
 
-module load CUDA/5.0
+#module load CUDA/5.0
 
-set root /share/apps/NAMD/cuda/2.9/cuda-5.0
+set root /share/apps/NAMD/NAMD_2.9_Linux-x86_64-multicore-CUDA
 prepend-path PATH 		$root
+prepend-path LD_LIBRARY_PATH 	$root
 prepend-path LD_LIBRARY_PATH 	$root/lib
 

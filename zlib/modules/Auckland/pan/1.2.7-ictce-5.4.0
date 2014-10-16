@@ -30,4 +30,4 @@ setenv	EBVERSIONZLIB		"1.2.7"
 setenv	EBDEVELZLIB		"$root/easybuild/zlib-1.2.7-ictce-5.4.0-easybuild-devel"
 
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.13.0

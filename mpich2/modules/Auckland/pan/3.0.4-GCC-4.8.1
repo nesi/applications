@@ -19,6 +19,7 @@ if { ![is-loaded GCC/4.8.1] } {
 
 prepend-path	CPATH		$root/include
 prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
 prepend-path	MANPATH		$root/share/man
 prepend-path	PATH		$root/bin
 prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
@@ -28,4 +29,4 @@ setenv	EBVERSIONMPICH2		"3.0.4"
 setenv	EBDEVELMPICH2		"$root/easybuild/MPICH2-3.0.4-GCC-4.8.1-easybuild-devel"
 
 
-# built with EasyBuild version 1.10.0
+# Built with EasyBuild version 1.13.0

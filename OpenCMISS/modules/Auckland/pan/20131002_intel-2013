@@ -6,7 +6,7 @@ module-whatis {OpenCMISS: A mathematical modelling environment for complex bioen
 set root      /share/apps/OpenCMISS/sandybridge/ics-2013/netcdf-4.3.0/hdf5-1.8.11
 
 module load netcdf-fortran/4.2_intel-2013-impi-sandybridge
-module load python/2.7.4
+module load Python/2.7.3-ictce-5.4.0 
 
 setenv 		OPENCMISS_ROOT 			$root/OpenCMISS
 setenv 		OPENCMISSEXAMPLES_ROOT 		$root/OpenCMISS/examples

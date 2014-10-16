@@ -21,10 +21,11 @@ if { ![is-loaded bzip2/1.0.6-ictce-5.4.0] } {
 
 prepend-path	CPATH		$root/include
 prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
 
 setenv	EBROOTBOOST		"$root"
 setenv	EBVERSIONBOOST		"1.53.0"
 setenv	EBDEVELBOOST		"$root/easybuild/Boost-1.53.0-ictce-5.4.0-easybuild-devel"
 
 
-# built with EasyBuild version 1.10.0
+# Built with EasyBuild version 1.13.0

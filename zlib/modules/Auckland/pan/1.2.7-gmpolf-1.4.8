@@ -21,6 +21,7 @@ if { ![is-loaded gmpolf/1.4.8] } {
 
 prepend-path	CPATH		$root/include
 prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
 prepend-path	MANPATH		$root/share/man
 prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
 
@@ -29,4 +30,4 @@ setenv	EBVERSIONZLIB		"1.2.7"
 setenv	EBDEVELZLIB		"$root/easybuild/zlib-1.2.7-gmpolf-1.4.8-easybuild-devel"
 
 
-# built with EasyBuild version 1.10.0
+# Built with EasyBuild version 1.13.0

@@ -39,4 +39,4 @@ setenv	EBVERSIONGOOLF		"1.4.10"
 setenv	EBDEVELGOOLF		"$root/easybuild/goolf-1.4.10-easybuild-devel"
 
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.13.0

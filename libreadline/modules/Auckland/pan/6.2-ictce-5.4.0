@@ -36,4 +36,4 @@ setenv	EBVERSIONLIBREADLINE		"6.2"
 setenv	EBDEVELLIBREADLINE		"$root/easybuild/libreadline-6.2-ictce-5.4.0-easybuild-devel"
 
 
-# Built with EasyBuild version 1.12.0
+# Built with EasyBuild version 1.13.0

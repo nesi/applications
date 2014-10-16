@@ -6,7 +6,7 @@ proc ModulesHelp { } {
     }
 }
 
-module-whatis {The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Java, and Ada,
+module-whatis {Description: The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Java, and Ada,
  as well as libraries for these languages (libstdc++, libgcj,...). - Homepage: http://gcc.gnu.org/}
 
 set root    /share/easybuild/RHEL6.3/westmere/software/GCC/4.8.2
@@ -17,6 +17,8 @@ prepend-path	CPATH		$root/include
 prepend-path	LD_LIBRARY_PATH		$root/lib
 prepend-path	LD_LIBRARY_PATH		$root/lib64
 prepend-path	LD_LIBRARY_PATH		$root/lib/gcc/x86_64-unknown-linux-gnu/4.8.2
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib64
 prepend-path	MANPATH		$root/share/man
 prepend-path	PATH		$root/bin
 
@@ -25,4 +27,4 @@ setenv	EBVERSIONGCC		"4.8.2"
 setenv	EBDEVELGCC		"$root/easybuild/GCC-4.8.2-easybuild-devel"
 
 
-# built with EasyBuild version 1.9.0
+# Built with EasyBuild version 1.13.0

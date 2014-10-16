@@ -20,6 +20,7 @@ if { ![is-loaded ictce/5.4.0] } {
 prepend-path	ACLOCAL_PATH		$root/share/aclocal
 prepend-path	CPATH		$root/include
 prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
 prepend-path	MANPATH		$root/share/man
 prepend-path	PATH		$root/bin
 
@@ -28,4 +29,4 @@ setenv	EBVERSIONLIBTOOL		"2.4.2"
 setenv	EBDEVELLIBTOOL		"$root/easybuild/libtool-2.4.2-ictce-5.4.0-easybuild-devel"
 
 
-# built with EasyBuild version 1.10.0
+# Built with EasyBuild version 1.13.0

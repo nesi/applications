@@ -2,8 +2,8 @@
 
 module-whatis "Trinity (version 2013-02-25)"
 
-module load java/1.7.0_25
-module load bowtie/0.12.7
+module load Java/1.7.0_25
+module load Bowtie/0.12.7
 
 set root /share/apps/trinity/noarch/r2013-02-25/gcc-4.4.6
 

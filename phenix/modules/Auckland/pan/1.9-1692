@@ -2,8 +2,5 @@
 
 module-whatis "PHENIX is a software suite for the automated determination of macromolecular structures using X-ray crystallography and other methods."
 
-setenv PHENIX_ROSETTA_PATH /share/src/rosetta/rosetta_2014.20.56838_bundle/main
-
-set phenix /share/apps/phenix/1.9-1692/phenix-1.9-1692
-
+set phenix /share/apps/phenix/binary/phenix-1.9-1692 
 prepend-path PATH $phenix

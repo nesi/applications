@@ -17,10 +17,14 @@ phylogenetics packages.
 
 set root    /share/easybuild/RHEL6.3/westmere/software/beagle-lib/20140322-goolf-1.5.14
 
-conflict    beagle-lib
+conflict beagle-lib
 
 if { ![is-loaded goolf/1.5.14] } {
     module load goolf/1.5.14
+}
+
+if { ![is-loaded CUDA/6.0.37] } {
+    module load CUDA/6.0.37
 }
 
 if { ![is-loaded Java/1.7.0_51] } {
@@ -36,5 +40,6 @@ setenv	EBROOTBEAGLEMINLIB		"$root"
 setenv	EBVERSIONBEAGLEMINLIB		"20140322"
 setenv	EBDEVELBEAGLEMINLIB		"$root/easybuild/beagle-lib-20140322-goolf-1.5.14-easybuild-devel"
 
+setenv	BEAGLE_LIB_PATH		"$root/lib"
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.15.1

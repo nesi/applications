@@ -25,6 +25,7 @@ if { ![is-loaded Boost/1.53.0-ictce-5.4.0] } {
 
 prepend-path	CPATH		$root/include
 prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
 prepend-path	PATH		$root/bin
 
 setenv	EBROOTBLAST		"$root"
@@ -33,4 +34,4 @@ setenv	EBDEVELBLAST		"$root/easybuild/BLAST-2.2.29-ictce-5.4.0-easybuild-devel"
 
 setenv BLASTDB /share/db/blast/db
 
-# built with EasyBuild version 1.10.0
+# Built with EasyBuild version 1.13.0

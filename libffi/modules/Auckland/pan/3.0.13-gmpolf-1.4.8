@@ -19,6 +19,8 @@ if { ![is-loaded gmpolf/1.4.8] } {
 
 prepend-path	LD_LIBRARY_PATH		$root/lib
 prepend-path	LD_LIBRARY_PATH		$root/lib64
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib64
 prepend-path	MANPATH		$root/share/man
 prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
 
@@ -27,4 +29,4 @@ setenv	EBVERSIONLIBFFI		"3.0.13"
 setenv	EBDEVELLIBFFI		"$root/easybuild/libffi-3.0.13-gmpolf-1.4.8-easybuild-devel"
 
 
-# built with EasyBuild version 1.10.0
+# Built with EasyBuild version 1.13.0
