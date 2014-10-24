@@ -1,0 +1,33 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   EMAN is a powerful image processing library as well as a complete software suite 
+                for single particle reconstruction. This is a process for converting randomly 
+                oriented 2D projection images into a 3D model, and is typically used in conjunction 
+                with electron cryomicroscopy.  - Homepage: http://www.msg.ucsf.edu/local/programs/eman
+    }
+}
+
+module-whatis {Description: EMAN is a powerful image processing library as well as a complete software suite 
+                for single particle reconstruction. This is a process for converting randomly 
+                oriented 2D projection images into a 3D model, and is typically used in conjunction 
+                with electron cryomicroscopy.  - Homepage: http://www.msg.ucsf.edu/local/programs/eman}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/EMAN/daily
+
+conflict EMAN
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTEMAN		"$root"
+setenv	EBVERSIONEMAN		"daily"
+setenv	EBDEVELEMAN		"$root/easybuild/EMAN-daily-easybuild-devel"
+
+setenv	EMANDIR		"$root"
+prepend-path	PYTHONPATH		$root/lib
+prepend-path	PATH		$root/
+
+# Built with EasyBuild version 1.15.1

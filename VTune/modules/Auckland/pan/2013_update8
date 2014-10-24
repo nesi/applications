@@ -1,0 +1,27 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Intel VTune Amplifier XE 2013 is the premier performance profiler for C, C++, C#, Fortran, Assembly and Java. - Homepage: http://software.intel.com/en-us/intel-vtune-amplifier-xe
+    }
+}
+
+module-whatis {Description: Intel VTune Amplifier XE 2013 is the premier performance profiler for C, C++, C#, Fortran, Assembly and Java. - Homepage: http://software.intel.com/en-us/intel-vtune-amplifier-xe}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/VTune/2013_update8
+
+conflict VTune
+
+prepend-path	CPATH		$root/include
+prepend-path	FPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib64
+prepend-path	LIBRARY_PATH		$root/lib64
+prepend-path	MANPATH		$root/man
+prepend-path	PATH		$root/bin64
+
+setenv	EBROOTVTUNE		"$root"
+setenv	EBVERSIONVTUNE		"2013_update8"
+setenv	EBDEVELVTUNE		"$root/easybuild/VTune-2013_update8-easybuild-devel"
+
+prepend-path	INTEL_LICENSE_FILE		/share/apps/intel/licenses/license.lic
+
+# Built with EasyBuild version 1.15.1
