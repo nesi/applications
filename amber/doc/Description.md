@@ -1,1 +1,1 @@
-There is no documentation for this application provided yet. Please contact eresearch@nesi.org.nz.
+Amber is a molecular simulation package with a wide variety of tools, including programs for model building, energy refinement and molecular dynamics simulations.
