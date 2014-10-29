@@ -1,2 +1,2 @@
 Load the Amber CUDA module:
-    module load amber/12-ictce-5.4.0
+    module load Amber/12-ictce-5.4.0

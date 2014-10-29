@@ -7,4 +7,4 @@
 #SBATCH --mem-per-cpu=8132
 
 module load Amber/12-ictce-5.4.0
-srun sander -O
+srun sander.MPI -O
