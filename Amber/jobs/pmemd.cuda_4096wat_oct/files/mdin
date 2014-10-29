@@ -1,0 +1,13 @@
+ short md, npt ensemble, trunc oct                                                                                                            
+ &cntrl                                                                                                                                       
+   ntx=1, irest=0,                                                                                                                            
+   ntc=2, ntf=2, tol=0.0000001,                                                                                                               
+   nstlim=20, ntt=1,                                                                                                                          
+   tempi=300.0, temp0=300.0,                                                                                                                  
+   ntb=2,ntp=1,                                                                                                                               
+   ntpr=1, ntwr=10000, ntwx=5,                                                                                                                
+   dt=0.001,                                                                                                                                  
+ /                                                                                                                                            
+ &ewald                                                                                                                                       
+  nfft1=64,nfft2=64,nfft3=64,netfrc=0,                                                                                                        
+ /                                                                                                                                            
