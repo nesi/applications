@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: NAMD is a parallel molecular dynamics code designed for high-performance simulation of large biomolecular systems. - Homepage: http://www.ks.uiuc.edu/Research/namd/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/NAMD/2.9-ictce-5.4.0-ibverbs
+set root    /share/easybuild/RHEL6.3/sandybridge/software/NAMD/2.9-ictce-5.4.0-ibverbs
 
 conflict NAMD
 

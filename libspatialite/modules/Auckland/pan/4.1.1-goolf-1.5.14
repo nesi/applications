@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: SpatiaLite is an open source library intended to extend the SQLite core to support fully fledged Spatial SQL capabilities. - Homepage: https://www.gaia-gis.it/fossil/libspatialite/home}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/libspatialite/4.1.1-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/libspatialite/4.1.1-goolf-1.5.14
 
 conflict    libspatialite
 

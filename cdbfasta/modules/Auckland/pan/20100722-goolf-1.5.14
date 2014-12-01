@@ -1,0 +1,29 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   fast indexing and retrieval of fasta records from flat file databases. - Homepage: http://sourceforge.net/projects/cdbfasta/
+    }
+}
+
+module-whatis {Description: fast indexing and retrieval of fasta records from flat file databases. - Homepage: http://sourceforge.net/projects/cdbfasta/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/cdbfasta/20100722-goolf-1.5.14
+
+conflict cdbfasta
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded zlib/1.2.8-goolf-1.5.14] } {
+    module load zlib/1.2.8-goolf-1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTCDBFASTA		"$root"
+setenv	EBVERSIONCDBFASTA		"20100722"
+setenv	EBDEVELCDBFASTA		"$root/easybuild/cdbfasta-20100722-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1

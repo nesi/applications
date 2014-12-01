@@ -1,0 +1,37 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   libXaw provides the Athena Widgets toolkit - Homepage: http://www.freedesktop.org/wiki/Software/xlibs
+    }
+}
+
+module-whatis {Description: libXaw provides the Athena Widgets toolkit - Homepage: http://www.freedesktop.org/wiki/Software/xlibs}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/libXaw/1.0.12-goolf-1.5.14
+
+conflict    libXaw
+
+if { ![is-loaded libXmu/1.1.2-goolf-1.5.14] } {
+    module load libXmu/1.1.2-goolf-1.5.14
+}
+
+if { ![is-loaded libXpm/3.5.11-goolf-1.5.14] } {
+    module load libXpm/3.5.11-goolf-1.5.14
+}
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTLIBXAW		"$root"
+setenv	EBVERSIONLIBXAW		"1.0.12"
+setenv	EBDEVELLIBXAW		"$root/easybuild/libXaw-1.0.12-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

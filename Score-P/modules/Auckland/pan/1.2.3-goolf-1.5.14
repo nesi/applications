@@ -11,7 +11,7 @@ module-whatis {Description: The Score-P measurement infrastructure is a highly s
  easy-to-use tool suite for profiling, event tracing, and online analysis of HPC
  applications. - Homepage: http://www.score-p.org}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/Score-P/1.2.3-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/Score-P/1.2.3-goolf-1.5.14
 
 conflict    Score-P
 

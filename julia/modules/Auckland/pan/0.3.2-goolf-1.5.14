@@ -1,0 +1,29 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   A high-level, high-performance dynamic language for technical computing. - Homepage: http://julialang.org
+    }
+}
+
+module-whatis {Description: A high-level, high-performance dynamic language for technical computing. - Homepage: http://julialang.org}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/Julia/0.3.2-goolf-1.5.14
+
+conflict Julia
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTJULIA		"$root"
+setenv	EBVERSIONJULIA		"0.3.2"
+setenv	EBDEVELJULIA		"$root/easybuild/Julia-0.3.2-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1

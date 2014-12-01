@@ -15,7 +15,7 @@ module-whatis {Description: Program Database Toolkit (PDT) is a framework for an
  program representation, the program database (PDB), that can be accessed in a uniform way
  through a class library supporting common PDB operations. - Homepage: http://www.cs.uoregon.edu/research/pdt/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/PDT/3.20-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/PDT/3.20-goolf-1.5.14
 
 conflict    PDT
 

@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Locates tandem repeats in DNA sequences. - Homepage: http://tandem.bu.edu/trf/trf.html}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/trf/4.04
+set root    /share/easybuild/RHEL6.3/sandybridge/software/trf/4.04
 
 conflict    trf
 

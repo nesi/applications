@@ -17,7 +17,7 @@ module-whatis {Description: The Portable Hardware Locality (hwloc) software pack
  network interfaces, InfiniBand HCAs or GPUs. It primarily aims at helping applications with gathering
  information about modern computing hardware so as to exploit it accordingly and efficiently. - Homepage: http://www.open-mpi.org/projects/hwloc/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/hwloc/1.8.1-iccifort-2013.4.183
+set root    /share/easybuild/RHEL6.3/sandybridge/software/hwloc/1.8.1-iccifort-2013.4.183
 
 conflict    hwloc
 

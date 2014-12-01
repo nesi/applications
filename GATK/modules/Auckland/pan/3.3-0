@@ -1,0 +1,34 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   The Genome Analysis Toolkit or GATK is a software package developed at the Broad Institute 
+ to analyse next-generation resequencing data. The toolkit offers a wide variety of tools,
+ with a primary focus on variant discovery and genotyping as well as strong emphasis on 
+ data quality assurance. Its robust architecture, powerful processing engine and 
+ high-performance computing features make it capable of taking on projects of any size. - Homepage: http://www.broadinstitute.org/gatk/
+    }
+}
+
+module-whatis {Description: The Genome Analysis Toolkit or GATK is a software package developed at the Broad Institute 
+ to analyse next-generation resequencing data. The toolkit offers a wide variety of tools,
+ with a primary focus on variant discovery and genotyping as well as strong emphasis on 
+ data quality assurance. Its robust architecture, powerful processing engine and 
+ high-performance computing features make it capable of taking on projects of any size. - Homepage: http://www.broadinstitute.org/gatk/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/GATK/3.3-0
+
+conflict GATK
+
+if { ![is-loaded R/3.1.1-goolf-1.5.14] } {
+    module load R/3.1.1-goolf-1.5.14
+}
+
+prepend-path	CLASSPATH		$root/GenomeAnalysisTK.jar
+
+setenv	EBROOTGATK		"$root"
+setenv	EBVERSIONGATK		"3.3-0"
+setenv	EBDEVELGATK		"$root/easybuild/GATK-3.3-0-easybuild-devel"
+
+setenv	GATK		"$root/GenomeAnalysisTK.jar"
+
+# Built with EasyBuild version 1.15.1

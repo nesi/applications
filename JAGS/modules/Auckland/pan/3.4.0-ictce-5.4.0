@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Just Another Gibbs Sampler - a program for the statistical analysis of Bayesian hierarchical models by Markov Chain Monte Carlo. - Homepage: http://sourceforge.net/projects/mcmc-jags}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/JAGS/3.4.0-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/sandybridge/software/JAGS/3.4.0-ictce-5.4.0
 
 conflict    JAGS
 

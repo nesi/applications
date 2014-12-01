@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: C and C++ compiler from Intel - Homepage: http://software.intel.com/en-us/intel-compilers/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/icc/2011.13.367
+set root    /share/easybuild/RHEL6.3/sandybridge/software/icc/2011.13.367
 
 conflict    icc
 

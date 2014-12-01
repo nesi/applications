@@ -1,0 +1,31 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   CD-HIT stands for Cluster Database at High Identity with Tolerance. The program 
+takes a fasta format sequence database as input and produces a set of 'non-redundant' (nr) 
+representative sequences as output. In addition cd-hit outputs a cluster file, documenting the 
+sequence 'groupies' for each nr sequence representative.  - Homepage: http://www.bioinformatics.org/cd-hit/
+    }
+}
+
+module-whatis {Description: CD-HIT stands for Cluster Database at High Identity with Tolerance. The program 
+takes a fasta format sequence database as input and produces a set of 'non-redundant' (nr) 
+representative sequences as output. In addition cd-hit outputs a cluster file, documenting the 
+sequence 'groupies' for each nr sequence representative.  - Homepage: http://www.bioinformatics.org/cd-hit/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/CD-HIT/3.1.1-goolf-1.5.14-2007-02-01
+
+conflict CD-HIT
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTCDMINHIT		"$root"
+setenv	EBVERSIONCDMINHIT		"3.1.1"
+setenv	EBDEVELCDMINHIT		"$root/easybuild/CD-HIT-3.1.1-goolf-1.5.14-2007-02-01-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1

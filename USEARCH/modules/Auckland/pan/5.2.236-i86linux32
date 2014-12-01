@@ -1,0 +1,28 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   USEARCH is a unique sequence analysis tool which offers search and clustering algorithms that are
+ often orders of magnitude faster than BLAST. - Homepage: http://www.drive5.com/usearch/index.html
+    }
+}
+
+module-whatis {Description: USEARCH is a unique sequence analysis tool which offers search and clustering algorithms that are
+ often orders of magnitude faster than BLAST. - Homepage: http://www.drive5.com/usearch/index.html}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/USEARCH/5.2.236-i86linux32
+
+conflict USEARCH
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTUSEARCH		"$root"
+setenv	EBVERSIONUSEARCH		"5.2.236"
+setenv	EBDEVELUSEARCH		"$root/easybuild/USEARCH-5.2.236-i86linux32-easybuild-devel"
+
+
+if [ module-info mode load ] {
+        puts stderr     "USEARCH (32-bit) is licensed software but can be used for free by individuals when registered. A 64-bit version is also available. For more information see http://www.drive5.com/usearch . "
+}
+prepend-path	PATH		$root/
+
+# Built with EasyBuild version 1.15.1

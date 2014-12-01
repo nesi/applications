@@ -1,0 +1,22 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   UCLUST: Extreme high-speed sequence clustering, alignment and database search. - Homepage: http://www.drive5.com/usearch/index.html
+    }
+}
+
+module-whatis {Description: UCLUST: Extreme high-speed sequence clustering, alignment and database search. - Homepage: http://www.drive5.com/usearch/index.html}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/UCLUST/1.2.22q-i86linux64
+
+conflict UCLUST
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTUCLUST		"$root"
+setenv	EBVERSIONUCLUST		"1.2.22q"
+setenv	EBDEVELUCLUST		"$root/easybuild/UCLUST-1.2.22q-i86linux64-easybuild-devel"
+
+prepend-path	PATH		$root/
+
+# Built with EasyBuild version 1.15.1

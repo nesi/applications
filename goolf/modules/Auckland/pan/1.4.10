@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: GNU Compiler Collection (GCC) based compiler toolchain, including
  OpenMPI for MPI support, OpenBLAS (BLAS and LAPACK support), FFTW and ScaLAPACK. - Homepage: (none)}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/goolf/1.4.10
+set root    /share/easybuild/RHEL6.3/sandybridge/software/goolf/1.4.10
 
 conflict    goolf
 

@@ -9,7 +9,7 @@ dynamics (MD) using pseudopotentials and a plane wave basis set. - Homepage: htt
 module-whatis {Description: VAMP/VASP is a package for performing ab-initio quantum-mechanical molecular
 dynamics (MD) using pseudopotentials and a plane wave basis set. - Homepage: http://www.vasp.at/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/VASP/5.3.5-iomkl-4.6.13
+set root    /share/easybuild/RHEL6.3/sandybridge/software/VASP/5.3.5-iomkl-4.6.13
 
 conflict    VASP
 

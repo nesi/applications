@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Sequence assembler for very short reads - Homepage: http://www.ebi.ac.uk/~zerbino/velvet/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/Velvet/XL-1.2.10-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/Velvet/XL-1.2.10-goolf-1.5.14
 
 conflict    Velvet
 
@@ -22,4 +22,4 @@ setenv	EBVERSIONVELVET		"1.2.10"
 setenv	EBDEVELVELVET		"$root/easybuild/Velvet-XL-1.2.10-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.13.0

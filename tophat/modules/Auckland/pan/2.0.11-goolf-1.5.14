@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: TopHat is a fast splice junction mapper for RNA-Seq reads. - Homepage: http://tophat.cbcb.umd.edu/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/TopHat/2.0.11-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/TopHat/2.0.11-goolf-1.5.14
 
 conflict    TopHat
 
@@ -34,4 +34,4 @@ setenv	EBVERSIONTOPHAT		"2.0.11"
 setenv	EBDEVELTOPHAT		"$root/easybuild/TopHat-2.0.11-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.13.0

@@ -1,0 +1,25 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   CTFFIND3 and CTFTILT are two programs for finding CTFs of electron micrographs - Homepage: http://grigoriefflab.janelia.org/ctf
+    }
+}
+
+module-whatis {Description: CTFFIND3 and CTFTILT are two programs for finding CTFs of electron micrographs - Homepage: http://grigoriefflab.janelia.org/ctf}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/ctffind/140609-goolf-1.5.14
+
+conflict ctffind
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTCTFFIND		"$root"
+setenv	EBVERSIONCTFFIND		"140609"
+setenv	EBDEVELCTFFIND		"$root/easybuild/ctffind-140609-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1

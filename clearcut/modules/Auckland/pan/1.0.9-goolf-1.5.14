@@ -1,0 +1,27 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Clearcut is the reference implementation for Relaxed Neighbor Joining (RNJ). Neighbor joining (NJ)
+ is a popular distance-based phylogenetic tree reconstruction method. - Homepage: http://bioinformatics.hungry.com/clearcut/
+    }
+}
+
+module-whatis {Description: Clearcut is the reference implementation for Relaxed Neighbor Joining (RNJ). Neighbor joining (NJ)
+ is a popular distance-based phylogenetic tree reconstruction method. - Homepage: http://bioinformatics.hungry.com/clearcut/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/clearcut/1.0.9-goolf-1.5.14
+
+conflict clearcut
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTCLEARCUT		"$root"
+setenv	EBVERSIONCLEARCUT		"1.0.9"
+setenv	EBDEVELCLEARCUT		"$root/easybuild/clearcut-1.0.9-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1

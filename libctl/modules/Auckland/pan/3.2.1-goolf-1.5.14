@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: libctl is a free Guile-based library implementing flexible control files for scientific simulations. - Homepage: http://ab-initio.mit.edu/libctl}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/libctl/3.2.1-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/libctl/3.2.1-goolf-1.5.14
 
 conflict    libctl
 
@@ -30,4 +30,4 @@ setenv	EBVERSIONLIBCTL		"3.2.1"
 setenv	EBDEVELLIBCTL		"$root/easybuild/libctl-3.2.1-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.13.0

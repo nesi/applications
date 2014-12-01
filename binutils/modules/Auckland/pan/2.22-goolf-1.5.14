@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: binutils-2.22: GNU binary utilities - Homepage: http://directory.fsf.org/project/binutils/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/binutils/2.22-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/binutils/2.22-goolf-1.5.14
 
 conflict    binutils
 

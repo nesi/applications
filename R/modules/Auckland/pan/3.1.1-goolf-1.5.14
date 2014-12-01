@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: R is a free software environment for statistical computing and graphics. - Homepage: http://www.r-project.org/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/R/3.1.1-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/R/3.1.1-goolf-1.5.14
 
 conflict    R
 

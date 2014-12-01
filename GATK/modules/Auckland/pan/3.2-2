@@ -15,7 +15,7 @@ module-whatis {Description: The Genome Analysis Toolkit or GATK is a software pa
  data quality assurance. Its robust architecture, powerful processing engine and 
  high-performance computing features make it capable of taking on projects of any size. - Homepage: http://www.broadinstitute.org/gatk/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/GATK/3.2-2
+set root    /share/easybuild/RHEL6.3/sandybridge/software/GATK/3.2-2
 
 conflict    GATK
 

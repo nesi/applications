@@ -1,0 +1,29 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   FastTree infers approximately-maximum-likelihood phylogenetic trees from alignments of nucleotide
+ or protein sequences. FastTree can handle alignments with up to a million of sequences in a reasonable amount of
+ time and memory.  - Homepage: http://www.microbesonline.org/fasttree/
+    }
+}
+
+module-whatis {Description: FastTree infers approximately-maximum-likelihood phylogenetic trees from alignments of nucleotide
+ or protein sequences. FastTree can handle alignments with up to a million of sequences in a reasonable amount of
+ time and memory.  - Homepage: http://www.microbesonline.org/fasttree/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/FastTree/2.1.7-goolf-1.5.14
+
+conflict FastTree
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTFASTTREE		"$root"
+setenv	EBVERSIONFASTTREE		"2.1.7"
+setenv	EBDEVELFASTTREE		"$root/easybuild/FastTree-2.1.7-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1

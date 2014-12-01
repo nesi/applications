@@ -1,0 +1,36 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   X Inter-Client Exchange library for freedesktop.org - Homepage: http://www.freedesktop.org/wiki/Software/xlibs
+    }
+}
+
+module-whatis {Description: X Inter-Client Exchange library for freedesktop.org - Homepage: http://www.freedesktop.org/wiki/Software/xlibs}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/libICE/1.0.8-goolf-1.5.14
+
+conflict    libICE
+
+if { ![is-loaded xproto/7.0.23-goolf-1.5.14] } {
+    module load xproto/7.0.23-goolf-1.5.14
+}
+
+if { ![is-loaded xtrans/1.2-goolf-1.5.14] } {
+    module load xtrans/1.2-goolf-1.5.14
+}
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTLIBICE		"$root"
+setenv	EBVERSIONLIBICE		"1.0.8"
+setenv	EBDEVELLIBICE		"$root/easybuild/libICE-1.0.8-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

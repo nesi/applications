@@ -1,0 +1,34 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   X11 Session Management library, which allows for applications to both manage sessions,
+ and make use of session managers to save and restore their state for later use. - Homepage: http://www.freedesktop.org/wiki/Software/xlibs
+    }
+}
+
+module-whatis {Description: X11 Session Management library, which allows for applications to both manage sessions,
+ and make use of session managers to save and restore their state for later use. - Homepage: http://www.freedesktop.org/wiki/Software/xlibs}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/libSM/1.2.1-goolf-1.5.14
+
+conflict    libSM
+
+if { ![is-loaded libICE/1.0.8-goolf-1.5.14] } {
+    module load libICE/1.0.8-goolf-1.5.14
+}
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTLIBSM		"$root"
+setenv	EBVERSIONLIBSM		"1.2.1"
+setenv	EBDEVELLIBSM		"$root/easybuild/libSM-1.2.1-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

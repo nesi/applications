@@ -1,0 +1,27 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   ParsInsert efficiently produces both a phylogenetic tree and taxonomic classification for sequences
+ for microbial community sequence analysis. - Homepage: http://sourceforge.net/projects/parsinsert/
+    }
+}
+
+module-whatis {Description: ParsInsert efficiently produces both a phylogenetic tree and taxonomic classification for sequences
+ for microbial community sequence analysis. - Homepage: http://sourceforge.net/projects/parsinsert/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/ParsInsert/1.04-goolf-1.5.14
+
+conflict ParsInsert
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTPARSINSERT		"$root"
+setenv	EBVERSIONPARSINSERT		"1.04"
+setenv	EBDEVELPARSINSERT		"$root/easybuild/ParsInsert-1.04-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1

@@ -11,7 +11,7 @@ module-whatis {Description: zlib is designed to be a free, general-purpose, lega
  not covered by any patents -- lossless data-compression library for use on virtually any 
  computer hardware and operating system. - Homepage: http://www.zlib.net/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/zlib/1.2.7-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/sandybridge/software/zlib/1.2.7-ictce-5.4.0
 
 conflict    zlib
 

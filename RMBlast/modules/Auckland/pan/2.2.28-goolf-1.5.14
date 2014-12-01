@@ -13,7 +13,7 @@ Support for custom matrices ( without KA-Statistics ).
 Support for cross_match-like complexity adjusted scoring. Cross_match is Phil Green's seeded smith-waterman search algorithm.
 Support for cross_match-like masklevel filtering.. - Homepage: http://www.repeatmasker.org/RMBlast.html}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/RMBlast/2.2.28-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/RMBlast/2.2.28-goolf-1.5.14
 
 conflict    RMBlast
 
@@ -35,4 +35,4 @@ setenv	EBVERSIONRMBLAST		"2.2.28"
 setenv	EBDEVELRMBLAST		"$root/easybuild/RMBlast-2.2.28-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.13.0

@@ -1,0 +1,29 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Motion Correction for Dose-Fractionation Stack - Homepage: http://cryoem.ucsf.edu/software/software.html
+    }
+}
+
+module-whatis {Description: Motion Correction for Dose-Fractionation Stack - Homepage: http://cryoem.ucsf.edu/software/software.html}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/dosefgpu_driftcorr/2.0-GCC-4.6.4
+
+conflict dosefgpu_driftcorr
+
+if { ![is-loaded GCC/4.6.4] } {
+    module load GCC/4.6.4
+}
+
+if { ![is-loaded CUDA/6.0.37] } {
+    module load CUDA/6.0.37
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTDOSEFGPU_DRIFTCORR		"$root"
+setenv	EBVERSIONDOSEFGPU_DRIFTCORR		"2.0"
+setenv	EBDEVELDOSEFGPU_DRIFTCORR		"$root/easybuild/dosefgpu_driftcorr-2.0-GCC-4.6.4-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1

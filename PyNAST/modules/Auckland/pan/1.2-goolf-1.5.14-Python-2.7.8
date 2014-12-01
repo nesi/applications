@@ -1,0 +1,36 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Python Nearest Alignment Space Termination tool - Homepage: https://github.com/qiime/pynast/
+    }
+}
+
+module-whatis {Description: Python Nearest Alignment Space Termination tool - Homepage: https://github.com/qiime/pynast/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/PyNAST/1.2-goolf-1.5.14-Python-2.7.8
+
+conflict PyNAST
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded Python/2.7.8-goolf-1.5.14] } {
+    module load Python/2.7.8-goolf-1.5.14
+}
+
+if { ![is-loaded PyCogent/1.5.3-goolf-1.5.14-Python-2.7.8] } {
+    module load PyCogent/1.5.3-goolf-1.5.14-Python-2.7.8
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTPYNAST		"$root"
+setenv	EBVERSIONPYNAST		"1.2"
+setenv	EBDEVELPYNAST		"$root/easybuild/PyNAST-1.2-goolf-1.5.14-Python-2.7.8-easybuild-devel"
+
+prepend-path	PYTHONPATH		$root/lib/python2.7/site-packages
+
+# Built with EasyBuild version 1.15.1

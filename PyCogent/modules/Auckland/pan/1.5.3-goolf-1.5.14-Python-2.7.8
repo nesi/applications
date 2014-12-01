@@ -1,0 +1,31 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   A toolkit for making sense from sequence - Homepage: https://github.com/pycogent/pycogent/
+    }
+}
+
+module-whatis {Description: A toolkit for making sense from sequence - Homepage: https://github.com/pycogent/pycogent/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/PyCogent/1.5.3-goolf-1.5.14-Python-2.7.8
+
+conflict PyCogent
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded Python/2.7.8-goolf-1.5.14] } {
+    module load Python/2.7.8-goolf-1.5.14
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+
+setenv	EBROOTPYCOGENT		"$root"
+setenv	EBVERSIONPYCOGENT		"1.5.3"
+setenv	EBDEVELPYCOGENT		"$root/easybuild/PyCogent-1.5.3-goolf-1.5.14-Python-2.7.8-easybuild-devel"
+
+prepend-path	PYTHONPATH		$root/lib/python2.7/site-packages
+
+# Built with EasyBuild version 1.15.1

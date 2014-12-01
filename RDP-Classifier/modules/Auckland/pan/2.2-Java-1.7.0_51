@@ -1,0 +1,31 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   The RDP Classifier is a naive Bayesian classifier that can rapidly and accurately provides taxonomic
+ assignments from domain to genus, with confidence estimates for each assignment. - Homepage: http://sourceforge.net/projects/rdp-classifier
+    }
+}
+
+module-whatis {Description: The RDP Classifier is a naive Bayesian classifier that can rapidly and accurately provides taxonomic
+ assignments from domain to genus, with confidence estimates for each assignment. - Homepage: http://sourceforge.net/projects/rdp-classifier}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/RDP-Classifier/2.2-Java-1.7.0_51
+
+conflict RDP-Classifier
+
+if { ![is-loaded Java/1.7.0_51] } {
+    module load Java/1.7.0_51
+}
+
+prepend-path	CLASSPATH		$root/rdp_classifier-2.2.jar
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+
+setenv	EBROOTRDPMINCLASSIFIER		"$root"
+setenv	EBVERSIONRDPMINCLASSIFIER		"2.2"
+setenv	EBDEVELRDPMINCLASSIFIER		"$root/easybuild/RDP-Classifier-2.2-Java-1.7.0_51-easybuild-devel"
+
+prepend-path	CLASSPATH		$root/rdp_classifier-2.2.jar
+prepend-path	RDP_JAR_PATH		$root/rdp_classifier-2.2.jar
+
+# Built with EasyBuild version 1.15.1

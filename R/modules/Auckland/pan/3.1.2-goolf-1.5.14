@@ -1,0 +1,61 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   R is a free software environment for statistical computing and graphics. - Homepage: http://www.r-project.org/
+    }
+}
+
+module-whatis {Description: R is a free software environment for statistical computing and graphics. - Homepage: http://www.r-project.org/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/R/3.1.2-goolf-1.5.14
+
+conflict R
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded libreadline/6.2-goolf-1.5.14] } {
+    module load libreadline/6.2-goolf-1.5.14
+}
+
+if { ![is-loaded ncurses/5.9-goolf-1.5.14] } {
+    module load ncurses/5.9-goolf-1.5.14
+}
+
+if { ![is-loaded libpng/1.6.10-goolf-1.5.14] } {
+    module load libpng/1.6.10-goolf-1.5.14
+}
+
+if { ![is-loaded libxml2/2.9.1-goolf-1.5.14] } {
+    module load libxml2/2.9.1-goolf-1.5.14
+}
+
+if { ![is-loaded SQLite/3.8.4.3-goolf-1.5.14] } {
+    module load SQLite/3.8.4.3-goolf-1.5.14
+}
+
+if { ![is-loaded GEOS/3.3.5-goolf-1.5.14] } {
+    module load GEOS/3.3.5-goolf-1.5.14
+}
+
+if { ![is-loaded cURL/7.29.0-goolf-1.5.14] } {
+    module load cURL/7.29.0-goolf-1.5.14
+}
+
+if { ![is-loaded Java/1.8.0_5] } {
+    module load Java/1.8.0_5
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib64
+prepend-path	LIBRARY_PATH		$root/lib64
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTR		"$root"
+setenv	EBVERSIONR		"3.1.2"
+setenv	EBDEVELR		"$root/easybuild/R-3.1.2-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1
+setenv	EBEXTSLISTR		"base-,compiler-,datasets-,graphics-,grDevices-,grid-,methods-,parallel-,splines-,stats-,stats4-,tools-,utils-,Rmpi-0.6-5,snow-0.3-13,snowfall-1.84-6,iterators-1.0.7,codetools-0.2-9,foreach-1.4.2,doMPI-0.2,doParallel-1.0.8,rJava-0.9-6,irace-1.05,lattice-0.20-29,RColorBrewer-1.0-5,latticeExtra-0.6-26,Matrix-1.1-4,png-0.1-7,Rcpp-0.11.3,RcppEigen-0.3.2.2.0,quadprog-1.5-5,BB-2014.10-1,MASS-7.3-35,class-7.3-11,e1071-1.6-4,nnet-7.3-8,car-2.0-21,colorspace-1.2-4,DEoptimR-1.0-2,robustbase-0.92-1,sp-1.0-16,vcd-1.3-2,rpart-4.1-8,randomForest-4.6-10,mice-2.22,nlme-3.1-118,nloptr-1.0.4,minqa-1.2.4,lme4-1.1-7,ape-3.1-4,mgcv-1.8-3,logistf-1.21,bitops-1.0-6,RCurl-1.95-4.3,boot-1.3-13,foreign-0.8-61,survival-2.37-7,gam-1.09.1,gamlss.data-4.2-7,gamlss.dist-4.3-1,hwriter-1.3.2,KernSmooth-2.23-13,zoo-1.7-11,lmtest-0.9-33,mnormt-1.5-1,mvtnorm-1.0-1,numDeriv-2012.9-1,coda-0.16-1,pscl-1.4.6,sandwich-2.3-2,sfsmisc-1.0-26,spatial-7.3-8,VGAM-0.9-5,waveslim-1.7.3,profileModel-0.5-9,brglm-0.5-9,deSolve-1.11,tseriesChaos-0.1-13,tseries-0.10-32,neuRosim-0.2-10,fastICA-1.2-0,R.methodsS3-1.6.1,R.oo-1.18.0,Rniftilib-0.0-32,igraph-0.7.1,gbm-2.1,stringr-0.6.2,plyr-1.8.1,reshape-0.8.5,reshape2-1.4,dichromat-2.0-0,Formula-1.1-2,cluster-1.15.3,acepack-1.3-3.3,Hmisc-3.14-5,munsell-0.4.2,labeling-0.3,scales-0.2.4,fastcluster-1.1.13,digest-0.6.4,gtable-0.1.2,proto-0.3-10,ggplot2-1.0.0,maptools-0.8-30,intervals-0.15.0,xts-0.9-7,rgeos-0.3-8,spacetime-1.1-1,FNN-1.1,gstat-1.0-19,deldir-0.1-6,LearnBayes-2.15,abind-1.4-0,spdep-0.5-77,splancs-2.01-36,DCluster-0.2-6,tensor-1.5,polyclip-1.3-0,goftest-1.0-2,spatstat-1.39-1,getopt-1.20.0,optparse-1.2.0,permute-0.8-3,vegan-2.2-0,spam-1.0-1,RandomFields-3.0.35,geoR-1.7-4.1,geoRglm-0.9-4,R2WinBUGS-2.1-19,R2OpenBUGS-3.2-2.2,akima-0.5-11,rjags-3-14,R2jags-0.04-03,DBI-0.3.1,xtable-1.7-4,RSQLite-1.0.0,locfit-1.5-9.1,lpSolve-5.6.10,glmmML-1.0,survey-3.30-3,rlecuyer-0.3-3,crs-0.15-23,dclone-2.0-0,caTools-1.17.1,gtools-3.4.1,gdata-2.13.3,gplots-2.14.2,gsalib-2.0,inline-0.3.13,RcppArmadillo-0.4.500.0,XML-3.98-1.1,spgrass6-0.8-6,checkmate-1.5.0,BBmisc-1.8,fail-1.2,brew-1.0-6,base64enc-0.1-2,sendmailR-1.2-1,BatchJobs-1.5,BiocInstaller-1.16.1,BiocGenerics-0.12.1,Biobase-2.26.0,S4Vectors-0.4.0,IRanges-2.0.0,XVector-0.6.0,zlibbioc-1.12.0,Biostrings-2.34.0,GenomeInfoDb-1.2.3,AnnotationDbi-1.28.1,GenomicRanges-1.18.1,Rsamtools-1.18.2,BiocParallel-1.0.0,GenomicAlignments-1.2.1,rtracklayer-1.26.2,BSgenome-1.34.0,graph-1.44.0,annotate-1.44.0,genefilter-1.48.1,geneplotter-1.44.0,DESeq-1.18.0,DESeq2-1.6.2,ShortRead-1.24.0,rlecuyer-0.3-3,pbdMPI-0.2-5,pbdSLAP-0.1-9,pbdBASE-0.2-3,pbdDMAT-0.2-3"

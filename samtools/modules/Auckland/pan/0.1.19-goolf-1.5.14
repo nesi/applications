@@ -9,7 +9,7 @@ for storing large nucleotide sequence alignments. - Homepage: http://samtools.so
 module-whatis {Description: SAM (Sequence Alignment/Map) format is a generic format
 for storing large nucleotide sequence alignments. - Homepage: http://samtools.sourceforge.net/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/SAMtools/0.1.19-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/SAMtools/0.1.19-goolf-1.5.14
 
 conflict    SAMtools
 
@@ -35,4 +35,4 @@ setenv	EBVERSIONSAMTOOLS		"0.1.19"
 setenv	EBDEVELSAMTOOLS		"$root/easybuild/SAMtools-0.1.19-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.13.0

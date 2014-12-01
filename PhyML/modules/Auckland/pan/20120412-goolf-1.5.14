@@ -8,7 +8,7 @@ proc ModulesHelp { } {
  tree topologies, going from very fast and efficient methods to slower 
  but generally more accurate approaches. PhyML was designed to process 
  moderate to large data sets. In theory, alignments with up to 4,000 
- sequences 2,000,000 character-long can be processed.  - Homepage: http://code.google.com/p/phyml 
+ sequences 2,000,000 character-long can be processed.  - Homepage: http://code.google.com/p/phyml
     }
 }
 
@@ -19,9 +19,9 @@ module-whatis {Description:  PhyML is a software that estimates maximum likeliho
  tree topologies, going from very fast and efficient methods to slower 
  but generally more accurate approaches. PhyML was designed to process 
  moderate to large data sets. In theory, alignments with up to 4,000 
- sequences 2,000,000 character-long can be processed.  - Homepage: http://code.google.com/p/phyml }
+ sequences 2,000,000 character-long can be processed.  - Homepage: http://code.google.com/p/phyml}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/PhyML/20120412-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/PhyML/20120412-goolf-1.5.14
 
 conflict    PhyML
 
@@ -36,4 +36,4 @@ setenv	EBVERSIONPHYML		"20120412"
 setenv	EBDEVELPHYML		"$root/easybuild/PhyML-20120412-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.13.0

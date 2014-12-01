@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library. OpenCV was built to provide a common infrastructure for computer vision applications and to accelerate the use of machine perception in the commercial products. - Homepage: http://opencv.org/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/OpenCV/2.4.9-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/OpenCV/2.4.9-goolf-1.5.14
 
 conflict    OpenCV
 

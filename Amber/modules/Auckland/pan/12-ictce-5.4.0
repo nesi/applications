@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Amber (originally Assisted Model Building with Energy Refinement) is software for performing molecular dynamics and structure prediction. - Homepage: http://ambermd.org/amber.html}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/Amber/12-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/sandybridge/software/Amber/12-ictce-5.4.0
 
 conflict Amber
 
@@ -27,10 +27,19 @@ if { ![is-loaded Python/2.7.3-ictce-5.4.0] } {
     module load Python/2.7.3-ictce-5.4.0
 }
 
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LD_LIBRARY_PATH		$root/lib64
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib64
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
 
 setenv	EBROOTAMBER		"$root"
 setenv	EBVERSIONAMBER		"12"
 setenv	EBDEVELAMBER		"$root/easybuild/Amber-12-ictce-5.4.0-easybuild-devel"
 
+setenv	AMBERHOME		"/share/easybuild/RHEL6.3/sandybridge/software/Amber/12-ictce-5.4.0"
 
 # Built with EasyBuild version 1.15.1

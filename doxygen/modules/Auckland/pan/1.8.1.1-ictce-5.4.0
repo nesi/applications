@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: Doxygen is a documentation system for C++, C, Java, Objective-C, Python, 
  IDL (Corba and Microsoft flavors), Fortran, VHDL, PHP, C#, and to some extent D. - Homepage: http://www.doxygen.org}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/Doxygen/1.8.1.1-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/sandybridge/software/Doxygen/1.8.1.1-ictce-5.4.0
 
 conflict    Doxygen
 

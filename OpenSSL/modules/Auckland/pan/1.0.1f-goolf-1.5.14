@@ -11,7 +11,7 @@ module-whatis {Description: The OpenSSL Project is a collaborative effort to dev
  and Open Source toolchain implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1) 
  protocols as well as a full-strength general purpose cryptography library.  - Homepage: http://www.openssl.org/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/OpenSSL/1.0.1f-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/OpenSSL/1.0.1f-goolf-1.5.14
 
 conflict    OpenSSL
 

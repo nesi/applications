@@ -13,7 +13,7 @@ It can also optionally output discordant read pairs and/or split read mappings t
 reads to a separate FASTQ file. When marking duplicates, samblaster will require approximately 20MB of memory per 1M read pairs.
  - Homepage: http://github.com/GregoryFaust/samblaster}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/samblaster/0.1.15-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/samblaster/0.1.15-goolf-1.5.14
 
 conflict    samblaster
 

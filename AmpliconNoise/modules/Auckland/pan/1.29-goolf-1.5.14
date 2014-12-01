@@ -1,0 +1,38 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   AmpliconNoise is a collection of programs for the removal of noise from 454 sequenced PCR amplicons.
+ It involves two steps the removal of noise from the sequencing itself and the removal of PCR point errors. This
+ project also includes the Perseus algorithm for chimera removal. - Homepage: https://code.google.com/p/ampliconnoise/
+    }
+}
+
+module-whatis {Description: AmpliconNoise is a collection of programs for the removal of noise from 454 sequenced PCR amplicons.
+ It involves two steps the removal of noise from the sequencing itself and the removal of PCR point errors. This
+ project also includes the Perseus algorithm for chimera removal. - Homepage: https://code.google.com/p/ampliconnoise/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/AmpliconNoise/1.29-goolf-1.5.14
+
+conflict AmpliconNoise
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded GSL/1.16-goolf-1.5.14] } {
+    module load GSL/1.16-goolf-1.5.14
+}
+
+if { ![is-loaded MAFFT/7.164-goolf-1.5.14-with-extensions] } {
+    module load MAFFT/7.164-goolf-1.5.14-with-extensions
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTAMPLICONNOISE		"$root"
+setenv	EBVERSIONAMPLICONNOISE		"1.29"
+setenv	EBDEVELAMPLICONNOISE		"$root/easybuild/AmpliconNoise-1.29-goolf-1.5.14-easybuild-devel"
+
+prepend-path	PATH		$root/Scripts
+
+# Built with EasyBuild version 1.15.1

@@ -11,7 +11,7 @@ module-whatis {Description: The Intel Trace Collector is a low-overhead tracing 
  event-based tracing in applications. The Intel Trace Analyzer provides a convenient way to monitor application
  activities gathered by the Intel Trace Collector through graphical displays.  - Homepage: http://software.intel.com/en-us/intel-trace-analyzer/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/itac/8.1.4.045
+set root    /share/easybuild/RHEL6.3/sandybridge/software/itac/8.1.4.045
 
 conflict itac
 

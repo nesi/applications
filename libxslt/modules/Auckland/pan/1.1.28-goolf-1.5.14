@@ -9,7 +9,7 @@ outside of the Gnome platform). - Homepage: http://xmlsoft.org/
 module-whatis {Description: Libxslt is the XSLT C library developed for the GNOME project (but usable
 outside of the Gnome platform). - Homepage: http://xmlsoft.org/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/libxslt/1.1.28-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/libxslt/1.1.28-goolf-1.5.14
 
 conflict    libxslt
 

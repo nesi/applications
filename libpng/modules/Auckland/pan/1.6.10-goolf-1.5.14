@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: libpng is the official PNG reference library - Homepage: http://www.libpng.org/pub/png/libpng.html}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/libpng/1.6.10-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/libpng/1.6.10-goolf-1.5.14
 
 conflict    libpng
 
@@ -31,4 +31,4 @@ setenv	EBVERSIONLIBPNG		"1.6.10"
 setenv	EBDEVELLIBPNG		"$root/easybuild/libpng-1.6.10-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.13.0

@@ -9,7 +9,7 @@ The library provides a wide range of mathematical routines such as random number
 module-whatis {Description: The GNU Scientific Library (GSL) is a numerical library for C and C++ programmers.
 The library provides a wide range of mathematical routines such as random number generators, special functions and least-squares fitting. - Homepage: http://www.gnu.org/software/gsl/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/GSL/1.15-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/GSL/1.15-goolf-1.5.14
 
 conflict    GSL
 
@@ -30,4 +30,4 @@ setenv	EBVERSIONGSL		"1.15"
 setenv	EBDEVELGSL		"$root/easybuild/GSL-1.15-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.13.0

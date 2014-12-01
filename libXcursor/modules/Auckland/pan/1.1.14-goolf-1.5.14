@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Xcursor is a simple library designed to help locate and load cursors - Homepage: http://www.freedesktop.org/wiki/Software/xlibs}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/libXcursor/1.1.14-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/libXcursor/1.1.14-goolf-1.5.14
 
 conflict    libXcursor
 

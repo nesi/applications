@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: manipulates and analyzes data stored in netCDF-accessible formats, including DAP, HDF4, and HDF5 - Homepage: http://nco.sourceforge.net}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/NCO/4.4.4-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/sandybridge/software/NCO/4.4.4-ictce-5.4.0
 
 conflict    NCO
 

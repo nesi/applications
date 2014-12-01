@@ -1,0 +1,23 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Converts 2D images and 3D volumes from/to formats typically used in 3D electron microscopy - Homepage: https://www.imagescience.de/em2em.html
+    }
+}
+
+module-whatis {Description: Converts 2D images and 3D volumes from/to formats typically used in 3D electron microscopy - Homepage: https://www.imagescience.de/em2em.html}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/em2em/20141007
+
+conflict em2em
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+
+setenv	EBROOTEM2EM		"$root"
+setenv	EBVERSIONEM2EM		"20141007"
+setenv	EBDEVELEM2EM		"$root/easybuild/em2em-20141007-easybuild-devel"
+
+prepend-path	PATH		$root/.
+
+# Built with EasyBuild version 1.15.1

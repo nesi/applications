@@ -1,0 +1,33 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   The X protocol C-language Binding (XCB) is a replacement for Xlib featuring a small footprint,
+latency hiding, direct access to the protocol, improved threading support, and extensibility. - Homepage: http://xcb.freedesktop.org/
+    }
+}
+
+module-whatis {Description: The X protocol C-language Binding (XCB) is a replacement for Xlib featuring a small footprint,
+latency hiding, direct access to the protocol, improved threading support, and extensibility. - Homepage: http://xcb.freedesktop.org/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/xcb-proto/1.7-goolf-1.5.14-Python-2.7.3
+
+conflict    xcb-proto
+
+if { ![is-loaded Python/2.7.3-goolf-1.5.14] } {
+    module load Python/2.7.3-goolf-1.5.14
+}
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTXCBMINPROTO		"$root"
+setenv	EBVERSIONXCBMINPROTO		"1.7"
+setenv	EBDEVELXCBMINPROTO		"$root/easybuild/xcb-proto-1.7-goolf-1.5.14-Python-2.7.3-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

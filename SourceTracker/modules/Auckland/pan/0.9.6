@@ -1,0 +1,23 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   SourceTracker is a Bayesian approach to estimating the proportion of a novel community that comes
+ from a set of source environments. - Homepage: http://sourceforge.net/projects/sourcetracker
+    }
+}
+
+module-whatis {Description: SourceTracker is a Bayesian approach to estimating the proportion of a novel community that comes
+ from a set of source environments. - Homepage: http://sourceforge.net/projects/sourcetracker}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/SourceTracker/0.9.6
+
+conflict SourceTracker
+
+
+setenv	EBROOTSOURCETRACKER		"$root"
+setenv	EBVERSIONSOURCETRACKER		"0.9.6"
+setenv	EBDEVELSOURCETRACKER		"$root/easybuild/SourceTracker-0.9.6-easybuild-devel"
+
+setenv	SOURCETRACKER_PATH		"$root"
+
+# Built with EasyBuild version 1.15.1

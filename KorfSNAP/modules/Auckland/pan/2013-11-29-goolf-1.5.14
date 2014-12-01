@@ -1,0 +1,26 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Semi-HMM-based Nucleic Acid Parser - Homepage: http://korflab.ucdavis.edu/software.html
+    }
+}
+
+module-whatis {Description: Semi-HMM-based Nucleic Acid Parser - Homepage: http://korflab.ucdavis.edu/software.html}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/KorfSNAP/2013-11-29-goolf-1.5.14
+
+conflict KorfSNAP
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTKORFSNAP		"$root"
+setenv	EBVERSIONKORFSNAP		"2013-11-29"
+setenv	EBDEVELKORFSNAP		"$root/easybuild/KorfSNAP-2013-11-29-goolf-1.5.14-easybuild-devel"
+
+setenv	ZOE		"$root"
+
+# Built with EasyBuild version 1.15.1

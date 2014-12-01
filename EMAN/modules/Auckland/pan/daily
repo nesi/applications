@@ -13,7 +13,7 @@ module-whatis {Description: EMAN is a powerful image processing library as well 
                 oriented 2D projection images into a 3D model, and is typically used in conjunction 
                 with electron cryomicroscopy.  - Homepage: http://www.msg.ucsf.edu/local/programs/eman}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/EMAN/daily
+set root    /share/easybuild/RHEL6.3/sandybridge/software/EMAN/daily
 
 conflict EMAN
 

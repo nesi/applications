@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: HDF5 is a unique technology suite that makes possible the management of 
  extremely large and complex data collections. - Homepage: http://www.hdfgroup.org/HDF5/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/HDF5/1.8.9-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/sandybridge/software/HDF5/1.8.9-ictce-5.4.0
 
 conflict    HDF5
 

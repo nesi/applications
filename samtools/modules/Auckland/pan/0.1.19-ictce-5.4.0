@@ -9,7 +9,7 @@ for storing large nucleotide sequence alignments. - Homepage: http://samtools.so
 module-whatis {Description: SAM (Sequence Alignment/Map) format is a generic format
 for storing large nucleotide sequence alignments. - Homepage: http://samtools.sourceforge.net/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/SAMtools/0.1.19-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/sandybridge/software/SAMtools/0.1.19-ictce-5.4.0
 
 conflict    SAMtools
 

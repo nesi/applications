@@ -1,0 +1,32 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Computes the local resolution of 3D density maps studied in structural biology, primarily electron cryo-microscopy - Homepage: http://resmap.sourceforge.net
+    }
+}
+
+module-whatis {Description: Computes the local resolution of 3D density maps studied in structural biology, primarily electron cryo-microscopy - Homepage: http://resmap.sourceforge.net}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/ResMap/1.1.4-goolf-1.5.14-Python-2.7.8
+
+conflict ResMap
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded Python/2.7.8-goolf-1.5.14] } {
+    module load Python/2.7.8-goolf-1.5.14
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTRESMAP		"$root"
+setenv	EBVERSIONRESMAP		"1.1.4"
+setenv	EBDEVELRESMAP		"$root/easybuild/ResMap-1.1.4-goolf-1.5.14-Python-2.7.8-easybuild-devel"
+
+prepend-path	PYTHONPATH		$root/lib
+
+# Built with EasyBuild version 1.15.1

@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Genome annotation pipeline - Homepage: http://www.yandell-lab.org/software/maker.html}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/MAKER/2.31.3-goolf-1.5.14-Perl-5.18.2
+set root    /share/easybuild/RHEL6.3/sandybridge/software/MAKER/2.31.3-goolf-1.5.14-Perl-5.18.2
 
 conflict    MAKER
 
@@ -19,8 +19,8 @@ if { ![is-loaded BioPerl/1.6.923-goolf-1.5.14-Perl-5.18.2] } {
     module load BioPerl/1.6.923-goolf-1.5.14-Perl-5.18.2
 }
 
-if { ![is-loaded SNAP/2013-11-29-goolf-1.5.14] } {
-    module load SNAP/2013-11-29-goolf-1.5.14
+if { ![is-loaded KorfSNAP/2013-11-29-goolf-1.5.14] } {
+    module load KorfSNAP/2013-11-29-goolf-1.5.14
 }
 
 if { ![is-loaded exonerate/2.2.0-goolf-1.5.14] } {

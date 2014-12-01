@@ -13,7 +13,7 @@ module-whatis {Description: CUDA (formerly Compute Unified Device Architecture) 
  graphics processing units (GPUs) that they produce. CUDA gives developers access
  to the virtual instruction set and memory of the parallel computational elements in CUDA GPUs. - Homepage: https://developer.nvidia.com/cuda-toolkit}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/CUDA/6.0.37
+set root    /share/easybuild/RHEL6.3/sandybridge/software/CUDA/6.0.37
 
 conflict    CUDA
 

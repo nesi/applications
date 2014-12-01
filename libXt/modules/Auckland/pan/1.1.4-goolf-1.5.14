@@ -1,0 +1,51 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   libXt provides the X Toolkit Intrinsics, an abstract widget library upon which other toolkits are
+ based. Xt is the basis for many toolkits, including the Athena widgets (Xaw), and LessTif (a Motif implementation). - Homepage: http://www.freedesktop.org/wiki/Software/xlibs
+    }
+}
+
+module-whatis {Description: libXt provides the X Toolkit Intrinsics, an abstract widget library upon which other toolkits are
+ based. Xt is the basis for many toolkits, including the Athena widgets (Xaw), and LessTif (a Motif implementation). - Homepage: http://www.freedesktop.org/wiki/Software/xlibs}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/libXt/1.1.4-goolf-1.5.14
+
+conflict    libXt
+
+if { ![is-loaded libSM/1.2.1-goolf-1.5.14] } {
+    module load libSM/1.2.1-goolf-1.5.14
+}
+
+if { ![is-loaded libICE/1.0.8-goolf-1.5.14] } {
+    module load libICE/1.0.8-goolf-1.5.14
+}
+
+if { ![is-loaded libX11/1.6.1-goolf-1.5.14] } {
+    module load libX11/1.6.1-goolf-1.5.14
+}
+
+if { ![is-loaded kbproto/1.0.6-goolf-1.5.14] } {
+    module load kbproto/1.0.6-goolf-1.5.14
+}
+
+if { ![is-loaded xproto/7.0.23-goolf-1.5.14] } {
+    module load xproto/7.0.23-goolf-1.5.14
+}
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTLIBXT		"$root"
+setenv	EBVERSIONLIBXT		"1.1.4"
+setenv	EBDEVELLIBXT		"$root/easybuild/libXt-1.1.4-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

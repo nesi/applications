@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: FreeXL is an open source library to extract valid data from within an Excel (.xls) spreadsheet. - Homepage: https://www.gaia-gis.it/fossil/freexl/index}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/FreeXL/1.0.0g-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/FreeXL/1.0.0g-goolf-1.5.14
 
 conflict    FreeXL
 

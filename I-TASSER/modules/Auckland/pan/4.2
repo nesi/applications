@@ -1,0 +1,33 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   I-TASSER is a set of pre-compiled binaries and scripts for protein structure and function
+modelling and comparison. - Homepage: http://zhanglab.ccmb.med.umich.edu/I-TASSER/
+    }
+}
+
+module-whatis {Description: I-TASSER is a set of pre-compiled binaries and scripts for protein structure and function
+modelling and comparison. - Homepage: http://zhanglab.ccmb.med.umich.edu/I-TASSER/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/I-TASSER/4.2
+
+conflict I-TASSER
+
+if { ![is-loaded BLAST/2.2.29-ictce-5.4.0] } {
+    module load BLAST/2.2.29-ictce-5.4.0
+}
+
+if { ![is-loaded Java/1.7.0_51] } {
+    module load Java/1.7.0_51
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTIMINTASSER		"$root"
+setenv	EBVERSIONIMINTASSER		"4.2"
+setenv	EBDEVELIMINTASSER		"$root/easybuild/I-TASSER-4.2-easybuild-devel"
+
+setenv	IMINTASSERDB		"/share/db/I-TASSER/4.2"
+prepend-path	PATH		$root/
+
+# Built with EasyBuild version 1.15.1

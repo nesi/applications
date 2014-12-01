@@ -1,0 +1,29 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   ligtextutils is a dependency of fastx-toolkit and is provided via the same upstream - Homepage: http://hannonlab.cshl.edu/fastx_toolkit/
+    }
+}
+
+module-whatis {Description: ligtextutils is a dependency of fastx-toolkit and is provided via the same upstream - Homepage: http://hannonlab.cshl.edu/fastx_toolkit/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/libgtextutils/0.6.1-goolf-1.5.14
+
+conflict libgtextutils
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	ACLOCAL_PATH		$root/share/aclocal
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTLIBGTEXTUTILS		"$root"
+setenv	EBVERSIONLIBGTEXTUTILS		"0.6.1"
+setenv	EBDEVELLIBGTEXTUTILS		"$root/easybuild/libgtextutils-0.6.1-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1

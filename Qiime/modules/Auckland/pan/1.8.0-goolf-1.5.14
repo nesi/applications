@@ -1,0 +1,134 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   QIIME (canonically pronounced 'Chime') is a pipeline for performing microbial community analysis
+ that integrates many third party tools which have become standard in the field. - Homepage: http://qiime.sourceforge.net/
+    }
+}
+
+module-whatis {Description: QIIME (canonically pronounced 'Chime') is a pipeline for performing microbial community analysis
+ that integrates many third party tools which have become standard in the field. - Homepage: http://qiime.sourceforge.net/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/QIIME/1.8.0-goolf-1.5.14
+
+conflict QIIME
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded Python/2.7.3-goolf-1.5.14-QIIME] } {
+    module load Python/2.7.3-goolf-1.5.14-QIIME
+}
+
+if { ![is-loaded UCLUST/1.2.22q-i86linux64] } {
+    module load UCLUST/1.2.22q-i86linux64
+}
+
+if { ![is-loaded FastTree/2.1.7-goolf-1.5.14] } {
+    module load FastTree/2.1.7-goolf-1.5.14
+}
+
+if { ![is-loaded CD-HIT/3.1.1-goolf-1.5.14-2007-02-01] } {
+    module load CD-HIT/3.1.1-goolf-1.5.14-2007-02-01
+}
+
+if { ![is-loaded MUSCLE/3.8.31-goolf-1.5.14] } {
+    module load MUSCLE/3.8.31-goolf-1.5.14
+}
+
+if { ![is-loaded BLAST/2.2.22-Linux_x86_64] } {
+    module load BLAST/2.2.22-Linux_x86_64
+}
+
+if { ![is-loaded BLAT/3.5-goolf-1.5.14] } {
+    module load BLAT/3.5-goolf-1.5.14
+}
+
+if { ![is-loaded RDP-Classifier/2.2-Java-1.7.0_51] } {
+    module load RDP-Classifier/2.2-Java-1.7.0_51
+}
+
+if { ![is-loaded RAxML/7.3.0-goolf-1.5.14-hybrid-sse3] } {
+    module load RAxML/7.3.0-goolf-1.5.14-hybrid-sse3
+}
+
+if { ![is-loaded R/3.1.2-goolf-1.5.14] } {
+    module load R/3.1.2-goolf-1.5.14
+}
+
+if { ![is-loaded Mothur/1.25.0-goolf-1.5.14] } {
+    module load Mothur/1.25.0-goolf-1.5.14
+}
+
+if { ![is-loaded clearcut/1.0.9-goolf-1.5.14] } {
+    module load clearcut/1.0.9-goolf-1.5.14
+}
+
+if { ![is-loaded cdbfasta/20100722-goolf-1.5.14] } {
+    module load cdbfasta/20100722-goolf-1.5.14
+}
+
+if { ![is-loaded microbiomeutil/2010-04-29-goolf-1.5.14-Perl-5.18.2] } {
+    module load microbiomeutil/2010-04-29-goolf-1.5.14-Perl-5.18.2
+}
+
+if { ![is-loaded BWA/0.7.10-goolf-1.5.14] } {
+    module load BWA/0.7.10-goolf-1.5.14
+}
+
+if { ![is-loaded Infernal/1.0.2-goolf-1.5.14] } {
+    module load Infernal/1.0.2-goolf-1.5.14
+}
+
+if { ![is-loaded AmpliconNoise/1.29-goolf-1.5.14] } {
+    module load AmpliconNoise/1.29-goolf-1.5.14
+}
+
+if { ![is-loaded USEARCH/5.2.236-i86linux32] } {
+    module load USEARCH/5.2.236-i86linux32
+}
+
+if { ![is-loaded rtax/0.984] } {
+    module load rtax/0.984
+}
+
+if { ![is-loaded ea-utils/1.1.2-686-goolf-1.5.14] } {
+    module load ea-utils/1.1.2-686-goolf-1.5.14
+}
+
+if { ![is-loaded SeqPrep/1.1-goolf-1.5.14] } {
+    module load SeqPrep/1.1-goolf-1.5.14
+}
+
+if { ![is-loaded pplacer/1.1] } {
+    module load pplacer/1.1
+}
+
+if { ![is-loaded Cytoscape/2.7.0-Java-1.7.0_51] } {
+    module load Cytoscape/2.7.0-Java-1.7.0_51
+}
+
+if { ![is-loaded ParsInsert/1.04-goolf-1.5.14] } {
+    module load ParsInsert/1.04-goolf-1.5.14
+}
+
+if { ![is-loaded SourceTracker/0.9.6] } {
+    module load SourceTracker/0.9.6
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTQIIME		"$root"
+setenv	EBVERSIONQIIME		"1.8.0"
+setenv	EBDEVELQIIME		"$root/easybuild/QIIME-1.8.0-goolf-1.5.14-easybuild-devel"
+
+prepend-path	PYTHONPATH		$root/lib/python2.7/site-packages
+prepend-path	QIIME_CONFIG_FP		$root/qiime_config
+setenv	BLASTMAT		"/share/easybuild/RHEL6.3/sandybridge/software/BLAST/2.2.22-Linux_x86_64/data"
+setenv	PYRO_LOOKUP_FILE		"/share/easybuild/RHEL6.3/sandybridge/software/AmpliconNoise/1.29-goolf-1.5.14/Data/LookUp_E123.dat"
+setenv	SEQ_LOOKUP_FILE		"/share/easybuild/RHEL6.3/sandybridge/software/AmpliconNoise/1.29-goolf-1.5.14/Data/Tran.dat"
+
+# Built with EasyBuild version 1.15.1

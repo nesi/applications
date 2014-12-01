@@ -1,0 +1,33 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   The GNU Scientific Library (GSL) is a numerical library for C and C++ programmers.
+The library provides a wide range of mathematical routines such as random number generators, special functions and least-squares fitting. - Homepage: http://www.gnu.org/software/gsl/
+    }
+}
+
+module-whatis {Description: The GNU Scientific Library (GSL) is a numerical library for C and C++ programmers.
+The library provides a wide range of mathematical routines such as random number generators, special functions and least-squares fitting. - Homepage: http://www.gnu.org/software/gsl/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/GSL/1.16-goolf-1.5.14
+
+conflict GSL
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	ACLOCAL_PATH		$root/share/aclocal
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTGSL		"$root"
+setenv	EBVERSIONGSL		"1.16"
+setenv	EBDEVELGSL		"$root/easybuild/GSL-1.16-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1

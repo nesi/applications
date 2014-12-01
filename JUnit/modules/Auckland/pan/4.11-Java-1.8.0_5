@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: A programmer-oriented testing framework for Java. - Homepage: http://sourceforge.net/projects/junit}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/JUnit/4.11-Java-1.8.0_5
+set root    /share/easybuild/RHEL6.3/sandybridge/software/JUnit/4.11-Java-1.8.0_5
 
 conflict    JUnit
 

@@ -11,7 +11,7 @@ module-whatis {Description: The BLACS (Basic Linear Algebra Communication Subpro
  an ongoing investigation whose purpose is to create a linear algebra oriented message passing interface
  that may be implemented efficiently and uniformly across a large range of distributed memory platforms. - Homepage: http://www.netlib.org/blacs/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/BLACS/1.1-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/BLACS/1.1-goolf-1.5.14
 
 conflict    BLACS
 

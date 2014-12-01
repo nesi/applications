@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: LMDB is an ultra-fast, ultra-compact key-value embedded data store developed by Symas for the OpenLDAP Project - Homepage: http://symas.com/mdb}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/liblmdb/0.9.14-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/liblmdb/0.9.14-goolf-1.5.14
 
 conflict    liblmdb
 

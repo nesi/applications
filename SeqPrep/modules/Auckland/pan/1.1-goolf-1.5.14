@@ -1,0 +1,29 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Tool for stripping adaptors and/or merging paired reads with overlap into single reads. - Homepage: https://github.com/jstjohn/SeqPrep
+    }
+}
+
+module-whatis {Description: Tool for stripping adaptors and/or merging paired reads with overlap into single reads. - Homepage: https://github.com/jstjohn/SeqPrep}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/SeqPrep/1.1-goolf-1.5.14
+
+conflict SeqPrep
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded zlib/1.2.8-goolf-1.5.14] } {
+    module load zlib/1.2.8-goolf-1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTSEQPREP		"$root"
+setenv	EBVERSIONSEQPREP		"1.1"
+setenv	EBDEVELSEQPREP		"$root/easybuild/SeqPrep-1.1-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1

@@ -15,7 +15,7 @@ gcc -o test test.c `pkg-config --libs --cflags glib-2.0`
 for instance, rather than hard-coding values on where to find glib (or other libraries).
  - Homepage: http://www.freedesktop.org/wiki/Software/pkg-config/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/pkg-config/0.27.1-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/pkg-config/0.27.1-goolf-1.5.14
 
 conflict    pkg-config
 
@@ -32,4 +32,4 @@ setenv	EBVERSIONPKGMINCONFIG		"0.27.1"
 setenv	EBDEVELPKGMINCONFIG		"$root/easybuild/pkg-config-0.27.1-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.13.0

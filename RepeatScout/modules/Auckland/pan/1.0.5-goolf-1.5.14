@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: De novo identification of repeat families in large genomes - Homepage: http://bix.ucsd.edu/repeatscout/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/RepeatScout/1.0.5-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/RepeatScout/1.0.5-goolf-1.5.14
 
 conflict    RepeatScout
 

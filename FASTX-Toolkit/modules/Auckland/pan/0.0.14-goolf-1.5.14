@@ -1,0 +1,32 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   The FASTX-Toolkit is a collection of command line tools for 
+ Short-Reads FASTA/FASTQ files preprocessing. - Homepage: http://hannonlab.cshl.edu/fastx_toolkit/
+    }
+}
+
+module-whatis {Description: The FASTX-Toolkit is a collection of command line tools for 
+ Short-Reads FASTA/FASTQ files preprocessing. - Homepage: http://hannonlab.cshl.edu/fastx_toolkit/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/FASTX-Toolkit/0.0.14-goolf-1.5.14
+
+conflict FASTX-Toolkit
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded libgtextutils/0.6.1-goolf-1.5.14] } {
+    module load libgtextutils/0.6.1-goolf-1.5.14
+}
+
+prepend-path	ACLOCAL_PATH		$root/share/aclocal
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTFASTXMINTOOLKIT		"$root"
+setenv	EBVERSIONFASTXMINTOOLKIT		"0.0.14"
+setenv	EBDEVELFASTXMINTOOLKIT		"$root/easybuild/FASTX-Toolkit-0.0.14-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1

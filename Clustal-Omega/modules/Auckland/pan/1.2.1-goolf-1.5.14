@@ -13,7 +13,7 @@ module-whatis {Description:  Clustal Omega is a multiple sequence alignment
  sequence alignments of divergent sequences. Evolutionary relationships 
  can be seen via viewing Cladograms or Phylograms  - Homepage: http://www.clustal.org/omega/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/Clustal-Omega/1.2.1-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/Clustal-Omega/1.2.1-goolf-1.5.14
 
 conflict    Clustal-Omega
 
@@ -36,4 +36,4 @@ setenv	EBVERSIONCLUSTALMINOMEGA		"1.2.1"
 setenv	EBDEVELCLUSTALMINOMEGA		"$root/easybuild/Clustal-Omega-1.2.1-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.13.0

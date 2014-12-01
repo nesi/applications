@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description:  AUGUSTUS is a program that predicts genes in eukaryotic genomic sequences.  - Homepage: http://bioinf.uni-greifswald.de/augustus/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/Augustus/3.0.2-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/Augustus/3.0.2-goolf-1.5.14
 
 conflict    Augustus
 
@@ -32,4 +32,4 @@ setenv	EBDEVELAUGUSTUS		"$root/easybuild/Augustus-3.0.2-goolf-1.5.14-easybuild-d
 setenv	AUGUSTUS_CONFIG_PATH		"$root/config"
 prepend-path	PATH		$root/scripts
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.13.0

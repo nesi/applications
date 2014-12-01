@@ -1,0 +1,29 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   NLopt is a free/open-source library for nonlinear optimization, providing a common interface for a number of different free optimization routines available online as well as original implementations of various other algorithms - Homepage: http://ab-initio.mit.edu/wiki/index.php/NLopt
+    }
+}
+
+module-whatis {Description: NLopt is a free/open-source library for nonlinear optimization, providing a common interface for a number of different free optimization routines available online as well as original implementations of various other algorithms - Homepage: http://ab-initio.mit.edu/wiki/index.php/NLopt}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/NLopt/2.4.2-ictce-5.4.0
+
+conflict    NLopt
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTNLOPT		"$root"
+setenv	EBVERSIONNLOPT		"2.4.2"
+setenv	EBDEVELNLOPT		"$root/easybuild/NLopt-2.4.2-ictce-5.4.0-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

@@ -1,0 +1,27 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Infernal ('INFERence of RNA ALignment') is for searching DNA sequence databases
+ for RNA structure and sequence similarities. - Homepage: http://infernal.janelia.org/
+    }
+}
+
+module-whatis {Description: Infernal ('INFERence of RNA ALignment') is for searching DNA sequence databases
+ for RNA structure and sequence similarities. - Homepage: http://infernal.janelia.org/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/Infernal/1.0.2-goolf-1.5.14
+
+conflict Infernal
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTINFERNAL		"$root"
+setenv	EBVERSIONINFERNAL		"1.0.2"
+setenv	EBDEVELINFERNAL		"$root/easybuild/Infernal-1.0.2-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1

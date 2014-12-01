@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description:  Argtable is an ANSI C library for parsing GNU style 
  command line options with a minimum of fuss.  - Homepage: http://argtable.sourceforge.net/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/argtable/2.13-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/argtable/2.13-goolf-1.5.14
 
 conflict    argtable
 
@@ -28,4 +28,4 @@ setenv	EBVERSIONARGTABLE		"2.13"
 setenv	EBDEVELARGTABLE		"$root/easybuild/argtable-2.13-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.13.0

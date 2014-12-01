@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: The gflags package contains a library that implements commandline flags processing. As such it's a replacement for getopt(). It has increased flexibility, including built-in support for C++ types like string, and the ability to define flags in the source file in which they're used. - Homepage: https://code.google.com/p/gflags}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/libgflags/2.1.1-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/libgflags/2.1.1-goolf-1.5.14
 
 conflict    libgflags
 

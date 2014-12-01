@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: MrBayes is a program for the Bayesian estimation of phylogeny. - Homepage: http://mrbayes.csit.fsu.edu}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/MrBayes/3.1.2-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/sandybridge/software/MrBayes/3.1.2-ictce-5.4.0
 
 conflict    MrBayes
 

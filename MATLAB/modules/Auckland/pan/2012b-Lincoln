@@ -11,7 +11,7 @@ module-whatis {Description: MATLAB is a high-level language and interactive envi
  that enables you to perform computationally intensive tasks faster than with
  traditional programming languages such as C, C++, and Fortran. - Homepage: http://www.mathworks.com/products/matlab}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/MATLAB/2012b-Lincoln
+set root    /share/easybuild/RHEL6.3/sandybridge/software/MATLAB/2012b-Lincoln
 
 conflict    MATLAB
 
@@ -27,4 +27,4 @@ setenv	EBDEVELMATLAB		"$root/easybuild/MATLAB-2012b-Lincoln-easybuild-devel"
 
 setenv	_JAVA_OPTIONS		"-Xmx256m"
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.13.0

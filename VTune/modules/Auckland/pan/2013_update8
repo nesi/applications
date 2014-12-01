@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Intel VTune Amplifier XE 2013 is the premier performance profiler for C, C++, C#, Fortran, Assembly and Java. - Homepage: http://software.intel.com/en-us/intel-vtune-amplifier-xe}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/VTune/2013_update8
+set root    /share/easybuild/RHEL6.3/sandybridge/software/VTune/2013_update8
 
 conflict VTune
 

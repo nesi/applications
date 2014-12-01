@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: Bison is a general-purpose parser generator that converts an annotated context-free grammar
  into a deterministic LR or generalized LR (GLR) parser employing LALR(1) parser tables. - Homepage: http://www.gnu.org/software/bison}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/Bison/2.7-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/sandybridge/software/Bison/2.7-ictce-5.4.0
 
 conflict Bison
 

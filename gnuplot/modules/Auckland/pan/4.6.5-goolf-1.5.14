@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: gnuplot-4.6.0: Portable interactive, function plotting utility - Homepage: http://gnuplot.sourceforge.net/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/gnuplot/4.6.5-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/gnuplot/4.6.5-goolf-1.5.14
 
 conflict    gnuplot
 

@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: The glog library implements application-level logging. This library provides logging APIs based on C++-style streams and various helper macros. - Homepage: https://code.google.com/p/google-glog/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/libglog/0.3.3-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/libglog/0.3.3-goolf-1.5.14
 
 conflict    libglog
 

@@ -1,0 +1,25 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Basic Local Alignment Search Tool, or BLAST, is an algorithm
+ for comparing primary biological sequence information, such as the amino-acid
+ sequences of different proteins or the nucleotides of DNA sequences. - Homepage: http://blast.ncbi.nlm.nih.gov/
+    }
+}
+
+module-whatis {Description: Basic Local Alignment Search Tool, or BLAST, is an algorithm
+ for comparing primary biological sequence information, such as the amino-acid
+ sequences of different proteins or the nucleotides of DNA sequences. - Homepage: http://blast.ncbi.nlm.nih.gov/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/BLAST/2.2.22-Linux_x86_64
+
+conflict BLAST
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTBLAST		"$root"
+setenv	EBVERSIONBLAST		"2.2.22"
+setenv	EBDEVELBLAST		"$root/easybuild/BLAST-2.2.22-Linux_x86_64-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1

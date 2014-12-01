@@ -1,0 +1,31 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Cytoscape is an open source software platform for visualizing molecular interaction networks and
+ biological pathways and integrating these networks with annotations, gene expression profiles and other state data. - Homepage: http://cytoscape.org/
+    }
+}
+
+module-whatis {Description: Cytoscape is an open source software platform for visualizing molecular interaction networks and
+ biological pathways and integrating these networks with annotations, gene expression profiles and other state data. - Homepage: http://cytoscape.org/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/Cytoscape/2.7.0-Java-1.7.0_51
+
+conflict Cytoscape
+
+if { ![is-loaded Java/1.7.0_51] } {
+    module load Java/1.7.0_51
+}
+
+prepend-path	CLASSPATH		$root/cytoscape.jar
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+
+setenv	EBROOTCYTOSCAPE		"$root"
+setenv	EBVERSIONCYTOSCAPE		"2.7.0"
+setenv	EBDEVELCYTOSCAPE		"$root/easybuild/Cytoscape-2.7.0-Java-1.7.0_51-easybuild-devel"
+
+prepend-path	PATH		$root/
+prepend-path	CLASSPATH		$root/cytoscape.jar
+
+# Built with EasyBuild version 1.15.1

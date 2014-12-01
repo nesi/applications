@@ -1,0 +1,39 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   The aim of VCFtools is to provide 
+ methods for working with VCF files: validating, 
+ merging, comparing and calculate some basic population
+ genetic statistics.  - Homepage: http://vcftools.sourceforge.net/
+    }
+}
+
+module-whatis {Description: The aim of VCFtools is to provide 
+ methods for working with VCF files: validating, 
+ merging, comparing and calculate some basic population
+ genetic statistics.  - Homepage: http://vcftools.sourceforge.net/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/VCFtools/0.1.12-goolf-1.5.14-Perl-5.18.2
+
+conflict VCFtools
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded Perl/5.18.2-goolf-1.5.14] } {
+    module load Perl/5.18.2-goolf-1.5.14
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTVCFTOOLS		"$root"
+setenv	EBVERSIONVCFTOOLS		"0.1.12"
+setenv	EBDEVELVCFTOOLS		"$root/easybuild/VCFtools-0.1.12-goolf-1.5.14-Perl-5.18.2-easybuild-devel"
+
+prepend-path	PERL5LIB		$root/lib/perl5/site_perl
+
+# Built with EasyBuild version 1.15.1

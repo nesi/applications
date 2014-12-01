@@ -1,0 +1,41 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   A set of software utilities for processing and analyzing 16S rRNA genes including generating NAST
+ alignments, chimera checking, and assembling paired 16S rRNA reads according to reference sequence homology. - Homepage: http://sourceforge.net/projects/microbiomeutil/
+    }
+}
+
+module-whatis {Description: A set of software utilities for processing and analyzing 16S rRNA genes including generating NAST
+ alignments, chimera checking, and assembling paired 16S rRNA reads according to reference sequence homology. - Homepage: http://sourceforge.net/projects/microbiomeutil/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/microbiomeutil/2010-04-29-goolf-1.5.14-Perl-5.18.2
+
+conflict microbiomeutil
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded BLAST/2.2.22-Linux_x86_64] } {
+    module load BLAST/2.2.22-Linux_x86_64
+}
+
+if { ![is-loaded cdbfasta/20100722-goolf-1.5.14] } {
+    module load cdbfasta/20100722-goolf-1.5.14
+}
+
+if { ![is-loaded Perl/5.18.2-goolf-1.5.14] } {
+    module load Perl/5.18.2-goolf-1.5.14
+}
+
+
+setenv	EBROOTMICROBIOMEUTIL		"$root"
+setenv	EBVERSIONMICROBIOMEUTIL		"2010-04-29"
+setenv	EBDEVELMICROBIOMEUTIL		"$root/easybuild/microbiomeutil-2010-04-29-goolf-1.5.14-Perl-5.18.2-easybuild-devel"
+
+prepend-path	PATH		$root/NAST-iEr
+prepend-path	PATH		$root/WigeoN
+prepend-path	PATH		$root/ChimeraSlayer
+
+# Built with EasyBuild version 1.15.1

@@ -11,7 +11,7 @@ module-whatis {Description: MUSCLE is a program for creating multiple alignments
 sequences. A range of options is provided that give you the choice of optimizing accuracy, speed,
 or some compromise between the two. - Homepage: http://drive5.com/muscle/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/MUSCLE/3.8.31-i86linux64
+set root    /share/easybuild/RHEL6.3/sandybridge/software/MUSCLE/3.8.31-i86linux64
 
 conflict    MUSCLE
 
@@ -22,4 +22,4 @@ setenv	EBDEVELMUSCLE		"$root/easybuild/MUSCLE-3.8.31-i86linux64-easybuild-devel"
 
 prepend-path	PATH		$root/
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.13.0

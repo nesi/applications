@@ -1,0 +1,41 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {     Coot is for macromolecular model building, model 
+completion and validation, particularly suitable for protein modelling 
+using X-ray data.
+Coot displays maps and models and allows model manipulations such as 
+idealization, real space refinement, manual rotation/translation, 
+rigid-body fitting, ligand search, solvation, mutations, 
+rotamers, Ramachandran plots, skeletonization, 
+non-crystallographic symmetry and more.   - Homepage: http://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/
+    }
+}
+
+module-whatis {Description:   Coot is for macromolecular model building, model 
+completion and validation, particularly suitable for protein modelling 
+using X-ray data.
+Coot displays maps and models and allows model manipulations such as 
+idealization, real space refinement, manual rotation/translation, 
+rigid-body fitting, ligand search, solvation, mutations, 
+rotamers, Ramachandran plots, skeletonization, 
+non-crystallographic symmetry and more.   - Homepage: http://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/coot/0.8-binary-Linux-x86_64-rhel-6-python-gtk2
+
+conflict coot
+
+prepend-path	ACLOCAL_PATH		$root/share/aclocal
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/man
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTCOOT		"$root"
+setenv	EBVERSIONCOOT		"0.8-binary-Linux-x86_64-rhel-6-python-gtk2"
+setenv	EBDEVELCOOT		"$root/easybuild/coot-0.8-binary-Linux-x86_64-rhel-6-python-gtk2-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1

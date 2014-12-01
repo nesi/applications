@@ -1,0 +1,33 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   xtrans includes a number of routines to make X implementations transport-independent;
+ at time of writing, it includes support for UNIX sockets, IPv4, IPv6, and DECnet.
+ - Homepage: http://www.freedesktop.org/wiki/Software/xlibs
+    }
+}
+
+module-whatis {Description: xtrans includes a number of routines to make X implementations transport-independent;
+ at time of writing, it includes support for UNIX sockets, IPv4, IPv6, and DECnet.
+ - Homepage: http://www.freedesktop.org/wiki/Software/xlibs}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/xtrans/1.2-goolf-1.5.14
+
+conflict    xtrans
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	ACLOCAL_PATH		$root/share/aclocal
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTXTRANS		"$root"
+setenv	EBVERSIONXTRANS		"1.2"
+setenv	EBDEVELXTRANS		"$root/easybuild/xtrans-1.2-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

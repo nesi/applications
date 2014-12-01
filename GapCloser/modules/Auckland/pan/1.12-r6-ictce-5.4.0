@@ -1,0 +1,25 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Close the gaps emerging during the scaffolding process of SOAPdenovo or other assemblers, using the abundant pair relationships of short reads. - Homepage: http://soap.genomics.org.cn/index.html
+    }
+}
+
+module-whatis {Description: Close the gaps emerging during the scaffolding process of SOAPdenovo or other assemblers, using the abundant pair relationships of short reads. - Homepage: http://soap.genomics.org.cn/index.html}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/GapCloser/1.12-r6-ictce-5.4.0
+
+conflict GapCloser
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTGAPCLOSER		"$root"
+setenv	EBVERSIONGAPCLOSER		"1.12-r6"
+setenv	EBDEVELGAPCLOSER		"$root/easybuild/GapCloser-1.12-r6-ictce-5.4.0-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1

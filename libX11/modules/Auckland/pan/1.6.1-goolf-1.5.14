@@ -1,0 +1,37 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   X11 client-side library - Homepage: http://www.freedesktop.org/wiki/Software/xlibs
+    }
+}
+
+module-whatis {Description: X11 client-side library - Homepage: http://www.freedesktop.org/wiki/Software/xlibs}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/libX11/1.6.1-goolf-1.5.14
+
+conflict    libX11
+
+if { ![is-loaded libxcb/1.8-goolf-1.5.14-Python-2.7.3] } {
+    module load libxcb/1.8-goolf-1.5.14-Python-2.7.3
+}
+
+if { ![is-loaded xtrans/1.2-goolf-1.5.14] } {
+    module load xtrans/1.2-goolf-1.5.14
+}
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTLIBX11		"$root"
+setenv	EBVERSIONLIBX11		"1.6.1"
+setenv	EBDEVELLIBX11		"$root/easybuild/libX11-1.6.1-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

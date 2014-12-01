@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: BLAT on DNA is designed to quickly find sequences of 95% and greater similarity of length 25 bases or more. - Homepage: http://genome.ucsc.edu/FAQ/FAQblat.html}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/BLAT/3.5-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/BLAT/3.5-goolf-1.5.14
 
 conflict    BLAT
 
@@ -28,4 +28,4 @@ setenv	EBVERSIONBLAT		"3.5"
 setenv	EBDEVELBLAT		"$root/easybuild/BLAT-3.5-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.13.0

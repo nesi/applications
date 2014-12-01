@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: A program for population genetic analysis that extends the method of Hey and Nielsen (2007) to two or more populations - Homepage: https://bio.cst.temple.edu/~hey/software/software.htm#IMa2}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/IMa2/12.08.27-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/IMa2/12.08.27-goolf-1.5.14
 
 conflict    IMa2
 

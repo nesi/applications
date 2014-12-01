@@ -1,0 +1,25 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   RAxML search algorithm for maximum likelihood based inference of phylogenetic trees. - Homepage: https://github.com/stamatak/standard-RAxML
+    }
+}
+
+module-whatis {Description: RAxML search algorithm for maximum likelihood based inference of phylogenetic trees. - Homepage: https://github.com/stamatak/standard-RAxML}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/RAxML/7.3.0-goolf-1.5.14-hybrid-sse3
+
+conflict RAxML
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTRAXML		"$root"
+setenv	EBVERSIONRAXML		"7.3.0"
+setenv	EBDEVELRAXML		"$root/easybuild/RAxML-7.3.0-goolf-1.5.14-hybrid-sse3-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1

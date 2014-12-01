@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: A fast and lightweight key/value database library by Google. - Homepage: https://code.google.com/p/leveldb/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/libleveldb/1.15.0-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/libleveldb/1.15.0-goolf-1.5.14
 
 conflict    libleveldb
 

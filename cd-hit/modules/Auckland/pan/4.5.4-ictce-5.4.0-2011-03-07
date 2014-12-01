@@ -13,7 +13,7 @@ takes a fasta format sequence database as input and produces a set of 'non-redun
 representative sequences as output. In addition cd-hit outputs a cluster file, documenting the 
 sequence 'groupies' for each nr sequence representative.  - Homepage: http://www.bioinformatics.org/cd-hit/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/CD-HIT/4.5.4-ictce-5.4.0-2011-03-07
+set root    /share/easybuild/RHEL6.3/sandybridge/software/CD-HIT/4.5.4-ictce-5.4.0-2011-03-07
 
 conflict    CD-HIT
 

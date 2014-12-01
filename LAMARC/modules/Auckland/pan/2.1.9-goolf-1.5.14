@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Estimates population-genetic parameters such as population size, population growth rate, recombination rate, and migration rates. - Homepage: http://evolution.gs.washington.edu/lamarc/index.html}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/LAMARC/2.1.9-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/LAMARC/2.1.9-goolf-1.5.14
 
 conflict    LAMARC
 

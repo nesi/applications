@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Intel Cluster Toolkit Compiler Edition provides Intel C/C++ and Fortran compilers, Intel MPI & Intel MKL. - Homepage: http://software.intel.com/en-us/intel-cluster-toolkit-compiler/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/ictce/5.4.0
+set root    /share/easybuild/RHEL6.3/sandybridge/software/ictce/5.4.0
 
 conflict    ictce
 
@@ -33,4 +33,4 @@ setenv	EBVERSIONICTCE		"5.4.0"
 setenv	EBDEVELICTCE		"$root/easybuild/ictce-5.4.0-easybuild-devel"
 
 
-# built with EasyBuild version 1.10.0
+# Built with EasyBuild version 1.13.0

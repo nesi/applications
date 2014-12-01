@@ -1,0 +1,28 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Estimates effective population sizes and past migration rates between N populations 
+assuming a migration matrix model with asymmetric migration rates and different subpopulation sizes - Homepage: http://popgen.sc.fsu.edu/Migrate/Migrate-n.html
+    }
+}
+
+module-whatis {Description: Estimates effective population sizes and past migration rates between N populations 
+assuming a migration matrix model with asymmetric migration rates and different subpopulation sizes - Homepage: http://popgen.sc.fsu.edu/Migrate/Migrate-n.html}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/Migrate-n/3.6.4-goolf-1.5.14
+
+conflict Migrate-n
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	MANPATH		$root/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTMIGRATEMINN		"$root"
+setenv	EBVERSIONMIGRATEMINN		"3.6.4"
+setenv	EBDEVELMIGRATEMINN		"$root/easybuild/Migrate-n-3.6.4-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1

@@ -9,7 +9,7 @@ method that can build a de novo draft assembly for the human-sized genomes - Hom
 module-whatis {Description: Short Oligonucleotide Analysis Package - novel short-read assembly
 method that can build a de novo draft assembly for the human-sized genomes - Homepage: http://soap.genomics.org.cn/index.html}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/SOAPdenovo2/r240-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/SOAPdenovo2/r240-goolf-1.5.14
 
 conflict    SOAPdenovo2
 
@@ -24,4 +24,4 @@ setenv	EBVERSIONSOAPDENOVO2		"r240"
 setenv	EBDEVELSOAPDENOVO2		"$root/easybuild/SOAPdenovo2-r240-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.13.0

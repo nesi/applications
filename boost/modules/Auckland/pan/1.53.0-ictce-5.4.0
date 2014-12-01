@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Boost provides free peer-reviewed portable C++ source libraries. - Homepage: http://www.boost.org/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/Boost/1.53.0-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/sandybridge/software/Boost/1.53.0-ictce-5.4.0
 
 conflict    Boost
 

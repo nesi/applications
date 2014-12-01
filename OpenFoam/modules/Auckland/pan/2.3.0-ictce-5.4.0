@@ -8,12 +8,12 @@ proc ModulesHelp { } {
     }
 }
 
-module-whatis {OpenFOAM is a free, open source CFD software package. 
+module-whatis {Description: OpenFOAM is a free, open source CFD software package. 
  OpenFOAM has an extensive range of features to solve anything from complex fluid flows
  involving chemical reactions, turbulence and heat transfer, 
  to solid dynamics and electromagnetics. - Homepage: http://www.openfoam.com/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/OpenFOAM/2.3.0-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/sandybridge/software/OpenFOAM/2.3.0-ictce-5.4.0
 
 conflict    OpenFOAM
 
@@ -42,8 +42,8 @@ setenv	WM_PROJECT_VERSION		"2.3.0"
 setenv	FOAM_INST_DIR		"$root"
 setenv	WM_COMPILER		"Icc"
 setenv	WM_MPLIB		"IMPI"
-setenv	MPI_ARCH_PATH		"/share/easybuild/RHEL6.3/westmere/software/impi/4.1.2.040/intel64"
+setenv	MPI_ARCH_PATH		"/share/easybuild/RHEL6.3/sandybridge/software/impi/4.1.2.040/intel64"
 setenv	FOAM_BASH		"$root/OpenFOAM-2.3.0/etc/bashrc"
 setenv	FOAM_CSH		"$root/OpenFOAM-2.3.0/etc/cshrc"
 
-# built with EasyBuild version 1.10.0dev
+# Built with EasyBuild version 1.13.0

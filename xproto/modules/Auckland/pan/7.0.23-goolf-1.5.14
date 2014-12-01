@@ -1,0 +1,28 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   X protocol and ancillary headers - Homepage: http://www.freedesktop.org/wiki/Software/xlibs
+    }
+}
+
+module-whatis {Description: X protocol and ancillary headers - Homepage: http://www.freedesktop.org/wiki/Software/xlibs}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/xproto/7.0.23-goolf-1.5.14
+
+conflict    xproto
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTXPROTO		"$root"
+setenv	EBVERSIONXPROTO		"7.0.23"
+setenv	EBDEVELXPROTO		"$root/easybuild/xproto-7.0.23-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.14.0

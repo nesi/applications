@@ -1,0 +1,27 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Rapid and accurate taxonomic classification of short paired-end sequence reads from the 16S ribosomal
+ RNA gene. - Homepage: https://github.com/davidsoergel/rtax
+    }
+}
+
+module-whatis {Description: Rapid and accurate taxonomic classification of short paired-end sequence reads from the 16S ribosomal
+ RNA gene. - Homepage: https://github.com/davidsoergel/rtax}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/rtax/0.984
+
+conflict rtax
+
+if { ![is-loaded USEARCH/5.2.236-i86linux32] } {
+    module load USEARCH/5.2.236-i86linux32
+}
+
+
+setenv	EBROOTRTAX		"$root"
+setenv	EBVERSIONRTAX		"0.984"
+setenv	EBDEVELRTAX		"$root/easybuild/rtax-0.984-easybuild-devel"
+
+prepend-path	PATH		$root/
+
+# Built with EasyBuild version 1.15.1

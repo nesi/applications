@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: ALLPATHS-LG, the new short read genome assembler. - Homepage: http://www.broadinstitute.org/software/allpaths-lg/blog/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/ALLPATHS-LG/46968-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/ALLPATHS-LG/46968-goolf-1.5.14
 
 conflict    ALLPATHS-LG
 

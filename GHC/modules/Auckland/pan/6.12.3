@@ -1,0 +1,24 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   The Glorious/Glasgow Haskell Compiler - Homepage: http://haskell.org/ghc/
+    }
+}
+
+module-whatis {Description: The Glorious/Glasgow Haskell Compiler - Homepage: http://haskell.org/ghc/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/GHC/6.12.3
+
+conflict GHC
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTGHC		"$root"
+setenv	EBVERSIONGHC		"6.12.3"
+setenv	EBDEVELGHC		"$root/easybuild/GHC-6.12.3-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1

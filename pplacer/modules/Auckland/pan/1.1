@@ -1,0 +1,25 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Places query sequences on a fixed reference phylogenetic tree 
+to maximize phylogenetic likelihood or posterior probability according to a reference alignment - Homepage: http://matsen.fhcrc.org/pplacer/
+    }
+}
+
+module-whatis {Description: Places query sequences on a fixed reference phylogenetic tree 
+to maximize phylogenetic likelihood or posterior probability according to a reference alignment - Homepage: http://matsen.fhcrc.org/pplacer/}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/pplacer/1.1
+
+conflict pplacer
+
+
+setenv	EBROOTPPLACER		"$root"
+setenv	EBVERSIONPPLACER		"1.1"
+setenv	EBDEVELPPLACER		"$root/easybuild/pplacer-1.1-easybuild-devel"
+
+prepend-path	PATH		$root/scripts
+prepend-path	PATH		$root/.
+prepend-path	PATH		$root/
+
+# Built with EasyBuild version 1.15.1

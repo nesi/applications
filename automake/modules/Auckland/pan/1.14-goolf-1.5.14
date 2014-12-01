@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Automake: GNU Standards-compliant Makefile generator - Homepage: http://www.gnu.org/software/automake/automake.html}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/Automake/1.14-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/Automake/1.14-goolf-1.5.14
 
 conflict    Automake
 
@@ -28,4 +28,4 @@ setenv	EBVERSIONAUTOMAKE		"1.14"
 setenv	EBDEVELAUTOMAKE		"$root/easybuild/Automake-1.14-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.13.0

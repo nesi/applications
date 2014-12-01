@@ -5,9 +5,9 @@ proc ModulesHelp { } {
     }
 }
 
-module-whatis {Finite Element Analysis software for modeling, visualization and best-in-class implicit and explicit dynamics FEA. - Homepage: http://www.simulia.com/products/abaqus_fea.html}
+module-whatis {Description: Finite Element Analysis software for modeling, visualization and best-in-class implicit and explicit dynamics FEA. - Homepage: http://www.simulia.com/products/abaqus_fea.html}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/ABAQUS/6.13.2-linux-x86_64
+set root    /share/easybuild/RHEL6.3/sandybridge/software/ABAQUS/6.13.2-linux-x86_64
 
 conflict    ABAQUS
 
@@ -19,4 +19,4 @@ setenv	EBDEVELABAQUS		"$root/easybuild/ABAQUS-6.13.2-linux-x86_64-easybuild-deve
 
 prepend-path	PATH		$root/
 
-# built with EasyBuild version 1.10.0dev
+# Built with EasyBuild version 1.13.0

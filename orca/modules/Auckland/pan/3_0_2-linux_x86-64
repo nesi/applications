@@ -15,7 +15,7 @@ module-whatis {Description: ORCA is a flexible, efficient and easy-to-use genera
  and multireference correlated ab initio methods. 
  It can also treat environmental and relativistic effects. - Homepage: http://www.thch.uni-bonn.de/tc/orca/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/ORCA/3_0_2-linux_x86-64
+set root    /share/easybuild/RHEL6.3/sandybridge/software/ORCA/3_0_2-linux_x86-64
 
 conflict    ORCA
 
@@ -30,4 +30,4 @@ setenv	EBDEVELORCA		"$root/easybuild/ORCA-3_0_2-linux_x86-64-easybuild-devel"
 
 prepend-path	PATH		$root/
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.13.0

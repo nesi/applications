@@ -13,7 +13,7 @@ module-whatis {Description: Scalasca is a software tool that supports the perfor
  potential performance bottlenecks -- in particular those concerning communication and
  synchronization -- and offers guidance in exploring their causes. - Homepage: http://www.scalasca.org/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/Scalasca/2.0-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/Scalasca/2.0-goolf-1.5.14
 
 conflict    Scalasca
 

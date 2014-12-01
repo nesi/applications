@@ -7,9 +7,9 @@ proc ModulesHelp { } {
 
 module-whatis {Description: RAxML search algorithm for maximum likelihood based inference of phylogenetic trees. - Homepage: https://github.com/stamatak/standard-RAxML}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/RAxML/8.0.22-goolf-1.5.14-hybrid-sse3
+set root    /share/easybuild/RHEL6.3/sandybridge/software/RAxML/8.0.22-goolf-1.5.14-hybrid-sse3
 
-conflict    RAxML
+conflict RAxML
 
 if { ![is-loaded goolf/1.5.14] } {
     module load goolf/1.5.14
@@ -22,4 +22,4 @@ setenv	EBVERSIONRAXML		"8.0.22"
 setenv	EBDEVELRAXML		"$root/easybuild/RAxML-8.0.22-goolf-1.5.14-hybrid-sse3-easybuild-devel"
 
 
-# Built with EasyBuild version 1.12.1
+# Built with EasyBuild version 1.15.1

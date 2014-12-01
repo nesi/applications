@@ -9,7 +9,7 @@ that arise in the numerical solution of partial differential equations using ite
 module-whatis {Description: The Library of Iterative Solvers for linear systems, a parallel library for solving linear equations and eigenvalue problems 
 that arise in the numerical solution of partial differential equations using iterative methods.  - Homepage: http://www.ssisc.org/lis/}
 
-set root    /share/easybuild/RHEL6.3/westmere/software/Lis/1.4.37-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/sandybridge/software/Lis/1.4.37-goolf-1.5.14
 
 conflict    Lis
 

@@ -1,0 +1,35 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Command-line tools for processing biological sequencing data. Barcode demultiplexing,
+ adapter trimming, etc. - Homepage: https://code.google.com/p/ea-utils
+    }
+}
+
+module-whatis {Description: Command-line tools for processing biological sequencing data. Barcode demultiplexing,
+ adapter trimming, etc. - Homepage: https://code.google.com/p/ea-utils}
+
+set root    /share/easybuild/RHEL6.3/sandybridge/software/ea-utils/1.1.2-686-goolf-1.5.14
+
+conflict ea-utils
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded ncurses/5.9-goolf-1.5.14] } {
+    module load ncurses/5.9-goolf-1.5.14
+}
+
+if { ![is-loaded GSL/1.16-goolf-1.5.14] } {
+    module load GSL/1.16-goolf-1.5.14
+}
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTEAMINUTILS		"$root"
+setenv	EBVERSIONEAMINUTILS		"1.1.2-686"
+setenv	EBDEVELEAMINUTILS		"$root/easybuild/ea-utils-1.1.2-686-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.1
