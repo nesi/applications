@@ -22,7 +22,9 @@ or
 
 	cfx5post
 
-and the GUI will appear. 
+and the GUI will appear. If you are connecting from a Windows machine, you may need to use:
+
+	cfx5post -gr mesa 
 
 $H$H$H$H Running compute jobs
 
