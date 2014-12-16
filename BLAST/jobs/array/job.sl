@@ -11,7 +11,7 @@
 #################################################################
 ###  Load the Environment
 source /etc/profile
-module load NCBI-BLAST+/2.2.29
+module load BLAST
 #################################################################
 ###  The files will be allocated in the /dev/shm FS 
 echo $SHM_DIR
