@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: QIIME (canonically pronounced 'Chime') is a pipeline for performing microbial community analysis
  that integrates many third party tools which have become standard in the field. - Homepage: http://qiime.sourceforge.net/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/QIIME/1.8.0-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/QIIME/1.8.0-goolf-1.5.14
 
 conflict QIIME
 
@@ -127,8 +127,8 @@ setenv	EBDEVELQIIME		"$root/easybuild/QIIME-1.8.0-goolf-1.5.14-easybuild-devel"
 
 prepend-path	PYTHONPATH		$root/lib/python2.7/site-packages
 prepend-path	QIIME_CONFIG_FP		$root/qiime_config
-setenv	BLASTMAT		"/share/easybuild/RHEL6.3/sandybridge/software/BLAST/2.2.22-Linux_x86_64/data"
-setenv	PYRO_LOOKUP_FILE		"/share/easybuild/RHEL6.3/sandybridge/software/AmpliconNoise/1.29-goolf-1.5.14/Data/LookUp_E123.dat"
-setenv	SEQ_LOOKUP_FILE		"/share/easybuild/RHEL6.3/sandybridge/software/AmpliconNoise/1.29-goolf-1.5.14/Data/Tran.dat"
+setenv	BLASTMAT		"/share/easybuild/RHEL6.3/westmere/software/BLAST/2.2.22-Linux_x86_64/data"
+setenv	PYRO_LOOKUP_FILE		"/share/easybuild/RHEL6.3/westmere/software/AmpliconNoise/1.29-goolf-1.5.14/Data/LookUp_E123.dat"
+setenv	SEQ_LOOKUP_FILE		"/share/easybuild/RHEL6.3/westmere/software/AmpliconNoise/1.29-goolf-1.5.14/Data/Tran.dat"
 
 # Built with EasyBuild version 1.15.1

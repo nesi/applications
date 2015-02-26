@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: A set of tools (in Java) for working with next generation sequencing data in the BAM format. - Homepage: http://sourceforge.net/projects/picard}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/picard/1.111
+set root    /share/easybuild/RHEL6.3/westmere/software/picard/1.111
 
 conflict    picard
 
@@ -76,4 +76,4 @@ setenv	EBDEVELPICARD		"$root/easybuild/picard-1.111-easybuild-devel"
 
 prepend-path	PATH		$root/
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.0

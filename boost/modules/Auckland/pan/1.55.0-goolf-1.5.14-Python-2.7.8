@@ -1,0 +1,35 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Boost provides free peer-reviewed portable C++ source libraries. - Homepage: http://www.boost.org/
+    }
+}
+
+module-whatis {Description: Boost provides free peer-reviewed portable C++ source libraries. - Homepage: http://www.boost.org/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Boost/1.55.0-goolf-1.5.14-Python-2.7.8
+
+conflict Boost
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded bzip2/1.0.6-goolf-1.5.14] } {
+    module load bzip2/1.0.6-goolf-1.5.14
+}
+
+if { ![is-loaded Python/2.7.8-goolf-1.5.14] } {
+    module load Python/2.7.8-goolf-1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+
+setenv	EBROOTBOOST		"$root"
+setenv	EBVERSIONBOOST		"1.55.0"
+setenv	EBDEVELBOOST		"$root/easybuild/Boost-1.55.0-goolf-1.5.14-Python-2.7.8-easybuild-devel"
+
+
+# Built with EasyBuild version 1.16.1

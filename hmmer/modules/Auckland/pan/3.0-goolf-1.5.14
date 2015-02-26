@@ -21,7 +21,7 @@ module-whatis {Description: HMMER is used for searching sequence databases for h
   came at significant computational expense, but in the new HMMER3 project, HMMER is now
   essentially as fast as BLAST. - Homepage: http://hmmer.janelia.org/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/HMMER/3.0-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/HMMER/3.0-goolf-1.5.14
 
 conflict    HMMER
 
@@ -36,4 +36,4 @@ setenv	EBVERSIONHMMER		"3.0"
 setenv	EBDEVELHMMER		"$root/easybuild/HMMER-3.0-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

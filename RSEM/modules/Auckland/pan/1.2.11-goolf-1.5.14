@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Estimates gene and isoform expression levels from RNA-Seq data - Homepage: http://deweylab.biostat.wisc.edu/rsem/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/RSEM/1.2.11-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/RSEM/1.2.11-goolf-1.5.14
 
 conflict    RSEM
 
@@ -38,4 +38,4 @@ setenv	EBVERSIONRSEM		"1.2.11"
 setenv	EBDEVELRSEM		"$root/easybuild/RSEM-1.2.11-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

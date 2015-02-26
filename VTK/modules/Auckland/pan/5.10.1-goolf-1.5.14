@@ -15,9 +15,9 @@ module-whatis {Description: The Visualization Toolkit (VTK) is an open-source, f
   algorithms including: scalar, vector, tensor, texture, and volumetric methods; and advanced modeling techniques
   such as: implicit modeling, polygon reduction, mesh smoothing, cutting, contouring, and Delaunay triangulation. - Homepage: http://www.vtk.org}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/VTK/5.10.1-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/VTK/5.10.1-goolf-1.5.14
 
-conflict    VTK
+conflict VTK
 
 if { ![is-loaded goolf/1.5.14] } {
     module load goolf/1.5.14
@@ -33,4 +33,4 @@ setenv	EBVERSIONVTK		"5.10.1"
 setenv	EBDEVELVTK		"$root/easybuild/VTK-5.10.1-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.14.0
+# Built with EasyBuild version 1.16.1

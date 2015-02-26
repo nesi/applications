@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: UDUNITS supports conversion of unit specifications between formatted and binary forms,
  arithmetic manipulation of units, and conversion of values between compatible scales of measurement. - Homepage: http://www.unidata.ucar.edu/software/udunits/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/UDUNITS/2.1.24-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/UDUNITS/2.1.24-ictce-5.4.0
 
 conflict    UDUNITS
 

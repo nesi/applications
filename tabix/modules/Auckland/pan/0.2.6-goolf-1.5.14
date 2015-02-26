@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Generic indexer for TAB-delimited genome position files. - Homepage: http://samtools.sourceforge.net/tabix.shtml}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/tabix/0.2.6-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/tabix/0.2.6-goolf-1.5.14
 
 conflict    tabix
 
@@ -23,4 +23,4 @@ setenv	EBVERSIONTABIX		"0.2.6"
 setenv	EBDEVELTABIX		"$root/easybuild/tabix-0.2.6-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

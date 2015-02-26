@@ -7,9 +7,9 @@ proc ModulesHelp { } {
 
 module-whatis {Description: X.org InputProto protocol headers. - Homepage: http://www.freedesktop.org/wiki/Software/xlibs}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/inputproto/2.3-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/inputproto/2.3-goolf-1.5.14
 
-conflict    inputproto
+conflict inputproto
 
 if { ![is-loaded goolf/1.5.14] } {
     module load goolf/1.5.14
@@ -25,4 +25,4 @@ setenv	EBVERSIONINPUTPROTO		"2.3"
 setenv	EBDEVELINPUTPROTO		"$root/easybuild/inputproto-2.3-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.14.0
+# Built with EasyBuild version 1.15.1

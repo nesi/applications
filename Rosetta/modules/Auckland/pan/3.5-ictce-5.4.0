@@ -1,0 +1,32 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Rosetta is the premier software suite for modeling macromolecular structures. As a flexible,
+multi-purpose application, it includes tools for structure prediction, design, and remodeling of proteins and
+nucleic acids. - Homepage: https://www.rosettacommons.org
+    }
+}
+
+module-whatis {Description: Rosetta is the premier software suite for modeling macromolecular structures. As a flexible,
+multi-purpose application, it includes tools for structure prediction, design, and remodeling of proteins and
+nucleic acids. - Homepage: https://www.rosettacommons.org}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Rosetta/3.5-ictce-5.4.0
+
+conflict Rosetta
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTROSETTA		"$root"
+setenv	EBVERSIONROSETTA		"3.5"
+setenv	EBDEVELROSETTA		"$root/easybuild/Rosetta-3.5-ictce-5.4.0-easybuild-devel"
+
+setenv	ROSETTA3_DB		"$root/rosetta_database"
+
+# Built with EasyBuild version 1.16.1

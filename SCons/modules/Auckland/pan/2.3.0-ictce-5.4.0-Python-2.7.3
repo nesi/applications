@@ -1,0 +1,33 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   SCons is a software construction tool. - Homepage: http://www.scons.org/
+    }
+}
+
+module-whatis {Description: SCons is a software construction tool. - Homepage: http://www.scons.org/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/SCons/2.3.0-ictce-5.4.0-Python-2.7.3
+
+conflict SCons
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+if { ![is-loaded Python/2.7.3-ictce-5.4.0] } {
+    module load Python/2.7.3-ictce-5.4.0
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTSCONS		"$root"
+setenv	EBVERSIONSCONS		"2.3.0"
+setenv	EBDEVELSCONS		"$root/easybuild/SCons-2.3.0-ictce-5.4.0-Python-2.7.3-easybuild-devel"
+
+prepend-path	PYTHONPATH		$root/lib/python2.7/site-packages
+
+# Built with EasyBuild version 1.16.1

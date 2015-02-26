@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Solution of the partial differential equations describing fluid flow - Homepage: http://gfs.sourceforge.net/wiki/index.php/Main_Page}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/Gerris/131206-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/Gerris/131206-goolf-1.5.14
 
 conflict    Gerris
 

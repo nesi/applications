@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: BamTools provides both a programmer's API and an end-user's toolkit for handling BAM files. - Homepage: https://github.com/pezmaster31/bamtools}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/BamTools/2.2.3-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/BamTools/2.2.3-goolf-1.5.14
 
 conflict    BamTools
 
@@ -25,4 +25,4 @@ setenv	EBVERSIONBAMTOOLS		"2.2.3"
 setenv	EBDEVELBAMTOOLS		"$root/easybuild/BamTools-2.2.3-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

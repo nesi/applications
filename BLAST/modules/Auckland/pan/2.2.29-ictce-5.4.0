@@ -11,7 +11,7 @@ module-whatis {Description: Basic Local Alignment Search Tool, or BLAST, is an a
  for comparing primary biological sequence information, such as the amino-acid
  sequences of different proteins or the nucleotides of DNA sequences. - Homepage: http://blast.ncbi.nlm.nih.gov/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/BLAST/2.2.29-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/BLAST/2.2.29-ictce-5.4.0
 
 conflict    BLAST
 

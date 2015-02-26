@@ -9,7 +9,7 @@ MIT to model electromagnetic systems. - Homepage: http://ab-initio.mit.edu/wiki/
 module-whatis {Description: Meep (or MEEP) is a free finite-difference time-domain (FDTD) simulation software packagedeveloped at
 MIT to model electromagnetic systems. - Homepage: http://ab-initio.mit.edu/wiki/index.php/Meep}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/Meep/1.2.1-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/Meep/1.2.1-goolf-1.5.14
 
 conflict    Meep
 
@@ -44,4 +44,4 @@ setenv	EBVERSIONMEEP		"1.2.1"
 setenv	EBDEVELMEEP		"$root/easybuild/Meep-1.2.1-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

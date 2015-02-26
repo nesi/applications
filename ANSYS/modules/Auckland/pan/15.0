@@ -11,23 +11,19 @@ module-whatis {Description: ANSYS simulation software enables organizations to c
     how their products will operate in the real world. We believe that every product is 
     a promise of something greater.  - Homepage: http://www.ansys.com}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/ANSYS/15.0/v150
+set root    /share/easybuild/RHEL6.3/westmere/software/ANSYS/15.0
 
 conflict    ANSYS
 
-prepend-path	PATH		$root/tgrid/bin
-prepend-path    PATH            $root/Framework/bin/Linux64
-prepend-path    PATH            $root/aisol/bin/linx64
-prepend-path	PATH		$root/RSM/bin
-prepend-path	PATH		$root/ansys/bin
-prepend-path	PATH		$root/CFD-Post/bin
-prepend-path    PATH            $root/autodyn/bin
-prepend-path	PATH		$root/CFX/bin
-prepend-path	PATH		$root/fluent/bin
-prepend-path	PATH		$root/TurboGrid/bin
-prepend-path	PATH		$root/polyflow/bin
-prepend-path    PATH            $root/Icepak/bin
-prepend-path	PATH		$root/icemcfd/linux64_amd/bin
+prepend-path	PATH		$root/v150/tgrid/bin
+prepend-path	PATH		$root/v150/RSM/bin
+prepend-path	PATH		$root/v150/ansys/bin
+prepend-path	PATH		$root/v150/CFD-Post/bin
+prepend-path	PATH		$root/v150/CFX/bin
+prepend-path	PATH		$root/v150/fluent/bin
+prepend-path	PATH		$root/v150/TurboGrid/bin
+prepend-path	PATH		$root/v150/polyflow/bin
+prepend-path	PATH		$root/v150/icemcfd/linux64_amd/bin
 
 setenv	EBROOTANSYS		"$root"
 setenv	EBVERSIONANSYS		"15.0"

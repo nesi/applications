@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: Eigen is a C++ template library for linear algebra:
  matrices, vectors, numerical solvers, and related algorithms. - Homepage: http://eigen.tuxfamily.org/index.php?title=Main_Page}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/Eigen/3.2.1-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/Eigen/3.2.1-goolf-1.5.14
 
 conflict    Eigen
 
@@ -25,4 +25,4 @@ setenv	EBVERSIONEIGEN		"3.2.1"
 setenv	EBDEVELEIGEN		"$root/easybuild/Eigen-3.2.1-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

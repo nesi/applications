@@ -17,7 +17,7 @@ module-whatis {Description:  Chapel is an emerging parallel programming language
  parallel computers while matching or beating the performance and portability of current programming
  models like MPI. - Homepage: http://chapel.cray.com}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/Chapel/1.9.0-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/Chapel/1.9.0-goolf-1.5.14
 
 conflict    Chapel
 

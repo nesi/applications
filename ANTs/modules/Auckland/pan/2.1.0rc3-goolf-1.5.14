@@ -1,0 +1,29 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   ANTs extracts information from complex datasets that include imaging. ANTs is useful for managing,
+ interpreting and visualizing multidimensional data. - Homepage: http://stnava.github.io/ANTs/
+    }
+}
+
+module-whatis {Description: ANTs extracts information from complex datasets that include imaging. ANTs is useful for managing,
+ interpreting and visualizing multidimensional data. - Homepage: http://stnava.github.io/ANTs/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/ANTs/2.1.0rc3-goolf-1.5.14
+
+conflict ANTs
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTANTS		"$root"
+setenv	EBVERSIONANTS		"2.1.0rc3"
+setenv	EBDEVELANTS		"$root/easybuild/ANTs-2.1.0rc3-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.16.1

@@ -1,0 +1,21 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   ctffind is a program for finding CTFs of electron micrographs - Homepage: http://grigoriefflab.janelia.org/ctf
+    }
+}
+
+module-whatis {Description: ctffind is a program for finding CTFs of electron micrographs - Homepage: http://grigoriefflab.janelia.org/ctf}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/ctffind/4.0.10-linux64
+
+conflict ctffind
+
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTCTFFIND		"$root"
+setenv	EBVERSIONCTFFIND		"4.0.10-linux64"
+setenv	EBDEVELCTFFIND		"$root/easybuild/ctffind-4.0.10-linux64-easybuild-devel"
+
+
+# Built with EasyBuild version 1.16.1

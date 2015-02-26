@@ -1,0 +1,39 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Instant is a Python module that allows for instant inlining of C and C++ code in Python.
+It is a small Python module built on top of SWIG and Distutils. It is part of the FEniCS Project (http://fenicsproject.org). - Homepage: https://launchpad.net/instant
+    }
+}
+
+module-whatis {Description: Instant is a Python module that allows for instant inlining of C and C++ code in Python.
+It is a small Python module built on top of SWIG and Distutils. It is part of the FEniCS Project (http://fenicsproject.org). - Homepage: https://launchpad.net/instant}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/Instant/1.5.0-goolf-1.5.14-Python-2.7.8
+
+conflict Instant
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded Python/2.7.8-goolf-1.5.14] } {
+    module load Python/2.7.8-goolf-1.5.14
+}
+
+if { ![is-loaded SWIG/2.0.4-goolf-1.5.14-Python-2.7.8] } {
+    module load SWIG/2.0.4-goolf-1.5.14-Python-2.7.8
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTINSTANT		"$root"
+setenv	EBVERSIONINSTANT		"1.5.0"
+setenv	EBDEVELINSTANT		"$root/easybuild/Instant-1.5.0-goolf-1.5.14-Python-2.7.8-easybuild-devel"
+
+prepend-path	PYTHONPATH		$root/lib/python2.7/site-packages
+
+# Built with EasyBuild version 1.16.1

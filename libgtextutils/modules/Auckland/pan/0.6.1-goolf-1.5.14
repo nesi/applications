@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: ligtextutils is a dependency of fastx-toolkit and is provided via the same upstream - Homepage: http://hannonlab.cshl.edu/fastx_toolkit/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/libgtextutils/0.6.1-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/libgtextutils/0.6.1-goolf-1.5.14
 
 conflict libgtextutils
 

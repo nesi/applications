@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: The FASTX-Toolkit is a collection of command line tools for 
  Short-Reads FASTA/FASTQ files preprocessing. - Homepage: http://hannonlab.cshl.edu/fastx_toolkit/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/FASTX-Toolkit/0.0.14-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/FASTX-Toolkit/0.0.14-goolf-1.5.14
 
 conflict FASTX-Toolkit
 

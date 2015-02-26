@@ -13,7 +13,7 @@ of high reliable set of gene annotations in virtually any eukaryotic genome. The
 strategy relies on a simple fact: some highly conserved proteins are encoded in
 essentially all eukaryotic genomes. - Homepage: http://korflab.ucdavis.edu/datasets/cegma}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/CEGMA/2.5-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/CEGMA/2.5-ictce-5.4.0
 
 conflict    CEGMA
 
@@ -48,4 +48,4 @@ setenv	EBDEVELCEGMA		"$root/easybuild/CEGMA-2.5-ictce-5.4.0-easybuild-devel"
 setenv	CEGMA		"$root"
 setenv	PERL5LIB		"$root/lib"
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

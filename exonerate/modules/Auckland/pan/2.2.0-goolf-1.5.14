@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Generic tool for pairwise sequence comparison - Homepage: http://www.ebi.ac.uk/~guy/exonerate/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/exonerate/2.2.0-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/exonerate/2.2.0-goolf-1.5.14
 
 conflict    exonerate
 
@@ -23,4 +23,4 @@ setenv	EBVERSIONEXONERATE		"2.2.0"
 setenv	EBDEVELEXONERATE		"$root/easybuild/exonerate-2.2.0-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

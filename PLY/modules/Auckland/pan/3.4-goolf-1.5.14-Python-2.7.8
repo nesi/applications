@@ -1,0 +1,37 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Welcome to the PLY homepage. 
+ PLY is an implementation of lex and yacc parsing tools for Python. 
+ If you don't have the slightest idea what that means, you're 
+ probably in the wrong place. Otherwise, keep reading. - Homepage: http://www.dabeaz.com/ply
+    }
+}
+
+module-whatis {Description: Welcome to the PLY homepage. 
+ PLY is an implementation of lex and yacc parsing tools for Python. 
+ If you don't have the slightest idea what that means, you're 
+ probably in the wrong place. Otherwise, keep reading. - Homepage: http://www.dabeaz.com/ply}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/PLY/3.4-goolf-1.5.14-Python-2.7.8
+
+conflict PLY
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded Python/2.7.8-goolf-1.5.14] } {
+    module load Python/2.7.8-goolf-1.5.14
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+
+setenv	EBROOTPLY		"$root"
+setenv	EBVERSIONPLY		"3.4"
+setenv	EBDEVELPLY		"$root/easybuild/PLY-3.4-goolf-1.5.14-Python-2.7.8-easybuild-devel"
+
+prepend-path	PYTHONPATH		$root/lib/python2.7/site-packages
+
+# Built with EasyBuild version 1.16.1

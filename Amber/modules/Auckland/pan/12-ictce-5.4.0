@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Amber (originally Assisted Model Building with Energy Refinement) is software for performing molecular dynamics and structure prediction. - Homepage: http://ambermd.org/amber.html}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/Amber/12-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/Amber/12-ictce-5.4.0
 
 conflict Amber
 
@@ -40,6 +40,6 @@ setenv	EBROOTAMBER		"$root"
 setenv	EBVERSIONAMBER		"12"
 setenv	EBDEVELAMBER		"$root/easybuild/Amber-12-ictce-5.4.0-easybuild-devel"
 
-setenv	AMBERHOME		"/share/easybuild/RHEL6.3/sandybridge/software/Amber/12-ictce-5.4.0"
+setenv	AMBERHOME		"/share/easybuild/RHEL6.3/westmere/software/Amber/12-ictce-5.4.0"
 
 # Built with EasyBuild version 1.15.1

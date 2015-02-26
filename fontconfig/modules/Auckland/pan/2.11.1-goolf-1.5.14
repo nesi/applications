@@ -1,0 +1,36 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Fontconfig is a library designed to provide system-wide font configuration, customization and
+application access. - Homepage: http://www.freedesktop.org/software/fontconfig
+    }
+}
+
+module-whatis {Description: Fontconfig is a library designed to provide system-wide font configuration, customization and
+application access. - Homepage: http://www.freedesktop.org/software/fontconfig}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/fontconfig/2.11.1-goolf-1.5.14
+
+conflict fontconfig
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded expat/2.1.0-goolf-1.5.14] } {
+    module load expat/2.1.0-goolf-1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTFONTCONFIG		"$root"
+setenv	EBVERSIONFONTCONFIG		"2.11.1"
+setenv	EBDEVELFONTCONFIG		"$root/easybuild/fontconfig-2.11.1-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.2

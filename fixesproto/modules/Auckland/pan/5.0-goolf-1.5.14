@@ -1,0 +1,28 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   X.org FixesProto protocol headers. - Homepage: http://www.freedesktop.org/wiki/Software/xlibs
+    }
+}
+
+module-whatis {Description: X.org FixesProto protocol headers. - Homepage: http://www.freedesktop.org/wiki/Software/xlibs}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/fixesproto/5.0-goolf-1.5.14
+
+conflict fixesproto
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTFIXESPROTO		"$root"
+setenv	EBVERSIONFIXESPROTO		"5.0"
+setenv	EBDEVELFIXESPROTO		"$root/easybuild/fixesproto-5.0-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.2

@@ -8,12 +8,12 @@ proc ModulesHelp { } {
     }
 }
 
-module-whatis {Description: Intel Math Kernel Library is a library of highly optimized,
+module-whatis {Intel Math Kernel Library is a library of highly optimized,
  extensively threaded math routines for science, engineering, and financial
  applications that require maximum performance. Core math functions include
  BLAS, LAPACK, ScaLAPACK, Sparse Solvers, Fast Fourier Transforms, Vector Math, and more. - Homepage: http://software.intel.com/en-us/intel-mkl/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/imkl/11.0.4.183
+set root    /share/easybuild/RHEL6.3/westmere/software/imkl/11.0.4.183
 
 conflict    imkl
 
@@ -47,4 +47,4 @@ prepend-path	INTEL_LICENSE_FILE		/share/apps/intel/licenses/license.lic
 prepend-path	NLSPATH		$root/idb/intel64/locale/%l_%t/%N
 setenv	MKLROOT		$root
 
-# Built with EasyBuild version 1.13.0
+# built with EasyBuild version 1.9.0

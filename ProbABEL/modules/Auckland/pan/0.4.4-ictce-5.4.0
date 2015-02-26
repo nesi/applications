@@ -1,0 +1,30 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Genome-wide association analysis of imputed genetic data - Homepage: http://www.genabel.org/packages/ProbABEL
+    }
+}
+
+module-whatis {Description: Genome-wide association analysis of imputed genetic data - Homepage: http://www.genabel.org/packages/ProbABEL}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/ProbABEL/0.4.4-ictce-5.4.0
+
+conflict ProbABEL
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+if { ![is-loaded Eigen/3.2.4-ictce-5.4.0] } {
+    module load Eigen/3.2.4-ictce-5.4.0
+}
+
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTPROBABEL		"$root"
+setenv	EBVERSIONPROBABEL		"0.4.4"
+setenv	EBDEVELPROBABEL		"$root/easybuild/ProbABEL-0.4.4-ictce-5.4.0-easybuild-devel"
+
+
+# Built with EasyBuild version 1.16.1

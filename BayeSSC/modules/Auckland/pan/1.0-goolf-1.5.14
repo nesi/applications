@@ -9,7 +9,7 @@ which allows flexible coalescent modelling from a variety of different priors - 
 module-whatis {Description: Bayesian Serial SimCoal, (BayeSSC) is a modification of SIMCOAL 1.0 
 which allows flexible coalescent modelling from a variety of different priors - Homepage: http://web.stanford.edu/group/hadlylab/ssc/index.html}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/BayeSSC/1.0-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/BayeSSC/1.0-goolf-1.5.14
 
 conflict    BayeSSC
 

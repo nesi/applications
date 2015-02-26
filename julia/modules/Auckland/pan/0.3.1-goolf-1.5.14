@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: A high-level, high-performance dynamic language for technical computing. - Homepage: http://julialang.org}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/Julia/0.3.1-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/Julia/0.3.1-goolf-1.5.14
 
 conflict Julia
 

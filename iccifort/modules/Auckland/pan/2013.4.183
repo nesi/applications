@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Intel Cluster Toolkit Compiler Edition provides Intel C,C++ and fortran compilers, Intel MPI and Intel MKL - Homepage: http://software.intel.com/en-us/intel-cluster-toolkit-compiler/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/iccifort/2013.4.183
+set root    /share/easybuild/RHEL6.3/westmere/software/iccifort/2013.4.183
 
 conflict    iccifort
 

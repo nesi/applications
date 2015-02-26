@@ -7,9 +7,9 @@ proc ModulesHelp { } {
 
 module-whatis {Description: X.org KBProto protocol headers. - Homepage: http://www.freedesktop.org/wiki/Software/xlibs}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/kbproto/1.0.6-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/kbproto/1.0.6-goolf-1.5.14
 
-conflict    kbproto
+conflict kbproto
 
 if { ![is-loaded goolf/1.5.14] } {
     module load goolf/1.5.14
@@ -25,4 +25,4 @@ setenv	EBVERSIONKBPROTO		"1.0.6"
 setenv	EBDEVELKBPROTO		"$root/easybuild/kbproto-1.0.6-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.14.0
+# Built with EasyBuild version 1.15.1

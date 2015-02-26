@@ -13,7 +13,7 @@ module-whatis {Description: MAFFT is a multiple sequence alignment program
  alignment methods, L-INS-i (accurate; for alignment of <∼200 sequences), 
  FFT-NS-2 (fast; for alignment of <∼10,000 sequences), etc. - Homepage: http://mafft.cbrc.jp/alignment/software/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/MAFFT/7.164-goolf-1.5.14-with-extensions
+set root    /share/easybuild/RHEL6.3/westmere/software/MAFFT/7.164-goolf-1.5.14-with-extensions
 
 conflict    MAFFT
 

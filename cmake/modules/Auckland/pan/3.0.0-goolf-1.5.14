@@ -1,0 +1,32 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   CMake, the cross-platform, open-source build system.
+ CMake is a family of tools designed to build, test and package software. - Homepage: http://www.cmake.org
+    }
+}
+
+module-whatis {Description: CMake, the cross-platform, open-source build system.
+ CMake is a family of tools designed to build, test and package software. - Homepage: http://www.cmake.org}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/CMake/3.0.0-goolf-1.5.14
+
+conflict CMake
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded ncurses/5.9-goolf-1.5.14] } {
+    module load ncurses/5.9-goolf-1.5.14
+}
+
+prepend-path	ACLOCAL_PATH		$root/share/aclocal
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTCMAKE		"$root"
+setenv	EBVERSIONCMAKE		"3.0.0"
+setenv	EBDEVELCMAKE		"$root/easybuild/CMake-3.0.0-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.16.1

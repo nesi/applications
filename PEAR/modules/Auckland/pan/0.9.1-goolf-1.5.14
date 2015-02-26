@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: An ultrafast, memory-efficient and highly accurate pair-end read merger. - Homepage: http://sco.h-its.org/exelixis/web/software/pear/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/PEAR/0.9.1-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/PEAR/0.9.1-goolf-1.5.14
 
 conflict    PEAR
 

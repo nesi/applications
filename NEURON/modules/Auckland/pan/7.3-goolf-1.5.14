@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Empirically-based simulations of neurons and networks of neurons. - Homepage: http://www.neuron.yale.edu/neuron}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/NEURON/7.3-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/NEURON/7.3-goolf-1.5.14
 
 conflict    NEURON
 
@@ -39,4 +39,4 @@ setenv	EBDEVELNEURON		"$root/easybuild/NEURON-7.3-goolf-1.5.14-easybuild-devel"
 
 setenv	CC		"gcc"
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

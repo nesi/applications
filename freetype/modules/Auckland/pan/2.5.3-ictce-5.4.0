@@ -11,7 +11,7 @@ module-whatis {Description: FreeType 2 is a software font engine that is designe
  portable while capable of producing high-quality output (glyph images). It can be used in graphics libraries, display
  servers, font conversion tools, text image generation tools, and many other products as well. - Homepage: http://freetype.org}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/freetype/2.5.3-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/freetype/2.5.3-ictce-5.4.0
 
 conflict    freetype
 

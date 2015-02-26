@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: USEARCH is a unique sequence analysis tool which offers search and clustering algorithms that are
  often orders of magnitude faster than BLAST. - Homepage: http://www.drive5.com/usearch/index.html}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/USEARCH/5.2.236-i86linux32
+set root    /share/easybuild/RHEL6.3/westmere/software/USEARCH/5.2.236-i86linux32
 
 conflict USEARCH
 

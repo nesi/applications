@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: An extremely memory-efficient hash_map implementation. 2 bits/entry overhead! The SparseHash library
  contains several hash-map implementations, including implementations that optimize for space or speed. - Homepage: http://code.google.com/p/google-sparsehash/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/google-sparsehash/2.0.2-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/google-sparsehash/2.0.2-ictce-5.4.0
 
 conflict    google-sparsehash
 

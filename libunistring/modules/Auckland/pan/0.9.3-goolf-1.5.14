@@ -9,7 +9,7 @@ according to the Unicode standard. - Homepage: http://www.gnu.org/software/libun
 module-whatis {Description: This library provides functions for manipulating Unicode strings and for manipulating C strings
 according to the Unicode standard. - Homepage: http://www.gnu.org/software/libunistring/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/libunistring/0.9.3-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/libunistring/0.9.3-goolf-1.5.14
 
 conflict    libunistring
 
@@ -26,4 +26,4 @@ setenv	EBVERSIONLIBUNISTRING		"0.9.3"
 setenv	EBDEVELLIBUNISTRING		"$root/easybuild/libunistring-0.9.3-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

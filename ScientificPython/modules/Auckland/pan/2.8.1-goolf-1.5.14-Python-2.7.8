@@ -1,0 +1,37 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   ScientificPython is a collection of Python modules for scientific computing.
+ It contains support for geometry, mathematical functions, statistics, physical units, IO, visualization,
+ and parallelization. - Homepage: https://sourcesup.cru.fr/projects/scientific-py/
+    }
+}
+
+module-whatis {Description: ScientificPython is a collection of Python modules for scientific computing.
+ It contains support for geometry, mathematical functions, statistics, physical units, IO, visualization,
+ and parallelization. - Homepage: https://sourcesup.cru.fr/projects/scientific-py/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/ScientificPython/2.8.1-goolf-1.5.14-Python-2.7.8
+
+conflict ScientificPython
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded Python/2.7.8-goolf-1.5.14] } {
+    module load Python/2.7.8-goolf-1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTSCIENTIFICPYTHON		"$root"
+setenv	EBVERSIONSCIENTIFICPYTHON		"2.8.1"
+setenv	EBDEVELSCIENTIFICPYTHON		"$root/easybuild/ScientificPython-2.8.1-goolf-1.5.14-Python-2.7.8-easybuild-devel"
+
+prepend-path	PYTHONPATH		$root/lib/python2.7/site-packages
+
+# Built with EasyBuild version 1.16.1

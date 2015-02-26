@@ -9,7 +9,7 @@ for RNA structure and sequence similarities. - Homepage: http://infernal.janelia
 module-whatis {Description: Infernal ('INFERence of RNA ALignment') is for searching DNA sequence databases
 for RNA structure and sequence similarities. - Homepage: http://infernal.janelia.org/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/Infernal/1.1-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/Infernal/1.1-goolf-1.5.14
 
 conflict    Infernal
 

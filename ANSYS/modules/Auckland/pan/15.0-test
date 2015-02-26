@@ -11,7 +11,7 @@ module-whatis {Description: ANSYS simulation software enables organizations to c
     how their products will operate in the real world. We believe that every product is 
     a promise of something greater.  - Homepage: http://www.ansys.com}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/ANSYS/15.0-test
+set root    /share/easybuild/RHEL6.3/westmere/software/ANSYS/15.0-test
 
 conflict ANSYS
 

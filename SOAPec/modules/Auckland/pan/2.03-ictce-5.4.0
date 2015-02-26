@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: SOAPec is a short-read correction tool and part of SOAPdenovo.
  It is specially designed to correct Illum ina GA short reads. - Homepage: http://soap.genomics.org.cn/index.html}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/SOAPec/2.03-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/SOAPec/2.03-ictce-5.4.0
 
 conflict    SOAPec
 

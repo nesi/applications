@@ -9,7 +9,7 @@ for aligning sequencing reads to long reference sequences. - Homepage: http://bo
 module-whatis {Description: Bowtie 2 is an ultrafast and memory-efficient tool
 for aligning sequencing reads to long reference sequences. - Homepage: http://bowtie-bio.sourceforge.net/bowtie2/index.shtml}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/Bowtie2/2.2.0-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/Bowtie2/2.2.0-ictce-5.4.0
 
 conflict    Bowtie2
 

@@ -11,7 +11,7 @@ module-whatis {Description: SGA is a de novo genome assembler based on the conce
 The major goal of SGA is to be very memory efficient, which is achieved by using a compressed 
 representation of DNA sequence reads. - Homepage: https://github.com/jts/sga/wiki}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/SGA/0.10.13-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/SGA/0.10.13-goolf-1.5.14
 
 conflict    SGA
 
@@ -38,4 +38,4 @@ setenv	EBVERSIONSGA		"0.10.13"
 setenv	EBDEVELSGA		"$root/easybuild/SGA-0.10.13-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

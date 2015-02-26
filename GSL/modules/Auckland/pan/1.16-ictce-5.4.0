@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: The GNU Scientific Library (GSL) is a numerical library for C and C++ programmers.
  The library provides a wide range of mathematical routines such as random number generators, special functions and least-squares fitting. - Homepage: http://www.gnu.org/software/gsl/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/GSL/1.16-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/GSL/1.16-ictce-5.4.0
 
 conflict    GSL
 

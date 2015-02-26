@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: Berkeley DB enables the development of custom data management solutions,
  without the overhead traditionally associated with such custom projects. - Homepage: http://www.oracle.com/technetwork/products/berkeleydb}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/DB/6.0.30-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/DB/6.0.30-goolf-1.5.14
 
 conflict    DB
 
@@ -27,4 +27,4 @@ setenv	EBVERSIONDB		"6.0.30"
 setenv	EBDEVELDB		"$root/easybuild/DB-6.0.30-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

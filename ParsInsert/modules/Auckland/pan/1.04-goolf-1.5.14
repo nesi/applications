@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: ParsInsert efficiently produces both a phylogenetic tree and taxonomic classification for sequences
  for microbial community sequence analysis. - Homepage: http://sourceforge.net/projects/parsinsert/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/ParsInsert/1.04-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/ParsInsert/1.04-goolf-1.5.14
 
 conflict ParsInsert
 

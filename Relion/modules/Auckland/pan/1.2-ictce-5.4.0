@@ -13,7 +13,7 @@ module-whatis {Description: RELION (for REgularised LIkelihood OptimisatioN, pro
     approach to refinement of (multiple) 3D reconstructions or 2D class 
     averages in electron cryo-microscopy (cryo-EM).  - Homepage: http://www2.mrc-lmb.cam.ac.uk/relion/index.php/Main_Page}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/Relion/1.2-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/Relion/1.2-ictce-5.4.0
 
 conflict    Relion
 
@@ -33,4 +33,4 @@ setenv	EBVERSIONRELION		"1.2"
 setenv	EBDEVELRELION		"$root/easybuild/Relion-1.2-ictce-5.4.0-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.13.0dev

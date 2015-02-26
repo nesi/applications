@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Cartographic Projections Library - Homepage: http://trac.osgeo.org/proj/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/PROJ4/4.8.0-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/PROJ4/4.8.0-goolf-1.5.14
 
 conflict    PROJ4
 

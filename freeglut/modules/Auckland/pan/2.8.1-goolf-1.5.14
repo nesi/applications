@@ -1,0 +1,31 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   freeglut is a completely OpenSourced alternative to the OpenGL Utility Toolkit (GLUT) library. - Homepage: http://freeglut.sourceforge.net/
+    }
+}
+
+module-whatis {Description: freeglut is a completely OpenSourced alternative to the OpenGL Utility Toolkit (GLUT) library. - Homepage: http://freeglut.sourceforge.net/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/freeglut/2.8.1-goolf-1.5.14
+
+conflict freeglut
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded libXi/1.7.2-goolf-1.5.14] } {
+    module load libXi/1.7.2-goolf-1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+
+setenv	EBROOTFREEGLUT		"$root"
+setenv	EBVERSIONFREEGLUT		"2.8.1"
+setenv	EBDEVELFREEGLUT		"$root/easybuild/freeglut-2.8.1-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.2

@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: Java Platform, Standard Edition (Java SE) lets you develop and deploy
  Java applications on desktops and servers. - Homepage: http://java.com/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/Java/1.7.0_51
+set root    /share/easybuild/RHEL6.3/westmere/software/Java/1.7.0_51
 
 conflict    Java
 
@@ -26,4 +26,4 @@ setenv	EBDEVELJAVA		"$root/easybuild/Java-1.7.0_51-easybuild-devel"
 prepend-path	PATH		$root/
 setenv	JAVA_HOME		"$root"
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.0

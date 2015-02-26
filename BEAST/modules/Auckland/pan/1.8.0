@@ -2,6 +2,10 @@
 
 module-whatis "BEAST is a cross-platform program for Bayesian MCMC analysis of molecular sequences (version 1.8.0)"
 
+if [ module-info mode load ] {
+    puts stderr "Warning: The BEAST/1.8.0 environment module has been superseded by BEAST/1.8.0-goolf-1.5.14 and BEAST/1.8.1-goolf-1.5.14."
+}
+
 set root /share/apps/BEAST/noarch/1.8.0
 
 prepend-path PATH $root/bin

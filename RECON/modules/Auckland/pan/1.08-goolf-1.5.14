@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: De novo identification and classification of repeat sequence families from genomic sequences - Homepage: http://selab.janelia.org/recon.html}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/RECON/1.08-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/RECON/1.08-goolf-1.5.14
 
 conflict    RECON
 

@@ -1,13 +1,39 @@
 #%Module1.0
-module load xorg-dir2proto/2.8
-module load xorg-glproto/1.4.16
-module load xorg-libxcb/1.9.3
-module load xorg-pciaccess/0.13.2
-module load xorg-util-macros/1.17.1
-module load xorg-xcb-proto/1.9
-module load libdrm/2.4.49 
+
+set root /share/libs/Xorg/dir2proto/2.8/noarch/gcc_4.4.6
+prepend-path PKG_CONFIG_PATH $root/lib/pkgconfig
+prepend-path LD_LIBRARY_PATH $root/lib
+prepend-path CPATH $root/include
+
+set root /share/libs/Xorg/glproto/1.4.16/noarch/gcc_4.4.6
+prepend-path PKG_CONFIG_PATH $root/lib/pkgconfig
+prepend-path LD_LIBRARY_PATH $root/lib
+prepend-path CPATH $root/include
+
+set root /share/libs/Xorg/libxcb/1.9.3/noarch/gcc_4.4.6
+prepend-path PKG_CONFIG_PATH $root/lib/pkgconfig
+prepend-path CPATH $root/include
+prepend-path LD_LIBRARY_PATH $root/lib
+
+set root /share/libs/Xorg/libpciaccess/0.13.2/noarch/gcc_4.4.6
+prepend-path PKG_CONFIG_PATH $root/lib/pkgconfig
+prepend-path LD_LIBRARY_PATH $root/lib
+prepend-path CPATH $root/include
+
+set root /share/libs/Xorg/util-macros/1.17.1/noarch/gcc_4.4.6
+prepend-path PKG_CONFIG_PATH $root/share/pkgconfig
+
+set root /share/libs/Xorg/xcb-proto/1.9/noarch/gcc_4.4.6
+prepend-path PKG_CONFIG_PATH $root/lib/pkgconfig
+prepend-path LD_LIBRARY_PATH $root/lib
+
+set root /share/libs/libdrm/2.4.49/norch/gcc_4.4.6 
+prepend-path PKG_CONFIG_PATH $root/lib/pkgconfig
+prepend-path LD_LBIRARY_PATH $root/lib
+prepend-path CPATH $root/include
 
 prepend-path LD_LIBRARY_PATH /share/libs/mesa/9.2.3/noarch/gcc_4.4.6/lib
 prepend-path PKG_CONFIG_PATH /share/libs/mesa/9.2.3/noarch/gcc_4.4.6/lib/pkgconfig
 prepend-path CPATH /share/libs/mesa/9.2.3/noarch/gcc_4.4.6/include
+
 

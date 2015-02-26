@@ -1,0 +1,26 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Genetic variant annotation and effect prediction toolbox. - Homepage: http://snpeff.sourceforge.net
+    }
+}
+
+module-whatis {Description: Genetic variant annotation and effect prediction toolbox. - Homepage: http://snpeff.sourceforge.net}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/snpEff/4.0
+
+conflict snpEff
+
+if { ![is-loaded Java/1.7.0_51] } {
+    module load Java/1.7.0_51
+}
+
+prepend-path	CLASSPATH		$root/snpEff.jar
+prepend-path	CLASSPATH		$root/SnpSift.jar
+
+setenv	EBROOTSNPEFF		"$root"
+setenv	EBVERSIONSNPEFF		"4.0"
+setenv	EBDEVELSNPEFF		"$root/easybuild/snpEff-4.0-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.2

@@ -21,7 +21,7 @@ rigid-body fitting, ligand search, solvation, mutations,
 rotamers, Ramachandran plots, skeletonization, 
 non-crystallographic symmetry and more.   - Homepage: http://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/coot/0.8-binary-Linux-x86_64-rhel-6-python-gtk2
+set root    /share/easybuild/RHEL6.3/westmere/software/coot/0.8-binary-Linux-x86_64-rhel-6-python-gtk2
 
 conflict coot
 

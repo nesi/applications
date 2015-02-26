@@ -9,7 +9,7 @@ and semantics as Perl 5. - Homepage: http://www.pcre.org/
 module-whatis {Description: The PCRE library is a set of functions that implement regular expression pattern matching using the same syntax
 and semantics as Perl 5. - Homepage: http://www.pcre.org/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/PCRE/8.12-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/PCRE/8.12-goolf-1.5.14
 
 conflict PCRE
 

@@ -17,7 +17,7 @@ SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP form based upload,
 proxies, cookies, user+password authentication (Basic, Digest, NTLM, Negotiate,
 Kerberos), file transfer resume, http proxy tunneling and more. - Homepage: http://curl.haxx.se}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/cURL/7.29.0-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/cURL/7.29.0-goolf-1.5.14
 
 conflict    cURL
 

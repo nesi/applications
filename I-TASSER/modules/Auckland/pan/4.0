@@ -9,7 +9,7 @@ modelling and comparison. - Homepage: http://zhanglab.ccmb.med.umich.edu/I-TASSE
 module-whatis {Description: I-TASSER is a set of pre-compiled binaries and scripts for protein structure and function
 modelling and comparison. - Homepage: http://zhanglab.ccmb.med.umich.edu/I-TASSER/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/I-TASSER/4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/I-TASSER/4.0
 
 conflict I-TASSER
 

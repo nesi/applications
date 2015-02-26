@@ -1,0 +1,34 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   HTSeq is a Python package that provides infrastructure to process data from high-throughput sequencing
+assays. - Homepage: http://www-huber.embl.de/users/anders/HTSeq/doc/overview.html
+    }
+}
+
+module-whatis {Description: HTSeq is a Python package that provides infrastructure to process data from high-throughput sequencing
+assays. - Homepage: http://www-huber.embl.de/users/anders/HTSeq/doc/overview.html}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/HTSeq/0.6.1p1-goolf-1.5.14-Python-2.7.8
+
+conflict HTSeq
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded Python/2.7.8-goolf-1.5.14] } {
+    module load Python/2.7.8-goolf-1.5.14
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTHTSEQ		"$root"
+setenv	EBVERSIONHTSEQ		"0.6.1p1"
+setenv	EBDEVELHTSEQ		"$root/easybuild/HTSeq-0.6.1p1-goolf-1.5.14-Python-2.7.8-easybuild-devel"
+
+prepend-path	PYTHONPATH		$root/lib/python2.7/site-packages
+
+# Built with EasyBuild version 1.16.1

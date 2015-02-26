@@ -1,0 +1,67 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   PETSc, pronounced PET-see (the S is silent), is a suite of data 
+ structures and routines for the scalable (parallel) solution
+ of scientific applications modeled by partial differential equations. - Homepage: http://www.mcs.anl.gov/petsc
+    }
+}
+
+module-whatis {Description: PETSc, pronounced PET-see (the S is silent), is a suite of data 
+ structures and routines for the scalable (parallel) solution
+ of scientific applications modeled by partial differential equations. - Homepage: http://www.mcs.anl.gov/petsc}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/PETSc/3.5.3-goolf-1.5.14-Python-2.7.8
+
+conflict PETSc
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded Boost/1.55.0-goolf-1.5.14-Python-2.7.8] } {
+    module load Boost/1.55.0-goolf-1.5.14-Python-2.7.8
+}
+
+if { ![is-loaded FIAT/1.5.0-goolf-1.5.14-Python-2.7.8] } {
+    module load FIAT/1.5.0-goolf-1.5.14-Python-2.7.8
+}
+
+if { ![is-loaded METIS/5.1.0-goolf-1.5.14] } {
+    module load METIS/5.1.0-goolf-1.5.14
+}
+
+if { ![is-loaded ParMETIS/4.0.3-goolf-1.5.14] } {
+    module load ParMETIS/4.0.3-goolf-1.5.14
+}
+
+if { ![is-loaded ScientificPython/2.8.1-goolf-1.5.14-Python-2.7.8] } {
+    module load ScientificPython/2.8.1-goolf-1.5.14-Python-2.7.8
+}
+
+if { ![is-loaded SCOTCH/6.0.0_esmumps-goolf-1.5.14] } {
+    module load SCOTCH/6.0.0_esmumps-goolf-1.5.14
+}
+
+if { ![is-loaded SuiteSparse/4.2.1-goolf-1.5.14-ParMETIS-4.0.3] } {
+    module load SuiteSparse/4.2.1-goolf-1.5.14-ParMETIS-4.0.3
+}
+
+if { ![is-loaded Hypre/2.9.0b-goolf-1.5.14] } {
+    module load Hypre/2.9.0b-goolf-1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTPETSC		"$root"
+setenv	EBVERSIONPETSC		"3.5.3"
+setenv	EBDEVELPETSC		"$root/easybuild/PETSc-3.5.3-goolf-1.5.14-Python-2.7.8-easybuild-devel"
+
+setenv	PETSC_DIR		"$root"
+
+# Built with EasyBuild version 1.16.1

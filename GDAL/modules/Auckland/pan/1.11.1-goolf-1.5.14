@@ -1,0 +1,39 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   GDAL is a translator library for raster geospatial data formats that is released under an X/MIT style
+ Open Source license by the Open Source Geospatial Foundation. As a library, it presents a single abstract data model
+ to the calling application for all supported formats. It also comes with a variety of useful commandline utilities for
+ data translation and processing. - Homepage: http://www.gdal.org/
+    }
+}
+
+module-whatis {Description: GDAL is a translator library for raster geospatial data formats that is released under an X/MIT style
+ Open Source license by the Open Source Geospatial Foundation. As a library, it presents a single abstract data model
+ to the calling application for all supported formats. It also comes with a variety of useful commandline utilities for
+ data translation and processing. - Homepage: http://www.gdal.org/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/GDAL/1.11.1-goolf-1.5.14
+
+conflict GDAL
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded zlib/1.2.8-goolf-1.5.14] } {
+    module load zlib/1.2.8-goolf-1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTGDAL		"$root"
+setenv	EBVERSIONGDAL		"1.11.1"
+setenv	EBDEVELGDAL		"$root/easybuild/GDAL-1.11.1-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.16.1

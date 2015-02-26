@@ -11,7 +11,7 @@ module-whatis {Description: AmpliconNoise is a collection of programs for the re
  It involves two steps the removal of noise from the sequencing itself and the removal of PCR point errors. This
  project also includes the Perseus algorithm for chimera removal. - Homepage: https://code.google.com/p/ampliconnoise/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/AmpliconNoise/1.29-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/AmpliconNoise/1.29-goolf-1.5.14
 
 conflict AmpliconNoise
 

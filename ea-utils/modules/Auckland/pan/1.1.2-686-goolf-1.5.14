@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: Command-line tools for processing biological sequencing data. Barcode demultiplexing,
  adapter trimming, etc. - Homepage: https://code.google.com/p/ea-utils}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/ea-utils/1.1.2-686-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/ea-utils/1.1.2-686-goolf-1.5.14
 
 conflict ea-utils
 

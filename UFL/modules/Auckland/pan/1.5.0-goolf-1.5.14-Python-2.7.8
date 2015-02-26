@@ -1,0 +1,37 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   The Unified Form Language (UFL) is a domain specific language for declaration of finite element discretizations
+of variational forms. More precisely, it defines a flexible interface for choosing finite element spaces and defining expressions
+for weak forms in a notation close to mathematical notation. - Homepage: https://launchpad.net/ufl
+    }
+}
+
+module-whatis {Description: The Unified Form Language (UFL) is a domain specific language for declaration of finite element discretizations
+of variational forms. More precisely, it defines a flexible interface for choosing finite element spaces and defining expressions
+for weak forms in a notation close to mathematical notation. - Homepage: https://launchpad.net/ufl}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/UFL/1.5.0-goolf-1.5.14-Python-2.7.8
+
+conflict UFL
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded Python/2.7.8-goolf-1.5.14] } {
+    module load Python/2.7.8-goolf-1.5.14
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTUFL		"$root"
+setenv	EBVERSIONUFL		"1.5.0"
+setenv	EBDEVELUFL		"$root/easybuild/UFL-1.5.0-goolf-1.5.14-Python-2.7.8-easybuild-devel"
+
+prepend-path	PYTHONPATH		$root/lib/python2.7/site-packages
+
+# Built with EasyBuild version 1.16.1

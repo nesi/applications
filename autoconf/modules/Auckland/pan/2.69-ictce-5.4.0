@@ -13,7 +13,7 @@ module-whatis {Description: Autoconf is an extensible package of M4 macros that 
  systems without manual user intervention. Autoconf creates a configuration script for a package from a
  template file that lists the operating system features that the package can use, in the form of M4 macro calls. - Homepage: http://www.gnu.org/software/autoconf/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/Autoconf/2.69-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/Autoconf/2.69-ictce-5.4.0
 
 conflict    Autoconf
 
@@ -33,4 +33,4 @@ setenv	EBVERSIONAUTOCONF		"2.69"
 setenv	EBDEVELAUTOCONF		"$root/easybuild/Autoconf-2.69-ictce-5.4.0-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# built with EasyBuild version 1.10.0

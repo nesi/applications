@@ -11,7 +11,7 @@ module-whatis {Description: GNU `gettext' is an important step for the GNU Trans
 build many other steps. This package offers to programmers, translators, and even users, a well integrated set of tools
 and documentation - Homepage: http://www.gnu.org/software/gettext/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/gettext/0.18.2-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/gettext/0.18.2-goolf-1.5.14
 
 conflict    gettext
 
@@ -31,4 +31,4 @@ setenv	EBVERSIONGETTEXT		"0.18.2"
 setenv	EBDEVELGETTEXT		"$root/easybuild/gettext-0.18.2-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

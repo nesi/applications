@@ -1,0 +1,34 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   GNU libmatheval is a library (callable from C and Fortran) to parse
+ and evaluate symbolic expressions input as text. - Homepage: http://www.gnu.org/software/libmatheval/
+    }
+}
+
+module-whatis {Description: GNU libmatheval is a library (callable from C and Fortran) to parse
+ and evaluate symbolic expressions input as text. - Homepage: http://www.gnu.org/software/libmatheval/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/libmatheval/1.1.8-goolf-1.5.14
+
+conflict libmatheval
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded guile/1.8.8-goolf-1.5.14] } {
+    module load guile/1.8.8-goolf-1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTLIBMATHEVAL		"$root"
+setenv	EBVERSIONLIBMATHEVAL		"1.1.8"
+setenv	EBDEVELLIBMATHEVAL		"$root/easybuild/libmatheval-1.1.8-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.16.1

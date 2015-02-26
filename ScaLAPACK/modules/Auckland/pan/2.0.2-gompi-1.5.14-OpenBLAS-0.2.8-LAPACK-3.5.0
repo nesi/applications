@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: The ScaLAPACK (or Scalable LAPACK) library includes a subset of LAPACK routines
  redesigned for distributed memory MIMD parallel computers. - Homepage: http://www.netlib.org/scalapack/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/ScaLAPACK/2.0.2-gompi-1.5.14-OpenBLAS-0.2.8-LAPACK-3.5.0
+set root    /share/easybuild/RHEL6.3/westmere/software/ScaLAPACK/2.0.2-gompi-1.5.14-OpenBLAS-0.2.8-LAPACK-3.5.0
 
 conflict    ScaLAPACK
 
@@ -30,4 +30,4 @@ setenv	EBVERSIONSCALAPACK		"2.0.2"
 setenv	EBDEVELSCALAPACK		"$root/easybuild/ScaLAPACK-2.0.2-gompi-1.5.14-OpenBLAS-0.2.8-LAPACK-3.5.0-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

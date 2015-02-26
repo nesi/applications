@@ -11,7 +11,7 @@ module-whatis {Description: Ruby is a dynamic, open source programming language 
  a focus on simplicity and productivity. It has an elegant syntax that is 
  natural to read and easy to write. - Homepage: https://www.ruby-lang.org}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/Ruby/1.9.3-p547-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/Ruby/1.9.3-p547-goolf-1.5.14
 
 conflict    Ruby
 

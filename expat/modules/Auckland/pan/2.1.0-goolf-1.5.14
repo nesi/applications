@@ -9,7 +9,7 @@ registers handlers for things the parser might find in the XML document (like st
 module-whatis {Description: Expat is an XML parser library written in C. It is a stream-oriented parser in which an application
 registers handlers for things the parser might find in the XML document (like start tags) - Homepage: http://expat.sourceforge.net/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/expat/2.1.0-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/expat/2.1.0-goolf-1.5.14
 
 conflict    expat
 
@@ -29,4 +29,4 @@ setenv	EBVERSIONEXPAT		"2.1.0"
 setenv	EBDEVELEXPAT		"$root/easybuild/expat-2.1.0-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

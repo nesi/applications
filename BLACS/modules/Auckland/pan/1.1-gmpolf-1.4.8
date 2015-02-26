@@ -7,11 +7,11 @@ proc ModulesHelp { } {
     }
 }
 
-module-whatis {Description: The BLACS (Basic Linear Algebra Communication Subprograms) project is
+module-whatis {The BLACS (Basic Linear Algebra Communication Subprograms) project is
  an ongoing investigation whose purpose is to create a linear algebra oriented message passing interface
  that may be implemented efficiently and uniformly across a large range of distributed memory platforms. - Homepage: http://www.netlib.org/blacs/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/BLACS/1.1-gmpolf-1.4.8
+set root    /share/easybuild/RHEL6.3/westmere/software/BLACS/1.1-gmpolf-1.4.8
 
 conflict    BLACS
 
@@ -29,4 +29,4 @@ setenv	EBVERSIONBLACS		"1.1"
 setenv	EBDEVELBLACS		"$root/easybuild/BLACS-1.1-gmpolf-1.4.8-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# built with EasyBuild version 1.9.0

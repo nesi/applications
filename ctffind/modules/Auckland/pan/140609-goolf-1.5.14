@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: CTFFIND3 and CTFTILT are two programs for finding CTFs of electron micrographs - Homepage: http://grigoriefflab.janelia.org/ctf}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/ctffind/140609-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/ctffind/140609-goolf-1.5.14
 
 conflict ctffind
 

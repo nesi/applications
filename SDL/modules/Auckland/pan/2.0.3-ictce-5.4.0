@@ -11,7 +11,7 @@ module-whatis {Description: Simple DirectMedia Layer is a cross-platform develop
 designed to provide low level access to audio, keyboard, mouse, joystick, and 
 graphics hardware via OpenGL and Direct3D. - Homepage: https://www.libsdl.org}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/SDL/2.0.3-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/SDL/2.0.3-ictce-5.4.0
 
 conflict SDL
 

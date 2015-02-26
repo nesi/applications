@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description:  CD-HIT is a very widely used program for clustering and 
  comparing protein or nucleotide sequences. - Homepage: http://weizhong-lab.ucsd.edu/cd-hit/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/CD-HIT/4.6.1-ictce-5.4.0-2012-08-27
+set root    /share/easybuild/RHEL6.3/westmere/software/CD-HIT/4.6.1-ictce-5.4.0-2012-08-27
 
 conflict    CD-HIT
 

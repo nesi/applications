@@ -1,0 +1,30 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Migrate estimates effective population sizes and past migration rates between n population assuming a migration matrix model with asymmetric migration rates and different subpopulation sizes. Migrate uses maximum likelihood or Bayesian inference to jointly estimate all parameters. - Homepage: http://popgen.sc.fsu.edu/Migrate/Migrate-n.html
+    }
+}
+
+module-whatis {Description: Migrate estimates effective population sizes and past migration rates between n population assuming a migration matrix model with asymmetric migration rates and different subpopulation sizes. Migrate uses maximum likelihood or Bayesian inference to jointly estimate all parameters. - Homepage: http://popgen.sc.fsu.edu/Migrate/Migrate-n.html}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/MIGRATE/3.4.4-ictce-5.4.0
+
+conflict MIGRATE
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+if { ![is-loaded zlib/1.2.5-ictce-5.4.0] } {
+    module load zlib/1.2.5-ictce-5.4.0
+}
+
+prepend-path	MANPATH		$root/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTMIGRATE		"$root"
+setenv	EBVERSIONMIGRATE		"3.4.4"
+setenv	EBDEVELMIGRATE		"$root/easybuild/MIGRATE-3.4.4-ictce-5.4.0-easybuild-devel"
+
+
+# Built with EasyBuild version 1.16.1

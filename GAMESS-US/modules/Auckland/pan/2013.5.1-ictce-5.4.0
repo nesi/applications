@@ -1,0 +1,31 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   The General Atomic and Molecular Electronic Structure System (GAMESS)
+is a general ab initio quantum chemistry package. - Homepage: http://www.msg.ameslab.gov/gamess/
+    }
+}
+
+module-whatis {Description: The General Atomic and Molecular Electronic Structure System (GAMESS)
+is a general ab initio quantum chemistry package. - Homepage: http://www.msg.ameslab.gov/gamess/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/GAMESS-US/2013.5.1-ictce-5.4.0
+
+conflict GAMESS-US
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+
+setenv	EBROOTGAMESSMINUS		"$root"
+setenv	EBVERSIONGAMESSMINUS		"2013.5.1"
+setenv	EBDEVELGAMESSMINUS		"$root/easybuild/GAMESS-US-2013.5.1-ictce-5.4.0-easybuild-devel"
+
+prepend-path	PATH		$root/
+
+if [ module-info mode load ] {
+        puts stderr     "GAMESS has been made available at no cost to both academic and commercial users. However, it has not been released into the public domain, nor under an open-source licence. By accessing and using this installation of GAMESS, you represent that you and your research group agree to the GAMESS licence, which is available at http://www.msg.ameslab.gov/gamess/License_Agreement.html."
+}
+
+# Built with EasyBuild version 1.16.1

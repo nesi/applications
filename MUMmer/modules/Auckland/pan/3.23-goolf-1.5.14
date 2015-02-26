@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: MUMmer is a system for rapidly aligning entire genomes,
  whether in complete or draft form. AMOS makes use of it. - Homepage: http://mummer.sourceforge.net/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/MUMmer/3.23-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/MUMmer/3.23-goolf-1.5.14
 
 conflict    MUMmer
 

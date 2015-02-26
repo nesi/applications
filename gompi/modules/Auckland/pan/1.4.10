@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: GNU Compiler Collection (GCC) based compiler toolchain,
  including OpenMPI for MPI support. - Homepage: (none)}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/gompi/1.4.10
+set root    /share/easybuild/RHEL6.3/westmere/software/gompi/1.4.10
 
 conflict    gompi
 
@@ -27,4 +27,4 @@ setenv	EBVERSIONGOMPI		"1.4.10"
 setenv	EBDEVELGOMPI		"$root/easybuild/gompi-1.4.10-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

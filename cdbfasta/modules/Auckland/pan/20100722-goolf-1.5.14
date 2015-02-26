@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: fast indexing and retrieval of fasta records from flat file databases. - Homepage: http://sourceforge.net/projects/cdbfasta/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/cdbfasta/20100722-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/cdbfasta/20100722-goolf-1.5.14
 
 conflict cdbfasta
 

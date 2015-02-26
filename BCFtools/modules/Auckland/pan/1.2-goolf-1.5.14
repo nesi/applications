@@ -1,0 +1,34 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Manipulate variant calls in the Variant Call Format (VCF) and its binary counterpart BCF. - Homepage: http://www.htslib.org
+    }
+}
+
+module-whatis {Description: Manipulate variant calls in the Variant Call Format (VCF) and its binary counterpart BCF. - Homepage: http://www.htslib.org}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/BCFtools/1.2-goolf-1.5.14
+
+conflict BCFtools
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded ncurses/5.9-goolf-1.5.14] } {
+    module load ncurses/5.9-goolf-1.5.14
+}
+
+if { ![is-loaded zlib/1.2.8-goolf-1.5.14] } {
+    module load zlib/1.2.8-goolf-1.5.14
+}
+
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTBCFTOOLS		"$root"
+setenv	EBVERSIONBCFTOOLS		"1.2"
+setenv	EBDEVELBCFTOOLS		"$root/easybuild/BCFtools-1.2-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.16.1

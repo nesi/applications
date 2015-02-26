@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Paraview is a scientific parallel visualizer - Homepage: http://www.paraview.org}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/Paraview/4.1.0-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/Paraview/4.1.0-ictce-5.4.0
 
 conflict    Paraview
 

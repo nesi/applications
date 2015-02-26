@@ -1,0 +1,37 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   X Fixes extension library - Homepage: http://www.freedesktop.org/wiki/Software/xlibs
+    }
+}
+
+module-whatis {Description: X Fixes extension library - Homepage: http://www.freedesktop.org/wiki/Software/xlibs}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/libXfixes/5.0.1-goolf-1.5.14
+
+conflict libXfixes
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded fixesproto/5.0-goolf-1.5.14] } {
+    module load fixesproto/5.0-goolf-1.5.14
+}
+
+if { ![is-loaded xextproto/7.2.1-goolf-1.5.14] } {
+    module load xextproto/7.2.1-goolf-1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTLIBXFIXES		"$root"
+setenv	EBVERSIONLIBXFIXES		"5.0.1"
+setenv	EBDEVELLIBXFIXES		"$root/easybuild/libXfixes-5.0.1-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.2

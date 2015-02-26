@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: The RDP Classifier is a naive Bayesian classifier that can rapidly and accurately provides taxonomic
  assignments from domain to genus, with confidence estimates for each assignment. - Homepage: http://sourceforge.net/projects/rdp-classifier}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/RDP-Classifier/2.2-Java-1.7.0_51
+set root    /share/easybuild/RHEL6.3/westmere/software/RDP-Classifier/2.2-Java-1.7.0_51
 
 conflict RDP-Classifier
 

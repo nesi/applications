@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: System for Processing Image Data from Electron microscopy and Related fields - Homepage: http://spider.wadsworth.org/spider_doc/spider/docs/spider.html}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/SPIDER/22.02
+set root    /share/easybuild/RHEL6.3/westmere/software/SPIDER/22.02
 
 conflict    SPIDER
 

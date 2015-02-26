@@ -19,7 +19,7 @@ data from any orientation, and modeling and display of the image files. IMOD
 was developed primarily by David Mastronarde, Rick Gaudette, Sue Held, Jim
 Kremer, Quanren Xiong, and John Heumann at the University of Colorado. - Homepage: http://bio3d.colorado.edu/imod/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/IMOD/4.7.12_RHEL6-64
+set root    /share/easybuild/RHEL6.3/westmere/software/IMOD/4.7.12_RHEL6-64
 
 conflict IMOD
 

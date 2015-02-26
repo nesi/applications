@@ -7,9 +7,9 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Very simple MPI sanity code. Nothing more, nothing less. - Homepage: https://github.com/hpc/supermagic}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/supermagic/20130104-iomkl-6.5.4
+set root    /share/easybuild/RHEL6.3/westmere/software/supermagic/20130104-iomkl-6.5.4
 
-conflict    supermagic
+conflict supermagic
 
 if { ![is-loaded iomkl/6.5.4] } {
     module load iomkl/6.5.4
@@ -24,4 +24,4 @@ setenv	EBVERSIONSUPERMAGIC		"20130104"
 setenv	EBDEVELSUPERMAGIC		"$root/easybuild/supermagic-20130104-iomkl-6.5.4-easybuild-devel"
 
 
-# Built with EasyBuild version 1.14.0
+# Built with EasyBuild version 1.15.2

@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: Oases is a de novo transcriptome assembler designed to produce transcripts from
  short read sequencing technologies, such as Illumina, SOLiD, or 454 in the absence of any genomic assembly. - Homepage: http://www.ebi.ac.uk/~zerbino/oases/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/Oases/0.2.08-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/Oases/0.2.08-goolf-1.5.14
 
 conflict    Oases
 
@@ -24,4 +24,4 @@ setenv	EBVERSIONOASES		"0.2.08"
 setenv	EBDEVELOASES		"$root/easybuild/Oases-0.2.08-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

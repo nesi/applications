@@ -11,7 +11,7 @@ module-whatis {Description: MATLAB is a high-level language and interactive envi
  that enables you to perform computationally intensive tasks faster than with
  traditional programming languages such as C, C++, and Fortran. - Homepage: http://www.mathworks.com/products/matlab}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/MATLAB/2013a-FoS
+set root    /share/easybuild/RHEL6.3/westmere/software/MATLAB/2013a-FoS
 
 conflict    MATLAB
 

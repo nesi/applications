@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: The MPFR library is a C library for multiple-precision 
  floating-point computations with correct rounding. - Homepage: http://www.mpfr.org}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/MPFR/3.1.0-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/MPFR/3.1.0-ictce-5.4.0
 
 conflict    MPFR
 
@@ -30,4 +30,4 @@ setenv	EBVERSIONMPFR		"3.1.0"
 setenv	EBDEVELMPFR		"$root/easybuild/MPFR-3.1.0-ictce-5.4.0-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

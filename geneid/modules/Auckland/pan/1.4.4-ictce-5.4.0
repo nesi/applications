@@ -19,7 +19,7 @@ structure is assembled, maximizing the sum of the scores of the assembled exons.
 support to integrate predictions from multiple source via external gff files and the redefinition of the 
 general gene structure or model is also feasible. - Homepage: http://genome.crg.es/software/geneid/index.html}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/geneid/1.4.4-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/geneid/1.4.4-ictce-5.4.0
 
 conflict    geneid
 
@@ -35,4 +35,4 @@ setenv	EBDEVELGENEID		"$root/easybuild/geneid-1.4.4-ictce-5.4.0-easybuild-devel"
 
 setenv	GENEID		"$root/param/human3isoU12.param"
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

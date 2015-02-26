@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Aligning proteins or protein HMMs to DNA - Homepage: http://www.ebi.ac.uk/~birney/wise2/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/Wise2/2.4.1-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/Wise2/2.4.1-ictce-5.4.0
 
 conflict    Wise2
 
@@ -27,4 +27,4 @@ setenv	EBDEVELWISE2		"$root/easybuild/Wise2-2.4.1-ictce-5.4.0-easybuild-devel"
 
 setenv	WISECONFIGDIR		"$root/wisecfg"
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

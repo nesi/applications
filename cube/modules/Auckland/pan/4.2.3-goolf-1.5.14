@@ -15,7 +15,7 @@ module-whatis {Description: Cube, which is used as performance report explorer f
  resource. Each dimension can be represented as a tree, where non-leaf nodes of the tree
  can be collapsed or expanded to achieve the desired level of granularity. - Homepage: http://www.scalasca.org/software/cube-4.x/download.html}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/Cube/4.2.3-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/Cube/4.2.3-goolf-1.5.14
 
 conflict    Cube
 

@@ -11,7 +11,7 @@ module-whatis {Description: GNU M4 is an implementation of the traditional Unix 
   although it has some extensions (for example, handling more than 9 positional parameters to macros).
  GNU M4 also has built-in functions for including files, running shell commands, doing arithmetic, etc. - Homepage: http://www.gnu.org/software/m4/m4.html}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/M4/1.4.16-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/M4/1.4.16-ictce-5.4.0
 
 conflict    M4
 
@@ -27,4 +27,4 @@ setenv	EBVERSIONM4		"1.4.16"
 setenv	EBDEVELM4		"$root/easybuild/M4-1.4.16-ictce-5.4.0-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# built with EasyBuild version 1.10.0

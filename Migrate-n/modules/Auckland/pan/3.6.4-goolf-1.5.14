@@ -9,7 +9,7 @@ assuming a migration matrix model with asymmetric migration rates and different 
 module-whatis {Description: Estimates effective population sizes and past migration rates between N populations 
 assuming a migration matrix model with asymmetric migration rates and different subpopulation sizes - Homepage: http://popgen.sc.fsu.edu/Migrate/Migrate-n.html}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/Migrate-n/3.6.4-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/Migrate-n/3.6.4-goolf-1.5.14
 
 conflict Migrate-n
 

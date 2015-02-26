@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: A profile hidden Markov model based tool for a directed ortholog search in EST or protein sequence data - Homepage: http://sourceforge.net/projects/hamstr/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/HaMStR/13.2.3-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/HaMStR/13.2.3-goolf-1.5.14
 
 conflict    HaMStR
 

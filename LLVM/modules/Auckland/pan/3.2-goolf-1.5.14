@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: TEMPLATE DESCRIPTION - Homepage: http://www.example.com}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/LLVM/3.2-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/LLVM/3.2-goolf-1.5.14
 
 conflict    LLVM
 
@@ -25,4 +25,4 @@ setenv	EBVERSIONLLVM		"3.2"
 setenv	EBDEVELLLVM		"$root/easybuild/LLVM-3.2-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

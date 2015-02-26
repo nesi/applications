@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: A parallel sparse direct solver - Homepage: http://graal.ens-lyon.fr/MUMPS/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/MUMPS/4.10.0-gmpolf-1.4.8-parmetis
+set root    /share/easybuild/RHEL6.3/westmere/software/MUMPS/4.10.0-gmpolf-1.4.8-parmetis
 
 conflict    MUMPS
 

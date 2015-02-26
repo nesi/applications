@@ -1,0 +1,39 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   SymPy is a Python library for symbolic mathematics. It aims to
+ become a full-featured computer algebra system (CAS) while keeping the code as
+ simple as possible in order to be comprehensible and easily extensible. SymPy
+ is written entirely in Python and does not require any external libraries. - Homepage: http://sympy.org/
+    }
+}
+
+module-whatis {Description: SymPy is a Python library for symbolic mathematics. It aims to
+ become a full-featured computer algebra system (CAS) while keeping the code as
+ simple as possible in order to be comprehensible and easily extensible. SymPy
+ is written entirely in Python and does not require any external libraries. - Homepage: http://sympy.org/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/sympy/0.7.2-ictce-5.4.0-Python-2.7.8
+
+conflict sympy
+
+if { ![is-loaded ictce/5.4.0] } {
+    module load ictce/5.4.0
+}
+
+if { ![is-loaded Python/2.7.8-ictce-5.4.0] } {
+    module load Python/2.7.8-ictce-5.4.0
+}
+
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTSYMPY		"$root"
+setenv	EBVERSIONSYMPY		"0.7.2"
+setenv	EBDEVELSYMPY		"$root/easybuild/sympy-0.7.2-ictce-5.4.0-Python-2.7.8-easybuild-devel"
+
+prepend-path	PYTHONPATH		$root/lib/python2.7/site-packages
+
+# Built with EasyBuild version 1.16.1

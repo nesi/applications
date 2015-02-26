@@ -11,7 +11,7 @@ module-whatis {Description: FastTree infers approximately-maximum-likelihood phy
  or protein sequences. FastTree can handle alignments with up to a million of sequences in a reasonable amount of
  time and memory.  - Homepage: http://www.microbesonline.org/fasttree/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/FastTree/2.1.7-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/FastTree/2.1.7-goolf-1.5.14
 
 conflict FastTree
 

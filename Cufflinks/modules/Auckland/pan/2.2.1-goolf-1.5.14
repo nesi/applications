@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Transcript assembly, differential expression, and differential regulation for RNA-Seq - Homepage: http://cufflinks.cbcb.umd.edu/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/Cufflinks/2.2.1-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/Cufflinks/2.2.1-goolf-1.5.14
 
 conflict    Cufflinks
 
@@ -38,4 +38,4 @@ setenv	EBVERSIONCUFFLINKS		"2.2.1"
 setenv	EBDEVELCUFFLINKS		"$root/easybuild/Cufflinks-2.2.1-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

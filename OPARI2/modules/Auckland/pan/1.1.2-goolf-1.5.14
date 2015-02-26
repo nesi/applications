@@ -13,7 +13,7 @@ module-whatis {Description: OPARI2, the successor of Forschungszentrum Juelich's
  It surrounds OpenMP directives and runtime library calls with calls to
  the POMP2 measurement interface. - Homepage: http://www.score-p.org}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/OPARI2/1.1.2-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/OPARI2/1.1.2-goolf-1.5.14
 
 conflict    OPARI2
 

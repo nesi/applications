@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: HDF5 is a unique technology suite that makes possible the management of 
  extremely large and complex data collections. - Homepage: http://www.hdfgroup.org/HDF5/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/HDF5/1.8.9-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/HDF5/1.8.9-goolf-1.5.14
 
 conflict    HDF5
 
@@ -35,4 +35,4 @@ setenv	EBVERSIONHDF5		"1.8.9"
 setenv	EBDEVELHDF5		"$root/easybuild/HDF5-1.8.9-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

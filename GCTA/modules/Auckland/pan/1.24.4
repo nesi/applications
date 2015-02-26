@@ -1,0 +1,21 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   Genome-wide Complex Trait Analysis - Homepage: http://www.complextraitgenomics.com/software/gcta/
+    }
+}
+
+module-whatis {Description: Genome-wide Complex Trait Analysis - Homepage: http://www.complextraitgenomics.com/software/gcta/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/GCTA/1.24.4
+
+conflict GCTA
+
+
+setenv	EBROOTGCTA		"$root"
+setenv	EBVERSIONGCTA		"1.24.4"
+setenv	EBDEVELGCTA		"$root/easybuild/GCTA-1.24.4-easybuild-devel"
+
+prepend-path	PATH		$root/
+
+# Built with EasyBuild version 1.16.1

@@ -15,7 +15,7 @@ module-whatis {Description: PAPI provides the tool designer and application engi
  In addition Component PAPI provides access to a collection of components
  that expose performance measurement opportunites across the hardware and software stack. - Homepage: http://icl.cs.utk.edu/projects/papi/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/PAPI/5.2.0-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/PAPI/5.2.0-goolf-1.5.14
 
 conflict    PAPI
 

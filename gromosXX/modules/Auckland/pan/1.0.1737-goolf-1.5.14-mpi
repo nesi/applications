@@ -1,0 +1,40 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {    GROMOS™ is an acronym of the GROningen MOlecular Simulation
+computer program package, which has been developed since 1978 for the dynamic
+modelling of (bio)molecules, until 1990 at the University of Groningen, The
+Netherlands, and since then at the ETH, the Swiss Federal Institute of
+Technology, in Zürich, Switzerland.  - Homepage: http://www.gromos.net/
+    }
+}
+
+module-whatis {Description:  GROMOS™ is an acronym of the GROningen MOlecular Simulation
+computer program package, which has been developed since 1978 for the dynamic
+modelling of (bio)molecules, until 1990 at the University of Groningen, The
+Netherlands, and since then at the ETH, the Swiss Federal Institute of
+Technology, in Zürich, Switzerland.  - Homepage: http://www.gromos.net/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/gromosXX/1.0.1737-goolf-1.5.14-mpi
+
+conflict gromosXX
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded GSL/1.16-goolf-1.5.14] } {
+    module load GSL/1.16-goolf-1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	PATH		$root/bin
+
+setenv	EBROOTGROMOSXX		"$root"
+setenv	EBVERSIONGROMOSXX		"1.0.1737"
+setenv	EBDEVELGROMOSXX		"$root/easybuild/gromosXX-1.0.1737-goolf-1.5.14-mpi-easybuild-devel"
+
+
+# Built with EasyBuild version 1.16.1

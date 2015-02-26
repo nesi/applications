@@ -15,7 +15,7 @@ calculations at the heart of most Bayesian and Maximum Likelihood
 phylogenetics packages.
  - Homepage: http://code.google.com/p/beagle-lib/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/beagle-lib/20140322-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/beagle-lib/20140322-ictce-5.4.0
 
 conflict beagle-lib
 

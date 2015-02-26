@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: GNU Triangulated Surface Library - Homepage: http://gts.sourceforge.net}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/GTS/121130-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/GTS/121130-goolf-1.5.14
 
 conflict    GTS
 

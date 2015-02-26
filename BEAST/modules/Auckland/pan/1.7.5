@@ -2,6 +2,10 @@
 
 module-whatis "BEAST is a cross-platform program for Bayesian MCMC analysis of molecular sequences (version 1.7.5)"
 
+if [ module-info mode load ] {
+    puts stderr "Warning: The BEAST/1.7.5 environment module is marked for removal. Please contact the Centre for eReseach if you need it."
+}
+
 set root /share/apps/BEAST/noarch/1.7.5
 
 prepend-path PATH $root/bin

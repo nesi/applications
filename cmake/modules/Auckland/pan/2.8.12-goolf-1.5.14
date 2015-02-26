@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: CMake, the cross-platform, open-source build system.
  CMake is a family of tools designed to build, test and package software. - Homepage: http://www.cmake.org}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/CMake/2.8.12-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/CMake/2.8.12-goolf-1.5.14
 
 conflict    CMake
 
@@ -30,4 +30,4 @@ setenv	EBVERSIONCMAKE		"2.8.12"
 setenv	EBDEVELCMAKE		"$root/easybuild/CMake-2.8.12-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

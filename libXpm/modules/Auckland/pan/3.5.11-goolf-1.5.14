@@ -7,9 +7,9 @@ proc ModulesHelp { } {
 
 module-whatis {Description: libXp provides the X print library. - Homepage: http://www.freedesktop.org/wiki/Software/xlibs}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/libXpm/3.5.11-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/libXpm/3.5.11-goolf-1.5.14
 
-conflict    libXpm
+conflict libXpm
 
 if { ![is-loaded goolf/1.5.14] } {
     module load goolf/1.5.14
@@ -27,4 +27,4 @@ setenv	EBVERSIONLIBXPM		"3.5.11"
 setenv	EBDEVELLIBXPM		"$root/easybuild/libXpm-3.5.11-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.14.0
+# Built with EasyBuild version 1.15.1

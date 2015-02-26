@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Close the gaps emerging during the scaffolding process of SOAPdenovo or other assemblers, using the abundant pair relationships of short reads. - Homepage: http://soap.genomics.org.cn/index.html}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/GapCloser/1.12-r6-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/GapCloser/1.12-r6-ictce-5.4.0
 
 conflict GapCloser
 

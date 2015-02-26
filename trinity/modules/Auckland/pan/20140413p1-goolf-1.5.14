@@ -11,7 +11,7 @@ module-whatis {Description: Trinity represents a novel method for the efficient 
  of transcriptomes from RNA-Seq data. Trinity combines three independent software modules: Inchworm,
  Chrysalis, and Butterfly, applied sequentially to process large volumes of RNA-Seq reads. - Homepage: http://trinityrnaseq.sourceforge.net/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/Trinity/20140413p1-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/Trinity/20140413p1-goolf-1.5.14
 
 conflict    Trinity
 

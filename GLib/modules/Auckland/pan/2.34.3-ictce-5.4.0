@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: GLib is one of the base libraries of the GTK+ project - Homepage: http://www.gtk.org/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/GLib/2.34.3-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/GLib/2.34.3-ictce-5.4.0
 
 conflict    GLib
 
@@ -35,4 +35,4 @@ setenv	EBVERSIONGLIB		"2.34.3"
 setenv	EBDEVELGLIB		"$root/easybuild/GLib-2.34.3-ictce-5.4.0-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

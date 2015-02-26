@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: GNU Compiler Collection (GCC) based compiler toolchain, including
  OpenMPI for MPI support, OpenBLAS (BLAS and LAPACK support), FFTW and ScaLAPACK. - Homepage: (none)}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/goolf/1.4.10
+set root    /share/easybuild/RHEL6.3/westmere/software/goolf/1.4.10
 
 conflict    goolf
 
@@ -40,3 +40,6 @@ setenv	EBDEVELGOOLF		"$root/easybuild/goolf-1.4.10-easybuild-devel"
 
 
 # Built with EasyBuild version 1.13.0
+# Temporary solution for srun support of OpenMPI issues related with this toolchain
+setenv SLURM_STEP_RESV_PORTS   "12000-12090"
+setenv SLURM_MPI_TYPE          "openmpi"

@@ -1,0 +1,49 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   LibXi provides an X Window System client interface to the XINPUT extension to the X protocol. - Homepage: http://www.freedesktop.org/wiki/Software/xlibs
+    }
+}
+
+module-whatis {Description: LibXi provides an X Window System client interface to the XINPUT extension to the X protocol. - Homepage: http://www.freedesktop.org/wiki/Software/xlibs}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/libXi/1.7.2-goolf-1.5.14
+
+conflict libXi
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded xproto/7.0.23-goolf-1.5.14] } {
+    module load xproto/7.0.23-goolf-1.5.14
+}
+
+if { ![is-loaded xextproto/7.2.1-goolf-1.5.14] } {
+    module load xextproto/7.2.1-goolf-1.5.14
+}
+
+if { ![is-loaded libXext/1.3.2-goolf-1.5.14] } {
+    module load libXext/1.3.2-goolf-1.5.14
+}
+
+if { ![is-loaded inputproto/2.3-goolf-1.5.14] } {
+    module load inputproto/2.3-goolf-1.5.14
+}
+
+if { ![is-loaded libXfixes/5.0.1-goolf-1.5.14] } {
+    module load libXfixes/5.0.1-goolf-1.5.14
+}
+
+prepend-path	CPATH		$root/include
+prepend-path	LD_LIBRARY_PATH		$root/lib
+prepend-path	LIBRARY_PATH		$root/lib
+prepend-path	MANPATH		$root/share/man
+prepend-path	PKG_CONFIG_PATH		$root/lib/pkgconfig
+
+setenv	EBROOTLIBXI		"$root"
+setenv	EBVERSIONLIBXI		"1.7.2"
+setenv	EBDEVELLIBXI		"$root/easybuild/libXi-1.7.2-goolf-1.5.14-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.2

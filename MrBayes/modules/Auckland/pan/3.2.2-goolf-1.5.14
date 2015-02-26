@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: MrBayes is a program for the Bayesian estimation of phylogeny. - Homepage: http://mrbayes.csit.fsu.edu}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/MrBayes/3.2.2-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/MrBayes/3.2.2-goolf-1.5.14
 
 conflict    MrBayes
 
@@ -30,4 +30,4 @@ setenv	EBVERSIONMRBAYES		"3.2.2"
 setenv	EBDEVELMRBAYES		"$root/easybuild/MrBayes-3.2.2-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

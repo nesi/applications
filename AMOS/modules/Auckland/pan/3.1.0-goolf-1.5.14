@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: The AMOS consortium is committed to the development of open-source whole genome assembly software - Homepage: http://sourceforge.net/apps/mediawiki/amos/index.php?title=AMOS}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/AMOS/3.1.0-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/AMOS/3.1.0-goolf-1.5.14
 
 conflict    AMOS
 

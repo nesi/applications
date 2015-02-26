@@ -9,7 +9,7 @@ static mapping, and sparse matrix block ordering, and sequential mesh and hyperg
 module-whatis {Description: Software package and libraries for sequential and parallel graph partitioning,
 static mapping, and sparse matrix block ordering, and sequential mesh and hypergraph partitioning. - Homepage: http://www.labri.fr/perso/pelegrin/scotch/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/SCOTCH/6.0.0_esmumps-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/SCOTCH/6.0.0_esmumps-ictce-5.4.0
 
 conflict    SCOTCH
 
@@ -28,4 +28,4 @@ setenv	EBVERSIONSCOTCH		"6.0.0_esmumps"
 setenv	EBDEVELSCOTCH		"$root/easybuild/SCOTCH-6.0.0_esmumps-ictce-5.4.0-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

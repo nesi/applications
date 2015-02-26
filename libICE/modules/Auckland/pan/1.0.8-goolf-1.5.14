@@ -7,9 +7,13 @@ proc ModulesHelp { } {
 
 module-whatis {Description: X Inter-Client Exchange library for freedesktop.org - Homepage: http://www.freedesktop.org/wiki/Software/xlibs}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/libICE/1.0.8-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/libICE/1.0.8-goolf-1.5.14
 
-conflict    libICE
+conflict libICE
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
 
 if { ![is-loaded xproto/7.0.23-goolf-1.5.14] } {
     module load xproto/7.0.23-goolf-1.5.14
@@ -17,10 +21,6 @@ if { ![is-loaded xproto/7.0.23-goolf-1.5.14] } {
 
 if { ![is-loaded xtrans/1.2-goolf-1.5.14] } {
     module load xtrans/1.2-goolf-1.5.14
-}
-
-if { ![is-loaded goolf/1.5.14] } {
-    module load goolf/1.5.14
 }
 
 prepend-path	CPATH		$root/include
@@ -33,4 +33,4 @@ setenv	EBVERSIONLIBICE		"1.0.8"
 setenv	EBDEVELLIBICE		"$root/easybuild/libICE-1.0.8-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.14.0
+# Built with EasyBuild version 1.15.1

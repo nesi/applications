@@ -11,9 +11,9 @@ module-whatis {Description: xtrans includes a number of routines to make X imple
  at time of writing, it includes support for UNIX sockets, IPv4, IPv6, and DECnet.
  - Homepage: http://www.freedesktop.org/wiki/Software/xlibs}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/xtrans/1.2-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/xtrans/1.2-goolf-1.5.14
 
-conflict    xtrans
+conflict xtrans
 
 if { ![is-loaded goolf/1.5.14] } {
     module load goolf/1.5.14
@@ -30,4 +30,4 @@ setenv	EBVERSIONXTRANS		"1.2"
 setenv	EBDEVELXTRANS		"$root/easybuild/xtrans-1.2-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.14.0
+# Built with EasyBuild version 1.15.1

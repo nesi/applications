@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Very simple MPI sanity code. Nothing more, nothing less. - Homepage: https://github.com/hpc/supermagic}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/supermagic/20130104-ictce-5.4.0
+set root    /share/easybuild/RHEL6.3/westmere/software/supermagic/20130104-ictce-5.4.0
 
 conflict    supermagic
 

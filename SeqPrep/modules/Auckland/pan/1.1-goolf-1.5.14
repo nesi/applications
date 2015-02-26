@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Tool for stripping adaptors and/or merging paired reads with overlap into single reads. - Homepage: https://github.com/jstjohn/SeqPrep}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/SeqPrep/1.1-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/SeqPrep/1.1-goolf-1.5.14
 
 conflict SeqPrep
 

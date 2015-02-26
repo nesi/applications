@@ -1,0 +1,29 @@
+#%Module
+
+proc ModulesHelp { } {
+    puts stderr {   SuiteSparse is a collection of libraries manipulate sparse matrices. - Homepage: http://www.cise.ufl.edu/research/sparse/SuiteSparse/
+    }
+}
+
+module-whatis {Description: SuiteSparse is a collection of libraries manipulate sparse matrices. - Homepage: http://www.cise.ufl.edu/research/sparse/SuiteSparse/}
+
+set root    /share/easybuild/RHEL6.3/westmere/software/SuiteSparse/4.2.1-goolf-1.5.14-ParMETIS-4.0.3
+
+conflict SuiteSparse
+
+if { ![is-loaded goolf/1.5.14] } {
+    module load goolf/1.5.14
+}
+
+if { ![is-loaded ParMETIS/4.0.3-goolf-1.5.14] } {
+    module load ParMETIS/4.0.3-goolf-1.5.14
+}
+
+prepend-path	CPATH		$root/SuiteSparse_config
+
+setenv	EBROOTSUITESPARSE		"$root"
+setenv	EBVERSIONSUITESPARSE		"4.2.1"
+setenv	EBDEVELSUITESPARSE		"$root/easybuild/SuiteSparse-4.2.1-goolf-1.5.14-ParMETIS-4.0.3-easybuild-devel"
+
+
+# Built with EasyBuild version 1.15.2

@@ -9,7 +9,7 @@ behind a consistent, portable interface. - Homepage: http://www.gnu.org/software
 module-whatis {Description: GNU libtool is a generic library support script. Libtool hides the complexity of using shared libraries
 behind a consistent, portable interface. - Homepage: http://www.gnu.org/software/libtool}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/libtool/2.4.2-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/libtool/2.4.2-goolf-1.5.14
 
 conflict    libtool
 
@@ -29,4 +29,4 @@ setenv	EBVERSIONLIBTOOL		"2.4.2"
 setenv	EBDEVELLIBTOOL		"$root/easybuild/libtool-2.4.2-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

@@ -9,7 +9,7 @@ operating on signed integers, rational numbers, and floating point numbers.  - H
 module-whatis {Description: GMP is a free library for arbitrary precision arithmetic, 
 operating on signed integers, rational numbers, and floating point numbers.  - Homepage: http://gmplib.org/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/GMP/5.1.3-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/GMP/5.1.3-goolf-1.5.14
 
 conflict    GMP
 
@@ -26,4 +26,4 @@ setenv	EBVERSIONGMP		"5.1.3"
 setenv	EBDEVELGMP		"$root/easybuild/GMP-5.1.3-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.13.0
+# Built with EasyBuild version 1.12.1

@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: VirtualGL is an open source toolkit that gives any Unix or Linux remote display software the ability to run OpenGL applications with full 3D hardware acceleration. - Homepage: http://www.virtualgl.org/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/VirtualGL/2.3.3-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/VirtualGL/2.3.3-goolf-1.5.14
 
 conflict    VirtualGL
 

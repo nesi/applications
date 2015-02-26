@@ -9,7 +9,7 @@ proc ModulesHelp { } {
 module-whatis {Description: Mothur is a single piece of open-source, expandable software
  to fill the bioinformatics needs of the microbial ecology community. - Homepage: http://www.mothur.org/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/Mothur/1.25.0-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/Mothur/1.25.0-goolf-1.5.14
 
 conflict Mothur
 

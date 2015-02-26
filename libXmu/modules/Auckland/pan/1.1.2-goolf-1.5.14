@@ -9,16 +9,16 @@ proc ModulesHelp { } {
 module-whatis {Description: libXmu provides a set of miscellaneous utility convenience functions for X libraries to use.
  libXmuu is a lighter-weight version that does not depend on libXt or libXext - Homepage: http://www.freedesktop.org/wiki/Software/xlibs}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/libXmu/1.1.2-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/libXmu/1.1.2-goolf-1.5.14
 
-conflict    libXmu
-
-if { ![is-loaded libXt/1.1.4-goolf-1.5.14] } {
-    module load libXt/1.1.4-goolf-1.5.14
-}
+conflict libXmu
 
 if { ![is-loaded goolf/1.5.14] } {
     module load goolf/1.5.14
+}
+
+if { ![is-loaded libXt/1.1.4-goolf-1.5.14] } {
+    module load libXt/1.1.4-goolf-1.5.14
 }
 
 prepend-path	CPATH		$root/include
@@ -31,4 +31,4 @@ setenv	EBVERSIONLIBXMU		"1.1.2"
 setenv	EBDEVELLIBXMU		"$root/easybuild/libXmu-1.1.2-goolf-1.5.14-easybuild-devel"
 
 
-# Built with EasyBuild version 1.14.0
+# Built with EasyBuild version 1.15.1

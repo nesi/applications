@@ -7,7 +7,7 @@ proc ModulesHelp { } {
 
 module-whatis {Description: Python is a programming language that lets you work more quickly and integrate your systems more effectively. - Homepage: http://python.org/}
 
-set root    /share/easybuild/RHEL6.3/sandybridge/software/Python/2.7.8-goolf-1.5.14
+set root    /share/easybuild/RHEL6.3/westmere/software/Python/2.7.8-goolf-1.5.14
 
 conflict    Python
 
