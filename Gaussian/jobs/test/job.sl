@@ -9,7 +9,6 @@
 #SBATCH --mem-per-cpu=8132  # memory/cpu (in MB)
 ######################################################
 ###  Load the Environment Modules for Gaussian
-source /etc/profile.d/modules.sh
 module load Gaussian/D.01
 ######################################################
 ###  Transferring the data to the local disk  ($SCRATCH_DIR)
@@ -21,4 +20,4 @@ export GAUSS_SCRDIR=$SCRATCH_DIR
 srun g09 < ./test0324.com > test0324.out
 ######################################################
 ###  Transferring the results to the project directory
-cp -pr $SCRATCH_DIR $PROJECT/OUT/gaussian/
+cp -pr $SCRATCH_DIR /projects/uoa99999/OUT/gaussian/
