@@ -1,4 +1,4 @@
-Our quiime_config is:
+Our quime_config is:
 
     cluster_jobs_fp start_parallel_jobs_srun.py
     temp_dir $SCRATCH_DIR
